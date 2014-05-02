@@ -11,7 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   api_constants
+   constants
 
 Indices and tables
 ==================
