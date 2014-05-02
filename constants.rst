@@ -13,7 +13,7 @@ Local readstore See the `README file`_
 =============== =========================================== ==================================================
 
 Each one has certain `datasets <https://developers.google.com/genomics/v1beta/reference/datasets>`_ 
-exposed to the public. It will eventually be possibly to list all available datasets from the API directly. 
+exposed to the public. It will eventually be possible to list all available datasets from the API directly. 
 For now, there are some common public values that can be used (in addition to private datasets):
 
 ================== =================== ============
