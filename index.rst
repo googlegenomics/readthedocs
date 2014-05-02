@@ -23,4 +23,4 @@ Contents:
 
    mailinglist
    constants
-   api-client-java/usage
+   api-client-java/index
