@@ -31,9 +31,7 @@ Running the client without App Engine
 Only follow the instructions in this section if you do *not* want to use App Engine. 
 See the section above for App Engine instructions.
 
-* First you will need to download Pip from::
-
-    https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+* First you will need to download Pip from https://raw.github.com/pypa/pip/master/contrib/get-pip.py
   
 * To install Pip, open up a cmd.exe window by selecting Start->Run->cmd and type the following
   (*replace directory_of_get-pip.py with the location of where get-pip.py resides*)::
