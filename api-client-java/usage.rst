@@ -80,14 +80,18 @@ These options can be used with any request type.
 
   If your client_secrets.json file is not in the same directory
   that you call the jar from, then use this path to specify where the file is located.
-  The client_secrets.json file must exist.::
+  The client_secrets.json file must exist.
+  
+  ::
 
     java -jar genomics-tools-client-java-v1beta.jar searchreadsets --dataset_id "376902546192" --client_secrets_filename ~/Downloads/client_secrets.json
 
 
 **--root_url**
 
-  Use this to hit a different API provider (like NCBI or EBI).::
+  Use this to hit a different API provider (like NCBI or EBI).
+  
+  ::
 
     java -jar target/genomics-tools-client-java-v1beta.jar searchreadsets --root_url "http://trace.ncbi.nlm.nih.gov/Traces/gg/" --dataset_id "SRP034507" --fields "readsets(id,name,fileData),pageToken"
 
@@ -101,6 +105,8 @@ These options can be used with any request type.
   Use this option to fetch a partial response from the API
   (i.e. only return some fields) See the
   `API docs <https://developers.google.com/genomics/performance#partial>`_
-  for more details.::
+  for more details.
+  
+  ::
 
     java -jar target/genomics-tools-client-java-v1beta.jar searchreadsets --dataset_id 376902546192 --fields "readsets(id,name)"
