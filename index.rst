@@ -16,7 +16,6 @@ All improvements to these docs are welcome! You can
 `file an issue <https://github.com/googlegenomics/docs/issues>`_ or 
 submit a `pull request <https://github.com/googlegenomics/docs/blob/master/CONTRIBUTING.rst>`_.
 
-Contents:
 
 .. toctree::
    :maxdepth: 2
@@ -24,3 +23,5 @@ Contents:
    mailinglist
    constants
    api-client-java/index
+   api-client-python/index
+   api-client-r/index
