@@ -7,4 +7,4 @@ provides a command line interface for API queries in Java.
 .. toctree::
    :maxdepth: 2
 
-   usage
+   Command line options <usage>
