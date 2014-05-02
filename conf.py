@@ -44,7 +44,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Google Genomics'
-copyright = u'2014, Cassie'
+copyright = u'2014, Google Inc'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
