@@ -23,7 +23,9 @@ Only follow the instructions in this section if you want to run the python clien
 * Download the "Google App Engine SDK for Python" for Windows from 
   https://developers.google.com/appengine/downloads and install it.
 
-* More instructions needed!
+  *Note:* For this instance we will assume the installation directory to be ``C:\Google\google_appengine_python``
+  
+* Once installed proceed to the 
 
 
 Running the client without App Engine
