@@ -8,5 +8,6 @@ provides a simple genome browser that pulls data from the Genomics API.
    :maxdepth: 2
    
    getting-started-windows
+   url-format
 
 
