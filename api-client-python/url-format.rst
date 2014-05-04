@@ -7,12 +7,15 @@ These parameters are set `using the hash <http://blog.mgm-tp.com/2011/10/must-kn
 The format is very simple with only 3 supported key value pairs separated by ``&`` and then ``=``:
 
 * backend
+
   The backend to use for API calls. example: ``GOOGLE`` or ``NCBI``
   
 * readsetId
+
   The ID of the readset that should be loaded. See :doc:`/constants` for more information. 
 
 * location
+
   The genomic position to display at. Takes the form of ``<chromosome>:<base pair position>``. example: ``14:25419886``
   This can also be an `RS ID <https://customercare.23andme.com/entries/21263638-What-are-all-the-rs-numbers-rsids->`_ 
   or a string that will be searched on `snpedia <snpedia.com>`_.
