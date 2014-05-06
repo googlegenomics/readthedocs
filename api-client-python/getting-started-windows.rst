@@ -14,6 +14,10 @@ Setting up the python client on Windows
   (if you chose a different installation location, change this path accordingly)::
 
   ;C:\Python27\;C:\Python27\Scripts\
+  
+* Get the api-client-python code onto your machine by cloning the repository::
+  
+    git clone https://github.com/googlegenomics/api-client-python.git
 
 
 Running the client with App Engine
@@ -22,12 +26,8 @@ Only follow the instructions in this section if you want to run the python clien
 
 * Download the "Google App Engine SDK for Python" for Windows from 
   https://developers.google.com/appengine/downloads and install it.
-
-* Open up the ``main.py`` file inside of your ``api-client-python`` directory and set the following value to True::
-
-    USE_APPENGINE = True
   
-* From within the ``api-client-python`` directory, you then need to run the dev_appserver.py script. 
+* From within the ``api-client-python`` directory that you clones, run the dev_appserver.py script. 
   If we assume the installation directory for your app engine SDK was ``C:\Google\google_appengine``, 
   then you would run the following command::
   
@@ -40,36 +40,6 @@ Only follow the instructions in this section if you want to run the python clien
  
 * To view your running server, open your browser to ``localhost:8080``.
 
-Enabling OAuth
-..............
-
-If you want to support OAuth requests (used by the Google API provider), 
-you will need to be running your server with App Engine. 
-
-* First, follow the `authentication instructions 
-  <https://developers.google.com/genomics#authenticate>`_ to generate a valid
-  ``client_secrets.json`` file. However, for this application you want to generate
-  secrets for a *Web Application* rather than a *Native Application*.
-
-* Be sure to add ``http://localhost:8080/oauth2callback`` as an ``Authorized redirect URI`` 
-  when configuring the client ID.
-
-* Replace the ``client_secrets.json`` file in the api-client-python directory 
-  with your newly downloaded file. 
-
-* Then, enable OAuth in the code by editing ``main.py`` again to set the 
-  following value to True::
-
-    REQUIRE_OAUTH = True
-  
-* Run your App Engine server as before, and view your server at ``localhost:8080``.
-
-* You should then be prompted to grant OAuth access to your local server, 
-  and Google will show up in the Readset choosing dialog.
-
-* If you see an ``Error: redirect_uri_mismatch`` message when trying to grant OAuth access to 
-  your local server that means you need to `update the Authorized redirect URIs <http://stackoverflow.com/questions/20732266/authenticate-with-google-oauth-2-0-did-not-match-a-registered-redirect-uri>`_ 
-  for your Client ID.
 
 Running the client without App Engine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,3 +64,38 @@ See the section above for App Engine instructions.
     cd api-client-python
     python localserver.py
 
+
+Enabling the Google API provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you want to pull in data from `Google Genomics API`_ you will need to set
+``API_KEY`` in ``main.py`` to a valid Google API key.
+
+* First apply for access to the Genomics API by following the instructions at
+  https://developers.google.com/genomics/
+
+* Then create a project in the
+  `Google Developers Console <https://console.developers.google.com>`_
+  or select an existing one.
+
+* On the **APIs & auth** tab, select APIs and turn the Genomics API to ON
+
+* On the **Credentials** tab, click **create new key** under
+  the Public API access section.
+
+* Select **Server key** in the dialog that pops up, and then click **Create**.
+  (You don't need to enter anything in the text box)
+
+* Copy the **API key** field value that now appears in the Public API access
+  section into the top of the ``main.py`` file inside of your api-client-python directory. 
+  It should look something like this::
+
+    API_KEY = "abcdef12345abcdef"
+
+
+  Note: You can also reuse an existing API key if you have one.
+  Just make sure the Genomics API is turned on.
+
+* Run your server as before, and view your server at ``localhost:8080``.
+
+* Google should now show up as an option in the Readset choosing dialog.
