@@ -26,3 +26,4 @@ submit a `pull request <https://github.com/googlegenomics/docs/blob/master/CONTR
    api-client-java/index
    api-client-python/index
    api-client-r/index
+   pgp-data
