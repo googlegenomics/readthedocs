@@ -8,3 +8,4 @@ provides a command line interface for API queries in Java.
    :maxdepth: 2
 
    Command line options <usage>
+   resetting_auth
