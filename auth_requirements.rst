@@ -20,6 +20,11 @@ Available APIs
 API method                 OAuth required
 =========================  ==============
 genomics.datasets.get      False
+genomics.datasets.create   True
+genomics.datasets.delete   True
+genomics.datasets.list     False
+genomics.datasets.patch    True
+genomics.datasets.update   True
 genomics.readsets.get	     False
 genomics.readsets.search   False
 genomics.reads.search      False
@@ -46,11 +51,6 @@ APIs in development
 ========================  ==============
 API method                OAuth required
 ========================  ==============
-genomics.datasets.create  True
-genomics.datasets.delete  True
-genomics.datasets.list    False
-genomics.datasets.patch   True
-genomics.datasets.update  True
 genomics.readsets.create  True
 genomics.readsets.delete  True
 genomics.readsets.export  True
