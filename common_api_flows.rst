@@ -21,7 +21,7 @@ Browsing read data
   
   Note: This is not currently implemented!! This is why we have the :doc:`/constants` page for now.
 
-* ``POST /readsets/search {datasetId: x}``
+* ``POST /readsets/search {datasetIds: [x]}``
 
   Search for readsets in a particular dataset. Choose one readsetId from the result.
   
@@ -29,7 +29,7 @@ Browsing read data
   to only ask for the id and name fields on a readset. Then you can follow up with a ``GET /readsets/<readsetId>`` 
   call to get the complete readset data.
   
-* ``POST /reads/search {readsetId: x}``   
+* ``POST /reads/search {readsetIds: [x]}``   
 
   Get reads for a particular readset. 
   
