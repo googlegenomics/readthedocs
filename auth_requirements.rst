@@ -29,6 +29,9 @@ genomics.readsets.get	     False
 genomics.readsets.delete   True
 genomics.readsets.import   True
 genomics.readsets.search   False
+genomics.readsets.export   True
+genomics.readsets.patch    True
+genomics.readsets.update   True
 genomics.reads.search      False
 genomics.jobs.*            True
 =========================  ==============
@@ -52,8 +55,5 @@ APIs in development
 ========================  ==============
 API method                OAuth required
 ========================  ==============
-genomics.readsets.export  True
-genomics.readsets.patch   True
-genomics.readsets.update  True
 genomics.beacons.get      False
 ========================  ==============
