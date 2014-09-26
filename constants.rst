@@ -16,18 +16,18 @@ Each one has certain `datasets <https://developers.google.com/genomics/v1beta/re
 exposed to the public. It will eventually be possible to list all available datasets from the API directly. 
 For now, there are some common public values that can be used (in addition to private datasets):
 
-================== =================== ============
-Public Dataset IDs Name                API Provider
-================== =================== ============
-376902546192       1000 Genomes        Google
-383928317087       PGP                 Google
-461916304629       Simons Foundation   Google
-337315832689       DREAM SMC Challenge Google
-SRP034507          SRP034507           NCBI
-SRP029392          SRP029392           NCBI
-(Any NCBI Study)                       NCBI
-data               All data at EBI     EBI
-================== =================== ============
+==================== =================== ============
+Public Dataset IDs   Name                API Provider
+==================== =================== ============
+10473108253681171589 1000 Genomes        Google
+383928317087         PGP                 Google
+461916304629         Simons Foundation   Google
+337315832689         DREAM SMC Challenge Google
+SRP034507            SRP034507           NCBI
+SRP029392            SRP029392           NCBI
+(Any NCBI Study)                         NCBI
+data                 All data at EBI     EBI
+==================== =================== ============
 
 Within a dataset, the API has 
 `a call <https://developers.google.com/genomics/v1beta/reference/readsets/search>`_ 
