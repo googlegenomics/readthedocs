@@ -33,7 +33,7 @@ existing options, then you can issue a fully custom request with the following p
 Putting these pieces together, if you wanted to do a readsets search with name filtering 
 (which isn't supported through the other options) you could do so with this query::
 
-  java -jar target/genomics-tools-client-java-v1beta.jar custom --custom_endpoint "readsets/search" --custom_body '{"datasetIds": ["376902546192"], "name": "NA1287"}' --fields "readsets(id,name)" --pretty_print
+  java -jar target/genomics-tools-client-java-v1beta.jar custom --custom_endpoint "readsets/search" --custom_body '{"datasetIds": ["10473108253681171589"], "name": "NA1287"}' --fields "readsets(id,name)" --pretty_print
 
 If instead you wanted to make a ``GET`` call, your custom request could look like this::
 
