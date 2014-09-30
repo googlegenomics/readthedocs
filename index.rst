@@ -28,3 +28,4 @@ submit a `pull request <https://github.com/googlegenomics/docs/blob/master/CONTR
    api-client-python/index
    api-client-r/index
    pgp-data
+   job_troubleshooting
