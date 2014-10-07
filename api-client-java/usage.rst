@@ -37,4 +37,4 @@ Putting these pieces together, if you wanted to do a readsets search with name f
 
 If instead you wanted to make a ``GET`` call, your custom request could look like this::
 
-  java -jar target/genomics-tools-client-java-v1beta.jar custom --custom_endpoint "readsets/CJDmkYn8ChCh4IH4hOf4gacB" --custom_method "GET" --fields "id,name" --pretty_print
+  java -jar target/genomics-tools-client-java-v1beta.jar custom --custom_endpoint "readsets/CMvnhpKTFhD04eLE-q2yxnU" --custom_method "GET" --fields "id,name" --pretty_print
