@@ -37,7 +37,7 @@ values based on the provider. They are always strings.
 ========================= ============ ===========================  
 Example Readset IDs       API Provider Description
 ========================= ============ ===========================  
-CJDmkYn8ChCh4IH4hOf4gacB  Google       Google generated ID
+CMvnhpKTFhD04eLE-q2yxnU   Google       Google generated ID
 SRR960599 or SRR960599.1  NCBI         NCBI Experiment Run or Read
 10                        EBI          EBI generated ID
 ========================= ============ ===========================  
