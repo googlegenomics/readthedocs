@@ -11,5 +11,5 @@ To test Google's compliance with the GA4GH API, you can use the compliance tests
 http://ga4gh.org/#/compliance
 
 To get a list of public datasets that can be used with Google's API calls, you can 
-`use the APIs explorer <https://developers.google.com/apis-explorer/#p/genomics/v1beta/genomics.datasets.list?_h=1&>`_
+`use the APIs explorer <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.list>`_
 or `Google Genomics Public Data <https://cloud.google.com/genomics/public-data>`_.
