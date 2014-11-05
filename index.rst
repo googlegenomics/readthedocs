@@ -22,6 +22,7 @@ submit a `pull request <https://github.com/googlegenomics/docs/blob/master/CONTR
 
    mailinglist
    constants
+   migrating_tips
    common_api_flows
    auth_requirements
    api-client-java/index
