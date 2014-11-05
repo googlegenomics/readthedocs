@@ -30,8 +30,14 @@ Reads
   * All read positions are now 0-based longs, just like the variant positions.
   * `originalBases` is now `alignedSequence`
   * `alignedBases` (`originalBases` with the cigar applied) has been removed
+  * `baseQuality` is now an int array called `alignedQuality`. You no longer 
+    need to subtract 33 or deal with ASCII conversion.
+  * `name` is now `fragmentName`
+  * `templateLength` is now `fragmentLength`
+  * `tags` is now `info`
   * `position` is now `alignment.position.position`. The alignment object now contains
-    all alignment-related information - the cigar, reference name, etc
+    all alignment-related information - including the cigar, reference name, 
+    and whether the read is on the reverse strand.
   * The old `cigar` string is now the structured field `alignment.cigar`. To get 
     an old-style cigar string, iterate over each element in the array, and
     concat the `operationLength` with a mapped version of `operation`. pseudocode::
