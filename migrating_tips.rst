@@ -40,6 +40,23 @@ Reads
           INSERT: "I", PAD: "P", SEQUENCE_MATCH: "=", SEQUENCE_MISMATCH: "X", SKIP: "N"}
 
       cigar_string = [c.operationLength + cigar_enums[c.operation] for c in read.alignment.cigar].join('')
+  * The old `flags` integer is now represented by many different first class fields.
+    To reconstruct a flags value, you need code similar to this pseudocode::
+    
+      flags = 0
+      flags += read.numberReads == 2 ? 1 : 0 #read_paired
+      flags += read.properPlacement ? 2 : 0 #read_proper_pair
+      flags += read.alignment.position.position == null ? 4 : 0 #read_unmapped
+      flags += read.nextMatePosition.position == null ? 8 : 0 #mate_unmapped
+      flags += read.alignment.position.reverseStrand ? 16 : 0 #read_reverse_strand
+      flags += read.nextMatePosition.reverseStrand ? 32 : 0 #mate_reverse_strand
+      flags += read.readNumber == 0 ? 64 : 0 #first_in_pair
+      flags += read.readNumber == 1 ? 128 : 0 #second_in_pair
+      flags += read.secondaryAlignment ? 256 : 0 #secondary_alignment
+      flags += read.failedVendorQualityChecks ? 512 : 0 #failed_quality_check
+      flags += read.duplicateFragment ? 1024 : 0 #duplicate_read
+      flags += read.supplementaryAlignment ? 2048 : 0 #supplementary_alignment
+      
 
 reads/search
   * `sequenceName` is now `referenceName`
