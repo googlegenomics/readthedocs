@@ -18,7 +18,11 @@ Datasets and Jobs
   * ``job.description`` is now ``job.detailedStatus``
 
 Variants
-  * The variant related API calls have not changed. No code modifications are necessary.
+  * The variant objects have not changed.
+  * The import and export methods have slightly different URLs. 
+    ``/variants/import`` is now ``/variantsets/<variantSetId>/importVariants`` and 
+    ``/variants/export`` is ``/variantsets/<variantSetId>/export``.
+    These affect the generated client libraries slightly.
 
 Readsets/Readgroupsets
   * ``readset`` has now been renamed to ``readgroupset``. This is mostly a straightforward replacement of the term. 
