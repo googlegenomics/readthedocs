@@ -11,42 +11,44 @@ changes necessary to move to the latest API.
 new version notes
 ~~~~~~~~~~~~~~~~~
 General
-  * `maxResults` is now `pageSize`, and is an integer
+  * ``maxResults`` is now ``pageSize``, and is an integer
 
 Datasets and Jobs
-  * All usages of `projectId` should be replaced by `projectNumber`
-  * `job.description` is now `job.detailedStatus`
+  * All usages of ``projectId`` should be replaced by ``projectNumber``
+  * ``job.description`` is now ``job.detailedStatus``
 
 Variants
   * The variant related API calls have not changed. No code modifications are necessary.
 
 Readsets/Readgroupsets
-  * `readset` has now been renamed to `readgroupset`. This is mostly a straightforward replacement of the term. 
-  * `readset.fileData[0].fileUri` is now `readgroupset.filename`
-  * The rest of the `readset.fileData` field has been replaced by information within 
-    the `readgroupset.readgroups` array.
+  * ``readset`` has now been renamed to ``readgroupset``. This is mostly a straightforward replacement of the term. 
+  * ``readset.fileData[0].fileUri`` is now ``readgroupset.filename``
+  * The rest of the ``readset.fileData`` field has been replaced by information within 
+    the ``readgroupset.readgroups`` array.
   
 Reads
   * All read positions are now 0-based longs, just like the variant positions.
-  * `originalBases` is now `alignedSequence`
-  * `alignedBases` (`originalBases` with the cigar applied) has been removed
-  * `baseQuality` is now an int array called `alignedQuality`. You no longer 
+  * ``originalBases`` is now ``alignedSequence``
+  * ``alignedBases`` (``originalBases`` with the cigar applied) has been removed
+  * ``baseQuality`` is now an int array called ``alignedQuality``. You no longer 
     need to subtract 33 or deal with ASCII conversion.
-  * `name` is now `fragmentName`
-  * `templateLength` is now `fragmentLength`
-  * `tags` is now `info`
-  * `position` is now `alignment.position.position`. The alignment object now contains
+  * ``name`` is now ``fragmentName``
+  * ``templateLength`` is now ``fragmentLength``
+  * ``tags`` is now ``info``
+  * ``position`` is now ``alignment.position.position``. The alignment object now contains
     all alignment-related information - including the cigar, reference name, 
     and whether the read is on the reverse strand.
-  * The old `cigar` string is now the structured field `alignment.cigar`. To get 
+  * The old ``cigar`` string is now the structured field ``alignment.cigar``. To get 
     an old-style cigar string, iterate over each element in the array, and
-    concat the `operationLength` with a mapped version of `operation`. pseudocode::
+    concat the ``operationLength`` with a mapped version of ``operation``. pseudocode::
     
       cigar_enums = {ALIGNMENT_MATCH: "M", CLIP_HARD: "H", CLIP_SOFT: "S", DELETE: "D",
           INSERT: "I", PAD: "P", SEQUENCE_MATCH: "=", SEQUENCE_MISMATCH: "X", SKIP: "N"}
 
       cigar_string = [c.operationLength + cigar_enums[c.operation] for c in read.alignment.cigar].join('')
-  * The old `flags` integer is now represented by many different first class fields.
+     
+     
+  * The old ``flags`` integer is now represented by many different first class fields.
     To reconstruct a flags value, you need code similar to this pseudocode::
     
       flags = 0
@@ -65,7 +67,7 @@ Reads
       
 
 reads/search
-  * `sequenceName` is now `referenceName`
-  * `sequenceStart` is now `start`
-  * `sequenceEnd` is now `end`
-  * The response from reads/search now returns a field called `alignments` rather than `reads`
+  * ``sequenceName`` is now ``referenceName``
+  * ``sequenceStart`` is now ``start``
+  * ``sequenceEnd`` is now ``end``
+  * The response from reads/search now returns a field called ``alignments`` rather than ``reads``
