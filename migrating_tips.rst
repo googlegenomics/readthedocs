@@ -27,6 +27,7 @@ Variants
 Readsets/Readgroupsets
   * ``readset`` has now been renamed to ``readgroupset``. This is mostly a straightforward replacement of the term. 
   * ``readset.fileData[0].fileUri`` is now ``readgroupset.filename``
+  * ``readset.fileData[0].refSequences`` is replaced by ``readgroupset.referenceSetId``
   * The rest of the ``readset.fileData`` field has been replaced by information within 
     the ``readgroupset.readgroups`` array.
   
