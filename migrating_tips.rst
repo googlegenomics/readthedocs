@@ -4,6 +4,11 @@ Migrating from v1beta to v1beta2
 The v1beta2 version of the Google Genomics API is now available and all client 
 code should migrate to it by the end of 2014.
 
+**If you are using the genomics-tools-client-java jar from the command line** - 
+upgrading is as easy as `downloading a new jar <https://cloud.google.com/genomics#install>`_. 
+(Or running ``git pull; mvn package`` from your git client)
+
+For all other integrations: 
 v1beta2 matches the `GA4GH API v0.5.1 <http://ga4gh.org/#/api>`_, which means that there are quite
 a few method and field renames to deal with. This page summarizes all the
 changes necessary to move to the latest API.
