@@ -18,7 +18,7 @@ The format is very simple with only 3 supported key value pairs separated by ``&
 
   The genomic position to display at. Takes the form of ``<chromosome>:<base pair position>``. example: ``14:25419886``
   This can also be an `RS ID <https://customercare.23andme.com/entries/21263638-What-are-all-the-rs-numbers-rsids->`_ 
-  or a string that will be searched on `snpedia <snpedia.com>`_.
+  or a string that will be searched on `snpedia <http://www.snpedia.com/index.php/SNPedia>`_.
   
 As you navigate in the browser (either locally or at http://gabrowse.appspot.com), 
 the hash will automatically populate to include these parameters. 
