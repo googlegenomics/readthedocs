@@ -3,13 +3,13 @@ Welcome to the Google Genomics GitHub Organization!
 #### Interactive Data Analysis Samples and Tools
 
 * [getting-started-bigquery](https://github.com/googlegenomics/getting-started-bigquery)
-Example queries to show how to get started with genomics data in BigQuery.
+Example queries to show how to get started with genomic data in BigQuery.
 
 * [codelabs](https://github.com/googlegenomics/codelabs)
-Codelabs demonstrating usage of several tools and systems upon genomics data.
+Codelabs demonstrating usage of several tools and systems upon genomic data.
 
 * [bigquery-examples](https://github.com/googlegenomics/bigquery-examples)
-Advanced BigQuery examples upon genomics data.
+Advanced BigQuery examples upon genomic data.
 
 * [api-client-java](https://github.com/googlegenomics/api-client-java)
 A command line tool for Google Genomics API queries.
@@ -18,15 +18,15 @@ A command line tool for Google Genomics API queries.
 An R package for Google Genomics API queries.
 
 * [gatk-tools-java](https://github.com/googlegenomics/gatk-tools-java)
-Tools for using Picard and GATK with Genomics API.
+Tools for using Picard and GATK with the Google Genomics API.
 
 #### Cluster Computing Data Analysis Samples
 
 * [dataflow-java](https://github.com/googlegenomics/dataflow-java)
-Google Cloud Dataflow pipelines upon genomics data such as Identity-By-State.
+Google Cloud Dataflow pipelines upon genomic data such as Identity-By-State.
 
 * [spark-examples](https://github.com/googlegenomics/spark-examples)
-Apache Spark jobs upon genomics data such as Principal Coordinate Analysis.
+Apache Spark jobs on genomic data such as Principal Coordinate Analysis.
 
 * [mapreduce-python](https://github.com/googlegenomics/mapreduce-python)
 Google App Engine Python MapReduce job which calculates Read coverage.
@@ -42,13 +42,13 @@ An implementation of the Global Alliance Reads API which reads data from local B
 #### Data Visualization Application Samples
 
 * [api-client-javascript](https://github.com/googlegenomics/api-client-javascript)
-A simple web application that demonstrates how javascript can be used to fetch data from the Genomics APIs.
+A simple web application that demonstrates how javascript can be used to fetch data from the Google Genomics APIs.
 
 * [api-client-android](https://github.com/googlegenomics/api-client-android)
 A sample Android app that calls the Google Genomics API.
 
 * [api-client-python](https://github.com/googlegenomics/api-client-python)
-Google AppEngine implelmentation of a simple genome browser that pulls data from the API in Python.
+Google AppEngine implelmentation of a simple genome browser that pulls data from the Google Genomics API.
 
 * [api-client-r](https://github.com/googlegenomics/api-client-r)
 An R package for Google Genomics API queries.
