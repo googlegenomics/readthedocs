@@ -2,10 +2,10 @@ Welcome to the Google Genomics GitHub Organization!
 
 #### New to Google Genomics?
 
-* Watch a video <a href="http://www.youtube.com/watch?feature=player_embedded&v=vINpqxhcTt0
+* Watch this codelab walkthrough:<br> <a href="http://www.youtube.com/watch?feature=player_embedded&v=vINpqxhcTt0
 " target="_blank"><img src="http://img.youtube.com/vi/vINpqxhcTt0/0.jpg" 
 alt="Google Genomics: Data Analysis Overview" width="240" height="180" border="10" /></a>
-* [Try a few BigQuery queries upon public genomic data](https://github.com/googlegenomics/getting-started-bigquery).
+* [Try a few queries on public genomic data](https://github.com/googlegenomics/getting-started-bigquery) using Google BigQuery.
 
 #### What You'll Find in GitHub
 
@@ -15,10 +15,10 @@ alt="Google Genomics: Data Analysis Overview" width="240" height="180" border="1
 Example queries to show how to get started with genomic data in BigQuery.
 
 * [codelabs](https://github.com/googlegenomics/codelabs)
-Codelabs demonstrating usage of several tools and systems upon genomic data.
+Codelabs demonstrating usage of several tools and systems on genomic data.
 
 * [bigquery-examples](https://github.com/googlegenomics/bigquery-examples)
-Advanced BigQuery examples upon genomic data.
+Advanced BigQuery examples on genomic data.
 
 * [api-client-java](https://github.com/googlegenomics/api-client-java)
 A command line tool for Google Genomics API queries.
@@ -32,10 +32,10 @@ Tools for using Picard and GATK with the Google Genomics API.
 ##### Cluster Computing Data Analysis Samples
 
 * [dataflow-java](https://github.com/googlegenomics/dataflow-java)
-Google Cloud Dataflow pipelines upon genomic data such as Identity-By-State.
+Google Cloud Dataflow pipelines such as Identity-By-State.
 
 * [spark-examples](https://github.com/googlegenomics/spark-examples)
-Apache Spark jobs on genomic data such as Principal Coordinate Analysis.
+Apache Spark jobs such as Principal Coordinate Analysis.
 
 * [mapreduce-python](https://github.com/googlegenomics/mapreduce-python)
 Google App Engine Python MapReduce job which calculates Read coverage.
