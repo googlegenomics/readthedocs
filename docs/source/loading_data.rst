@@ -166,4 +166,4 @@ Check the import job for completion.
     "warnings" : []
   }
   
-  Now you are ready to start `querying your variants <https://github.com/googlegenomics/getting-started-bigquery>`_!
+Now you are ready to start `querying your variants <https://github.com/googlegenomics/getting-started-bigquery>`_!
