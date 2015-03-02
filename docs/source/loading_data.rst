@@ -82,7 +82,7 @@ Create a Google Genomics dataset to hold your data.
 
 For more detail, see `managing datasets <https://cloud.google.com/genomics/v1beta2/managing-datasets>`_.
 
-Import your VCFs in Google Cloud Storage to your Google Genomics Dataset.
+Import your VCFs from Google Cloud Storage to your Google Genomics Dataset.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * THE_NEW_DATASET_ID This was returned in the output of the prior command.
 
