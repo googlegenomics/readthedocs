@@ -3,31 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation for Google Genomics tools
+Google Genomics Cookbook
 ===========================================
 
-The tools for working with the `Google Genomics API <https://developers.google.com/genomics/>`_
-are all open source and available `on GitHub <https://github.com/googlegenomics>`_.
-
-This documentation covers how to get started with the available tools as well
-as how you might build your own code which uses the API.
-
-All improvements to these docs are welcome! You can
-`file an issue <https://github.com/googlegenomics/docs/issues>`_ or
-submit a `pull request <https://github.com/googlegenomics/docs/blob/master/CONTRIBUTING.rst>`_.
-
+Here you will find task-oriented documentation.  What do you want to do today?
 
 .. toctree::
-   :maxdepth: 2
+  :maxdepth: 1
 
-   mailinglist
-   loading_data
-   constants
-   common_api_flows
-   auth_requirements
-   api-client-java/index
-   api-client-python/index
-   api-client-r/index
-   pgp-data
-   job_troubleshooting
-   migrating_tips
+  use_cases/browse_genomic_data/index
+  use_cases/analyze_variants/index
+  use_cases/annotate_variants/index
+  use_cases/discover_public_data/index
+  use_cases/load_data/index
+  use_cases/build_your_own_api_client/index
+  use_cases/compute_principal_coordinate_analysis/index
+  use_cases/compute_identity_by_state/index
+  mailinglist
+
+All improvements to these docs are welcome! You can
+`file an issue <https://github.com/googlegenomics/start-here/issues>`_ or
+submit a `pull request <https://github.com/googlegenomics/start-here/blob/master/CONTRIBUTING.rst>`_.
+
