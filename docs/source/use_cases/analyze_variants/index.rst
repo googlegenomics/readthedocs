@@ -4,5 +4,6 @@ Analyze Variants
 .. toctree::
    :maxdepth: 2
 
+TODO: All Modalities Codelab
 
-TODO: BigQuery
+To run this on your own data . . .

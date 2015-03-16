@@ -3,6 +3,8 @@ Loading Genomic Variants
 
 .. image:: GoogleGenomicsDataLoadingFlow.png
 
+.. contents::
+
 Prerequisites
 -------------
 
@@ -67,9 +69,9 @@ Step 2. Import variants to Google Genomics
 Create a Google Genomics dataset to hold your data.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* YOUR_DATASET_NAME This can be any name you like such as "My Copy of Platinum Genomes".
+* YOUR_DATASET_NAME: This can be any name you like such as "My Copy of Platinum Genomes".
 
-* YOUR_GOOGLE_CLOUD_PLATFORM_PROJECT_NUMBER You can find your Google Cloud Platform project number towards the top of the `Google Developers Console <https://console.developers.google.com/project/>`_ page. ::
+* YOUR_GOOGLE_CLOUD_PLATFORM_PROJECT_NUMBER: You can find your Google Cloud Platform project number towards the top of the `Google Developers Console <https://console.developers.google.com/project/>`_ page. ::
 
    $ java -jar genomics-tools-client-java-v1beta2.jar createdataset --name YOUR_DATASET_NAME \
    --project_number YOUR_GOOGLE_CLOUD_PLATFORM_PROJECT_NUMBER
@@ -84,7 +86,7 @@ For more detail, see `managing datasets <https://cloud.google.com/genomics/v1bet
 
 Import your VCFs from Google Cloud Storage to your Google Genomics Dataset.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* THE_NEW_DATASET_ID This was returned in the output of the prior command.
+* THE_NEW_DATASET_ID: This was returned in the output of the prior command.
 
 ::
 
@@ -101,7 +103,7 @@ For more detail, see `managing variants <https://cloud.google.com/genomics/v1bet
 Check the import job for completion.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* THE_NEW_IMPORT_JOB_ID This was returned in the output of the prior command.
+* THE_NEW_IMPORT_JOB_ID: This was returned in the output of the prior command.
 
 ::
 
@@ -131,11 +133,11 @@ Create a BigQuery dataset in the web UI to hold the data.
 Export variants to BigQuery.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* THE_NEW_DATASET_ID This was returned in the output of the createdataset command.
+* THE_NEW_DATASET_ID: This was returned in the output of the createdataset command.
 
-* YOUR_BIGQUERY_DATASET This is the dataset ID you created in the prior step.
+* YOUR_BIGQUERY_DATASET: This is the dataset ID you created in the prior step.
 
-* YOUR_BIGQUERY_TABLE ID This can be any ID you like such as "platinum_genomes_variants".
+* YOUR_BIGQUERY_TABLE: This can be any ID you like such as "platinum_genomes_variants".
 
 ::
 
@@ -153,7 +155,7 @@ For more detail, see `variant exports <https://cloud.google.com/genomics/v1beta2
 
 Check the import job for completion.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* THE_NEW_EXPORT_JOB_ID This was returned in the output of the prior command.
+* THE_NEW_EXPORT_JOB_ID: This was returned in the output of the prior command.
 
 ::
 
@@ -170,5 +172,3 @@ Now you are ready to start `querying your variants <https://github.com/googlegen
 
 .. toctree::
    :maxdepth: 3
-
-

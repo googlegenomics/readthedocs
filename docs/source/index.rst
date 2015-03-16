@@ -11,14 +11,15 @@ Here you will find task-oriented documentation.  What do you want to do today?
 .. toctree::
   :maxdepth: 1
 
-  use_cases/browse_genomic_data/index
-  use_cases/analyze_variants/index
-  use_cases/annotate_variants/index
   use_cases/discover_public_data/index
   use_cases/load_data/index
-  use_cases/build_your_own_api_client/index
+  use_cases/browse_genomic_data/index
+  use_cases/quality_control/index
+  use_cases/annotate_variants/index
+  use_cases/analyze_variants/index
   use_cases/compute_principal_coordinate_analysis/index
   use_cases/compute_identity_by_state/index
+  use_cases/build_your_own_api_client/index
   mailinglist
 
 All improvements to these docs are welcome! You can
