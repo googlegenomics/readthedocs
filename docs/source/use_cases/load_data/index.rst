@@ -6,3 +6,6 @@ Load Data into Google Genomics
 
    load_variants
    ../../job_troubleshooting
+
+.. include:: ../../includes/footer.rst
+
