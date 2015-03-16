@@ -6,10 +6,6 @@ Annotate Variants
 
   bioconductor_annotation
   tute_annotation
-  google_genomics_annotation
+..  google_genomics_annotation
 
-.. include: links
-
-.. include: ../../links
-
-
+.. include:: ../../includes/footer.rst

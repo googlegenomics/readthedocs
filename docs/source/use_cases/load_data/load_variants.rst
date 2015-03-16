@@ -1,6 +1,10 @@
 Loading Genomic Variants
 ========================
 
+.. toctree::
+   :maxdepth: 3
+
+
 .. image:: GoogleGenomicsDataLoadingFlow.png
 
 .. contents::
@@ -170,5 +174,5 @@ Check the import job for completion.
 
 Now you are ready to start `querying your variants <https://github.com/googlegenomics/getting-started-bigquery>`_!
 
-.. toctree::
-   :maxdepth: 3
+.. include:: ../../includes/footer.rst
+

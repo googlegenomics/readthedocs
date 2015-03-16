@@ -1,6 +1,11 @@
 Browse Genomic Data
 ====================
 
-TODO: GABROWSE and IGV
+Try it now: https://gabrowse.appspot.com/
 
-To browse your own data . . .
+For more detail, please see https://cloud.google.com/genomics/v1beta2/visualization
+
+.. TODO: IGV
+
+.. include:: ../../includes/footer.rst
+

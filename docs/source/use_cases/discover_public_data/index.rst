@@ -5,6 +5,10 @@ Discover Public Data
    :maxdepth: 2
 
   google_genomics_public_data
-  ../annotate_variants/tute_annotation
-  ../../pgp-data
+  mssng_data
+  tute_genomics_public_data
+  pgp_public_data
+..  ../../pgp-data
+
+.. include:: ../../includes/footer.rst
 
