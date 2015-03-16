@@ -7,7 +7,11 @@ Welcome to the Google Genomics GitHub Organization!
 alt="Google Genomics: Data Analysis Overview" width="240" height="180" border="10" /></a>
 * [Try a few queries on public genomic data](https://github.com/googlegenomics/getting-started-bigquery) using Google BigQuery.
 
-#### What You'll Find in GitHub
+_If you are ready to start coding, take a look at the list below.  But if you are
+looking for a task-oriented list (e.g., "how do I analyze variants with Google Genomics"),
+a better place to start is the [Google Genomics Cookbook](http://google-genomics.readthedocs.org/en/latest/index.html)._
+
+#### What You'll Find on GitHub
 
 ##### Interactive Data Analysis Samples and Tools
 
