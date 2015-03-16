@@ -16,7 +16,7 @@ Here you will find task-oriented documentation.  What do you want to do today?
   use_cases/discover_public_data/index
   use_cases/load_data/index
   use_cases/browse_genomic_data/index
-  use_cases/quality_control/index
+  use_cases/perform_quality_control_checks/index
   use_cases/annotate_variants/index
   use_cases/analyze_variants/index
   use_cases/build_your_own_api_client/index
