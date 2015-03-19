@@ -1,10 +1,14 @@
 PGP data in Google Cloud Storage
 --------------------------------
 
-Google is hosting a copy of the PGP Harvard data in Google Cloud Storage. 
+.. toctree::
+   :maxdepth: 2
+
+
+Google is hosting a copy of the PGP Harvard data in Google Cloud Storage.
 All of the data is in this bucket: ``gs://pgp-harvard-data-public``
 
-If you wish to browse the data you will need to 
+If you wish to browse the data you will need to
 `install gsutil <https://developers.google.com/storage/docs/gsutil_install>`_.
 
 Once installed, you can run the ``ls`` command on the pgp bucket::
@@ -31,5 +35,5 @@ And then keep diving down through the structure, you can end up here::
 Your genome data is located at:
 gs://pgp-harvard-data-public/{YOUR_PGP_ID}
 
-If you do not see the data you are looking for, you should contact 
+If you do not see the data you are looking for, you should contact
 PGP directly through `your web profile <https://my.pgp-hms.org/message/new>`_.
