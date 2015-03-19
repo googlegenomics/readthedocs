@@ -9,7 +9,7 @@ alt="Google Genomics: Data Analysis Overview" width="240" height="180" border="1
 
 _If you are ready to start coding, take a look at the list below.  But if you are
 looking for a task-oriented list (e.g., "how do I analyze variants with Google Genomics"),
-a better place to start is the [Google Genomics Cookbook](http://google-genomics.readthedocs.org/en/latest/index.html)._
+a better place to start is the [Google Genomics Cookbook](http://googlegenomics.readthedocs.org/en/latest/index.html)._
 
 #### What You'll Find on GitHub
 
@@ -83,6 +83,6 @@ Common Java files for Google Genomics integrations.
 
 ##### Documentation
 
-* See the README in each GitHub repository.
-* http://cloud.google.com/genomics
-* http://google-genomics.readthedocs.org
+* See http://cloud.google.com/genomics to understand what Google Genomics is and how to get started.
+* See http://googlegenomics.readthedocs.org for an incrementally growing task-oriented cookbook.
+* See the README in each GitHub repository for specifics about the code.
