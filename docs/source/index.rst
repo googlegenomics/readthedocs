@@ -8,8 +8,6 @@ Google Genomics Cookbook
 
 Here you will find task-oriented documentation.  What do you want to do today?
 
-.. CONTENT WRITERS: remove the '..' from toctree items when they are ready for viewing
-
 .. toctree::
   :maxdepth: 1
 
@@ -21,7 +19,5 @@ Here you will find task-oriented documentation.  What do you want to do today?
   use_cases/analyze_variants/index
   use_cases/build_your_own_api_client/index
   mailinglist
-..  use_cases/compute_principal_coordinate_analysis/index
-..  use_cases/compute_identity_by_state/index
 
 .. include:: includes/footer.rst

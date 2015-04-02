@@ -1,5 +1,5 @@
-Loading Genomic Variants
-========================
+Load Genomic Variants
+=====================
 
 .. toctree::
    :maxdepth: 3
