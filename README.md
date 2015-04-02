@@ -83,6 +83,6 @@ Common Java files for Google Genomics integrations.
 
 ##### Documentation
 
-* See http://cloud.google.com/genomics to understand what Google Genomics is and how to get started.
+* See https://cloud.google.com/genomics to understand what Google Genomics is and how to get started.
 * See http://googlegenomics.readthedocs.org for an incrementally growing task-oriented cookbook.
 * See the README in each GitHub repository for specifics about the code.

@@ -9,7 +9,7 @@ The text on that site is automatically pushed from this repo's
 Please help us improve these docs by [contributing](https://github.com/googlegenomics/docs/blob/master/CONTRIBUTING.rst)!
 
 For documentation about the Google Genomics APIs themselves, see 
-http://developers.google.com/genomics and http://ga4gh.org
+https://cloud.google.com/genomics/what-is-google-genomics and http://ga4gh.org
 
 ### Tips for local development
 

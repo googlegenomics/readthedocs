@@ -12,8 +12,8 @@ Load Genomic Variants
 Prerequisites
 -------------
 
-1. Sign up for Google Genomics by doing all the steps in `Google Genomics: Try it now <https://cloud.google.com/genomics/>`_.
-2. Sign up for Google Cloud Storage by doing all the steps in `Google Cloud Storage: Try it now <https://cloud.google.com/storage/docs>`_.
+1. Sign up for Google Genomics and install the command line client by doing all the steps in `Google Genomics Tools <https://cloud-dot-devsite.googleplex.com/genomics/install-genomics-tools>`_.
+2. Sign up for Google Cloud Storage and install ``gsutil`` by doing all the steps in `Google Cloud Storage: Try it now <https://cloud.google.com/storage/docs>`_.
 
 Step 1: Upload variants to Google Cloud Storage
 --------------------------------------------------------

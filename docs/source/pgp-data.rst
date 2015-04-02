@@ -9,7 +9,7 @@ Google is hosting a copy of the PGP Harvard data in Google Cloud Storage.
 All of the data is in this bucket: ``gs://pgp-harvard-data-public``
 
 If you wish to browse the data you will need to
-`install gsutil <https://developers.google.com/storage/docs/gsutil_install>`_.
+`install gsutil <https://cloud.google.com/storage/docs/gsutil_install>`_.
 
 Once installed, you can run the ``ls`` command on the pgp bucket::
 
