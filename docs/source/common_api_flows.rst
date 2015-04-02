@@ -26,7 +26,7 @@ Browsing read data
 
   Search for read group sets in a particular dataset. Choose one readGroupSetId from the result.
   
-  Note: This is a good place to use a `partial request <https://developers.google.com/genomics/performance#partial>`_ 
+  Note: This is a good place to use a `partial request <https://cloud.google.com/genomics/performance#partial>`_ 
   to only ask for the id and name fields on a read group set. Then you can follow up with a 
   ``GET /readgroupsets/<readGroupSetId>`` call to get the complete read group set data.
   
@@ -62,7 +62,7 @@ Map reducing over read data within a readset
 * ``POST /reads/search {readGroupSetId: x, referenceName: shard.refName, start: shard.start, end: shard.end}``
 
   Once you have your shard bounds, each shard will then do a reads search to get data. 
-  (Don't forget to use a use a `partial request <https://developers.google.com/genomics/performance#partial>`_)
+  (Don't forget to use a use a `partial request <https://cloud.google.com/genomics/performance#partial>`_)
 
 
 Map reducing over variant data
@@ -84,7 +84,7 @@ Map reducing over variant data
 * ``POST /variants/search {variantSetIds: [x], referenceName: shard.refName, start: shard.start, end: shard.end}``
 
   Once you have your shard bounds, each shard will then do a variants search to get data. 
-  (Don't forget to use a use a `partial request <https://developers.google.com/genomics/performance#partial>`_)
+  (Don't forget to use a use a `partial request <https://cloud.google.com/genomics/performance#partial>`_)
   
   If you only want to look at certain call sets, you can include the ``callSetIds: ["id1", "id2"]`` 
   field on the search request. Only call information for those call sets will be returned. Variants 
