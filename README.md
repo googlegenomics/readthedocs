@@ -41,9 +41,6 @@ Google Cloud Dataflow pipelines such as Identity-By-State.
 * [spark-examples](https://github.com/googlegenomics/spark-examples)
 Apache Spark jobs such as Principal Coordinate Analysis.
 
-* [mapreduce-python](https://github.com/googlegenomics/mapreduce-python)
-Google App Engine Python MapReduce job which calculates Read coverage.
-
 ##### Working with the Google Genomics API
 
 * [getting-started](https://github.com/googlegenomics/getting-started)
