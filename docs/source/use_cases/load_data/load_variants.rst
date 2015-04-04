@@ -174,5 +174,5 @@ Check the import job for completion.
 
 Now you are ready to start `querying your variants <https://github.com/googlegenomics/getting-started-bigquery>`_!
 
-.. include:: ../../includes/footer.rst
+
 

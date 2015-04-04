@@ -11,4 +11,4 @@ For public data hosted by Google Genomics such as:
 
 see `Google Genomics Public Data <https://cloud.google.com/genomics/public-data>`_.
 
-.. include:: ../../includes/footer.rst
+

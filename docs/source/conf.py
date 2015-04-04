@@ -44,7 +44,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Google Genomics'
-copyright = u'2014, Google Inc'
+copyright = u'2015, Google Inc'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -93,6 +93,20 @@ pygments_style = 'sphinx'
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
 
+# THIS IS THE GOOGLE GENOMICS FOOTER
+rst_epilog = """
+------------------------------------------------------------------------------------
+
+.. container:: ggfooter
+
+  Have feedback or corrections?  All improvements to these docs are welcome! You can `file an issue <https://github.com/googlegenomics/start-here/issues>`_ or submit a `pull request <https://github.com/googlegenomics/start-here/blob/master/CONTRIBUTING.rst>`_.
+
+  Need more help?  Please see https://cloud.google.com/genomics/support.
+
+.. Global replacements can go here
+.. |psf| replace:: Python Software Foundation
+
+"""
 
 # -- Options for HTML output ----------------------------------------------
 

@@ -10,5 +10,5 @@ Discover Public Data
   pgp_public_data
 ..  ../../pgp-data
 
-.. include:: ../../includes/footer.rst
+
 
