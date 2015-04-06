@@ -6,18 +6,32 @@ Compute Identity By State
 
 .. contents::
 
-Dataflow setup
---------------
+`Identity-by-State <https://www.youtube.com/watch?v=NRiI1RbE_-I>`_ is a simple similarity measure that describes the alleles shared by two individuals as a single number.
+
+See the `Quality Control using Google Genomics codelab <https://github.com/googlegenomics/codelabs/blob/master/R/PlatinumGenomes-QC/Sample-Level-QC.md#genome-similarity>`_ for an example that makes use of the results of this analysis run upon `Platinum Genomes`_.
+
+A `Google Cloud Dataflow`_ implementation is available.
+
+Setup Dataflow
+---------
+
+Local Setup
+^^^^^^^^^^^^
 
 .. include:: ../../includes/dataflow_setup.rst
 
+Compute Engine Setup
+^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../../includes/dataflow_on_gce_setup.rst
+
 Run the job
 --------------
-The following command will run Identity-by-State over the the BRCA1 region within the Platinum Genomes dataset.
+The following command will run Identity-by-State over the BRCA1 region within the `Platinum Genomes`_ dataset.
 
 .. code-block:: shell
 
-  java -cp target/google-genomics-dataflow-*.jar \
+  java -cp /PATH/TO/google-genomics-dataflow*.jar \
   com.google.cloud.genomics.dataflow.pipelines.IdentityByState \
   --project=YOUR_GOOGLE_CLOUD_PLATFORM_PROJECT_ID \
   --stagingLocation=gs://YOUR_BUCKET/dataflow-staging \
@@ -42,17 +56,8 @@ Gather the results into a single file
 
   gsutil cat gs://YOUR-BUCKET/output/platinum-genomes-ibs.tsv* | sort > platinum-genomes-ibs.tsv
 
-Additional Details
+Additional details
 ------------------
 
-Use ``--help`` to get more information about the command line options.
-
-.. code-block:: shell
-
-  java -cp google-genomics-dataflow-*.jar \
-  com.google.cloud.genomics.dataflow.pipelines.IdentityByState --help
-  java -cp google-genomics-dataflow-*.jar \
-  com.google.cloud.genomics.dataflow.pipelines.IdentityByState --help=IdentityByState
-
-See the source code for implementation details: https://github.com/googlegenomics/dataflow-java
+.. include:: ../../includes/dataflow_details.rst
 

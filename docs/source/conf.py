@@ -104,7 +104,14 @@ rst_epilog = """
   Need more help?  Please see https://cloud.google.com/genomics/support.
 
 .. Global replacements can go here
-.. |psf| replace:: Python Software Foundation
+
+.. _Platinum Genomes: https://cloud.google.com/genomics/data/platinum-genomes
+.. _1,000 Genomes: https://cloud.google.com/genomics/data/1000-genomes
+
+.. _Google Compute Engine: https://cloud.google.com/compute/
+.. _Google Cloud Dataflow: https://cloud.google.com/dataflow/what-is-google-cloud-dataflow
+.. _Apache Spark: https://spark.apache.org/
+.. _Google Developers Console: https://console.developers.google.com/
 
 """
 
