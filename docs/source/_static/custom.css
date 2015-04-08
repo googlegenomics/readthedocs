@@ -4,6 +4,14 @@
     clear: both;
 }
 
+.toggle .container {
+    border-top: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    /*background-color: red;*/
+    padding-bottom: 24px;
+}
+
 .toggle .header:after {
     content: " ▼";
 }

@@ -2,7 +2,7 @@
 
     .. container:: header
 
-        **Show/Hide Instructions**
+        Deploy and configure the cluster: **Show/Hide Instructions**
 
     .. container:: content
 
@@ -14,7 +14,7 @@
 
     .. container:: content
 
-      (2) Copy the ``client_secrets.json`` to the master.  If you do not already have this file, the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
+      (2) Copy your ``client_secrets.json`` to the master.  If you do not already have this file, the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
 
     .. code-block:: shell
 

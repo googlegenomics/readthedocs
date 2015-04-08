@@ -2,7 +2,7 @@
 
     .. container:: header
 
-        **Show/Hide Instructions**
+        To kick off the job from elsewhere: **Show/Hide Instructions**
 
     .. container:: content
 
