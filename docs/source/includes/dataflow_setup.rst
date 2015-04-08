@@ -18,5 +18,5 @@
 
     .. container:: content
 
-      (2) Copy your ``client_secrets.json`` to same directory at the Jar.  If you do not already have this file, see the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
+      (2) Copy your ``client_secrets.json`` to same directory as the Jar.  If you do not already have this file, see the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
 
