@@ -26,14 +26,14 @@ The following command will run Identity-by-State over the BRCA1 region within th
 .. code-block:: shell
 
   java -cp /PATH/TO/google-genomics-dataflow*.jar \
-  com.google.cloud.genomics.dataflow.pipelines.IdentityByState \
-  --project=YOUR_GOOGLE_CLOUD_PLATFORM_PROJECT_ID \
-  --stagingLocation=gs://YOUR_BUCKET/dataflow-staging \
-  --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
-  --datasetId=3049512673186936334 \
-  --references=chr17:41196311:41277499 \
-  --hasNonVariantSegments \
-  --output=gs://YOUR_BUCKET/output/platinum-genomes-brca1-ibs.tsv
+    com.google.cloud.genomics.dataflow.pipelines.IdentityByState \
+    --project=YOUR_GOOGLE_CLOUD_PLATFORM_PROJECT_ID \
+    --stagingLocation=gs://YOUR_BUCKET/dataflow-staging \
+    --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
+    --datasetId=3049512673186936334 \
+    --references=chr17:41196311:41277499 \
+    --hasNonVariantSegments \
+    --output=gs://YOUR_BUCKET/output/platinum-genomes-brca1-ibs.tsv
 
 Note that there are several IBS calculators from which to choose. Use the ``--callSimilarityCalculatorFactory`` to switch between them.
 
