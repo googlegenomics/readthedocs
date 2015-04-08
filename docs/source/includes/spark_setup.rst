@@ -6,7 +6,7 @@
 
     .. container:: content
 
-      (1) Use `bdutil <https://cloud.google.com/hadoop/setting-up-a-hadoop-cluster>`_ to deploy the cluster.  If you have not already done so, `install and configure <https://cloud.google.com/hadoop/setting-up-a-hadoop-cluster>`_ bdtuil.
+      (1) Use `bdutil <https://cloud.google.com/hadoop/setting-up-a-hadoop-cluster>`_ to deploy the cluster.  If you have not already done so, `install and configure <https://cloud.google.com/hadoop/setting-up-a-hadoop-cluster>`_ bdutil.
 
     .. code-block:: shell
 
@@ -14,7 +14,7 @@
 
     .. container:: content
 
-      (2) Copy your ``client_secrets.json`` to the master.  If you do not already have this file, the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
+      (2) Copy your ``client_secrets.json`` to the master.  If you do not already have this file, see the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
 
     .. code-block:: shell
 
