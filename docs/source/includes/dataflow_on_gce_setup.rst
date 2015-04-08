@@ -2,11 +2,11 @@
 
     .. container:: header
 
-        To kick off the job from elsewhere: **Show/Hide Instructions**
+        To kick off the job from Google Compute Engine: **Show/Hide Instructions**
 
     .. container:: content
 
-    Alternatively, you can also set up Java 7 on a `Google Compute Engine`_ instance you do not have Java on your local machine.
+    If you do not have Java on your local machine, you can set up Java 7 on a `Google Compute Engine`_ instance.  The following setup instructions will allow you to *launch* Dataflow jobs from a Compute Engine instance:
 
       (0) Google Cloud Dataflow is currently in Alpha.  If you have not already done so, `request to be whitelisted <https://cloud.google.com/dataflow/getting-started>`_ to use Dataflow.
 
