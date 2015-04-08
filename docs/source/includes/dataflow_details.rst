@@ -4,6 +4,6 @@ the pipeline class name below to match the one you would like to run.
 .. code-block:: shell
 
   java -cp google-genomics-dataflow*.jar \
-  com.google.cloud.genomics.dataflow.pipelines.VariantSimilarity --help
+    com.google.cloud.genomics.dataflow.pipelines.VariantSimilarity --help
 
 See the source code for implementation details: https://github.com/googlegenomics/dataflow-java
