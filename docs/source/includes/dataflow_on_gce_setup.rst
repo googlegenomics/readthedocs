@@ -27,4 +27,4 @@
 
         gcloud compute copy-files ~/googlegenomics/dataflow-java/client_secrets.json INSTANCE-NAME:~/
 
-      (4) Add option ``--headless`` to all of your dataflow command lines.
+    *Tip:* Add option ``--noLaunchBrowser`` your dataflow command lines so that the authorization flow prints a URL to be copied instead of launching a web browser.
