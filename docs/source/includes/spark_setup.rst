@@ -6,7 +6,7 @@
 
     .. container:: content
 
-      (1) Use `bdutil <https://cloud.google.com/hadoop/setting-up-a-hadoop-cluster>`_ to deploy the cluster.  If you have not already done so, `install and configure <https://cloud.google.com/hadoop/setting-up-a-hadoop-cluster>`_ bdutil.
+      (1) Use `bdutil <https://cloud.google.com/hadoop/bdutil>`_ to deploy the cluster.  If you have not already done so, `install and configure <https://cloud.google.com/hadoop/>`_ bdutil.
 
     .. code-block:: shell
 
