@@ -99,9 +99,10 @@ rst_epilog = """
 
 .. container:: ggfooter
 
-  Have feedback or corrections?  All improvements to these docs are welcome! You can 
+  Have feedback or corrections?  All improvements to these docs are welcome! You can
   click on the "Edit on GitHub" link at the top right corner of this page or
   `file an issue <https://github.com/googlegenomics/start-here/issues>`_.
+
   Need more help?  Please see https://cloud.google.com/genomics/support.
 
 .. Global replacements can go here
