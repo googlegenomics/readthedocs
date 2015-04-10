@@ -8,4 +8,4 @@ Annotate Variants
   tute_annotation
 ..  google_genomics_annotation
 
-.. include:: ../../includes/footer.rst
+

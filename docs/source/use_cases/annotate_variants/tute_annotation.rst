@@ -13,4 +13,4 @@ To make use of this upon your own data:
 
 .. image:: TuteAnnotation.png
 
-.. include:: ../../includes/footer.rst
+

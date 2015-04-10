@@ -1,0 +1,27 @@
+/* http://stackoverflow.com/questions/2454577/sphinx-restructuredtext-show-hide-code-snippets*/
+.toggle .header {
+    display: block;
+    clear: both;
+}
+
+.toggle .container {
+    border-top: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    /*background-color: red;*/
+    padding-bottom: 24px;
+}
+
+.toggle .header:after {
+    content: " ▼";
+}
+
+.toggle .header.open:after {
+    content: " ▲";
+}
+
+/* For http://sphinx-doc.org/config.html#confval-rst_epilog */
+.ggfooter p {
+    font-size: small;
+    font-style: italic;
+}

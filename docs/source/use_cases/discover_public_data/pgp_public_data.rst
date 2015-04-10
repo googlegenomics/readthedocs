@@ -24,4 +24,4 @@ BigQuery PGP Tables
 
 Variant set ``pgp_20150205`` was exported to BigQuery table `google.com:biggene:pgp_20150205.variants <https://bigquery.cloud.google.com/table/google.com:biggene:pgp_20150205.variants>`_
 
-.. include:: ../../includes/footer.rst
+
