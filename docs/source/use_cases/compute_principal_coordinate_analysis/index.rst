@@ -73,13 +73,14 @@ The following command will run PCA over the BRCA1 region within the `Platinum Ge
     --master spark://hadoop-m:7077 \
     /PATH/TO/googlegenomics-spark-examples-assembly-1.0.jar \
     --client-secrets /PATH/TO/YOUR/client_secrets.json \
+    --bases-per-partition 1000000 \
     --variant-set-id 3049512673186936334 \
     --references chr17:41196311:41277499 \
     --output-path gs://YOUR_BUCKET/output/platinum-genomes-brca1-pca.tsv
 
 To run this job over the entire genome:
 
-* Add ``--num-reduce-partitions`` to be equal to the number of cores in your cluster.
+* Add ``--num-reduce-partitions #`` to be equal to the number of cores in your cluster.
 * Use ``--all-references`` instead of ``--references chr17:41196311:41277499`` to run over the entire genome.
 * To run the job on a different dataset, change the variant set id for the ``--variant-set-id`` id parameter.
 
