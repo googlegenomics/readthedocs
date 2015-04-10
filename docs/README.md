@@ -1,7 +1,7 @@
 docs
 ====
 
-The documentation for all of the repositories in googlegenomics is hosted on readthedocs at http://google-genomics.readthedocs.org.
+The documentation for all of the repositories in googlegenomics is hosted on readthedocs at http://googlegenomics.readthedocs.org.
 
 The text on that site is automatically pushed from this repo's 
 [reStructuredText](http://sphinx-doc.org/rest.html) files. See [Read The Doc's documentation](https://docs.readthedocs.org/en/latest/index.html) for more info.
