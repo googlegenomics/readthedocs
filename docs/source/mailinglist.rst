@@ -1,5 +1,5 @@
-The mailing list
-----------------
+Subscribe to the mailing list
+-----------------------------
 
 .. toctree::
    :maxdepth: 2
