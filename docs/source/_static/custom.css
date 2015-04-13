@@ -1,3 +1,8 @@
+/* NOTE: Add/update the date suffix to this file's filename if you want to ensure
+ * folks pull in the most recent version instead of what is in their browser cache.
+ * Then modify _templates/page.html to point to the updated files.
+ */
+
 /* http://stackoverflow.com/questions/2454577/sphinx-restructuredtext-show-hide-code-snippets*/
 .toggle .header {
     display: block;
