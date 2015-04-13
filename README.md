@@ -36,14 +36,14 @@ Tools for using Picard and GATK with the Google Genomics API.
 ##### Cluster Computing Data Analysis Samples
 
 * [dataflow-java](https://github.com/googlegenomics/dataflow-java)
-Google Cloud Dataflow pipelines such as Identity-By-State.
+Google Cloud Dataflow pipelines such as Identity-By-State as well as useful utility classes.
 
 * [spark-examples](https://github.com/googlegenomics/spark-examples)
 Apache Spark jobs such as Principal Coordinate Analysis.
 
 ##### Working with the Google Genomics API
 
-* [getting-started](https://github.com/googlegenomics/getting-started)
+* [getting-started-with-the-api](https://github.com/googlegenomics/getting-started-with-the-api)
 Examples of how to get started with the Google Genomics API in many languages.
 
 * [api-provider-local-java](https://github.com/googlegenomics/api-provider-local-java)
