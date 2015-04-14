@@ -2,7 +2,7 @@ Annotate Variants
 ==================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
   bioconductor_annotation
   tute_annotation

@@ -94,5 +94,6 @@ Gather the results into a single file
 
 .. code-block:: shell
 
-  gsutil cat gs://YOUR-BUCKET/output/platinum-genomes-pca.tsv* | sort > platinum-genomes-pca.tsv
+  gsutil cat gs://YOUR_BUCKET/output/platinum-genomes-brca1-pca.tsv* \
+    | sort > platinum-genomes-brca1-pca.tsv
 

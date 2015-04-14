@@ -105,15 +105,19 @@ rst_epilog = """
 
   Need more help?  Please see https://cloud.google.com/genomics/support.
 
-.. Global replacements can go here
+.. GLOBAL REPLACEMENTS CAN GO HERE
 
 .. _Platinum Genomes: https://cloud.google.com/genomics/data/platinum-genomes
 .. _1,000 Genomes: https://cloud.google.com/genomics/data/1000-genomes
+.. _ClinVar: http://www.ncbi.nlm.nih.gov/clinvar/
 
 .. _Google Compute Engine: https://cloud.google.com/compute/
 .. _Google Cloud Dataflow: https://cloud.google.com/dataflow/what-is-google-cloud-dataflow
 .. _Apache Spark: https://spark.apache.org/
 .. _Google Developers Console: https://console.developers.google.com/
+
+.. _BRCA1: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA1#genomic_location
+.. _BRCA2: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA2#genomic_location
 
 """
 
