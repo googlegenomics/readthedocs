@@ -119,6 +119,9 @@ rst_epilog = """
 .. _BRCA1: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA1#genomic_location
 .. _BRCA2: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA2#genomic_location
 
+.. _Bioconductor: http://www.bioconductor.org/
+.. _Using Bioconductor: http://www.bioconductor.org/install/
+
 """
 
 # -- Options for HTML output ----------------------------------------------
