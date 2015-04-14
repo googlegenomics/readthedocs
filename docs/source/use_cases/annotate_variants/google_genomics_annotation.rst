@@ -6,9 +6,11 @@ Annotate Variants with Google Genomics
 
 .. contents::
 
-*a sentence or two about the task this job is accomplishing --> annotating variants*
+**Disclaimer:** This program is currently intended to be a *sample*, and provides only a small subset of functionality found in most variant annotation programs. [Pull requests](https://github.com/googlegenomics/dataflow-java) are welcome!
 
-*a sentence or two about the results of this job in action, how do people use this in their work*
+Variant annotation is a mechanism for finding and filtering interesting variants in a given variant set.
+
+An annotated variant set might be used to identify variants which affect a gene of interest, or to highlight potential rare variants in an individual.
 
 A `Google Cloud Dataflow`_ implementation is available.
 
@@ -38,7 +40,7 @@ The following command will use `ClinVar`_ to annotate variants in the `BRCA1`_ g
     --callSetIds=3049512673186936334-0 \
     --output=gs://YOUR_BUCKET/output/platinum-genomes-brca1-clinvar-annotation.tsv
 
-*any other pipeline-specific details we wish to highlight here; perhaps link to a new task-oriented page for adding a new annotationSet?*
+ Note that this program accepts `VariantSets` and `AnnotationSets` as input. The analogous inputs to traditional variant annotation programs are `VCF` and `.csv` files, respectively.
 
 To run this job over the entire genome:
 
