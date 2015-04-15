@@ -30,15 +30,15 @@ The following command will use `ClinVar`_ to annotate variants in the `BRCA1`_ g
 
   java -cp /PATH/TO/google-genomics-dataflow*.jar \
     com.google.cloud.genomics.dataflow.pipelines.AnnotateVariants \
-    --project=YOUR_GOOGLE_CLOUD_PLATFORM_PROJECT_ID \
-    --stagingLocation=gs://YOUR_BUCKET/dataflow-staging \
+    --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
+    --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
     --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
     --datasetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
     --transcriptSetIds=CIjfoPXj9LqPlAEQ6Mm91Ya458eqAQ \
     --variantAnnotationSetIds=CILSqfjtlY6tHxC0nNH-4cu-xlQ \
     --callSetIds=3049512673186936334-0 \
-    --output=gs://YOUR_BUCKET/output/platinum-genomes-brca1-clinvar-annotation.tsv
+    --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-clinvar-annotation.tsv
 
 Note that this program accepts `VariantSets` and `AnnotationSets` as input. The analogous inputs to traditional variant annotation programs are `VCF` and `.csv` files, respectively.
 
@@ -53,7 +53,7 @@ Gather the results into a single file
 
 .. code-block:: shell
 
-  gsutil cat gs://YOUR_BUCKET/output/platinum-genomes-brca1-clinvar-annotation.tsv* \
+  gsutil cat gs://YOUR-BUCKET/output/platinum-genomes-brca1-clinvar-annotation.tsv* \
     | sort > platinum-genomes-brca1-clinvar-annotation.tsv
 
 Additional details
