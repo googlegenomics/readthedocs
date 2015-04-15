@@ -8,7 +8,6 @@ Discover Public Data
   mssng_data
   tute_genomics_public_data
   pgp_public_data
-..  ../../pgp-data
 
 
 

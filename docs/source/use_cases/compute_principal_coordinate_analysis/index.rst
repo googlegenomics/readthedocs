@@ -34,12 +34,12 @@ The following command will run PCA over the BRCA1 region within the `Platinum Ge
 
   java -cp /PATH/TO/google-genomics-dataflow*.jar \
     com.google.cloud.genomics.dataflow.pipelines.VariantSimilarity \
-    --project=YOUR_GOOGLE_CLOUD_PLATFORM_PROJECT_ID \
-    --stagingLocation=gs://YOUR_BUCKET/dataflow-staging \
+    --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
+    --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
     --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
     --datasetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
-    --output=gs://YOUR_BUCKET/output/platinum-genomes-brca1-pca.tsv
+    --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv
 
 To run this job over the entire genome:
 
@@ -76,7 +76,7 @@ The following command will run PCA over the BRCA1 region within the `Platinum Ge
     --bases-per-partition 1000000 \
     --variant-set-id 3049512673186936334 \
     --references chr17:41196311:41277499 \
-    --output-path gs://YOUR_BUCKET/output/platinum-genomes-brca1-pca.tsv
+    --output-path gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv
 
 To run this job over the entire genome:
 
@@ -94,5 +94,6 @@ Gather the results into a single file
 
 .. code-block:: shell
 
-  gsutil cat gs://YOUR-BUCKET/output/platinum-genomes-pca.tsv* | sort > platinum-genomes-pca.tsv
+  gsutil cat gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv* \
+    | sort > platinum-genomes-brca1-pca.tsv
 
