@@ -12,7 +12,7 @@ To make use of this upon your own data:
 
 (1) First, load your data into Google Genomics.  See :doc:`../load_data/index` for more detail as to how to do this.
 
-(2) If you do not have them already, install the neccessary Bioconductor packages.  See `Using Bioconductor`_ for more detail as to how to do this.
+(2) If you do not have them already, install the necessary Bioconductor packages.  See `Using Bioconductor`_ for more detail as to how to do this.
 
 (3) Update the parameters to the ``getVariants`` call the example below to match that of your data and desired genomic region to annotate.
 
