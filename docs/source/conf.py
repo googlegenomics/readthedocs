@@ -111,8 +111,11 @@ rst_epilog = """
 .. _1,000 Genomes: https://cloud.google.com/genomics/data/1000-genomes
 .. _ClinVar: http://www.ncbi.nlm.nih.gov/clinvar/
 
+.. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/reads
+
 .. _Google Compute Engine: https://cloud.google.com/compute/
 .. _Google Cloud Dataflow: https://cloud.google.com/dataflow/what-is-google-cloud-dataflow
+.. _Google Cloud Storage: https://cloud.google.com/storage/docs
 .. _Apache Spark: https://spark.apache.org/
 .. _Google Developers Console: https://console.developers.google.com/
 
