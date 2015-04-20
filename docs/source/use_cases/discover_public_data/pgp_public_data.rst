@@ -22,8 +22,9 @@ This variant set contains the Complete Genomics datasets from:
 BigQuery PGP Tables
 -------------------
 
-Variant set ``pgp_20150205`` was exported to BigQuery tables
- 1. `google.com:biggene:pgp_20150205.variants <https://bigquery.cloud.google.com/table/google.com:biggene:pgp_20150205.variants>`_
- 1. `google.com:biggene:pgp_20150205.variants_cgi_only <https://bigquery.cloud.google.com/table/google.com:biggene:pgp_20150205.variants_cgi_only>`_ where the export excluded the single variants-only Illumina genome
+Variant set ``pgp_20150205`` was exported to BigQuery tables:
+
+ (1) `google.com:biggene:pgp_20150205.variants <https://bigquery.cloud.google.com/table/google.com:biggene:pgp_20150205.variants>`_
+ (2) `google.com:biggene:pgp_20150205.variants_cgi_only <https://bigquery.cloud.google.com/table/google.com:biggene:pgp_20150205.variants_cgi_only>`_ where the export excluded the single variants-only Illumina genome
 
 
