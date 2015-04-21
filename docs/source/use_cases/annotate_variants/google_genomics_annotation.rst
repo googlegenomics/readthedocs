@@ -19,7 +19,7 @@ Setup Dataflow
 
 .. include:: ../../includes/dataflow_on_gce_setup.rst
 
-Run the job
+Run the pipeline
 -----------
 
 The following command will use `ClinVar`_ to annotate variants in the `BRCA1`_ gene within the `Platinum Genomes`_ dataset for individual NA12877.
@@ -40,13 +40,19 @@ The following command will use `ClinVar`_ to annotate variants in the `BRCA1`_ g
     --callSetIds=3049512673186936334-0 \
     --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-clinvar-annotation.tsv
 
-Note that this program accepts `VariantSets` and `AnnotationSets` as input. The analogous inputs to traditional variant annotation programs are `VCF` and `.csv` files, respectively.
+Note that this program accepts `VariantSets` and `AnnotationSets` as input. The analogous inputs to traditional variant annotation programs are `VCF` and `.csv` files, respectively.  To run the pipeline on a different `VariantSet` change the variant set id for the ``--datasetId`` id parameter and:
 
-To run this job over the entire genome:
+ * update the ``--callSetIds`` parameter accordingly
+ * see :doc:`../discover_public_data/clinvar_annotations` if the variants were aligned to GRCh38 instead of GRCh37/hg19 and update ``--variantAnnotationSetIds``
+ * see :doc:`../discover_public_data/ucsc_annotations` if the variants were aligned to GRCh38 instead of GRCh37/hg19 and update ``--transcriptSetIds``
 
-* Add ``--runner=DataflowPipelineRunner`` to run the job on Google Cloud instead of locally.
-* Use ``--allReferences`` instead of ``--references=chr17:41196311:41277499`` to run over the entire genome.
-* To run the job on a different dataset, change the variant set id for the ``--datasetId`` id parameter and update the ``--callSetIds`` parameter accordingly.
+The above command line runs the pipeline over a small portion of the genome, only taking a few minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are configured to run concurrently via ``--numWorkers``.  To run this pipeline over a large portion of the genome:
+
+  #. add ``--runner=DataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally
+  #. add more references
+
+    * Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=chr13:32889610:32973808,chr17:41196311:41277499``
+    * Use ``--allReferences`` instead of ``--references=chr17:41196311:41277499`` to run over the entire genome.
 
 Gather the results into a single file
 -------------------------------------

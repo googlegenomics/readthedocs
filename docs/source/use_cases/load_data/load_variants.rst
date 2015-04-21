@@ -75,7 +75,7 @@ Create a Google Genomics dataset to hold your data.
 
 * YOUR-DATASET-NAME: This can be any name you like such as "My Copy of Platinum Genomes".
 
-* YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-NUMBER: You can find your Google Cloud Platform project number towards the top of the `Google Developers Console <https://console.developers.google.com/project/>`_ page. ::
+* YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-NUMBER: You can find your Google Cloud Platform project number towards the top of the `Google Developers Console`_ page. ::
 
    $ java -jar genomics-tools-client-java-v1beta2.jar createdataset --name YOUR-DATASET-NAME \
    --project_number YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-NUMBER
