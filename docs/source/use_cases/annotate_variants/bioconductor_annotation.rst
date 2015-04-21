@@ -23,6 +23,8 @@ To make use of this upon your own data:
   require(BSgenome.Hsapiens.UCSC.hg19)
   require(TxDb.Hsapiens.UCSC.hg19.knownGene)
 
+  GoogleGenomics::authenticate("/PATH/TO/YOUR/client_secrets.json")
+
   variants <- getVariants(datasetId="10473108253681171589", chromosome="17", start=41196311, end=41277499)
   granges <- variantsToGRanges(variants)
 
