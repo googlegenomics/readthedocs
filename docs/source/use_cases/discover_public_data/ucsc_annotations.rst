@@ -1,7 +1,7 @@
 UCSC Annotations
 ================
 
-`UCSC Sequence and Annotation Data`_ were loaded into Google Genomics for use in sample annotation pipelines.  This data reflects the state of `UCSC Sequence and Annotation Data`_ at a particular point in time - it is not being kept current as more annotations are added to `UCSC Sequence and Annotation Data`_ over time.
+`UCSC Sequence and Annotation Data`_ were loaded into Google Genomics for use in sample annotation pipelines.  This data reflects the state of `UCSC Sequence and Annotation Data`_ at a particular point in time.
 
 Each of the annotation sets listed below was imported into the API from the source files. The source files are also mirrored in Google Cloud Storage.
 

@@ -1,7 +1,7 @@
 ClinVar Annotations
 ===================
 
-Annotations from `ClinVar`_ were loaded into Google Genomics for use in sample annotation pipelines.  This data reflects the state of `ClinVar`_ at a particular point in time - it is not being kept current as more annotations are added to `ClinVar`_ over time.
+Annotations from `ClinVar`_ were loaded into Google Genomics for use in sample annotation pipelines.  This data reflects the state of `ClinVar`_ at a particular point in time.
 
 Each of the annotation sets listed below was imported into the API from the source files. The source files are also mirrored in Google Cloud Storage.
 
