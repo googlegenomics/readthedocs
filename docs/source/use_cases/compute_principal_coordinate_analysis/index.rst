@@ -25,7 +25,7 @@ Setup
 
 .. include:: ../../includes/dataflow_on_gce_setup.rst
 
-Run the job
+Run the pipeline
 ^^^^^^^^^^^
 
 The following command will run PCA over the BRCA1 region within the `Platinum Genomes`_ dataset.
@@ -41,11 +41,13 @@ The following command will run PCA over the BRCA1 region within the `Platinum Ge
     --references=chr17:41196311:41277499 \
     --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv
 
-To run this job over the entire genome:
+The above command line runs the pipeline over a small portion of the genome, only taking a few minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are configured to run concurrently via ``--numWorkers``.
 
-* Add ``--runner=DataflowPipelineRunner`` to run the job on Google Cloud instead of locally.
+To run this pipeline over the entire genome:
+
+* Add ``--runner=DataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally.
 * Use ``--allReferences`` instead of ``--references=chr17:41196311:41277499`` to run over the entire genome.
-* To run the job on a different dataset, change the variant set id for the ``--datasetId`` id parameter.
+* To run the pipeline on a different dataset, change the variant set id for the ``--datasetId`` id parameter.
 
 Additional details
 ^^^^^^^^^^^^^^^^^^
@@ -77,6 +79,8 @@ The following command will run PCA over the BRCA1 region within the `Platinum Ge
     --variant-set-id 3049512673186936334 \
     --references chr17:41196311:41277499 \
     --output-path gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv
+
+The above command line runs the job over a small portion of the genome, only taking a few minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are in the Spark cluster.
 
 To run this job over the entire genome:
 

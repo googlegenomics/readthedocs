@@ -16,8 +16,8 @@ Google Genomics variant set id for dataset ``pgp_20150205``: `917038991636507978
 This variant set contains the Complete Genomics datasets from:
 
 * `gs://pgp-harvard-data-public/**/masterVar*bz2 <https://console.developers.google.com/storage/pgp-harvard-data-public>`_
-* a few additional PGP Complete Genomics genomes
-* and one PGP variants-only Illumina genome
+* a few additional `PGP`_ Complete Genomics genomes
+* and one `PGP`_ variants-only Illumina genome
 
 BigQuery PGP Tables
 -------------------
