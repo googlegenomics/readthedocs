@@ -7,9 +7,9 @@ Count Reads
 .. contents::
 
 This simple pipeline just count reads and can be run either against a BAM file
-in Google Cloud Storage or against data accessed via Genomics API.
-It demonstrates decoupling of reads data processing from ways of getting the read data
-and show how to use common classes for getting reads from BAM or API data sources.
+in `Google Cloud Storage`_ or against data accessed via the `Google Genomics Reads API`_.
+It demonstrates the decoupling of reads data processing from ways of getting the read data
+and shows how to use common classes for getting reads from BAM or API data sources.
 
 The pipeline produces a small text file with the number of reads counted.
 
@@ -33,10 +33,10 @@ The following command will count reads from a BAM in `Google Cloud Storage`_, sp
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --output=gs://YOUR-BUCKET/dataflow-output \
     --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr17:41196311:41277499 \
-    --BAMFilePath=gs://genomics-public-data/platinum-genomes/bam/NA12877_S1.bam
+    --BAMFilePath=gs://genomics-public-data/platinum-genomes/bam/NA12877_S1.bam \
+    --output=gs://YOUR-BUCKET/dataflow-output/NA12877-BAM-reads.tsv \
 
 The following command will count those same reads but from the `Google Genomics Reads API`_:
 
@@ -46,21 +46,22 @@ The following command will count those same reads but from the `Google Genomics 
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --output=gs://YOUR-BUCKET/dataflow-output \
     --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr17:41196311:41277499 \
     --datasetId=3049512673186936334 \
-    --readGroupSetId=$READGROUPSET_ID
+    --readGroupSetId=CMvnhpKTFhD3he72j4KZuyc \
+    --output=gs://YOUR-BUCKET/dataflow-output/NA12877-API-reads.tsv
 
 The above command lines run the pipeline over a small portion of the genome, only taking a few minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are configured to run concurrently via ``--numWorkers``.
 
 To run this pipeline over a large portion of the genome:
 
-  #. add ``--runner=BlockingDataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally
-  #. add  ``--numWorkers=5`` for faster processing that will shard the data
-  
-* Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=chr13:32889610:32973808,chr17:41196311:41277499``
-* Use ``--allReferences`` instead of ``--references=chr17:41196311:41277499`` to run over the entire genome.
+* Add ``--runner=DataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally.
+* Add  ``--numWorkers=#`` for faster processing that will shard the data.
+* Add more references:
+
+  #. Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=chr13:32889610:32973808,chr17:41196311:41277499``
+  #. Use ``--allReferences`` instead of ``--references=chr17:41196311:41277499`` to run over the entire genome.
 
 To run the pipeline on a different dataset, change ``--datasetId`` and/or ``--readGroupSetId`` id parameters.
 
