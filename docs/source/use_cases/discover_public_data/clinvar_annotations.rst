@@ -16,3 +16,14 @@ Data
 ----
 * Google Cloud Storage folder `gs://genomics-public-data/clinvar/ <https://console.developers.google.com/storage/browser/genomics-public-data/clinvar/>`_
 * Google Genomics `annotation sets <https://developers.google.com/apis-explorer/?#p/genomics/v1beta2/genomics.annotationSets.search?_h=11&resource=%257B%250A++%2522datasetIds%2522%253A+%250A++%255B%252210673227266162962312%2522%250A++%255D%250A%257D&>`_
+
+Caveats
+----
+
+A number of ClinVar entries were omitted during ingestion due to data incompatibility with the Google Genomics API.
+
+* 14737 were aligned to NCBI36, which the Google Genomics API does not currently support.
+* 5952 did not specify a reference assembly.
+* 1324 were labeled as insertions but did not specify the inserted bases.
+* 220 were labeled as SNPs, but did not specify an alternate base.
+* 148 were larger than 100MBp.
