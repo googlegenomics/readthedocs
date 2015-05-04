@@ -36,7 +36,7 @@ The following command will count reads from a BAM in `Google Cloud Storage`_, sp
     --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr17:41196311:41277499 \
     --BAMFilePath=gs://genomics-public-data/platinum-genomes/bam/NA12877_S1.bam \
-    --output=gs://YOUR-BUCKET/dataflow-output/NA12877-BAM-reads.tsv \
+    --output=gs://YOUR-BUCKET/dataflow-output/NA12877-BAM-reads.tsv
 
 The following command will count those same reads but from the `Google Genomics Reads API`_:
 
@@ -63,9 +63,9 @@ To run this pipeline over a large portion of the genome:
   #. Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=chr13:32889610:32973808,chr17:41196311:41277499``
   #. Use ``--allReferences`` instead of ``--references=chr17:41196311:41277499`` to run over the entire genome.
 
-To run the pipeline on a different dataset, change ``--datasetId`` and/or ``--readGroupSetId`` id parameters.
+To run the pipeline on a different read group set, change the ``--readGroupSetId`` id parameter.
 
-To run the pipeline over a different BAM file, change ``--BAMFilePath`` parameter.
+To run the pipeline over a different BAM file, change ``--BAMFilePath`` parameter.  Set ``--shardBAMReading=false`` if no BAM index file is available.
 
 Additional details
 ------------------
