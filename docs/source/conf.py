@@ -113,6 +113,8 @@ rst_epilog = """
 .. _ClinVar: http://www.ncbi.nlm.nih.gov/clinvar/
 .. _UCSC Sequence and Annotation Data: http://hgdownload.cse.ucsc.edu/
 
+.. _GA4GH: http://ga4gh.org/#/api
+
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/reads
 
 .. _Google Developers Console: https://console.developers.google.com/
@@ -129,6 +131,8 @@ rst_epilog = """
 .. _Using Bioconductor: http://www.bioconductor.org/install/
 
 .. _IGV: https://www.broadinstitute.org/igv/
+.. _Picard: http://broadinstitute.github.io/picard/
+.. _GATK: https://www.broadinstitute.org/gatk/
 
 """
 

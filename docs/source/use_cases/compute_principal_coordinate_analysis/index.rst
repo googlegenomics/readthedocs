@@ -75,7 +75,6 @@ The following command will run PCA over the BRCA1 region within the `Platinum Ge
     --master spark://hadoop-m:7077 \
     /PATH/TO/googlegenomics-spark-examples-assembly-1.0.jar \
     --client-secrets /PATH/TO/YOUR/client_secrets.json \
-    --bases-per-partition 1000000 \
     --variant-set-id 3049512673186936334 \
     --references chr17:41196311:41277499 \
     --output-path gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv
