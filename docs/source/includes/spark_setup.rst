@@ -6,7 +6,7 @@
 
     .. container:: content
 
-      (1) Use `bdutil <https://cloud.google.com/hadoop/bdutil>`_ to deploy the cluster.  If you have not already done so, `install and configure <https://cloud.google.com/hadoop/>`_ bdutil.  **See issue** `#61 <https://github.com/googlegenomics/spark-examples/issues/61>`_ **for one additional temporary instruction when using bdutil.**
+      (1) Use `bdutil <https://cloud.google.com/hadoop/bdutil>`_ **version 1.2.1** or higher to deploy the cluster.  If you have not already done so, `install and configure <https://cloud.google.com/hadoop/>`_ bdutil.
 
     .. code-block:: shell
 
