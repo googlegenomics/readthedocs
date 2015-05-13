@@ -6,14 +6,14 @@ Count Reads
 
 .. contents::
 
-This simple pipeline just count reads and can be run either against a BAM file
+This simple pipeline counts reads and can be run either against a BAM file
 in `Google Cloud Storage`_ or against data accessed via the `Google Genomics Reads API`_.
 It demonstrates the decoupling of reads data processing from ways of getting the read data
 and shows how to use common classes for getting reads from BAM or API data sources.
 
 The pipeline produces a small text file with the number of reads counted.
 
-A `Google Cloud Dataflow`_ implementation is available.
+The pipeline is implemented on `Google Cloud Dataflow`_.
 
 Setup Dataflow
 --------------
@@ -25,7 +25,8 @@ Setup Dataflow
 Run the pipeline
 ----------------
 
-The following command will count reads from a BAM in `Google Cloud Storage`_, specifically those in the BRCA1 region for sample NA12877 within the `Platinum Genomes`_ dataset:
+The following command will count reads from a BAM in `Google Cloud Storage`_,
+specifically those in the BRCA1 region for sample NA12877 within the `Platinum Genomes`_ dataset:
 
 .. code-block:: shell
 
@@ -51,7 +52,9 @@ The following command will count those same reads but from the `Google Genomics 
     --readGroupSetId=CMvnhpKTFhD3he72j4KZuyc \
     --output=gs://YOUR-BUCKET/dataflow-output/NA12877-API-reads.tsv
 
-The above command lines run the pipeline over a small portion of the genome, only taking a few minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are configured to run concurrently via ``--numWorkers``.
+The above command lines run the pipeline over a small portion of the genome, only taking a few minutes.
+If modified to run over a larger portion of the genome or the entire genome, it may take a few hours
+depending upon how many machines are configured to run concurrently via ``--numWorkers``.
 
 To run this pipeline over a large portion of the genome:
 
