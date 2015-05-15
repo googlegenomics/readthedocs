@@ -134,6 +134,8 @@ rst_epilog = """
 .. _Picard: http://broadinstitute.github.io/picard/
 .. _GATK: https://www.broadinstitute.org/gatk/
 
+.. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
+
 """
 
 # -- Options for HTML output ----------------------------------------------
