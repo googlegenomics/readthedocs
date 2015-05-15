@@ -52,6 +52,8 @@ The following command will count those same reads but from the `Google Genomics 
     --readGroupSetId=CMvnhpKTFhD3he72j4KZuyc \
     --output=gs://YOUR-BUCKET/dataflow-output/NA12877-API-reads.tsv
 
+You can check your results by ensuring that both of these examples return the answer 45,081 in their output files.
+
 The above command lines run the pipeline over a small portion of the genome, only taking a few minutes.
 If modified to run over a larger portion of the genome or the entire genome, it may take a few hours
 depending upon how many machines are configured to run concurrently via ``--numWorkers``.
