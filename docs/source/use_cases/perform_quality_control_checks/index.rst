@@ -1,7 +1,7 @@
 Perform Quality Control Checks
 ==============================
 
-There are a collection of quality control checks for variants documented in codelab `Quality Control using Google Genomics <https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC>`_.
+There are a collection of quality control checks for variants documented in codelab `Quality Control using Google Genomics`_.
 
 To make use of this upon your own data:
 

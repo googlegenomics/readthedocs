@@ -14,9 +14,9 @@
 
       .. code-block:: shell
 
+        curl -O -L https://github.com/googlegenomics/dataflow-java/raw/master/google-genomics-dataflow.jar
         sudo apt-get update
         sudo apt-get install --assume-yes openjdk-7-jdk maven
-        curl -O -L https://github.com/googlegenomics/dataflow-java/raw/master/google-genomics-dataflow.jar
         sudo update-alternatives --config java
 
       (3) Run the following command from your local machine to copy the ``client_secrets.json`` to the Compute Engine instance.  If you do not already have this file, see the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
@@ -25,6 +25,6 @@
 
         gcloud compute copy-files ~/googlegenomics/dataflow-java/client_secrets.json INSTANCE-NAME:~/
 
-      (4) If you have not already done so, enable the Google Cloud Platform APIs used by `Google Cloud Dataflow`_.  See the `Core Cloud Platform Setup Steps <https://cloud.google.com/dataflow/getting-started#Core>`_ for the list of APIs to enable.
+      (4) If you have not already done so, click `here <https://console.developers.google.com/flows/enableapi?apiid=dataflow,compute_component,logging,storage_component,storage_api,bigquery,pubsub,datastore&_ga=1.38537760.2067798380.1406160784>`_ to enable the Google Cloud Platform APIs used by `Google Cloud Dataflow`_.
 
     *Tip:* Add option ``--noLaunchBrowser`` your dataflow command lines so that the authorization flow prints a URL to be copied instead of launching a web browser.
