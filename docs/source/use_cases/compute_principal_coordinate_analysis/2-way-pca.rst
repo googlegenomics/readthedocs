@@ -34,7 +34,7 @@ The following command will run a two-way PCA over the BRCA1 region within the `P
     /PATH/TO/googlegenomics-spark-examples-assembly-1.0.jar \
     --client-secrets /PATH/TO/YOUR/client_secrets.json \
     --variant-set-id 10473108253681171589 3049512673186936334 \
-    --references chr17:41196311:41277499 \
+    --references 17:41196311:41277499 chr17:41196311:41277499 \
     --output-path gs://YOUR-BUCKET/output/two-way-brca1-pca.tsv
 
 The above command line runs the job over a small portion of the genome, only taking a few minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are in the Spark cluster.
