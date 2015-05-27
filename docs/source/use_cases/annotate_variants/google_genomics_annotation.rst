@@ -35,7 +35,7 @@ The following command will use `ClinVar`_ to annotate variants in the `BRCA1`_ g
     --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
     --datasetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
-    --transcriptSetIds=CIjfoPXj9LqPlAEQ6Mm91Ya458eqAQ \
+    --transcriptSetIds=CIjfoPXj9LqPlAEQ5vnql4KewYuSAQ \
     --variantAnnotationSetIds=CILSqfjtlY6tHxC0nNH-4cu-xlQ \
     --callSetIds=3049512673186936334-0 \
     --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-clinvar-annotation.tsv
