@@ -32,7 +32,7 @@ The following command will use `ClinVar`_ to annotate variants in the `BRCA1`_ g
     com.google.cloud.genomics.dataflow.pipelines.AnnotateVariants \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
+    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --datasetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
     --transcriptSetIds=CIjfoPXj9LqPlAEQ5vnql4KewYuSAQ \

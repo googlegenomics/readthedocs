@@ -34,7 +34,7 @@ specifically those in the BRCA1 region for sample NA12877 within the `Platinum G
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
+    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr17:41196311:41277499 \
     --BAMFilePath=gs://genomics-public-data/platinum-genomes/bam/NA12877_S1.bam \
     --output=gs://YOUR-BUCKET/dataflow-output/NA12877-BAM-reads.tsv
@@ -47,7 +47,7 @@ The following command will count those same reads but from the `Google Genomics 
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
+    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr17:41196311:41277499 \
     --readGroupSetId=CMvnhpKTFhD3he72j4KZuyc \
     --output=gs://YOUR-BUCKET/dataflow-output/NA12877-API-reads.tsv
