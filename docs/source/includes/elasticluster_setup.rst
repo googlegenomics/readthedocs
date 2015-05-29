@@ -1,6 +1,8 @@
 .. _Elasticluster: https://elasticluster.readthedocs.org
 .. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 .. _gcloud: https://cloud.google.com/sdk/
+.. _SFTP: http://linux.die.net/man/1/sftp
+.. _HERE DOCUMENTS: http://tldp.org/LDP/abs/html/here-docs.html
 
 ================================================
 Create compute clusters on Google Compute Engine
@@ -265,13 +267,32 @@ Elasticluster provides a convenience routine to connect to your frontend instanc
 
 .. code:: bash
 
-  elasticluster ssh -v gridengine
+  elasticluster ssh gridengine
   
 However, you can connect to other instances using gcloud_:
 
 .. code:: bash
 
   gcloud compute ssh <instance> --zone <zone>
+
+Copy files to your instances
+****************************
+Elasticluster provides a convenience routine to connect to your frontend instance for SFTP_:
+
+.. code:: bash
+
+  elasticluster sftp gridengine
+
+To script commands for sftp, you can use bash `HERE DOCUMENTS`_:
+
+.. code:: bash
+
+  elasticluster sftp gridengine << 'EOF'
+  put *.sh
+  EOF
+
+
+See the SFTP_ man page for more commands.
 
 Destroy your cluster
 ********************
