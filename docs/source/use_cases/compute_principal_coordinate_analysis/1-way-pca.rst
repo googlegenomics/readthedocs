@@ -36,7 +36,7 @@ The following command will run PCA over the BRCA1 region within the `Platinum Ge
     com.google.cloud.genomics.dataflow.pipelines.VariantSimilarity \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
+    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --datasetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
     --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv

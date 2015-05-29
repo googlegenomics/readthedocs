@@ -29,7 +29,7 @@ The following command will run Identity-by-State over the BRCA1 region within th
     com.google.cloud.genomics.dataflow.pipelines.IdentityByState \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
+    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --datasetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
     --hasNonVariantSegments \
