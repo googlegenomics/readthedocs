@@ -18,7 +18,7 @@ Data
 * Google Genomics `annotation sets <https://developers.google.com/apis-explorer/?#p/genomics/v1beta2/genomics.annotationSets.search?_h=11&resource=%257B%250A++%2522datasetIds%2522%253A+%250A++%255B%252210673227266162962312%2522%250A++%255D%250A%257D&>`_
 
 Caveats
-----
+-------
 
 A number of ClinVar entries were omitted during ingestion due to data incompatibility with the Google Genomics API.
 
