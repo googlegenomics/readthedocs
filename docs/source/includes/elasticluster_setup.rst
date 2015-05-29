@@ -38,8 +38,7 @@ The instructions here explicitly use a Python virtualenv and have only been test
 
    [sudo] pip install virtualenv
 
-1. Change directory to where you want to install Elasticluster.
-You don't need to explicitly create an ``elasticluster`` directory (that will happen next).
+1. Change directory to where you want to install Elasticluster. You don't need to explicitly create an ``elasticluster`` directory (that will happen next).
 
 2. Create the elasticluster virtualenv:
 
@@ -220,7 +219,7 @@ The instructions provided on the Elasticluster installation site are currently o
    login=google-login
    setup_provider=ansible-gridengine
    security_group=default
-   image_id=****REPLACE WITH OUTPUT FROM: gcloud compute images list | grep ^backports-debian | cut -f 1 -d " " ****
+   image_id=****REPLACE WITH OUTPUT FROM: gcloud compute images list --uri | grep backports ****
    flavor=n1-standard-1
    frontend_nodes=1
    compute_nodes=2
