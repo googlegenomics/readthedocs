@@ -1,5 +1,6 @@
 .. _Elasticluster: https://elasticluster.readthedocs.org
 .. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
+.. _gcloud: https://cloud.google.com/sdk/
 
 ================================================
 Create compute clusters on Google Compute Engine
@@ -133,4 +134,157 @@ it is common to get inexplicable "AttributeErrors" when trying to deploy.  This 
 Elasticluster saving Python objects to ``~/.elasticluster/store/``.
 Removing the contents of this directory may resolve your issues.
 
+Create your cluster definition file
+===================================
+Elasticluster cluster definitions are driven from a configuration file.  By default this file is:
 
+.. code:: bash
+
+   ~/.elasticluster/config
+   
+Details of the config file can be found at:
+
+   https://elasticluster.readthedocs.org/en/latest/configure.html
+   
+Elasticluster provides a command to automatically create the config file for you, however
+using this command will create a template configuration file which you cannot immediately
+use as it includes a list of clusters that are not correctly configured.
+
+You can either:
+
+#. Install the default template using list-templates and then fix it up, or
+#. Install a minimal template provided below
+
+In either case, you will need to configure the ``~/.elasticluster/config`` file for accessing
+your Google Cloud project.
+
+Install the default template
+****************************
+
+If you install the default template using the command:
+
+.. code:: bash
+
+   elasticluster list-templates
+   
+It will copy a default file to ``~/.elasticluster/config`` and will emit a number of WARNINGS
+and ERRORS to the console.  To use this configuration file, you must then comment out or remove
+all of the "cluster" examples.  Look for the section:
+
+.. code:: bash
+
+   # Cluster Section
+   
+and then comment out or remove everything up to the:
+
+.. code:: bash
+
+  # Cluster node section
+  
+You can then copy each element (except ``setup/ansible-gridengine``) of the following minimal
+template into the config file.
+
+Install a minimal template
+**************************
+Copy the file into ``~/.elasticluster/config`` and update the fields marked with ****.
+Instructions for getting your client_id and client_secret can be found below.
+The instructions provided on the Elasticluster installation site are currently out of date.
+
+.. code:: bash
+
+   # Gridengine software to be configured by Ansible
+   [setup/ansible-gridengine]
+   provider=ansible
+   frontend_groups=gridengine_master
+   compute_groups=gridengine_clients
+   
+   # Create a cloud provider (call it "google-cloud")
+   [cloud/google-cloud]
+   provider=google
+   gce_project_id=****REPLACE WITH YOUR PROJECT ID****
+   gce_client_id=****REPLACE WITH YOUR CLIENT ID****
+   gce_client_secret=****REPLACE WITH YOUR SECRET KEY****
+   
+   # Create a login (call it "google-login")
+   [login/google-login]
+   image_user=****REPLACE WITH YOUR GOOGLE USERID (just the userid, not email)****
+   image_user_sudo=root
+   image_sudo=True
+   user_key_name=elasticluster
+   user_key_private=~/.ssh/google_compute_engine
+   user_key_public=~/.ssh/google_compute_engine.pub
+   
+   # Bring all of the elements together to define a cluster called "gridengine"
+   [cluster/gridengine]
+   cloud=google-cloud
+   login=google-login
+   setup_provider=ansible-gridengine
+   security_group=default
+   image_id=****REPLACE WITH OUTPUT FROM: gcloud compute images list | grep ^backports-debian | cut -f 1 -d " " ****
+   flavor=n1-standard-1
+   frontend_nodes=1
+   compute_nodes=2
+   image_userdata=
+   ssh_to=frontend
+
+Obtaining your client_id and client_secret
+******************************************
+To generate a client_id and client_secret to access the Google Compute Engine visit the following page:
+
+   https://console.developers.google.com/project/_/apiui/credential
+   
+#. Select the project to be used for your cluster
+#. If a "Client ID for native application" is listed on this page, skip to step 8
+#. Under the OAuth section, click "Create new Client ID"
+#. Select "Installed Application"
+#. If prompted, click "Configure consent screen" and follow the instructions to set a "product name" to identify your Cloud project in the consent screen
+#. In the Create Client ID dialog, be sure the following are selected::
+
+    Application type: Installed application
+    Installed application type: Other
+   
+#. Click the "Create Client ID" button
+#. You'll see your Client ID and Client secret listed under "Client ID for native application"
+
+Elasticluster operations
+========================
+Deploy your cluster
+*******************
+.. code:: bash
+
+  elasticluster start -v gridengine
+
+List your cluster instances
+***************************
+.. code:: bash
+
+  elasticluster list-nodes gridengine
+
+SSH to your instances
+*********************
+Elasticluster provides a convenience routine to connect to your frontend instance:
+
+.. code:: bash
+
+  elasticluster ssh -v gridengine
+  
+However, you can connect to other instances using gcloud_:
+
+.. code:: bash
+
+  gcloud compute ssh <instance> --zone <zone>
+
+Destroy your cluster
+********************
+.. code:: bash
+
+  elasticluster stop -v --yes gridengine
+
+Exit the virtualenv
+===================
+The ``activate`` command creates a function in the bash environment called ``deactivate``.
+To exit the virtualenv, just execute the command:
+
+.. code:: bash
+
+  deactivate
