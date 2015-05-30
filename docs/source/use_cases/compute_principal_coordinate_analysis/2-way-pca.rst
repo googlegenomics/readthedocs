@@ -41,7 +41,7 @@ The above command line runs the job over a small portion of the genome, only tak
 
 To run this job over the entire genome:
 
-* Add ``--num-reduce-partitions #`` to be equal to the number of cores in your cluster.
+* Add ``--num-reduce-partitions #`` to be somewhere between 10-20 this will be the level of parallelism when computing the reference call similarity, keep it bounded to a small number, otherwise the shuffle will need to move a full similarity matrix for each reducer.
 * Use ``--all-references`` instead of ``--references  17:41196311:41277499 chr17:41196311:41277499`` to run over the entire genome.
 * To run the job on a different dataset, change the second variant set id for the ``--variant-set-id`` id parameter and update the second value in ``--references`` as appropriate.
 
