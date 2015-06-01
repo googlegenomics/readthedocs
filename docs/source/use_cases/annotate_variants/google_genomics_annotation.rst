@@ -13,14 +13,14 @@ An annotated variant set might be used to identify variants which affect a gene 
 A `Google Cloud Dataflow`_ implementation is available.
 
 Setup Dataflow
----------
+--------------
 
 .. include:: ../../includes/dataflow_setup.rst
 
 .. include:: ../../includes/dataflow_on_gce_setup.rst
 
 Run the pipeline
------------
+----------------
 
 The following command will use `ClinVar`_ to annotate variants in the `BRCA1`_ gene within the `Platinum Genomes`_ dataset for individual NA12877.
 

@@ -19,3 +19,5 @@
       (2) Copy your ``client_secrets.json`` to same directory as the Jar.  If you do not already have this file, see the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
 
       (3) If you have not already done so, click `here <https://console.developers.google.com/flows/enableapi?apiid=dataflow,compute_component,logging,storage_component,storage_api,bigquery,pubsub,datastore&_ga=1.38537760.2067798380.1406160784>`_ to enable the Google Cloud Platform APIs used by `Google Cloud Dataflow`_.
+
+      (4) If you have not already done so, follow the instructions to `install gcloud`_.

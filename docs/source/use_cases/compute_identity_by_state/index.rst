@@ -13,14 +13,14 @@ See the `Quality Control using Google Genomics codelab <https://github.com/googl
 A `Google Cloud Dataflow`_ implementation is available.
 
 Setup Dataflow
----------
+--------------
 
 .. include:: ../../includes/dataflow_setup.rst
 
 .. include:: ../../includes/dataflow_on_gce_setup.rst
 
 Run the pipeline
---------------
+----------------
 The following command will run Identity-by-State over the BRCA1 region within the `Platinum Genomes`_ dataset.
 
 .. code-block:: shell
