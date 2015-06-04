@@ -1,14 +1,19 @@
-Discover Public Data
+Discover Published Data
 ========================
+Here we list the growing collection of genomic data resident in Google Cloud Platform and shared with the community.  Some datasets are open-access, such as 1,000 Genomes, whereas other datasets are controlled-access.  Each dataset page describes the source of the data and how to *access the data* or *apply for access* as applicable for the dataset.
+
 
 .. toctree::
   :maxdepth: 1
 
-  google_genomics_public_data
+  1000_genomes
+  platinum_genomes
+  reference_genomes
   mssng_data
-  tute_genomics_public_data
-  pgp_public_data
   supercentenarians
+  pgp_public_data
+  tute_genomics_public_data
   clinvar_annotations
   ucsc_annotations
 
+Please let us know if you have a dataset that you wish to share and have listed here for discovery.
