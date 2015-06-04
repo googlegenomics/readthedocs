@@ -5,3 +5,4 @@ Analyze Reads
   :maxdepth: 1
 
   count_reads
+  calculate_coverage
