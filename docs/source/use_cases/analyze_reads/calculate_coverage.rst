@@ -6,11 +6,11 @@ Calculate Coverage
 
 .. contents::
 
-This pipeline calculates mean read depth coverage for a given data set or set of read group sets
+This pipeline calculates mean read depth coverage for a given dataset or set of read group sets
 and writes the results to Annotations in a new AnnotationSet using the Genomics API.
 
 For each "bucket" in the given input references, this computes the average coverage (rounded to
-six decimal places) across the bucket that 10%, 20%, 30%, etc. of the input ReadGroupsSets have
+six decimal places) across the bucket that 10%, 20%, 30%, etc. of the input read group sets have
 for each mapping quality of the reads (<10:Low(L), 10-29:Medium(M), >=30:High(H)) as well as
 these same percentiles of read group sets for all reads regardless of mapping quality (Mapping
 quality All(A)).
@@ -35,7 +35,7 @@ In order to run this pipeline, you must create a dataset using the Genomics API 
 can output its AnnotationSet and Annotations to.  If you already have a dataset in which you have
 write access, you may use its id.  If not, you can do the following to create one:
 
-#. Go to `this link <https://developers.google.com/apis-explorer/?&_ga=1.229847964.1415640645.1431467722#p/genomics/v1beta2/genomics.datasets.create>`_ in the Genomics API Explorer for creating datasets.
+#. Go to `this link <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.create>`_ in the Genomics API Explorer for creating datasets.
 #. Put your Google Cloud Platform project number in the ``projectNumber`` field of the request body.
 #. Decide whether or not to make your dataset public by selecting or deselecting the ``isPublic`` field.
 #. Give your dataset a name in the ``name`` field.
@@ -68,8 +68,8 @@ dataset id:
 This can take several minutes to run.  You can check your results by using the Genomics API
 Explorer (make sure to authorize yourself!):
 
-#. First go to to the to the `AnnotationSets search request page <https://developers.google.com/apis-explorer/?&_ga=1.229847964.1415640645.1431467722#p/genomics/v1beta2/genomics.annotationSets.search>`_ to determine what your newly created AnnotationSetId is by putting your output dataset id in the ``datasetIds`` field.
-#. Then go to the `Annotations search request page <https://developers.google.com/apis-explorer/?&_ga=1.229847964.1415640645.1431467722#p/genomics/v1beta2/genomics.annotations.search>`_ and put the AnnotationSetId you just found in the ``annotationSetIds`` field.  Select ``info`` and ``position`` in the fields editor.
+#. First go to to the to the `AnnotationSets search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotationSets.search>`_ to determine what your newly created AnnotationSetId is by putting your output dataset id in the ``datasetIds`` field.
+#. Then go to the `Annotations search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotations.search>`_ and put the AnnotationSetId you just found in the ``annotationSetIds`` field.  Select ``info`` and ``position`` in the fields editor.
 #. Your Annotation should look like this:
 
 .. code-block:: shell
