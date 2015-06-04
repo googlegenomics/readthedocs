@@ -1,9 +1,6 @@
 1,000 Genomes
 =============
 
-.. toctree::
-   :maxdepth: 2
-
 Data from the 1,000 Genomes project is available on Google Cloud Platform.  This includes:
 
   * Phase 1 Variants
