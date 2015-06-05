@@ -1,9 +1,6 @@
 Personal Genome Project Data
 ============================
 
-.. toctree::
-   :maxdepth: 3
-
 .. contents::
 
 .. include:: ../../pgp-data.rst
