@@ -33,7 +33,7 @@ Create Output Dataset
 
 In order to run this pipeline, you must create a dataset using the Genomics API that the pipeline
 can output its AnnotationSet and Annotations to.  If you already have a dataset in which you have
-write access, you may use its id.  If not, you can do the following to create one:
+write access, you may use it.  If not, you can do the following to create one:
 
 #. Go to `this link <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.create>`_ in the Genomics API Explorer for creating datasets.
 #. Put your Google Cloud Platform project number in the ``projectNumber`` field of the request body.
@@ -65,12 +65,18 @@ dataset id:
     --inputDatasetId=10473108253681171589 \
     --outputDatasetId=YOUR_OUTPUT_DATASET_ID
 
-This can take several minutes to run.  You can check your results by using the Genomics API
-Explorer (make sure to authorize yourself!):
+This can take several minutes to run.  You can check your results by using the Genomics API Explorer:
 
-#. First go to to the to the `AnnotationSets search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotationSets.search>`_ to determine what your newly created AnnotationSetId is by putting your output dataset id in the ``datasetIds`` field.
-#. Then go to the `Annotations search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotations.search>`_ and put the AnnotationSetId you just found in the ``annotationSetIds`` field.  Select ``info`` and ``position`` in the fields editor.
-#. Your Annotation should look like this:
+1. First go to the `AnnotationSets search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotationSets.search>`_ to determine what your newly created AnnotationSetId is.
+  a. Put your output dataset id in the ``datasetIds`` field.
+  b. Turn on authorizing requests in the upper right corner of the window.
+  c. Press Execute.
+2. Then go to the `Annotations search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotations.search>`_ to be able to see your newly created Annotation.
+  a. Put the AnnotationSetId you just found in the ``annotationSetIds`` field.
+  b. Select ``info`` and ``position`` in the fields editor.
+  c. Turn on authorizing requests in the upper right corner of the window.
+  d. Press Execute.
+3. Your Annotation should look like this:
 
 .. code-block:: shell
 
@@ -144,7 +150,7 @@ Explorer (make sure to authorize yourself!):
 The following command will also calculate the mean coverage in the same manner as the previous
 command, but will use a select number of read group sets from 1000 Genomes instead of the entire
 dataset.  To do this, we must change the number of quantiles we are computing, as we now have
-less read group sets then the default requirement of 11:
+fewer read group sets then the default requirement of 11:
 
 .. code-block:: shell
 
@@ -206,15 +212,15 @@ depending upon how many machines are configured to run concurrently via ``--numW
 To run this pipeline over a large portion of the genome:
 
 * Add ``--runner=DataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally.
-* Add  ``--numWorkers=#`` for faster processing that will shard the data.
+* Add ``--numWorkers=#`` for faster processing that will shard the data.
 * Add more references:
 
   #. Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=13:32889610:32973808,17:41196311:41277499``
   #. Use ``--allReferences`` instead of ``--references=1:552960:557056`` to run over the entire genome.
 
-To run the pipeline on a different dataset, change the ``--inputDatasetId`` id parameter.
+To run the pipeline on a different dataset, change the ``--inputDatasetId`` parameter.
 
-To run the pipeline on a different group of read group sets, change the ``--readGroupSetIds`` id parameter.
+To run the pipeline on a different group of read group sets, change the ``--readGroupSetIds`` parameter.
 
 To run the pipeline with a different bucket width, change the ``--bucketWidth`` parameter.
 
