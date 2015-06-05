@@ -4,16 +4,9 @@ There is a growing collection of genomic data resident in Google Cloud Platform 
 
 
 .. toctree::
-  :maxdepth: 1
+  :maxdepth: 2
 
-  1000_genomes
-  platinum_genomes
-  reference_genomes
-  mssng_data
-  supercentenarians
-  pgp_public_data
-  tute_genomics_public_data
-  clinvar_annotations
-  ucsc_annotations
+  genomic_data_toc
+  annotations_toc
 
 Please let us know if you have a dataset that you wish to share and have listed here for discovery.
