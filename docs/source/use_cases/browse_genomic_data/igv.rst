@@ -1,4 +1,6 @@
 Integrative Genomics Viewer (IGV)
 =================================
 
-Try it now: http://www.broadinstitute.org/igv/projects/igv-web/examples/igv-ga4gh.html
+Try it now: http://igv.org/web/demo/ga4gh-demo.html
+
+There is also an embeddable version: http://igv.org/web/examples/ga4gh.html

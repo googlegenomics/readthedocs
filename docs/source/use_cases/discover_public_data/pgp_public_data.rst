@@ -16,6 +16,8 @@ This variant set contains the Complete Genomics datasets from:
 * a few additional `PGP`_ Complete Genomics genomes
 * and one `PGP`_ variants-only Illumina genome
 
+Google Genomics variant set id for dataset ``PGP Genomes``: `383928317087 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=383928317087>`_ contains both Illumina reads and variants for a single individual.
+
 BigQuery PGP Tables
 -------------------
 
