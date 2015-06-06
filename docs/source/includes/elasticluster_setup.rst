@@ -1,8 +1,10 @@
+.. _S3IT: http://www.s3it.uzh.ch/
 .. _Elasticluster: https://elasticluster.readthedocs.org
 .. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 .. _gcloud: https://cloud.google.com/sdk/
 .. _SFTP: http://linux.die.net/man/1/sftp
 .. _HERE DOCUMENTS: http://tldp.org/LDP/abs/html/here-docs.html
+.. _googlegenomics github organization: https://github.com/googlegenomics
 
 ================================================
 Create compute clusters on Google Compute Engine
@@ -64,76 +66,29 @@ This script will set environment variables necessary for the virtualenv:
 
 The script also saves away changed environment variables and installs a ``deactivate`` function into the bash environment.
 
-4. Install setuptools into the virtualenv
+4. Install elasticluster (select one):
 
-.. code:: bash
+    The `googlegenomics github organization`_ maintains a fork of elasticluster to ensure that relevant
+    Google Cloud features are available through elasticluster. Pull requests are submitted to the master
+    branch for all such features, and development is coordinated with S3IT_.
 
-   pip install setuptools==9.1
-   
-This will uninstall the current version of ``setuptools`` and install an older version.  Without this step, the Elasticluster installation will fail with:
+    a. From github (mbookman fork with Google-specific updates)
 
-.. code:: python
-
-   Traceback (most recent call last):
-     File "<string>", line 20, in <module>
-     File "/tmp/pip-build-uwB7Cn/elasticluster/setup.py", line 31, in <module>
-       del sdist.finders[:]
-     AttributeError: 'module' object has no attribute 'finders'
-     ----------------------------------------
-     Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-uwB7Cn/elasticluster
-
-5. Install ansible into the virtualenv
-
-.. code:: bash
-
-  pip install ansible==1.7.2
-
-This will uninstall the current version of ansible and install an older version.  Without this step, the installation of any software during cluster start will fail with:
-
-.. code:: python
-
-  ERROR:gc3.elasticluster:the setup provider was not able to setup the cluster,
-  but the cluster is running by now. Setup provider error message: `__init__()
-  got an unexpected keyword argument 'sudo'`
-
-See https://github.com/gc3-uzh-ch/elasticluster/issues/156
-
-6. Install elasticluster (select one):
-
-   a. Using pip 
-
-   .. code:: bash
-
-      pip install elasticluster
-
-   b. From github (mbookman fork with Google-specific updates)
-
-   .. code:: bash
+    .. code:: bash
 
       cd elasticluster
-      git clone https://github.com/mbookman/elasticluster.git src
+      git clone https://github.com/googlegenomics/elasticluster.git src
       cd src
       python setup.py install
 
-      pip uninstall --yes google-api-python-client
-      pip install google-api-python-client
+    b. From github (mainline)
 
-   c. From github (mainline)
-
-   .. code:: bash
+    .. code:: bash
 
       cd elasticluster
       git clone git://github.com/gc3-uzh-ch/elasticluster.git src
       cd src
       python setup.py install
-
-      pip uninstall --yes google-api-python-client
-      pip install google-api-python-client
-
-**Note**: if you change versions of Elasticluster (from pip install to github install, for example),
-it is common to get inexplicable "AttributeErrors" when trying to deploy.  This is due to
-Elasticluster saving Python objects to ``~/.elasticluster/store/``.
-Removing the contents of this directory may resolve your issues.
 
 Create your cluster definition file
 ===================================
