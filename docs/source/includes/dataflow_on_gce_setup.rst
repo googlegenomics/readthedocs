@@ -24,7 +24,7 @@
 
         gcloud compute copy-files /PATH/TO/client_secrets.json INSTANCE-NAME:~/
 
-      (3) Run the following commands on the Compute Engine instance to install `Java 7 <http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html>`_.
+      (5) Run the following commands on the Compute Engine instance to install `Java 7 <http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html>`_.
 
       .. code-block:: shell
 
