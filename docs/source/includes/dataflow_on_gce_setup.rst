@@ -8,7 +8,7 @@
 
       If you do not have Java on your local machine, you can set up Java 7 on a `Google Compute Engine`_ instance.  The following setup instructions will allow you to *launch* Dataflow jobs from a Compute Engine instance:
 
-      (1) If you have not already done so, click `here <https://console.developers.google.com/flows/enableapi?apiid=dataflow,compute_component,logging,storage_component,storage_api,bigquery,pubsub,datastore&_ga=1.38537760.2067798380.1406160784>`_ to enable the Google Cloud Platform APIs used by `Google Cloud Dataflow`_.
+      (1) If you have not already enabled the Google Cloud Platform APIs used by `Google Cloud Dataflow`_, click `here <https://console.developers.google.com/flows/enableapi?apiid=dataflow,compute_component,logging,storage_component,storage_api,bigquery,pubsub,datastore&_ga=1.38537760.2067798380.1406160784>`_ to do so.
 
       (2) Use the `Google Developers Console`_ to spin up a `Google Compute Engine`_ instance and ssh into it.  If you have not done this before, see the `step-by-step instructions <https://cloud.google.com/compute/docs/quickstart-developer-console>`_.
 
