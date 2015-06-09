@@ -8,13 +8,7 @@
 
       Most users *kick off* Dataflow jobs from their local machine.  This is unrelated to where the job itself actually runs (which is controlled by the ``--runner`` parameter).  Either way, `Java 7 <http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html>`_ is needed to run the Jar that kicks off the job.
 
-      (1) Click to download the `GoogleGenomics Dataflow Jar <https://github.com/googlegenomics/dataflow-java/blob/master/google-genomics-dataflow.jar>`_ or use ``curl``:
-
-    .. code-block:: shell
-
-      curl -O -L https://github.com/googlegenomics/dataflow-java/raw/master/google-genomics-dataflow.jar
-
-    .. container:: content
+      (1) Download the latest GoogleGenomics dataflow **runnable** jar from the `Maven Central Repository <https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.cloud.genomics%22%20AND%20a%3A%22google-genomics-dataflow%22>`_.
 
       (2) Copy your ``client_secrets.json`` to same directory as the Jar.  If you do not already have this file, see the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
 

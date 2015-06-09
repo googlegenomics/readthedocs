@@ -32,7 +32,7 @@ The following command will run PCA over the BRCA1 region within the `Platinum Ge
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*.jar \
+  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.VariantSimilarity \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
