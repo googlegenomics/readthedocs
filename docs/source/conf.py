@@ -109,6 +109,7 @@ rst_epilog = """
 
 .. _Platinum Genomes: https://cloud.google.com/genomics/data/platinum-genomes
 .. _1,000 Genomes: https://cloud.google.com/genomics/data/1000-genomes
+.. _Personal Genome Project: http://www.personalgenomes.org/
 .. _PGP: http://www.personalgenomes.org/
 .. _ClinVar: http://www.ncbi.nlm.nih.gov/clinvar/
 .. _UCSC Sequence and Annotation Data: http://hgdownload.cse.ucsc.edu/
@@ -117,6 +118,7 @@ rst_epilog = """
 .. _BRCA2: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA2#genomic_location
 
 .. _GA4GH: http://ga4gh.org/#/api
+.. _Global Alliance for Genomics and Health Beacon: http://ga4gh.org/#/beacon
 
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/reads
 

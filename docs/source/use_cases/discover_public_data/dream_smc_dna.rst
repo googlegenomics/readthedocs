@@ -13,13 +13,13 @@ This dataset comprises the three public synthetic tumor/normal pairs created for
 |  DOI: 10.1038/nmeth.3407
 |
 
-Provenance
-----------
-The BAMs were uploaded to Google Cloud Storage and the reads were then imported to Google Genomics.
-
-The authoritative data location is NCBI Sequence Read Archive: `SRP042948 <http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?study=SRP042948>`_
-
-Data
-----
+Google Cloud Platform data locations
+------------------------------------
 * Google Cloud Storage folder `gs://public-dream-data/ <https://console.developers.google.com/storage/browser/public-dream-data/>`_
 * Google Genomics dataset `337315832689 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=337315832689>`_.
+
+Provenance
+----------
+
+* The authoritative data location is NCBI Sequence Read Archive: `SRP042948 <http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?study=SRP042948>`_.
+* The BAMs were uploaded to Google Cloud Storage and the reads were then imported to Google Genomics.
