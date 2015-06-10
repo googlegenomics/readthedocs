@@ -55,7 +55,7 @@ dataset id:
 
 .. code-block:: shell
 
-  java -cp target/google-genomics-dataflow*.jar \
+  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CalculateCoverage \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
@@ -154,7 +154,7 @@ fewer read group sets then the default requirement of 11:
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*.jar \
+  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CalculateCoverage \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \

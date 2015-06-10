@@ -25,7 +25,7 @@ The following command will run Identity-by-State over the BRCA1 region within th
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*.jar \
+  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.IdentityByState \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
