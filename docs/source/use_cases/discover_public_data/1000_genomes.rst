@@ -39,7 +39,7 @@ Google Cloud Platform data locations
 Beacon
 ------
 
-You can find a `Global Alliance for Genomics and Health Beacon`_ at http://webdev.dnastack.com/p/beacon/thousandgenomes
+You can find a `Global Alliance for Genomics and Health Beacon`_ at http://webdev.dnastack.com/p/beacon/thousandgenomes?chromosome=1&coordinate=10177&allele=AC
 
 Provenance
 ----------

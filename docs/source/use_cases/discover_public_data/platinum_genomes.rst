@@ -12,7 +12,7 @@ Google Cloud Platform data locations
 
 Beacon
 ------
-You can find a `Global Alliance for Genomics and Health Beacon`_ at http://webdev.dnastack.com/p/beacon/platinum.
+You can find a `Global Alliance for Genomics and Health Beacon`_ at http://webdev.dnastack.com/p/beacon/platinum?chromosome=1&coordinate=10177&allele=AC
 
 Provenance
 ----------
