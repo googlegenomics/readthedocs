@@ -29,7 +29,7 @@ Setup Dataflow
 .. include:: ../../includes/dataflow_on_gce_setup.rst
 
 Your project must be whitelisted to use gRPC in order to run this pipeline, as it makes use of 
-gRPC streaming to retrieve data.
+gRPC streaming to retrieve data.  Contact us `here <google-genomics-contact@googlegroups.com>`_ if you are interested in being whitelisted to test this pipeline and other gRPC tools.
 
 Create Output Dataset
 ---------------------
@@ -223,7 +223,7 @@ depending upon how many machines are configured to run concurrently via ``--numW
 
 To run this pipeline over a large portion of the genome:
 
-* Add ``--runner=DataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally.
+* Add ``--runner=DataflowPipelineRunner`` and remove the ALPN jar from the command line to run the pipeline on Google Cloud instead of locally.
 * Add ``--numWorkers=#`` for faster processing that will shard the data.
 * Add more references:
 
