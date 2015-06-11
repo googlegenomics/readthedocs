@@ -28,6 +28,9 @@ Setup Dataflow
 
 .. include:: ../../includes/dataflow_on_gce_setup.rst
 
+Your project must be whitelisted to use gRPC in order to run this pipeline, as it makes use of 
+gRPC streaming to retrieve data.  Contact us `here <google-genomics-contact@googlegroups.com>`_ if you are interested in being whitelisted to test this pipeline and other gRPC tools.
+
 Create Output Dataset
 ---------------------
 
@@ -45,6 +48,13 @@ write access, you may use it.  If not, you can do the following to create one:
 The ``id`` that is generated in the response output is the output dataset id you should use when running
 the pipeline.
 
+Download ALPN
+-------------
+
+Running this pipeline locally requires that you have the ALPN jar that matches your JRE version
+on your computer.  See the `ALPN documentation <http://www.eclipse.org/jetty/documentation/9.2.10.v20150310/alpn-chapter.html>`_ for a table of which ALPN jar to use.
+
+You will not need to provide the ALPN flag or jar if you run the pipeline on Google cloud instead of locally.
 
 Run the pipeline
 ----------------
@@ -55,7 +65,8 @@ dataset id:
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
+    -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CalculateCoverage \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
@@ -154,7 +165,8 @@ fewer read group sets then the default requirement of 11:
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
+    -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CalculateCoverage \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
@@ -211,7 +223,7 @@ depending upon how many machines are configured to run concurrently via ``--numW
 
 To run this pipeline over a large portion of the genome:
 
-* Add ``--runner=DataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally.
+* Add ``--runner=DataflowPipelineRunner`` and remove the ALPN jar from the command line to run the pipeline on Google Cloud instead of locally.
 * Add ``--numWorkers=#`` for faster processing that will shard the data.
 * Add more references:
 
