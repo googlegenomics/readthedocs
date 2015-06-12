@@ -16,6 +16,8 @@ Elasticluster and GCE - Getting Started
 This document provides getting started instructions for using
 Elasticluster_ to create clusters of Google Compute Engine instances
 running job management software, such as Grid Engine, SLURM, or Hadoop.
+Elasticluster "aims to provide a user-friendly command line tool to
+create, manage and setup computional clusters hosted on cloud infrastructures"
 
 What you will do
 ================
@@ -44,6 +46,10 @@ The instructions here explicitly use a Python virtualenv and have only been test
 
 1. Change directory to where you want to install Elasticluster. You don't need to explicitly create an ``elasticluster`` directory (that will happen next).
 
+.. |br| raw:: html
+
+   <br />
+
 2. Create the elasticluster virtualenv:
 
 .. code-block:: shell
@@ -68,9 +74,14 @@ The script also saves away changed environment variables and installs a ``deacti
 
 4. Install elasticluster (select one):
 
-    The `googlegenomics github organization`_ maintains a fork of elasticluster to ensure that relevant
-    Google Cloud features are available through elasticluster. Pull requests are submitted to the master
-    branch for all such features, and development is coordinated with S3IT_.
+    The `googlegenomics github organization`_ maintains a fork of elasticluster. The purpose of this
+    fork is to provide Google Cloud bug fixes and enhancements. All such changes are submitted as
+    puull requests to the mainline branch, and development is coordinated with S3IT_.
+    
+    There is currently one significant feature in the googlegenomics fork, that is still an open
+    `pull request <https://github.com/gc3-uzh-ch/elasticluster/pull/158>`_ to mainline
+    (setting the boot disk type and size).
+
 
     a. From github (mbookman fork with Google-specific updates)
 
