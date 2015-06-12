@@ -24,7 +24,7 @@ What you will do
 ================
 By following the instructions in this document, you will:
 
-#. Install Elasticluster software
+#. Install Elasticluster software on your workstation/laptop
 #. Configure Elasticluster to access your Google Cloud Project
 #. Configure a cluster of Compute Engine virtual machines running Grid Engine
 #. Start a cluster of Compute Engine virtual machine running Grid Engine
@@ -32,10 +32,10 @@ By following the instructions in this document, you will:
 #. SSH to the instances of your Cluster
 #. Destroy the cluster
 
-Install Elasticluster
-=====================
+Install Elasticluster on your workstation/laptop
+================================================
 It is highly recommended that you install elasticluster in a python virtualenv_.
-This will allow you to contain your Elasticluster install and dependent libraries in one place.
+This will allow you to contain your Elasticluster installation and dependent libraries in one place.
 
 The instructions here explicitly use a Python virtualenv and have only been tested in this environment.
 
@@ -51,7 +51,7 @@ The instructions here explicitly use a Python virtualenv and have only been test
 
    <br />
 
-2. Create the elasticluster virtualenv:
+2. Create a virtualenv called ``elasticluster``:
 
 .. code-block:: shell
 
