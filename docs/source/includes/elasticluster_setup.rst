@@ -5,6 +5,7 @@
 .. _SFTP: http://linux.die.net/man/1/sftp
 .. _HERE DOCUMENTS: http://tldp.org/LDP/abs/html/here-docs.html
 .. _googlegenomics github organization: https://github.com/googlegenomics
+.. _Persistent Disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
 
 ================================================
 Create compute clusters on Google Compute Engine
@@ -16,8 +17,8 @@ Elasticluster and GCE - Getting Started
 This document provides getting started instructions for using
 Elasticluster_ to create clusters of Google Compute Engine instances
 running job management software, such as Grid Engine, SLURM, or Hadoop.
-Elasticluster "aims to provide a user-friendly command line tool to
-create, manage and setup computional clusters hosted on cloud infrastructures"
+Elasticluster *"aims to provide a user-friendly command line tool to
+create, manage and setup computional clusters hosted on cloud infrastructures"*.
 
 What you will do
 ================
@@ -75,15 +76,15 @@ The script also saves away changed environment variables and installs a ``deacti
 4. Install elasticluster (select one):
 
     The `googlegenomics github organization`_ maintains a fork of elasticluster. The purpose of this
-    fork is to provide Google Cloud bug fixes and enhancements. All such changes are submitted as
-    puull requests to the mainline branch, and development is coordinated with S3IT_.
+    fork is to provide bug fixes and enhancements relevant to Google Cloud and customer use-cases.
+    All such changes are submitted as pull requests to the mainline branch, and development is
+    coordinated with S3IT_.
     
-    There is currently one significant feature in the googlegenomics fork, that is still an open
+    There is currently one significant feature in the ``googlegenomics`` fork, that is still an open
     `pull request <https://github.com/gc3-uzh-ch/elasticluster/pull/158>`_ to mainline
-    (setting the boot disk type and size).
+    (setting the boot disk type and size). Use the ``googlegenomics`` fork if you need this functionality.
 
-
-    a. From github (mbookman fork with Google-specific updates)
+    a. From github (googlegenomics fork)
 
     .. code:: bash
 
@@ -119,7 +120,7 @@ use as it includes a list of clusters that are not correctly configured.
 
 You can either:
 
-#. Install the default template using list-templates and then fix it up, or
+#. Install the default template using ``list-templates`` and then fix it up, or
 #. Install a minimal template provided below
 
 In either case, you will need to configure the ``~/.elasticluster/config`` file for accessing
@@ -138,13 +139,13 @@ It will copy a default file to ``~/.elasticluster/config`` and will emit a numbe
 and ERRORS to the console.  To use this configuration file, you must then comment out or remove
 all of the "cluster" examples.  Look for the section:
 
-.. code:: bash
+.. code:: ini
 
    # Cluster Section
    
 and then comment out or remove everything up to the:
 
-.. code:: bash
+.. code:: ini
 
   # Cluster node section
   
@@ -157,7 +158,7 @@ Copy the file into ``~/.elasticluster/config`` and update the fields marked with
 Instructions for getting your client_id and client_secret can be found below.
 The instructions provided on the Elasticluster installation site are currently out of date.
 
-.. code:: bash
+.. code:: ini
 
    # Gridengine software to be configured by Ansible
    [setup/ansible-gridengine]
@@ -193,6 +194,43 @@ The instructions provided on the Elasticluster installation site are currently o
    compute_nodes=2
    image_userdata=
    ssh_to=frontend
+
+Setting the boot disk size
+**************************
+An update to the ``googlegenomics`` fork, not yet in mainline, allows for specifying both the boot
+disk type and size for instances of your cluster:
+
+``boot_disk_type``
+    Define the type of boot disk to use.
+    Only supported when the cloud provider is `google`.
+    Supported values are `pd-standard` and `pd-ssd`.
+    Default value is `pd-standard`.
+
+``boot_disk_size``
+    Define the size of boot disk to use.
+    Only supported when the cloud provider is `google`.
+    Values are specified in gigabytes.
+    Default value is 10.
+
+The disk type and size can be set for a cluster or for a group of nodes.
+
+For example to set up the above Grid Engine cluster such that nodes have a 100 GB
+SSD `Persistent Disk`_, add the following:
+
+.. code:: ini
+
+   [cluster/gridengine]
+   ...
+   boot_disk_type=pd-ssd
+   boot_disk_size=100
+
+or to configure all of the ``compute`` worker nodes to have a 2 TB Standard (HDD) `Persistent Disk`:
+
+.. code:: ini
+
+   [cluster/gridengine/compute]
+   boot_disk_type=pd-standard
+   boot_disk_size=2000
 
 Obtaining your client_id and client_secret
 ******************************************
