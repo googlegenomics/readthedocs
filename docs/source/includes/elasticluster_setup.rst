@@ -22,15 +22,17 @@ create, manage and setup computional clusters hosted on cloud infrastructures"*.
 
 What you will do
 ================
-By following the instructions in this document, you will:
+By following the instructions in this document, you will learn to:
 
 #. Install Elasticluster software on your workstation/laptop
 #. Configure Elasticluster to access your Google Cloud Project
 #. Configure a cluster of Compute Engine virtual machines running Grid Engine
 #. Start a cluster of Compute Engine virtual machine running Grid Engine
 #. List nodes of your cluster
-#. SSH to the instances of your Cluster
-#. Destroy the cluster
+#. Copy files to the master instance of your cluster
+#. SSH to the instances of your cluster
+#. Destroy your cluster
+#. Update your Elasticluster installation
 
 Install Elasticluster on your workstation/laptop
 ================================================
@@ -269,22 +271,6 @@ List your cluster instances
 
   elasticluster list-nodes gridengine
 
-SSH to your instances
-*********************
-Elasticluster provides a convenience routine to connect to your frontend instance:
-
-.. code:: bash
-
-  elasticluster ssh gridengine
-
-To connect to other nodes, you can use the ``-n`` flag command:
-
-.. code:: bash
-
-  elasticluster ssh gridengine -n <nodename>
-
-Where the nodename is the elasticluster name for the node (such as ``compute001``).
-
 Copy files to your instances
 ****************************
 Elasticluster provides a convenience routine to connect to your frontend instance for SFTP_:
@@ -303,6 +289,22 @@ To script commands for sftp, you can use bash `HERE DOCUMENTS`_:
 
 
 See the SFTP_ man page for more commands.
+
+SSH to your instances
+*********************
+Elasticluster provides a convenience routine to connect to your frontend instance:
+
+.. code:: bash
+
+  elasticluster ssh gridengine
+
+To connect to other nodes, you can use the ``-n`` flag command:
+
+.. code:: bash
+
+  elasticluster ssh gridengine -n <nodename>
+
+Where the nodename is the elasticluster name for the node (such as ``compute001``).
 
 Destroy your cluster
 ********************
