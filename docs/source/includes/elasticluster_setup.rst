@@ -80,25 +80,26 @@ The script also saves away changed environment variables and installs a ``deacti
     All such changes are submitted as pull requests to the mainline branch, and development is
     coordinated with S3IT_.
     
-    There is currently one significant feature in the ``googlegenomics`` fork, that is still an open
-    `pull request <https://github.com/gc3-uzh-ch/elasticluster/pull/158>`_ to mainline
-    (setting the boot disk type and size). Use the ``googlegenomics`` fork if you need this functionality.
+    The mainline fork is currently up-to-date with pull requests from the ``googlegenomics`` fork.
+    We suggest you use the mainline fork unless you are interested in submitting a pull request
+    for new features and bugs, including any items from the
+    `Issues list <https://github.com/googlegenomics/elasticluster/issues>`_.
 
-    a. From github (googlegenomics fork)
-
-    .. code:: bash
-
-      cd elasticluster
-      git clone https://github.com/googlegenomics/elasticluster.git src
-      cd src
-      python setup.py install
-
-    b. From github (mainline)
+    a. From github (mainline)
 
     .. code:: bash
 
       cd elasticluster
       git clone git://github.com/gc3-uzh-ch/elasticluster.git src
+      cd src
+      python setup.py install
+
+    b. From github (googlegenomics fork)
+
+    .. code:: bash
+
+      cd elasticluster
+      git clone https://github.com/googlegenomics/elasticluster.git src
       cd src
       python setup.py install
 
@@ -154,9 +155,8 @@ template into the config file.
 
 Install a minimal template
 **************************
-Copy the file into ``~/.elasticluster/config`` and update the fields marked with ****.
+Copy the following into ``~/.elasticluster/config`` and update the fields marked with ****.
 Instructions for getting your client_id and client_secret can be found below.
-The instructions provided on the Elasticluster installation site are currently out of date.
 
 .. code:: ini
 
@@ -197,8 +197,8 @@ The instructions provided on the Elasticluster installation site are currently o
 
 Setting the boot disk size
 **************************
-An update to the ``googlegenomics`` fork, not yet in mainline, allows for specifying both the boot
-disk type and size for instances of your cluster:
+For cluster tasks you may want to create use SSD Persistent disk or a boot disk larger than the default 10 GB.
+Elasticluster allows for specifying both the boot disk type and size for instances of your cluster:
 
 ``boot_disk_type``
     Define the type of boot disk to use.
@@ -257,6 +257,10 @@ Deploy your cluster
 *******************
 .. code:: bash
 
+  elasticluster start gridengine
+
+To get verbose output during startup, use the ``-v`` flag:
+
   elasticluster start -v gridengine
 
 List your cluster instances
@@ -272,12 +276,14 @@ Elasticluster provides a convenience routine to connect to your frontend instanc
 .. code:: bash
 
   elasticluster ssh gridengine
-  
-However, you can connect to other instances using gcloud_:
+
+To connect to other nodes, you can use the ``-n`` flag command:
 
 .. code:: bash
 
-  gcloud compute ssh <instance> --zone <zone>
+  elasticluster ssh gridengine -n <nodename>
+
+Where the nodename is the elasticluster name for the node (such as ``compute001``).
 
 Copy files to your instances
 ****************************
@@ -302,7 +308,13 @@ Destroy your cluster
 ********************
 .. code:: bash
 
-  elasticluster stop -v --yes gridengine
+  elasticluster stop gridengine
+
+or without prompt:
+
+.. code:: bash
+
+  elasticluster stop --yes gridengine
 
 Exit the virtualenv
 ===================
@@ -312,3 +324,17 @@ To exit the virtualenv, just execute the command:
 .. code:: bash
 
   deactivate
+
+Note that any time you want to use elasticluster commands, you must re-activate the virtualenv
+by sourcing the ``activate`` script.
+
+Updating your installation
+==========================
+To update your installation, active the virtualenv, pull the source from GitHub, and run the install command again:
+
+.. code:: bash
+
+    source elasticluster/bin/activate
+    cd elasticluster/src
+    git pull
+    python setup.py install
