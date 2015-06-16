@@ -205,7 +205,7 @@ Instructions for getting your client_id and client_secret can be found below.
    image_id=****REPLACE WITH OUTPUT FROM: gcloud compute images list | grep ^backports-debian | cut -f 1 -d " "****
    flavor=n1-standard-1
    frontend_nodes=1
-   compute_nodes=2
+   compute_nodes=3
    image_userdata=
    ssh_to=frontend
 
