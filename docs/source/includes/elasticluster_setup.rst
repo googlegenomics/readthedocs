@@ -75,35 +75,47 @@ This script will set environment variables necessary for the virtualenv:
 
 The script also saves away changed environment variables and installs a ``deactivate`` function into the bash environment.
 
-4. Install elasticluster (select one):
+4. Ensure compiler toolchain is installed (MacOS only):
 
-    The `googlegenomics github organization`_ maintains a fork of elasticluster. The purpose of this
-    fork is to provide bug fixes and enhancements relevant to Google Cloud and customer use-cases.
-    All such changes are submitted as pull requests to the mainline branch, and development is
-    coordinated with S3IT_.
-    
-    The mainline fork is currently up-to-date with pull requests from the ``googlegenomics`` fork.
-    We suggest you use the mainline fork unless you are interested in submitting a pull request
-    for new features and bugs, including any items from the
-    `Issues list <https://github.com/googlegenomics/elasticluster/issues>`_.
+When installing on MacOS, some dependent modules must be compiled,
+notably `pycrypto <https://pypi.python.org/pypi/pycrypto>`_.
+If your toolchain is not installed, run:
 
-    a. From github (mainline)
+.. code-block:: shell
 
-    .. code:: bash
+    xcode-select --install
 
-      cd elasticluster
-      git clone git://github.com/gc3-uzh-ch/elasticluster.git src
-      cd src
-      python setup.py install
+and follow the installation instructions.
 
-    b. From github (googlegenomics fork)
+5. Install elasticluster (select one):
 
-    .. code:: bash
+   The `googlegenomics github organization`_ maintains a fork of elasticluster. The purpose of this
+   fork is to provide bug fixes and enhancements relevant to Google Cloud and customer use-cases.
+   All such changes are submitted as pull requests to the mainline branch, and development is
+   coordinated with S3IT_.
 
-      cd elasticluster
-      git clone https://github.com/googlegenomics/elasticluster.git src
-      cd src
-      python setup.py install
+   The mainline fork is currently up-to-date with pull requests from the ``googlegenomics`` fork.
+   We suggest you use the mainline fork unless you are interested in submitting a pull request
+   for new features and bugs, including any items from the
+   `Issues list <https://github.com/googlegenomics/elasticluster/issues>`_.
+
+   a. From github (mainline)
+
+   .. code:: bash
+
+    cd elasticluster
+    git clone git://github.com/gc3-uzh-ch/elasticluster.git src
+    cd src
+    python setup.py install
+
+   b. From github (googlegenomics fork)
+
+   .. code:: bash
+
+    cd elasticluster
+    git clone https://github.com/googlegenomics/elasticluster.git src
+    cd src
+    python setup.py install
 
 Create your cluster definition file
 ===================================
