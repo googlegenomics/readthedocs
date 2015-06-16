@@ -190,12 +190,18 @@ Instructions for getting your client_id and client_secret can be found below.
    login=google-login
    setup_provider=ansible-gridengine
    security_group=default
-   image_id=****REPLACE WITH OUTPUT FROM: gcloud compute images list --uri | grep backports ****
+   image_id=****REPLACE WITH OUTPUT FROM: gcloud compute images list | grep ^backports-debian | cut -f 1 -d " "****
    flavor=n1-standard-1
    frontend_nodes=1
    compute_nodes=2
    image_userdata=
    ssh_to=frontend
+
+Note if you have not yet connected to a Google Compute Engine instance using SSH, you will not have a keypair and the ``user_key_private`` and ``user_key_public`` file paths above will not be valid. Create a test instance and SSH to it, or generate your keypair manually:
+
+.. code:: bash
+
+   ssh-keygen -t rsa -f ~/.ssh/google_compute_engine
 
 Setting the boot disk size
 **************************
