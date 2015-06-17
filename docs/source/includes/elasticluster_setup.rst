@@ -41,19 +41,17 @@ This will allow you to contain your Elasticluster installation and dependent lib
 
 The instructions here explicitly use a Python virtualenv and have only been tested in this environment.
 
-0. If you have not installed ``virtualenv``, then do so with:
+0. **If you have not installed** ``virtualenv`` **, then do so with:**
 
 .. code-block:: shell
 
    [sudo] pip install virtualenv
 
-1. Change directory to where you want to install Elasticluster. You don't need to explicitly create an ``elasticluster`` directory (that will happen next).
+1. **Change directory to where you want to install Elasticluster**
 
-.. |br| raw:: html
+You don't need to explicitly create an ``elasticluster`` directory (that will happen next).
 
-   <br />
-
-2. Create a virtualenv called ``elasticluster``:
+2. **Create a virtualenv called** ``elasticluster``:
 
 .. code-block:: shell
 
@@ -61,7 +59,7 @@ The instructions here explicitly use a Python virtualenv and have only been test
 
 This creates a directory named ``elasticluster`` and populates it with the necessary Python library files and shell scripts to contain the Elasticluster installation.  No Elasticluster software has yet been installed.
 
-3. Activate the ``elasticluster`` virtualenv for the current shell session:
+3. **Activate the** ``elasticluster`` **virtualenv for the current shell session:**
 
 .. code-block:: shell
 
@@ -75,7 +73,7 @@ This script will set environment variables necessary for the virtualenv:
 
 The script also saves away changed environment variables and installs a ``deactivate`` function into the bash environment.
 
-4. Ensure compiler toolchain is installed (MacOS only):
+4. **Ensure compiler toolchain is installed (MacOS only):**
 
 When installing on MacOS, some dependent modules must be compiled,
 notably `pycrypto <https://pypi.python.org/pypi/pycrypto>`_.
@@ -87,17 +85,17 @@ If your toolchain is not installed, run:
 
 and follow the installation instructions.
 
-5. Install elasticluster (select one):
+5. **Install elasticluster** (select one):
 
-   The `googlegenomics github organization`_ maintains a fork of elasticluster. The purpose of this
-   fork is to provide bug fixes and enhancements relevant to Google Cloud and customer use-cases.
-   All such changes are submitted as pull requests to the mainline branch, and development is
-   coordinated with S3IT_.
+    The `googlegenomics github organization`_ maintains a fork of elasticluster. The purpose of this
+    fork is to provide bug fixes and enhancements relevant to Google Cloud and customer use-cases.
+    All such changes are submitted as pull requests to the mainline branch, and development is
+    coordinated with S3IT_.
 
-   The mainline fork is currently up-to-date with pull requests from the ``googlegenomics`` fork.
-   We suggest you use the mainline fork unless you are interested in submitting a pull request
-   for new features and bugs, including any items from the
-   `Issues list <https://github.com/googlegenomics/elasticluster/issues>`_.
+    The mainline fork is currently up-to-date with pull requests from the ``googlegenomics`` fork.
+    We suggest you use the mainline fork unless you are interested in submitting a pull request
+    for new features and bugs, including any items from the
+    `Issues list <https://github.com/googlegenomics/elasticluster/issues>`_.
 
    a. From github (mainline)
 
