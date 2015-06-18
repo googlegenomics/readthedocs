@@ -6,6 +6,7 @@
 .. _HERE DOCUMENTS: http://tldp.org/LDP/abs/html/here-docs.html
 .. _googlegenomics github organization: https://github.com/googlegenomics
 .. _Persistent Disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
+.. _xcode-select: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/xcode-select.1.html
 
 ================================================
 Create compute clusters on Google Compute Engine
@@ -36,6 +37,20 @@ By following the instructions in this document, you will learn to:
 
 Install Elasticluster on your workstation/laptop
 ================================================
+The following instructions have been tested on Linux and MacOS.
+
++--------------------------------------------------------------------+
+| When installing on MacOS, some dependent modules must be compiled, |
+| notably `pycrypto <https://pypi.python.org/pypi/pycrypto>`_.       |
+|                                                                    |
+| If the command line developer tools are not installed, run:        |
+|                                                                    |
+| ``xcode-select --install``                                         |
+|                                                                    |
+| and follow the installation instructions. See xcode-select_ for    |
+| more information.                                                  |
++--------------------------------------------------------------------+
+
 It is highly recommended that you install elasticluster in a python virtualenv_.
 This will allow you to contain your Elasticluster installation and dependent libraries in one place.
 
@@ -73,19 +88,7 @@ This script will set environment variables necessary for the virtualenv:
 
 The script also saves away changed environment variables and installs a ``deactivate`` function into the bash environment.
 
-4. **Ensure compiler toolchain is installed (MacOS only):**
-
-When installing on MacOS, some dependent modules must be compiled,
-notably `pycrypto <https://pypi.python.org/pypi/pycrypto>`_.
-If your toolchain is not installed, run:
-
-.. code-block:: shell
-
-    xcode-select --install
-
-and follow the installation instructions.
-
-5. **Install elasticluster** (select one):
+4. **Install elasticluster** (select one):
 
     The `googlegenomics github organization`_ maintains a fork of elasticluster. The purpose of this
     fork is to provide bug fixes and enhancements relevant to Google Cloud and customer use-cases.
