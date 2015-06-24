@@ -1,6 +1,8 @@
 Analyze Variants
 =================
 
+Here are some analyses that operate on cloud-resident genomic variants.
+
 .. toctree::
   :maxdepth: 1
 
