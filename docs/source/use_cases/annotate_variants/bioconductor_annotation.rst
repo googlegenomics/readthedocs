@@ -6,16 +6,6 @@ Annotate Variants with Bioconductor
 
 `Bioconductor`_ provides a convenient way to annotate small regions of the genome.
 
-A more extensive example of variant annotation with `Bioconductor`_ is documented towards the end of codelab  `Data Analysis using Google Genomics <https://github.com/googlegenomics/codelabs/tree/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#annotate-variants-with-bioconductor>`_.
-
-To make use of this upon your own data:
-
-(1) First, load your data into Google Genomics.  See :doc:`../load_data/index` for more detail as to how to do this.
-
-(2) If you do not have them already, install the necessary Bioconductor packages.  See `Using Bioconductor`_ for more detail as to how to do this.
-
-(3) Update the parameters to the ``getVariants`` call the example below to match that of your data and desired genomic region to annotate.
-
 .. code-block:: shell
 
   require(GoogleGenomics)
@@ -38,3 +28,12 @@ To make use of this upon your own data:
                           varAllele=unlist(granges$ALT, use.names=FALSE))
   coding
 
+A more extensive example of variant annotation with `Bioconductor`_ is documented towards the end of codelab  `Data Analysis using Google Genomics <https://github.com/googlegenomics/codelabs/tree/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#annotate-variants-with-bioconductor>`_.
+
+To make use of this upon your own data:
+
+(1) First, load your data into Google Genomics.  See :doc:`../load_data/index` for more detail as to how to do this.
+
+(2) If you do not have them already, install the necessary Bioconductor packages.  See `Using Bioconductor`_ for more detail as to how to do this.
+
+(3) Update the parameters to the ``getVariants`` call the example above to match that of your data and desired genomic region to annotate.
