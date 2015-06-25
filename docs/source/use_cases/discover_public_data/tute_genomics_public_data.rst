@@ -1,7 +1,7 @@
 Tute Genomics Annotation
 ========================
 
-.. include:: ../../includes/tute_data.rst
+.. include:: /includes/tute_data.rst
 
 Google Cloud Platform data locations
 ------------------------------------

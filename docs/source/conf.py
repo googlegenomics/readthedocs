@@ -126,6 +126,7 @@ rst_epilog = """
 .. _Google Compute Engine: https://cloud.google.com/compute/
 .. _Google Cloud Dataflow: https://cloud.google.com/dataflow/what-is-google-cloud-dataflow
 .. _Google Cloud Storage: https://cloud.google.com/storage/docs
+.. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
 .. _install gcloud: https://cloud.google.com/sdk/
 
 .. _Apache Spark: https://spark.apache.org/

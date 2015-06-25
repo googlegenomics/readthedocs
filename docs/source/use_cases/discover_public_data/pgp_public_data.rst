@@ -29,5 +29,5 @@ Google Genomics variant set for dataset ``pgp_20150205``: `9170389916365079788 <
 
 Appendix
 --------
-.. include:: ../../pgp-data.rst
+.. include:: /pgp-data.rst
 
