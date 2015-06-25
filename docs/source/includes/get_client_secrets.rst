@@ -1,4 +1,4 @@
-Get your client_secrets.json file by visiting the following page:
+Get your ``client_secrets.json`` file by visiting the following page:
 
   https://console.developers.google.com/project/_/apiui/credential
 

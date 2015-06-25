@@ -1,0 +1,81 @@
+BioC 2015: Where Software and Biology Connect
+=============================================
+
+Give an overview here ... *in this workshop you will* ...
+
+.. contents::
+
+Get Started with Google Cloud Platform
+--------------------------------------
+
+Create a Google Cloud Platform project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sign up for Google Cloud Platform: https://console.developers.google.com/billing/freetrial
+
+Enable APIs
+^^^^^^^^^^^
+
+Enable all the Google Cloud Platform APIs we will use in this workshop by clicking on this `link <https://console.developers.google.com/flows/enableapi?apiid=genomics,bigquery,dataflow,compute_component,storage_component,storage_api,logging,pubsub,datastore>`_.
+
+Download client_secrets.json
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: toggle
+
+    .. container:: header
+
+        There are a few steps to do this.  Click here to **Show/Hide Instructions**
+
+    .. container:: content
+
+      .. include:: /includes/get_client_secrets.rst
+
+Install gcloud
+^^^^^^^^^^^^^^
+
+Follow the Windows, Mac OS X or Linux instructions to install gcloud on your local machine: https://cloud.google.com/sdk/
+
+Spin up a Google Compute Engine Instance running Bioconductor
+-------------------------------------------------------------
+
+This codelab can be run from anywhere.  All the heavy lifting is happening in the cloud regardless of where R is running.  But if you like, you can run the whole darn thing in the cloud.
+
+Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  See http://www.bioconductor.org/help/docker/ for more information.
+
+.. include:: /includes/r_workbench_setup.rst
+
+You now have access to RStudio via your browser!  (If you prefer to run locally instead, see the codelab `R prerequisites <https://github.com/googlegenomics/codelabs/tree/master/R>`_.)
+
+.. container:: toggle
+
+    .. container:: header
+
+        For more information: **Show/Hide Details**
+
+    .. container:: content
+
+      .. include:: /includes/r_workbench_details.rst
+
+Run the RMarkdown Codelab
+-------------------------
+
+(1) Clone the Google Genomics codelab repository.  From the RStudio menu:
+
+  File -> New Project -> Version Control -> Git
+
+  Repository URL:  https://github.com/googlegenomics/codelabs.git
+
+  click on the "Create Project" button
+
+(2) Open the codelab RMarkdown file.  From the RStudio Files Pane:
+
+  R -> 1000Genomes-BRCA1-analysis
+
+  Open AllModalitiesDemo.Rmd
+
+(3) Set your current working directory.  From the RStudio Files Pane:
+
+  More -> Set As Working Directory
+
+Start running AllModalitiesDemo.Rmd line by line or chunk by chunk!  You can view the rendered analysis `here <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md>`_.
