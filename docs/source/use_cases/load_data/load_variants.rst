@@ -39,7 +39,7 @@ If any failures occur due to temporary network issues, re-run with the no-clobbe
   gsutil -m -o 'GSUtil:parallel_composite_upload_threshold=150M' cp -n -R YOUR-DIRECTORY-OF-VCFS \
   gs://YOUR-BUCKET/platinum-genomes/
 
-For more detail, see the `gsutil cp command <https://cloud.google.com/storage/docs/gsutil/commands/cp>`_.
+For more detail, see `Using Google Cloud Storage with Big Data`_.
 
 Check the data.
 ~~~~~~~~~~~~~~~
