@@ -18,7 +18,7 @@ An `Apache Spark`_ implementation is available.
 Setup
 -----
 
-.. include:: ../../includes/spark_setup.rst
+.. include:: /includes/collapsible_spark_setup_instructions.rst
 
 Run the job
 -----------
@@ -48,7 +48,7 @@ To run this job over the entire genome:
 Additional details
 ------------------
 
-.. include:: ../../includes/spark_details.rst
+.. include:: /includes/spark_details.rst
 
 Gather the results into a single file
 -------------------------------------

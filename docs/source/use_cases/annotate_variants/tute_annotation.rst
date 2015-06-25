@@ -4,7 +4,7 @@ Annotate Variants with Tute Genomics
 .. toctree::
    :maxdepth: 2
 
-.. include:: ../../includes/tute_data.rst
+.. include:: /includes/tute_data.rst
 
 To make use of this upon your own data:
 

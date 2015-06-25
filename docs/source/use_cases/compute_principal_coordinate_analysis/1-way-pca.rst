@@ -21,9 +21,7 @@ Dataflow
 Setup
 ^^^^^
 
-.. include:: ../../includes/dataflow_setup.rst
-
-.. include:: ../../includes/dataflow_on_gce_setup.rst
+.. include:: /includes/collapsible_dataflow_setup_instructions.rst
 
 Run the pipeline
 ^^^^^^^^^^^^^^^^
@@ -52,7 +50,7 @@ To run this pipeline over the entire genome:
 Additional details
 ^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../includes/dataflow_details.rst
+.. include:: /includes/dataflow_details.rst
 
 Spark
 -----
@@ -60,7 +58,7 @@ Spark
 Setup
 ^^^^^
 
-.. include:: ../../includes/spark_setup.rst
+.. include:: /includes/collapsible_spark_setup_instructions.rst
 
 Run the job
 ^^^^^^^^^^^
@@ -90,7 +88,7 @@ To run this job over the entire genome:
 Additional details
 ^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../includes/spark_details.rst
+.. include:: /includes/spark_details.rst
 
 Gather the results into a single file
 -------------------------------------

@@ -18,9 +18,7 @@ The pipeline is implemented on `Google Cloud Dataflow`_.
 Setup Dataflow
 --------------
 
-.. include:: ../../includes/dataflow_setup.rst
-
-.. include:: ../../includes/dataflow_on_gce_setup.rst
+.. include:: /includes/collapsible_dataflow_setup_instructions.rst
 
 Run the pipeline
 ----------------
@@ -74,4 +72,4 @@ To run the pipeline over a different BAM file, change ``--BAMFilePath`` paramete
 Additional details
 ------------------
 
-.. include:: ../../includes/dataflow_details.rst
+.. include:: /includes/dataflow_details.rst

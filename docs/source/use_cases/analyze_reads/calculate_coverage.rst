@@ -24,11 +24,9 @@ The pipeline is implemented on `Google Cloud Dataflow`_.
 Setup Dataflow
 --------------
 
-.. include:: ../../includes/dataflow_setup.rst
+.. include:: /includes/collapsible_dataflow_setup_instructions.rst
 
-.. include:: ../../includes/dataflow_on_gce_setup.rst
-
-Your project must be whitelisted to use gRPC in order to run this pipeline, as it makes use of 
+Your project must be whitelisted to use gRPC in order to run this pipeline, as it makes use of
 gRPC streaming to retrieve data.  Contact us `here <google-genomics-contact@googlegroups.com>`_ if you are interested in being whitelisted to test this pipeline and other gRPC tools.
 
 Create Output Dataset
@@ -242,4 +240,4 @@ To run the pipeline with a different number of output quantiles, change the ``--
 Additional details
 ------------------
 
-.. include:: ../../includes/dataflow_details.rst
+.. include:: /includes/dataflow_details.rst

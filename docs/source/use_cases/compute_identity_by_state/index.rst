@@ -15,9 +15,7 @@ A `Google Cloud Dataflow`_ implementation is available.
 Setup Dataflow
 --------------
 
-.. include:: ../../includes/dataflow_setup.rst
-
-.. include:: ../../includes/dataflow_on_gce_setup.rst
+.. include:: /includes/collapsible_dataflow_setup_instructions.rst
 
 Run the pipeline
 ----------------
@@ -66,5 +64,5 @@ Gather the results into a single file
 Additional details
 ------------------
 
-.. include:: ../../includes/dataflow_details.rst
+.. include:: /includes/dataflow_details.rst
 
