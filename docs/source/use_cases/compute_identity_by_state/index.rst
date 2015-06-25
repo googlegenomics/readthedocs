@@ -13,23 +13,21 @@ See the `Quality Control using Google Genomics codelab <https://github.com/googl
 A `Google Cloud Dataflow`_ implementation is available.
 
 Setup Dataflow
----------
+--------------
 
-.. include:: ../../includes/dataflow_setup.rst
-
-.. include:: ../../includes/dataflow_on_gce_setup.rst
+.. include:: /includes/collapsible_dataflow_setup_instructions.rst
 
 Run the pipeline
---------------
+----------------
 The following command will run Identity-by-State over the BRCA1 region within the `Platinum Genomes`_ dataset.
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*.jar \
+  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.IdentityByState \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
+    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --datasetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
     --hasNonVariantSegments \
@@ -66,5 +64,5 @@ Gather the results into a single file
 Additional details
 ------------------
 
-.. include:: ../../includes/dataflow_details.rst
+.. include:: /includes/dataflow_details.rst
 

@@ -1,6 +1,8 @@
 Load Data into Google Genomics
 ===============================
 
+Here you will find task-oriented documentation regarding how to load data into Google Genomics.
+
 .. toctree::
    :maxdepth: 2
 

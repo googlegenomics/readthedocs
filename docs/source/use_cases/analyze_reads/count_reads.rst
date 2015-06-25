@@ -18,9 +18,7 @@ The pipeline is implemented on `Google Cloud Dataflow`_.
 Setup Dataflow
 --------------
 
-.. include:: ../../includes/dataflow_setup.rst
-
-.. include:: ../../includes/dataflow_on_gce_setup.rst
+.. include:: /includes/collapsible_dataflow_setup_instructions.rst
 
 Run the pipeline
 ----------------
@@ -30,11 +28,11 @@ specifically those in the BRCA1 region for sample NA12877 within the `Platinum G
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*.jar \
+  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
+    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr17:41196311:41277499 \
     --BAMFilePath=gs://genomics-public-data/platinum-genomes/bam/NA12877_S1.bam \
     --output=gs://YOUR-BUCKET/dataflow-output/NA12877-BAM-reads.tsv
@@ -43,11 +41,11 @@ The following command will count those same reads but from the `Google Genomics 
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*.jar \
+  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
     --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
     --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --genomicsSecretsFile=/PATH/TO/YOUR/client_secrets.json \
+    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr17:41196311:41277499 \
     --readGroupSetId=CMvnhpKTFhD3he72j4KZuyc \
     --output=gs://YOUR-BUCKET/dataflow-output/NA12877-API-reads.tsv
@@ -74,4 +72,4 @@ To run the pipeline over a different BAM file, change ``--BAMFilePath`` paramete
 Additional details
 ------------------
 
-.. include:: ../../includes/dataflow_details.rst
+.. include:: /includes/dataflow_details.rst

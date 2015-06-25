@@ -1,6 +1,8 @@
 Annotate Variants
 ==================
 
+There are many ways to annotate cloud-resident genomic variants.
+
 .. toctree::
   :maxdepth: 1
 

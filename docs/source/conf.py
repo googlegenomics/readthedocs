@@ -109,11 +109,16 @@ rst_epilog = """
 
 .. _Platinum Genomes: https://cloud.google.com/genomics/data/platinum-genomes
 .. _1,000 Genomes: https://cloud.google.com/genomics/data/1000-genomes
+.. _Personal Genome Project: http://www.personalgenomes.org/
 .. _PGP: http://www.personalgenomes.org/
 .. _ClinVar: http://www.ncbi.nlm.nih.gov/clinvar/
 .. _UCSC Sequence and Annotation Data: http://hgdownload.cse.ucsc.edu/
 
+.. _BRCA1: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA1#genomic_location
+.. _BRCA2: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA2#genomic_location
+
 .. _GA4GH: http://ga4gh.org/#/api
+.. _Global Alliance for Genomics and Health Beacon: http://ga4gh.org/#/beacon
 
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/reads
 
@@ -121,11 +126,10 @@ rst_epilog = """
 .. _Google Compute Engine: https://cloud.google.com/compute/
 .. _Google Cloud Dataflow: https://cloud.google.com/dataflow/what-is-google-cloud-dataflow
 .. _Google Cloud Storage: https://cloud.google.com/storage/docs
+.. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
+.. _install gcloud: https://cloud.google.com/sdk/
 
 .. _Apache Spark: https://spark.apache.org/
-
-.. _BRCA1: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA1#genomic_location
-.. _BRCA2: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA2#genomic_location
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
