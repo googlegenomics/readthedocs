@@ -152,6 +152,7 @@ rst_epilog = """
 
 .. ### googlegenomics github links
 .. _gatk-tools-java: https://github.com/googlegenomics/gatk-tools-java
+.. _Data Analysis using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/1000Genomes-BRCA1-analysis
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
 .. _BiocDockerOnGCE launch script: https://raw.githubusercontent.com/googlegenomics/gce-images/master/launch-scripts/bioconductorRStudioGCE.sh
 """

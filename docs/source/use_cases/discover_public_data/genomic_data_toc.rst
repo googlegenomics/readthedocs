@@ -10,4 +10,5 @@ Genomic Data
   mssng_data
   supercentenarians
   pgp_public_data
+  simons_foundation
   dream_smc_dna
