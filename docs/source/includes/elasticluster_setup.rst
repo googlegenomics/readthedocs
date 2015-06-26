@@ -223,13 +223,11 @@ Elasticluster allows for specifying both the boot disk type and size for instanc
 
 ``boot_disk_type``
     Define the type of boot disk to use.
-    Only supported when the cloud provider is `google`.
     Supported values are `pd-standard` and `pd-ssd`.
     Default value is `pd-standard`.
 
 ``boot_disk_size``
     Define the size of boot disk to use.
-    Only supported when the cloud provider is `google`.
     Values are specified in gigabytes.
     Default value is 10.
 
@@ -255,22 +253,8 @@ or to configure all of the ``compute`` worker nodes to have a 2 TB Standard (HDD
 
 Obtaining your client_id and client_secret
 ******************************************
-To generate a client_id and client_secret to access the Google Compute Engine visit the following page:
 
-   https://console.developers.google.com/project/_/apiui/credential
-   
-#. Select the project to be used for your cluster
-#. If a "Client ID for native application" is listed on this page, skip to step 8
-#. Under the OAuth section, click "Create new Client ID"
-#. Select "Installed Application"
-#. If prompted, click "Configure consent screen" and follow the instructions to set a "product name" to identify your Cloud project in the consent screen
-#. In the Create Client ID dialog, be sure the following are selected::
-
-    Application type: Installed application
-    Installed application type: Other
-   
-#. Click the "Create Client ID" button
-#. You'll see your Client ID and Client secret listed under "Client ID for native application"
+.. include:: /includes/get_client_secrets.rst
 
 Elasticluster operations
 ========================
