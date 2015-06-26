@@ -12,12 +12,17 @@ Load Genomic Variants
 Prerequisites
 -------------
 
-1. Sign up for Google Genomics and install the command line client by doing all the steps in `Google Genomics Tools <https://cloud-dot-devsite.googleplex.com/genomics/install-genomics-tools>`_.
-2. Sign up for Google Cloud Storage and install ``gsutil`` by doing all the steps in `Google Cloud Storage: Try it now <https://cloud.google.com/storage/docs>`_.
+1.
+  .. include:: /includes/genomics_tools_setup.rst
+
+2.
+  .. include:: /includes/gcloud_setup.rst
+
+3. Enable all the Google Cloud Platform APIs we will be using by clicking on this `link <https://console.developers.google.com/flows/enableapi?apiid=genomics,bigquery,storage_component,storage_api>`_.
 
 Step 1: Upload variants to Google Cloud Storage
 --------------------------------------------------------
-For the purposes of this example, let's assume you have a local copy of the `Illumina Platinum Genomes variants <https://cloud.google.com/genomics/data/platinum-genomes>`_ that you would like to load.
+For the purposes of this example, let's assume you have a local copy of the :doc:`/use_cases/discover_public_data/platinum_genomes` variants that you would like to load.
 
 **Note** *Google Genomics cannot load compressed VCFs so for now be sure to uncompress them prior to uploading them to cloud storage.  We expect to support compressed VCFs soon.*
 

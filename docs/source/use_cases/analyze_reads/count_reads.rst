@@ -24,7 +24,7 @@ Run the pipeline
 ----------------
 
 The following command will count reads from a BAM in `Google Cloud Storage`_,
-specifically those in the BRCA1 region for sample NA12877 within the `Platinum Genomes`_ dataset:
+specifically those in the BRCA1 region for sample NA12877 within the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset:
 
 .. code-block:: shell
 

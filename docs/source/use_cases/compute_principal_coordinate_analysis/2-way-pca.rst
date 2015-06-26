@@ -23,7 +23,7 @@ Setup
 Run the job
 -----------
 
-The following command will run a two-way PCA over the BRCA1 region within the `Platinum Genomes`_ dataset and the `1,000 Genomes`_ phase 1 variants.
+The following command will run a two-way PCA over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset and the :doc:`/use_cases/discover_public_data/1000_genomes` phase 1 variants.
 
 .. code-block:: shell
 
