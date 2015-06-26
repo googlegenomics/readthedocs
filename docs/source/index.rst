@@ -20,4 +20,7 @@ Here you will find task-oriented documentation.  What do you want to do today?
   use_cases/analyze_variants/index
   use_cases/build_your_own_api_client/index
   use_cases/run_picard_and_gatk/index
+  github_index
   mailinglist
+
+If instead you want to browse github samples by technology or language used, see :doc:`github_index`.
