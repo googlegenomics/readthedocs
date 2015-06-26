@@ -171,7 +171,10 @@ template into the config file.
 Install a minimal template
 **************************
 Copy the following into ``~/.elasticluster/config`` and update the fields marked with ****.
+
 Instructions for getting your client_id and client_secret can be found below.
+
+Instructions for ensuring your SSH keypair exists can be found below.
 
 .. code:: ini
 
@@ -210,12 +213,6 @@ Instructions for getting your client_id and client_secret can be found below.
    image_userdata=
    ssh_to=frontend
 
-Note if you have not yet connected to a Google Compute Engine instance using SSH, you will not have a keypair and the ``user_key_private`` and ``user_key_public`` file paths above will not be valid. Create a test instance and SSH to it, or generate your keypair manually:
-
-.. code:: bash
-
-   ssh-keygen -t rsa -f ~/.ssh/google_compute_engine
-
 Setting the boot disk size
 **************************
 For cluster tasks you may want to create use SSD Persistent disk or a boot disk larger than the default 10 GB.
@@ -250,6 +247,22 @@ or to configure all of the ``compute`` worker nodes to have a 2 TB Standard (HDD
    [cluster/gridengine/compute]
    boot_disk_type=pd-standard
    boot_disk_size=2000
+
+Generating your SSH keypair
+***************************
+
+If you have already connected to a Google Compute Engine instance using ``gcloud ssh``, then you will have a keypair generated in:
+
+* ``~/.ssh/google_compute_engine``
+* ``~/.ssh/google_compute_engine.pub``
+
+If you do not have a keypair, then the ``user_key_private`` and ``user_key_public`` file paths in the ``[login/google-login]`` section above will not be valid.
+
+You can create a test instance and connect to it with ``gcloud ssh``, or generate your keypair manually with:
+
+.. code:: bash
+
+   ssh-keygen -t rsa -f ~/.ssh/google_compute_engine
 
 Obtaining your client_id and client_secret
 ******************************************
