@@ -67,7 +67,7 @@ release = 'v1beta2'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_build', 'includes/*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -152,6 +152,7 @@ rst_epilog = """
 
 .. ### googlegenomics github links
 .. _gatk-tools-java: https://github.com/googlegenomics/gatk-tools-java
+.. _Data Analysis using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/1000Genomes-BRCA1-analysis
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
 .. _BiocDockerOnGCE launch script: https://raw.githubusercontent.com/googlegenomics/gce-images/master/launch-scripts/bioconductorRStudioGCE.sh
 """
