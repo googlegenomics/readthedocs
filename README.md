@@ -1,4 +1,4 @@
-Welcome to the Google Genomics GitHub Organization!
+Welcome to the [Google Genomics](https://cloud.google.com/genomics) GitHub Organization!
 
 #### New to Google Genomics?
 
