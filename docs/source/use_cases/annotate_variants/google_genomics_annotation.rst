@@ -20,7 +20,7 @@ Setup Dataflow
 Run the pipeline
 ----------------
 
-The following command will use `ClinVar`_ to annotate variants in the `BRCA1`_ gene within the `Platinum Genomes`_ dataset for individual NA12877.
+The following command will use `ClinVar`_ to annotate variants in the `BRCA1`_ gene within the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset for individual NA12877.
 
 **Disclaimer:** This program is currently intended to be a *sample*, and provides only a small subset of functionality found in most variant annotation programs. `Pull requests <https://github.com/googlegenomics/dataflow-java>`_ are welcome!
 

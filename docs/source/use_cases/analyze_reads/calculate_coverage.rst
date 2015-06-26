@@ -1,5 +1,5 @@
 Calculate Coverage
-===========
+==================
 
 .. toctree::
    :maxdepth: 2
@@ -27,7 +27,7 @@ Setup Dataflow
 .. include:: /includes/collapsible_dataflow_setup_instructions.rst
 
 Your project must be whitelisted to use gRPC in order to run this pipeline, as it makes use of
-gRPC streaming to retrieve data.  Contact us `here <google-genomics-contact@googlegroups.com>`_ if you are interested in being whitelisted to test this pipeline and other gRPC tools.
+gRPC streaming to retrieve data.  `Contact us`_ if you are interested in being whitelisted to test this pipeline and other gRPC tools.
 
 Create Output Dataset
 ---------------------

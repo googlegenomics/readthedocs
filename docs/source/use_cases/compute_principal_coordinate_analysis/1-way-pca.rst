@@ -11,7 +11,7 @@ counts the number of variants two samples have in common.  These counts are then
 ``NxN`` matrix where ``N`` is the number of samples in the dataset.  The matrix is centered,
 scaled, and then the first two principal components are computed for each invididual.
 
-See the `Data Analysis using Google Genomics codelab <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#cluster-computing>`_ for an example that makes use of the results of this analysis run upon `1,000 Genomes`_.
+See the `Data Analysis using Google Genomics codelab <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#cluster-computing>`_ for an example that makes use of the results of this analysis run upon :doc:`/use_cases/discover_public_data/1000_genomes`.
 
 Both `Google Cloud Dataflow`_ and `Apache Spark`_ implementations are available.
 
@@ -26,7 +26,7 @@ Setup
 Run the pipeline
 ^^^^^^^^^^^^^^^^
 
-The following command will run PCA over the BRCA1 region within the `Platinum Genomes`_ dataset.
+The following command will run PCA over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset.
 
 .. code-block:: shell
 
@@ -63,7 +63,7 @@ Setup
 Run the job
 ^^^^^^^^^^^
 
-The following command will run PCA over the BRCA1 region within the `Platinum Genomes`_ dataset.
+The following command will run PCA over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset.
 
 .. code-block:: shell
 

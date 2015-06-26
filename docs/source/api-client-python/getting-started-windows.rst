@@ -75,7 +75,7 @@ If you want to pull in data from Google Genomics API you will need to set
   https://cloud.google.com/genomics/
 
 * Then create a project in the
-  `Google Developers Console <https://console.developers.google.com>`_
+  `Google Developers Console`_
   or select an existing one.
 
 * On the **APIs & auth** tab, select APIs and turn the Genomics API to ON

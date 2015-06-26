@@ -107,28 +107,40 @@ rst_epilog = """
 
 .. GLOBAL REPLACEMENTS CAN GO HERE
 
-.. _Platinum Genomes: https://cloud.google.com/genomics/data/platinum-genomes
-.. _1,000 Genomes: https://cloud.google.com/genomics/data/1000-genomes
+.. ### Data links
 .. _Personal Genome Project: http://www.personalgenomes.org/
 .. _PGP: http://www.personalgenomes.org/
 .. _ClinVar: http://www.ncbi.nlm.nih.gov/clinvar/
 .. _UCSC Sequence and Annotation Data: http://hgdownload.cse.ucsc.edu/
 
+.. ### Gene links
 .. _BRCA1: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA1#genomic_location
 .. _BRCA2: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA2#genomic_location
 
+.. ### GA4GH Links
 .. _GA4GH: http://ga4gh.org/#/api
+.. _Global Alliance for Genomics and Health API: http://ga4gh.org/#/api
 .. _Global Alliance for Genomics and Health Beacon: http://ga4gh.org/#/beacon
 
-.. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/reads
-
-.. _Google Developers Console: https://console.developers.google.com/
+.. ### Google Product Links
+.. _Google BigQuery: https://cloud.google.com/bigquery/
+.. _Google Cloud Dataflow: https://cloud.google.com/dataflow/
+.. _Google Cloud Storage: https://cloud.google.com/storage/
 .. _Google Compute Engine: https://cloud.google.com/compute/
-.. _Google Cloud Dataflow: https://cloud.google.com/dataflow/what-is-google-cloud-dataflow
-.. _Google Cloud Storage: https://cloud.google.com/storage/docs
+.. _Google Developers Console: https://console.developers.google.com/
+.. _Google Genomics: https://cloud.google.com/genomics/
+
+.. ### Deep links into cloud.google.com documentation
+.. _Google Genomics Tools: https://cloud.google.com/genomics/install-genomics-tools
+.. _Google Genomics API: https://cloud.google.com/genomics/v1beta2/reference/
+.. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/variants
+.. _Google Genomics Variants API: https://cloud.google.com/genomics/v1beta2/reference/reads
 .. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
 .. _install gcloud: https://cloud.google.com/sdk/
 
+.. _Contact us: google-genomics-contact@googlegroups.com
+
+.. ### Open ecosystem links
 .. _Apache Spark: https://spark.apache.org/
 
 .. _Bioconductor: http://www.bioconductor.org/
@@ -138,8 +150,10 @@ rst_epilog = """
 .. _Picard: http://broadinstitute.github.io/picard/
 .. _GATK: https://www.broadinstitute.org/gatk/
 
+.. ### googlegenomics github links
+.. _gatk-tools-java: https://github.com/googlegenomics/gatk-tools-java
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
-
+.. _BiocDockerOnGCE launch script: https://raw.githubusercontent.com/googlegenomics/gce-images/master/launch-scripts/bioconductorRStudioGCE.sh
 """
 
 # -- Options for HTML output ----------------------------------------------

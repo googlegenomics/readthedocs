@@ -3,6 +3,17 @@ BioC 2015: Where Software and Biology Connect
 
 Give an overview here ... *in this workshop you will* ...
 
+In this workshop, you will use the `Bioconductor`_, `Google Genomics`_ and `Google BigQuery`_ to explore the :doc:`/use_cases/discover_public_data/1000_genomes` dataset. Specifically, you will:
+
+* visualize principal component analysis results from a previously executed `Apache Spark`_ job
+* use BigQuery to explore population variation
+* zoom in to specific genome regions, including using the `Google Genomics API`_ to look all the way down to raw reads
+* run a GWAS over the variants within `BRCA1`_
+* annotate variants
+* visualize reads
+
+R packages include: GoogleGenomics, VariantAnnotation, TxDb.Hsapiens.UCSC.hg19.knownGene and BSgenome.Hsapiens.UCSC.hg19, ggbio, bigrquery, dplyr
+
 .. contents::
 
 Get Started with Google Cloud Platform
@@ -11,7 +22,7 @@ Get Started with Google Cloud Platform
 Create a Google Cloud Platform project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sign up for Google Cloud Platform: https://console.developers.google.com/billing/freetrial
+.. include:: /includes/gcp_signup.rst
 
 Enable APIs
 ^^^^^^^^^^^
@@ -34,7 +45,7 @@ Download client_secrets.json
 Install gcloud
 ^^^^^^^^^^^^^^
 
-Follow the Windows, Mac OS X or Linux instructions to install gcloud on your local machine: https://cloud.google.com/sdk/
+.. include:: /includes/gcloud_setup.rst
 
 Spin up a Google Compute Engine Instance running Bioconductor
 -------------------------------------------------------------
@@ -60,7 +71,7 @@ You now have access to RStudio via your browser!  (If you prefer to run locally 
 Run the RMarkdown Codelab
 -------------------------
 
-(1) Clone the Google Genomics codelab repository.  From the RStudio menu:
+(1) Clone the Google Genomics codelab repository.  From the RStudio *Main Menu*:
 
   File -> New Project -> Version Control -> Git
 
@@ -68,13 +79,13 @@ Run the RMarkdown Codelab
 
   click on the "Create Project" button
 
-(2) Open the codelab RMarkdown file.  From the RStudio Files Pane:
+(2) Open the codelab RMarkdown file.  From the RStudio *Files Pane*:
 
   R -> 1000Genomes-BRCA1-analysis
 
   Open AllModalitiesDemo.Rmd
 
-(3) Set your current working directory.  From the RStudio Files Pane:
+(3) Set your current working directory.  From the RStudio *Files Pane*:
 
   More -> Set As Working Directory
 

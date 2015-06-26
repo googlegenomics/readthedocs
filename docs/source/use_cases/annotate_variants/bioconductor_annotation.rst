@@ -32,7 +32,7 @@ A more extensive example of variant annotation with `Bioconductor`_ is documente
 
 To make use of this upon your own data:
 
-(1) First, load your data into Google Genomics.  See :doc:`../load_data/index` for more detail as to how to do this.
+(1) First, load your data into Google Genomics.  See :doc:`/use_cases/load_data/index` for more detail as to how to do this.
 
 (2) If you do not have them already, install the necessary Bioconductor packages.  See `Using Bioconductor`_ for more detail as to how to do this.
 

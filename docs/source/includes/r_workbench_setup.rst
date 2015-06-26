@@ -1,5 +1,4 @@
-(1) Download this script to your local machine.  *TODO add link*
-
+(1) Download the `BiocDockerOnGCE launch script`_ to your local machine.
 .. sidebar:: Details
 
      This script will create virtual machine on Google Cloud Platform with a locked down network (only port 22 open).  Your local machine will securely connect to the VM via an ssh tunnel.

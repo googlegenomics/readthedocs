@@ -26,8 +26,8 @@ A more extensive example of read browsing with `Bioconductor`_ is documented tow
 
 To make use of this upon your own data:
 
-(1) First, load your data into Google Genomics.  See :doc:`../load_data/index` for more detail as to how to do this.
+(1) First, load your data into `Google Genomics`_.  See :doc:`/use_cases/load_data/index` for more detail as to how to do this.
 
-(2) If you do not have them already, install the necessary Bioconductor packages.  See `Using Bioconductor`_ for more detail as to how to do this.
+(2) If you do not have them already, install the necessary `Bioconductor`_ packages.  See `Using Bioconductor`_ for more detail as to how to do this.
 
 (3) Update the parameters to the ``getReads`` call the example above to match that of your data and desired genomic region to view.

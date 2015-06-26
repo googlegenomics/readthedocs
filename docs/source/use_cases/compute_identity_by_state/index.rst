@@ -8,7 +8,7 @@ Compute Identity By State
 
 `Identity-by-State <https://www.youtube.com/watch?v=NRiI1RbE_-I>`_ is a simple similarity measure that describes the alleles shared by two individuals as a single number.
 
-See the `Quality Control using Google Genomics codelab <https://github.com/googlegenomics/codelabs/blob/master/R/PlatinumGenomes-QC/Sample-Level-QC.md#genome-similarity>`_ for an example that makes use of the results of this analysis run upon `Platinum Genomes`_.
+See the `Quality Control using Google Genomics codelab <https://github.com/googlegenomics/codelabs/blob/master/R/PlatinumGenomes-QC/Sample-Level-QC.md#genome-similarity>`_ for an example that makes use of the results of this analysis run upon :doc:`/use_cases/discover_public_data/platinum_genomes`.
 
 A `Google Cloud Dataflow`_ implementation is available.
 
@@ -19,7 +19,7 @@ Setup Dataflow
 
 Run the pipeline
 ----------------
-The following command will run Identity-by-State over the BRCA1 region within the `Platinum Genomes`_ dataset.
+The following command will run Identity-by-State over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset.
 
 .. code-block:: shell
 
@@ -35,10 +35,10 @@ The following command will run Identity-by-State over the BRCA1 region within th
 
 Note that there are several IBS calculators from which to choose. Use the ``--callSimilarityCalculatorFactory`` to switch between them.
 
-Also notice use of the ``--hasNonVariantSegments`` parameter when running this pipeline on the `Platinum Genomes`_ dataset.
+Also notice use of the ``--hasNonVariantSegments`` parameter when running this pipeline on the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset.
 
  * For data with non-variant segments (such as Complete Genomics data or data in Genome VCF (gVCF) format), specify this flag so that the pipeline correctly takes into account non-variant segment records that overlap variants within the dataset.
- * The source `Platinum Genomes`_ data imported into GoogleGenomics was in gVCF format.
+ * The source :doc:`/use_cases/discover_public_data/platinum_genomes` data imported into `Google Genomics`_ was in gVCF format.
 
 To run the pipeline on a different dataset:
 
