@@ -147,6 +147,7 @@ rst_epilog = """
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
+.. _Dockerized Bioconductor: http://bioconductor.org/help/docker/
 
 .. _IGV: https://www.broadinstitute.org/igv/
 .. _Picard: http://broadinstitute.github.io/picard/
@@ -157,6 +158,14 @@ rst_epilog = """
 .. _Data Analysis using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/1000Genomes-BRCA1-analysis
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
 .. _BiocDockerOnGCE launch script: https://raw.githubusercontent.com/googlegenomics/gce-images/master/launch-scripts/bioconductorRStudioGCE.sh
+
+.. ### R package links
+.. _VariantAnnotation: http://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html
+.. _ggbio: http://bioconductor.org/packages/release/bioc/html/ggbio.html
+.. _ggplot2: http://cran.r-project.org/web/packages/ggplot2/index.html
+.. _dplyr: http://cran.r-project.org/web/packages/dplyr/index.html
+.. _bigrquery: http://cran.r-project.org/web/packages/bigrquery/index.html
+.. _GoogleGenomics: http://bioconductor.org/packages/release/bioc/html/GoogleGenomics.html
 """
 
 # -- Options for HTML output ----------------------------------------------

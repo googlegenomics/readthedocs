@@ -14,3 +14,5 @@ Get your ``client_secrets.json`` file by visiting the following page:
 #. Click the "Create Client ID" button.
 #. You'll see your Client ID and Client secret listed under "Client ID for native application".
 #. Under Client ID for native application, click "Download JSON".
+
+Throughout this documentation we refer to this file as ``client_secrets.json`` even though upon download it has a much longer filename.  You might rename the file or add a symlink to it with the shorter name.

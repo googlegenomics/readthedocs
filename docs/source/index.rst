@@ -23,4 +23,6 @@ Here you will find task-oriented documentation.  What do you want to do today?
   github_index
   mailinglist
 
+.. # See http://stackoverflow.com/questions/13094652/include-another-page-s-toc-in-sphinx for hand-created table of contents
+
 If instead you want to browse github samples by technology or language used, see :doc:`github_index`.
