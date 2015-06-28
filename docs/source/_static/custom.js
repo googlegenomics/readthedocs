@@ -1,3 +1,9 @@
+// Open all links in another window.
+$(document).ready(function() {
+    $("a[href^='http']").attr('target','_blank');
+});
+
+// implement collabsible containers for content.
 jQuery($(document).ready(function() {
     $(".toggle > *").hide();
     $(".toggle .header").show();
