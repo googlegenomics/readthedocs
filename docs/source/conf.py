@@ -14,6 +14,8 @@
 
 import sys
 import os
+import sphinx.environment
+from docutils.utils import get_source_line
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -325,3 +327,12 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# -- Silence certain warnings -------------------------------------------
+
+# http://stackoverflow.com/questions/12772927/specifying-an-online-image-in-sphinx-restructuredtext-format
+def _warn_node(self, msg, node):
+    if not msg.startswith('nonlocal image URI found:'):
+        self._warnfunc(msg, '%s:%s' % get_source_line(node))
+
+sphinx.environment.BuildEnvironment.warn_node = _warn_node
