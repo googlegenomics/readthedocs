@@ -12,9 +12,10 @@
 
 (3) Log into RStudio.
 
-.. code:: bash
+  username
+    rstudio
 
-  username: rstudio
-  password: rstudio
+  password
+    rstudio
 
 (4) Upload ``client_secrets.json``. From the RStudio *Files Pane* click on the "Upload" button.

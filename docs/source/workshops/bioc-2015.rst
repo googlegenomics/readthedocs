@@ -42,12 +42,25 @@ Install gcloud
 
 .. include:: /includes/gcloud_setup.rst
 
+Configure gcloud compute
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: toggle
+
+    .. container:: header
+
+        There are a few steps to do this.  Click here to **Show/Hide Instructions**
+
+    .. container:: content
+
+      .. include:: /includes/gcloud_compute_configure.rst
+
 Spin up a Google Compute Engine Instance running Bioconductor
 -------------------------------------------------------------
 
 This codelab can be run from anywhere.  All the heavy lifting is happening in the cloud regardless of where R is running.  But if you like, you can run the whole darn thing in the cloud.
 
-Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  See http://www.bioconductor.org/help/docker/ for more information.
+Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions follow but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
 .. include:: /includes/r_workbench_setup.rst
 
@@ -72,9 +85,10 @@ In `Data Analysis using Google Genomics`_ we perform PCA, BigQuery, and GWAS ana
 
   File -> New Project -> Version Control -> Git
 
-  Repository URL:  https://github.com/googlegenomics/codelabs.git
+  Repository URL
+    https://github.com/googlegenomics/codelabs.git
 
-  click on the "Create Project" button
+  The default value is fine for the other fields.  Click on the "Create Project" button
 
 (2) Open the codelab RMarkdown file.  From the RStudio *Files Pane*:
 
