@@ -116,8 +116,8 @@ rst_epilog = """
 .. _UCSC Sequence and Annotation Data: http://hgdownload.cse.ucsc.edu/
 
 .. ### Gene links
-.. _BRCA1: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA1#genomic_location
-.. _BRCA2: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA2#genomic_location
+.. _BRCA1: http://ghr.nlm.nih.gov/gene/BRCA1
+.. _BRCA2: http://ghr.nlm.nih.gov/gene/BRCA2
 
 .. ### GA4GH Links
 .. _GA4GH: http://ga4gh.org/#/api
@@ -172,13 +172,13 @@ rst_epilog = """
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = 'default'
+html_theme = 'default'
 
 #------------[ For Local Development ] -------------------------------------
 # See https://github.com/snide/sphinx_rtd_theme for theme install instructions.
-import sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+#import sphinx_rtd_theme
+#html_theme = "sphinx_rtd_theme"
+#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
