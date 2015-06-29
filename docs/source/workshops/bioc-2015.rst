@@ -60,7 +60,7 @@ Spin up a Google Compute Engine Instance running Bioconductor
 
 This codelab can be run from anywhere.  All the heavy lifting is happening in the cloud regardless of where R is running.  But if you like, you can run the whole darn thing in the cloud.
 
-Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions follow but if you want to learn more, see http://www.bioconductor.org/help/docker/.
+Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
 .. include:: /includes/r_workbench_setup.rst
 
@@ -83,6 +83,12 @@ In `Data Analysis using Google Genomics`_ we perform PCA, BigQuery, and GWAS ana
 
 (1) Clone the Google Genomics codelab repository.  From the RStudio *Main Menu*:
 
+  .. image:: /_static/create_git_project.png
+    :alt: Create Git Project Dialog
+    :align: right
+    :height: 100px
+    :width: 200px
+
   File -> New Project -> Version Control -> Git
 
   Repository URL
@@ -92,17 +98,39 @@ In `Data Analysis using Google Genomics`_ we perform PCA, BigQuery, and GWAS ana
 
 (2) Open the codelab RMarkdown file.  From the RStudio *Files Pane*:
 
+  .. image:: /_static/open_rmarkdown.png
+    :alt: Navigate to RMarkdown
+    :align: right
+    :height: 100px
+    :width: 200px
+
   R -> 1000Genomes-BRCA1-analysis
 
-  Open AllModalitiesDemo.Rmd
+  Open ``AllModalitiesDemo.Rmd``
 
 (3) Set your current working directory.  From the RStudio *Files Pane*:
+
+  .. image:: /_static/set_working_directory.png
+    :alt: Set Working Directory
+    :align: right
+    :height: 100px
+    :width: 200px
 
   More -> Set As Working Directory
 
 (4) Start running `AllModalitiesDemo.Rmd <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.Rmd>`_ line by line or chunk by chunk!
 
-  You can view the rendered analysis here `AllModalitiesDemo.md <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md>`_.
+  * To run line-by-line, put your cursor on the desired line  and click the "Run" button or use keyboard shortcuts for Windows/Linux: ``Ctrl+Enter`` and Mac: ``Command+Enter``.
+
+  .. image:: /_static/run_rmarkdown.png
+    :alt: Run Rmarkdown
+    :align: right
+    :height: 100px
+    :width: 200px
+
+  * To run chunk-by-chunk, put your cursor in the desired chunk and click the "Chunks -> Run Current Chuck" button. or use keyboard shortcuts for Windows/Linux: ``Ctrl+Alt+C`` and Mac: ``Command+Option+C``.
+
+  * You can view the rendered analysis here `AllModalitiesDemo.md <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md>`_.
 
 Run the "Quality Control using Google Genomics" Codelab
 --------------------------------------------------------
@@ -113,7 +141,7 @@ In `Quality Control using Google Genomics`_ we perform common quality control ch
 
   R -> PlatinumGenomes-QC
 
-  Open Data-Overview.Rmd
+  Open ``Data-Overview.Rmd``
 
 (2) Set your current working directory.  From the RStudio *Files Pane*:
 

@@ -1,5 +1,3 @@
-The instructions are below but if you want to learn more, see: https://cloud.google.com/compute/docs/gcloud-compute/
-
 (1) Set your default project ID.  *Note: Project ID is not the same as project name.  You can view your project ID on the overview page of the Developers Console*.
 
   ``gcloud config set project YOUR-PROJECT-ID``
@@ -11,3 +9,10 @@ The instructions are below but if you want to learn more, see: https://cloud.goo
 (3) Authorize gcloud.
 
   ``gcloud auth login``
+
+(4) Set up your ssh keys.
+
+  ``gcloud compute config-ssh``
+
+For more information, see: https://cloud.google.com/compute/docs/gcloud-compute/
+
