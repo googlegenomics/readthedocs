@@ -130,6 +130,7 @@ rst_epilog = """
 .. _install gcloud: https://cloud.google.com/sdk/
 
 .. _Apache Spark: https://spark.apache.org/
+.. _Apache Hadoop: https://hadoop.apache.org/
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
@@ -145,6 +146,8 @@ rst_epilog = """
 .. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 .. _googlegenomics github organization: https://github.com/googlegenomics
 .. _persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
+.. _Grid Engine: http://gridengine.info/
+.. _SLURM: https://computing.llnl.gov/linux/slurm/
 
 """
 
