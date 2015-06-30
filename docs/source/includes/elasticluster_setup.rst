@@ -10,8 +10,8 @@ Elasticluster and GCE - Getting Started
 ---------------------------------------
 
 This document provides getting started instructions for using
-Elasticluster_ to create clusters of Google Compute Engine instances
-running job management software, such as Grid Engine, SLURM, or Hadoop.
+`Elasticluster`_ to create clusters of Google Compute Engine instances
+running job management software, such as `Grid Engine`_, `SLURM`_, or `Apache Hadoop`_.
 Elasticluster *"aims to provide a user-friendly command line tool to
 create, manage and setup computional clusters hosted on cloud infrastructures"*.
 
@@ -252,11 +252,11 @@ If you have already connected to a Google Compute Engine instance using ``gcloud
 
 If you do not have a keypair, then the ``user_key_private`` and ``user_key_public`` file paths in the ``[login/google-login]`` section above will not be valid.
 
-You can create a test instance and connect to it with ``gcloud ssh``, or generate your keypair manually with:
+You can generate your keypair with the command:
 
 .. code:: bash
 
-   ssh-keygen -t rsa -f ~/.ssh/google_compute_engine
+   gcloud compute config-ssh
 
 Obtaining your client_id and client_secret
 ******************************************
