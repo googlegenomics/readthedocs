@@ -121,8 +121,10 @@ rst_epilog = """
 .. _GA4GH: http://ga4gh.org/#/api
 .. _Global Alliance for Genomics and Health API: http://ga4gh.org/#/api
 .. _Global Alliance for Genomics and Health Beacon: http://ga4gh.org/#/beacon
+
+.. ### Google genomics organizational links
 .. _googlegenomics github organization: https://github.com/googlegenomics
-.. _S3IT: http://www.s3it.uzh.ch/
+.. _Contact us: google-genomics-contact@googlegroups.com
 
 .. ### Google Product Links
 .. _Google BigQuery: https://cloud.google.com/bigquery/
@@ -141,13 +143,12 @@ rst_epilog = """
 .. _install gcloud: https://cloud.google.com/sdk/
 .. _persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
 
-.. _Contact us: google-genomics-contact@googlegroups.com
-
 .. ### Open ecosystem links
 .. _Apache Spark: https://spark.apache.org/
 .. _Apache Hadoop: https://hadoop.apache.org/
 .. _Elasticluster: https://elasticluster.readthedocs.org
 .. _Grid Engine: http://gridengine.info/
+.. _S3IT: http://www.s3it.uzh.ch/
 .. _SLURM: https://computing.llnl.gov/linux/slurm/
 
 .. _Bioconductor: http://www.bioconductor.org/
