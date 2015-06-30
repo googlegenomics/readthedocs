@@ -140,6 +140,12 @@ rst_epilog = """
 
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
 
+.. _S3IT: http://www.s3it.uzh.ch/
+.. _Elasticluster: https://elasticluster.readthedocs.org
+.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
+.. _googlegenomics github organization: https://github.com/googlegenomics
+.. _persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
+
 """
 
 # -- Options for HTML output ----------------------------------------------
