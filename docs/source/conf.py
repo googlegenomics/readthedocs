@@ -119,6 +119,8 @@ rst_epilog = """
 
 .. _GA4GH: http://ga4gh.org/#/api
 .. _Global Alliance for Genomics and Health Beacon: http://ga4gh.org/#/beacon
+.. _googlegenomics github organization: https://github.com/googlegenomics
+.. _S3IT: http://www.s3it.uzh.ch/
 
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/reads
 
@@ -128,9 +130,13 @@ rst_epilog = """
 .. _Google Cloud Storage: https://cloud.google.com/storage/docs
 .. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
 .. _install gcloud: https://cloud.google.com/sdk/
+.. _persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
 
 .. _Apache Spark: https://spark.apache.org/
 .. _Apache Hadoop: https://hadoop.apache.org/
+.. _Elasticluster: https://elasticluster.readthedocs.org
+.. _Grid Engine: http://gridengine.info/
+.. _SLURM: https://computing.llnl.gov/linux/slurm/
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
@@ -141,13 +147,8 @@ rst_epilog = """
 
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
 
-.. _S3IT: http://www.s3it.uzh.ch/
-.. _Elasticluster: https://elasticluster.readthedocs.org
+.. _Python user scheme: https://docs.python.org/2/install/index.html#alternate-installation-the-user-scheme
 .. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
-.. _googlegenomics github organization: https://github.com/googlegenomics
-.. _persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
-.. _Grid Engine: http://gridengine.info/
-.. _SLURM: https://computing.llnl.gov/linux/slurm/
 
 """
 
