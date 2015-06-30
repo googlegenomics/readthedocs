@@ -56,6 +56,13 @@ The instructions here explicitly use a Python virtualenv and have only been test
 
    [sudo] pip install virtualenv
 
+If you do not have write permission to the global Python site-packages directory, you can install virtualenv with the `Python user scheme`_:
+
+.. code-block:: shell
+
+   pip install --user virtualenv
+
+
 1. **Change directory to where you want to install Elasticluster**
 
 You don't need to explicitly create an ``elasticluster`` directory (that will happen next).
