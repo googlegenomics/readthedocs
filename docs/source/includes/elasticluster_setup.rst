@@ -1,11 +1,5 @@
-.. _S3IT: http://www.s3it.uzh.ch/
-.. _Elasticluster: https://elasticluster.readthedocs.org
-.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
-.. _gcloud: https://cloud.google.com/sdk/
 .. _SFTP: http://linux.die.net/man/1/sftp
 .. _HERE DOCUMENTS: http://tldp.org/LDP/abs/html/here-docs.html
-.. _googlegenomics github organization: https://github.com/googlegenomics
-.. _Persistent Disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
 .. _xcode-select: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/xcode-select.1.html
 
 ================================================
@@ -215,7 +209,7 @@ Instructions for ensuring your SSH keypair exists can be found below.
 
 Setting the boot disk size
 **************************
-For cluster tasks you may want to create use SSD Persistent disk or a boot disk larger than the default 10 GB.
+For cluster tasks you may want to create use SSD persistent disk or a boot disk larger than the default 10 GB.
 Elasticluster allows for specifying both the boot disk type and size for instances of your cluster:
 
 ``boot_disk_type``
@@ -231,7 +225,7 @@ Elasticluster allows for specifying both the boot disk type and size for instanc
 The disk type and size can be set for a cluster or for a group of nodes.
 
 For example to set up the above Grid Engine cluster such that nodes have a 100 GB
-SSD `Persistent Disk`_, add the following:
+SSD `persistent disk`_, add the following:
 
 .. code:: ini
 
@@ -240,7 +234,7 @@ SSD `Persistent Disk`_, add the following:
    boot_disk_type=pd-ssd
    boot_disk_size=100
 
-or to configure all of the ``compute`` worker nodes to have a 2 TB Standard (HDD) `Persistent Disk`:
+or to configure all of the ``compute`` worker nodes to have a 2 TB Standard (HDD) `persistent disk`:
 
 .. code:: ini
 
