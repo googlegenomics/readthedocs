@@ -121,6 +121,8 @@ rst_epilog = """
 .. _GA4GH: http://ga4gh.org/#/api
 .. _Global Alliance for Genomics and Health API: http://ga4gh.org/#/api
 .. _Global Alliance for Genomics and Health Beacon: http://ga4gh.org/#/beacon
+.. _googlegenomics github organization: https://github.com/googlegenomics
+.. _S3IT: http://www.s3it.uzh.ch/
 
 .. ### Google Product Links
 .. _Google BigQuery: https://cloud.google.com/bigquery/
@@ -137,11 +139,16 @@ rst_epilog = """
 .. _Google Genomics Variants API: https://cloud.google.com/genomics/v1beta2/reference/reads
 .. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
 .. _install gcloud: https://cloud.google.com/sdk/
+.. _persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
 
 .. _Contact us: google-genomics-contact@googlegroups.com
 
 .. ### Open ecosystem links
 .. _Apache Spark: https://spark.apache.org/
+.. _Apache Hadoop: https://hadoop.apache.org/
+.. _Elasticluster: https://elasticluster.readthedocs.org
+.. _Grid Engine: http://gridengine.info/
+.. _SLURM: https://computing.llnl.gov/linux/slurm/
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
@@ -155,6 +162,11 @@ rst_epilog = """
 .. _Data Analysis using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/1000Genomes-BRCA1-analysis
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
 .. _BiocDockerOnGCE launch script: https://raw.githubusercontent.com/googlegenomics/gce-images/master/launch-scripts/bioconductorRStudioGCE.sh
+
+.. ### Python installation and package links
+.. _Python user scheme: https://docs.python.org/2/install/index.html#alternate-installation-the-user-scheme
+.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
+
 """
 
 # -- Options for HTML output ----------------------------------------------
