@@ -234,7 +234,7 @@ SSD `persistent disk`_, add the following:
    boot_disk_type=pd-ssd
    boot_disk_size=100
 
-or to configure all of the ``compute`` worker nodes to have a 2 TB Standard (HDD) `persistent disk`:
+or to configure all of the ``compute`` worker nodes to have a 2 TB Standard (HDD) `persistent disk`_:
 
 .. code:: ini
 
