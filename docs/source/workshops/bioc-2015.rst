@@ -1,18 +1,13 @@
 BioC 2015: Where Software and Biology Connect
 =============================================
 
-Give an overview here ... *in this workshop you will* ...
+Google has some pretty amazing big data computational "hammers" that they have been applying to search and video data for a long time.  In this workshop we take those same hammers and apply them to whole genome sequences.
 
-In this workshop, you will use the `Bioconductor`_, `Google Genomics`_ and `Google BigQuery`_ to explore the :doc:`/use_cases/discover_public_data/1000_genomes` dataset. Specifically, you will:
+We will work with both the :doc:`/use_cases/discover_public_data/1000_genomes` reads and variants and also the :doc:`/use_cases/discover_public_data/platinum_genomes` gVCF variants.
 
-* visualize principal component analysis results from a previously executed `Apache Spark`_ job
-* use BigQuery to explore population variation
-* zoom in to specific genome regions, including using the `Google Genomics API`_ to look all the way down to raw reads
-* run a GWAS over the variants within `BRCA1`_
-* annotate variants
-* visualize reads
+We do this all from the comfort of the R prompt using common packages including `VariantAnnotation`_, `ggbio`_, `ggplot2`_, `dplyr`_, `bigrquery`_, and the new Bioconductor package `GoogleGenomics`_ which provides an R interface to Google's implementation of the `Global Alliance for Genomics and Health API`_.
 
-R packages include: GoogleGenomics, VariantAnnotation, TxDb.Hsapiens.UCSC.hg19.knownGene and BSgenome.Hsapiens.UCSC.hg19, ggbio, bigrquery, dplyr
+And we'll do this in a reproducible fashion running RMarkdown files via `Dockerized Bioconductor`_ running on `Google Compute Engine`_ VMs!
 
 .. contents::
 
@@ -47,12 +42,25 @@ Install gcloud
 
 .. include:: /includes/gcloud_setup.rst
 
+Configure gcloud compute
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: toggle
+
+    .. container:: header
+
+        There are a few steps to do this.  Click here to **Show/Hide Instructions**
+
+    .. container:: content
+
+      .. include:: /includes/gcloud_compute_configure.rst
+
 Spin up a Google Compute Engine Instance running Bioconductor
 -------------------------------------------------------------
 
 This codelab can be run from anywhere.  All the heavy lifting is happening in the cloud regardless of where R is running.  But if you like, you can run the whole darn thing in the cloud.
 
-Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  See http://www.bioconductor.org/help/docker/ for more information.
+Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
 .. include:: /includes/r_workbench_setup.rst
 
@@ -68,25 +76,95 @@ You now have access to RStudio via your browser!  (If you prefer to run locally 
 
       .. include:: /includes/r_workbench_details.rst
 
-Run the RMarkdown Codelab
--------------------------
+Run the "Data Analysis using Google Genomics" Codelab
+------------------------------------------------------
+
+In `Data Analysis using Google Genomics`_ we perform PCA, BigQuery, and GWAS analyses to identify variants of interest within :doc:`/use_cases/discover_public_data/1000_genomes` and then explore those reads and variants using Bioconductor.
 
 (1) Clone the Google Genomics codelab repository.  From the RStudio *Main Menu*:
 
+  .. image:: /_static/create_git_project.png
+    :alt: Create Git Project Dialog
+    :align: right
+    :height: 100px
+    :width: 200px
+
   File -> New Project -> Version Control -> Git
 
-  Repository URL:  https://github.com/googlegenomics/codelabs.git
+  Repository URL
+    https://github.com/googlegenomics/codelabs.git
 
-  click on the "Create Project" button
+  The default value is fine for the other fields.  Click on the "Create Project" button
 
 (2) Open the codelab RMarkdown file.  From the RStudio *Files Pane*:
 
+  .. image:: /_static/open_rmarkdown.png
+    :alt: Navigate to RMarkdown
+    :align: right
+    :height: 100px
+    :width: 200px
+
   R -> 1000Genomes-BRCA1-analysis
 
-  Open AllModalitiesDemo.Rmd
+  Open ``AllModalitiesDemo.Rmd``
 
 (3) Set your current working directory.  From the RStudio *Files Pane*:
 
+  .. image:: /_static/set_working_directory.png
+    :alt: Set Working Directory
+    :align: right
+    :height: 100px
+    :width: 200px
+
   More -> Set As Working Directory
 
-Start running AllModalitiesDemo.Rmd line by line or chunk by chunk!  You can view the rendered analysis `here <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md>`_.
+(4) Start running `AllModalitiesDemo.Rmd <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.Rmd>`_ line by line or chunk by chunk!
+
+  * To run line-by-line, put your cursor on the desired line  and click the "Run" button or use keyboard shortcuts for Windows/Linux: ``Ctrl+Enter`` and Mac: ``Command+Enter``.
+
+  .. image:: /_static/run_rmarkdown.png
+    :alt: Run Rmarkdown
+    :align: right
+    :height: 100px
+    :width: 200px
+
+  * To run chunk-by-chunk, put your cursor in the desired chunk and click the "Chunks -> Run Current Chuck" button. or use keyboard shortcuts for Windows/Linux: ``Ctrl+Alt+C`` and Mac: ``Command+Option+C``.
+
+  * You can view the rendered analysis here `AllModalitiesDemo.md <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md>`_.
+
+Run the "Quality Control using Google Genomics" Codelab
+--------------------------------------------------------
+
+In `Quality Control using Google Genomics`_ we perform common quality control checks such as singleton rate, transition/transversion rate, and Hardy-Weinberg Equilibrium on the :doc:`/use_cases/discover_public_data/platinum_genomes` gVCF variants.
+
+(1) Open the first codelab RMarkdown file.  From the RStudio *Files Pane*:
+
+  R -> PlatinumGenomes-QC
+
+  Open ``Data-Overview.Rmd``
+
+(2) Set your current working directory.  From the RStudio *Files Pane*:
+
+  More -> Set As Working Directory
+
+(3) Start running `Data-Overview.Rmd <https://github.com/googlegenomics/codelabs/blob/master/R/PlatinumGenomes-QC/Data-Overview.Rmd>`_ line by line or chunk by chunk!
+
+  You can view the rendered analysis here `Data-Overview.md <https://github.com/googlegenomics/codelabs/blob/master/R/PlatinumGenomes-QC/Data-Overview.md>`_.
+
+(4) There are three more parts to this codelab:
+
+  * `Part 2: Data Transformation <https://github.com/googlegenomics/codelabs/blob/master/R/PlatinumGenomes-QC/Data-Transformation.md>`_ just skim this - we use Dataflow to make the equivalent of a multi-sample VCF)
+  * `Part 3: Sample-Level QC <https://github.com/googlegenomics/codelabs/blob/master/R/PlatinumGenomes-QC/Sample-Level-QC.Rmd>`_
+  * `Part 4: Variant-Level QC <https://github.com/googlegenomics/codelabs/blob/master/R/PlatinumGenomes-QC/Variant-Level-QC.md>`_
+
+Wrap up
+-------------
+
+TODO: more here
+
+* see other published data
+* pointers to run spark/dataflow jobs
+* pointers to more BigQuery examples
+* "stop" your VM
+* collaborate on GA4GH specification
+* collaborate on https://github.com/Bioconductor/GoogleGenomics
