@@ -7,3 +7,5 @@ Most users *kick off* Dataflow jobs from their local machine.  This is unrelated
 (3)  If you have not already enabled the Google Cloud Platform APIs used by `Google Cloud Dataflow`_, click `here <https://console.developers.google.com/flows/enableapi?apiid=dataflow,compute_component,logging,storage_component,storage_api,bigquery,pubsub,datastore&_ga=1.38537760.2067798380.1406160784>`_ to do so.
 
 (4) If you have not already done so, follow the instructions to `install gcloud`_.
+
+(5) If you have not already done so, run the command ``gcloud auth login``.

@@ -124,6 +124,10 @@ rst_epilog = """
 .. _Global Alliance for Genomics and Health API: http://ga4gh.org/#/api
 .. _Global Alliance for Genomics and Health Beacon: http://ga4gh.org/#/beacon
 
+.. ### Google genomics organizational links
+.. _googlegenomics github organization: https://github.com/googlegenomics
+.. _Contact us: google-genomics-contact@googlegroups.com
+
 .. ### Google Product Links
 .. _Google BigQuery: https://cloud.google.com/bigquery/
 .. _Google Cloud Dataflow: https://cloud.google.com/dataflow/
@@ -139,11 +143,15 @@ rst_epilog = """
 .. _Google Genomics Variants API: https://cloud.google.com/genomics/v1beta2/reference/reads
 .. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
 .. _install gcloud: https://cloud.google.com/sdk/
-
-.. _Contact us: google-genomics-contact@googlegroups.com
+.. _persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
 
 .. ### Open ecosystem links
 .. _Apache Spark: https://spark.apache.org/
+.. _Apache Hadoop: https://hadoop.apache.org/
+.. _Elasticluster: https://elasticluster.readthedocs.org
+.. _Grid Engine: http://gridengine.info/
+.. _S3IT: http://www.s3it.uzh.ch/
+.. _SLURM: https://computing.llnl.gov/linux/slurm/
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
@@ -166,6 +174,11 @@ rst_epilog = """
 .. _dplyr: http://cran.r-project.org/web/packages/dplyr/index.html
 .. _bigrquery: http://cran.r-project.org/web/packages/bigrquery/index.html
 .. _GoogleGenomics: http://bioconductor.org/packages/release/bioc/html/GoogleGenomics.html
+
+.. ### Python installation and package links
+.. _Python user scheme: https://docs.python.org/2/install/index.html#alternate-installation-the-user-scheme
+.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
+
 """
 
 # -- Options for HTML output ----------------------------------------------
