@@ -4,9 +4,9 @@
 
    <br />
 
-=============================================
-Run SAMtools on files in Google Cloud Storage
-=============================================
+=======================================================
+Run SAMtools to index BAM files in Google Cloud Storage
+=======================================================
 
 Suppose you have thousands of BAMs, which you have stored in
 Google Cloud Storage, and you need to create index files (BAI) for them.
@@ -165,8 +165,8 @@ For example:
 
 .. code-block:: shell
 
-   $ DRYRUN=1 ./src/samtools/launch_samtools.sh ./samples/samtools/samtools_config.sh
-   Your job-array 5.1-6:1 ("samtools") has been submitted
+   $ DRYRUN=1 ./src/samtools/launch_samtools.sh ./samples/samtools/samtools_index_config.sh
+   Your job-array 2.1-6:1 ("samtools") has been submitted
 
 Then after waiting for the job to complete, inspect:
 
@@ -174,20 +174,27 @@ Then after waiting for the job to complete, inspect:
 
 .. code-block:: shell
 
-   $ head -n 5 samtools.o3.1 
-   Task host: compute001
+   $ head -n 5 samtools.o3.1Task host: compute002
    Task start: 1
    Input list file: ./samples/samtools/samtools_index_file_list.txt
-   Output path: gs://cookbook-bucket/bigtools/output_path/samtools_index
-   Output log path: gs://cookbook-bucket/bigtools/log_path/samtools_index
+   Output path: gs://cookbook-bucket/output_path/samtools_index
+   Output log path: gs://cookbook-bucket/log_path/samtools_index
 
-   $ grep "^Will download:" samtools.o5.*
-   samtools.o5.1:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/pilot2_high_cov_GRCh37_bams/data/NA12878/alignment/NA12878.chrom9.SOLID.bfast.CEU.high_coverage.20100125.bam to /scratch/samtools.5.1/in/
-   samtools.o5.2:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/pilot2_high_cov_GRCh37_bams/data/NA12878/alignment/NA12878.chrom1.LS454.ssaha2.CEU.high_coverage.20100311.bam to /scratch/samtools.5.2/in/
-   samtools.o5.3:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom11.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.5.3/in/
-   samtools.o5.4:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom12.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.5.4/in/
-   samtools.o5.5:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom10.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.5.5/in/
-   samtools.o5.6:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chromX.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.5.6/in/
+   $ grep "^Will download:" samtools.o3.*
+   samtools.o3.1:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/pilot2_high_cov_GRCh37_bams/data/NA12878/alignment/NA12878.chrom9.SOLID.bfast.CEU.high_coverage.20100125.bam to /scratch/samtools.3.1/in/
+   samtools.o3.2:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/pilot2_high_cov_GRCh37_bams/data/NA12878/alignment/NA12878.chrom1.LS454.ssaha2.CEU.high_coverage.20100311.bam to /scratch/samtools.3.2/in/
+   samtools.o3.3:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom11.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.3/in/
+   samtools.o3.4:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom12.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.4/in/
+   samtools.o3.5:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom10.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.5/in/
+   samtools.o3.6:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chromX.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.6/in/
+
+   $ grep "^Will upload:" samtools.o3.*
+   samtools.o3.1:Will upload: /scratch/samtools.3.1/in/NA12878.chrom9.SOLID.bfast.CEU.high_coverage.20100125.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+   samtools.o3.2:Will upload: /scratch/samtools.3.2/in/NA12878.chrom1.LS454.ssaha2.CEU.high_coverage.20100311.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+   samtools.o3.3:Will upload: /scratch/samtools.3.3/in/NA12878.chrom11.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+   samtools.o3.4:Will upload: /scratch/samtools.3.4/in/NA12878.chrom12.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+   samtools.o3.5:Will upload: /scratch/samtools.3.5/in/NA12878.chrom10.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+   samtools.o3.6:Will upload: /scratch/samtools.3.6/in/NA12878.chromX.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
 
 6. **Launch the job**
 
