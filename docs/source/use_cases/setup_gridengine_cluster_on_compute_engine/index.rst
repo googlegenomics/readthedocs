@@ -214,6 +214,8 @@ Instructions for ensuring your SSH keypair exists can be found below.
    image_userdata=
    ssh_to=frontend
 
+.. _elasticluster-config-boot-disk:
+
 Setting the boot disk size
 ==========================
 For cluster tasks you may want to create use SSD persistent disk or a boot disk larger than the default 10 GB.
