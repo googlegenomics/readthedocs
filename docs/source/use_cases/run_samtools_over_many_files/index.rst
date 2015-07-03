@@ -170,8 +170,6 @@ For example:
 
 Then after waiting for the job to complete, inspect:
 
-** FIXME: add real output here:
-
 .. code-block:: shell
 
    $ head -n 5 samtools.o3.1Task host: compute002
