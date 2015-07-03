@@ -14,6 +14,8 @@
 
 import sys
 import os
+import sphinx.environment
+from docutils.utils import get_source_line
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -114,8 +116,8 @@ rst_epilog = """
 .. _UCSC Sequence and Annotation Data: http://hgdownload.cse.ucsc.edu/
 
 .. ### Gene links
-.. _BRCA1: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA1#genomic_location
-.. _BRCA2: http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA2#genomic_location
+.. _BRCA1: http://ghr.nlm.nih.gov/gene/BRCA1
+.. _BRCA2: http://ghr.nlm.nih.gov/gene/BRCA2
 
 .. ### GA4GH Links
 .. _GA4GH: http://ga4gh.org/#/api
@@ -158,6 +160,7 @@ rst_epilog = """
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
+.. _Dockerized Bioconductor: http://bioconductor.org/help/docker/
 
 .. _IGV: https://www.broadinstitute.org/igv/
 .. _Picard: http://broadinstitute.github.io/picard/
@@ -171,6 +174,14 @@ rst_epilog = """
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
 .. _BiocDockerOnGCE launch script: https://raw.githubusercontent.com/googlegenomics/gce-images/master/launch-scripts/bioconductorRStudioGCE.sh
 .. _Grid Computing Tools github repo: https://github.com/googlegenomics/grid-computing-tools
+
+.. ### R package links
+.. _VariantAnnotation: http://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html
+.. _ggbio: http://bioconductor.org/packages/release/bioc/html/ggbio.html
+.. _ggplot2: http://cran.r-project.org/web/packages/ggplot2/index.html
+.. _dplyr: http://cran.r-project.org/web/packages/dplyr/index.html
+.. _bigrquery: http://cran.r-project.org/web/packages/bigrquery/index.html
+.. _GoogleGenomics: http://bioconductor.org/packages/release/bioc/html/GoogleGenomics.html
 
 .. ### Python installation and package links
 .. _Python user scheme: https://docs.python.org/2/install/index.html#alternate-installation-the-user-scheme
@@ -346,3 +357,12 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# -- Silence certain warnings -------------------------------------------
+
+# http://stackoverflow.com/questions/12772927/specifying-an-online-image-in-sphinx-restructuredtext-format
+def _warn_node(self, msg, node):
+    if not msg.startswith('nonlocal image URI found:'):
+        self._warnfunc(msg, '%s:%s' % get_source_line(node))
+
+sphinx.environment.BuildEnvironment.warn_node = _warn_node
