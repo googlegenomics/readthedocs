@@ -172,7 +172,8 @@ Then after waiting for the job to complete, inspect:
 
 .. code-block:: shell
 
-   $ head -n 5 samtools.o3.1Task host: compute002
+   $ head -n 5 samtools.o3.1
+   Task host: compute002
    Task start: 1
    Input list file: ./samples/samtools/samtools_index_file_list.txt
    Output path: gs://cookbook-bucket/output_path/samtools_index
