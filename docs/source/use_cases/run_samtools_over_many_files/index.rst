@@ -65,7 +65,9 @@ below demonstrate spreading the processing over 3 worker instances.
    The locations are determined by:
 
    * INPUT_LIST_FILE: file containing a list of GCS paths to the input files to process
-   * OUTPUT_PATH: GCS path indicating where to upload the output files
+   * OUTPUT_PATH: GCS path indicating where to upload the output files.
+     If set to ``source``, the output will be written to the same path
+     as the source file (with the extension ``.bai`` appended)
    * OUTPUT_LOG_PATH: (optional) GCS path indicating where to upload log files
 
    |br|
@@ -132,78 +134,93 @@ To run your own job to index a list of BAM files requires the following:
 
 1. **Create an** ``input list file``
 
-If all of your input files appear in a single directory, then the easiest way
-to generate a file list is with ``gsutil``. For example:
+   If all of your input files appear in a single directory, then the
+   easiest way to generate a file list is with ``gsutil``. For example:
 
-.. code-block:: shell
+   .. code-block:: shell
 
-  gsutil ls gs://MY_BUCKET/PATH/*.vcf.bz2 > ${WS_ROOT}/my_jobs/bam_indexing_list_file.txt
+     gsutil ls gs://MY_BUCKET/PATH/*.bam > ${WS_ROOT}/my_jobs/bam_indexing_list_file.txt
   
 2. **Create a** ``job config file``
 
-The easiest way to create a job config file is to base it off the appropriate sample and update
+   The easiest way to create a job config file is to base it off the
+   sample and update:
 
-* INPUT_LIST_FILE
-* OUTPUT_PATH
-* OUTPUT_LOG_PATH
+     * INPUT_LIST_FILE
+     * OUTPUT_PATH
+     * OUTPUT_LOG_PATH
 
+   To have the generated BAM index file written to the same location as the
+   source BAM, set:
+
+   .. code-block:: shell
+
+     OUTPUT_PATH=source
+
+   Save the job config file to ``${WS_ROOT}/my_jobs/``.
+
+   |br|
 3. .. include:: /includes/grid-computing-tools-steps-sizing-disks.rst
 
 4. .. include:: /includes/grid-computing-tools-steps-upload-your-config.rst
 
-5. **Do a "dry run"** (*optional*)
+5. .. include:: /includes/grid-computing-tools-steps-do-a-dry-run.rst
 
-The ``samtools`` tool supports the DRYRUN environment variable.
-Setting this value to 1 when launching your job will cause the queued job to
-execute *without downloading or uploading* any files.
+   For example:
 
-The local output files, however, will be populated with useful information about
-what files *would* be copied. This can be useful for ensuring your file list
-is valid and that the output path is correct.
+   .. code-block:: shell
 
-For example:
+      $ DRYRUN=1 ./src/samtools/launch_samtools.sh ./samples/samtools/samtools_index_config.sh
+      Your job-array 2.1-6:1 ("samtools") has been submitted
 
-.. code-block:: shell
+   Then after waiting for the job to complete, inspect:
 
-   $ DRYRUN=1 ./src/samtools/launch_samtools.sh ./samples/samtools/samtools_index_config.sh
-   Your job-array 2.1-6:1 ("samtools") has been submitted
+   .. code-block:: shell
 
-Then after waiting for the job to complete, inspect:
+      $ head -n 5 samtools.o3.1
+      Task host: compute002
+      Task start: 1
+      Input list file: ./samples/samtools/samtools_index_file_list.txt
+      Output path: gs://cookbook-bucket/output_path/samtools_index
+      Output log path: gs://cookbook-bucket/log_path/samtools_index
 
-.. code-block:: shell
+      $ grep "^Will download:" samtools.o3.*
+      samtools.o3.1:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/pilot2_high_cov_GRCh37_bams/data/NA12878/alignment/NA12878.chrom9.SOLID.bfast.CEU.high_coverage.20100125.bam to /scratch/samtools.3.1/in/
+      samtools.o3.2:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/pilot2_high_cov_GRCh37_bams/data/NA12878/alignment/NA12878.chrom1.LS454.ssaha2.CEU.high_coverage.20100311.bam to /scratch/samtools.3.2/in/
+      samtools.o3.3:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom11.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.3/in/
+      samtools.o3.4:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom12.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.4/in/
+      samtools.o3.5:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom10.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.5/in/
+      samtools.o3.6:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chromX.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.6/in/
 
-   $ head -n 5 samtools.o3.1
-   Task host: compute002
-   Task start: 1
-   Input list file: ./samples/samtools/samtools_index_file_list.txt
-   Output path: gs://cookbook-bucket/output_path/samtools_index
-   Output log path: gs://cookbook-bucket/log_path/samtools_index
+      $ grep "^Will upload:" samtools.o3.*
+      samtools.o3.1:Will upload: /scratch/samtools.3.1/in/NA12878.chrom9.SOLID.bfast.CEU.high_coverage.20100125.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+      samtools.o3.2:Will upload: /scratch/samtools.3.2/in/NA12878.chrom1.LS454.ssaha2.CEU.high_coverage.20100311.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+      samtools.o3.3:Will upload: /scratch/samtools.3.3/in/NA12878.chrom11.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+      samtools.o3.4:Will upload: /scratch/samtools.3.4/in/NA12878.chrom12.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+      samtools.o3.5:Will upload: /scratch/samtools.3.5/in/NA12878.chrom10.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+      samtools.o3.6:Will upload: /scratch/samtools.3.6/in/NA12878.chromX.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
 
-   $ grep "^Will download:" samtools.o3.*
-   samtools.o3.1:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/pilot2_high_cov_GRCh37_bams/data/NA12878/alignment/NA12878.chrom9.SOLID.bfast.CEU.high_coverage.20100125.bam to /scratch/samtools.3.1/in/
-   samtools.o3.2:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/pilot2_high_cov_GRCh37_bams/data/NA12878/alignment/NA12878.chrom1.LS454.ssaha2.CEU.high_coverage.20100311.bam to /scratch/samtools.3.2/in/
-   samtools.o3.3:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom11.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.3/in/
-   samtools.o3.4:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom12.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.4/in/
-   samtools.o3.5:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chrom10.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.5/in/
-   samtools.o3.6:Will download: gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/data/NA12878/alignment/NA12878.chromX.SOLID.corona.SRP000032.2009_08.bam to /scratch/samtools.3.6/in/
+6. .. include:: /includes/grid-computing-tools-steps-do-a-test-run.rst
 
-   $ grep "^Will upload:" samtools.o3.*
-   samtools.o3.1:Will upload: /scratch/samtools.3.1/in/NA12878.chrom9.SOLID.bfast.CEU.high_coverage.20100125.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
-   samtools.o3.2:Will upload: /scratch/samtools.3.2/in/NA12878.chrom1.LS454.ssaha2.CEU.high_coverage.20100311.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
-   samtools.o3.3:Will upload: /scratch/samtools.3.3/in/NA12878.chrom11.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
-   samtools.o3.4:Will upload: /scratch/samtools.3.4/in/NA12878.chrom12.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
-   samtools.o3.5:Will upload: /scratch/samtools.3.5/in/NA12878.chrom10.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
-   samtools.o3.6:Will upload: /scratch/samtools.3.6/in/NA12878.chromX.SOLID.corona.SRP000032.2009_08.bam.bai to gs://cookbook-bucket/output_path/samtools_index/
+   |br|
+   For example to launch a Grid Engine array job that only processes line 1:
 
-6. **Launch the job**
+   .. code-block:: shell
 
-  SSH to the master instance
- 
-  .. code-block:: shell
+     $ LAUNCH_MIN=1 LAUNCH_MAX=1 ./src/samtools/launch_samtools.sh ./samples/samtools/samtools_index_config.sh
+     Your job-array 5.1-1:1 ("samtools") has been submitted
 
-    elasticluster ssh gridengine
+   The ``LAUNCH_MIN`` and ``LAUNCH_MAX`` values can be used with the
+   ``DRYRUN`` environment variable:
 
-  Run the launch script, passing in the config file:
+   .. code-block:: shell
+
+     $ DRYRUN=1 LAUNCH_MIN=1 LAUNCH_MAX=5 ./src/samtools/launch_samtools.sh ./samples/samtools/samtools_index_config.sh
+     Your job-array 6.1-5:1 ("samtools") has been submitted
+
+7. **Launch the job**
+
+  On the master instance, run the launch script, passing in the config file:
 
   .. code-block:: shell
 

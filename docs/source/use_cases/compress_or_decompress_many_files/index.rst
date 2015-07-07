@@ -172,45 +172,41 @@ To run your own job to compress/decompress a list of files requires the followin
 
 1. **Create an** ``input list file``
 
-If all of your input files appear in a single directory, then the easiest way
-to generate a file list is with `gsutil`_. For example:
+   If all of your input files appear in a single directory, then the
+   easiest way to generate a file list is with `gsutil`_. For example:
 
-.. code-block:: shell
+   .. code-block:: shell
 
-  gsutil ls gs://MY_BUCKET/PATH/*.vcf.bz2 > ${WS_ROOT}/my_jobs/compressed_vcf_list_file.txt
+     gsutil ls gs://MY_BUCKET/PATH/*.vcf.bz2 > ${WS_ROOT}/my_jobs/compressed_vcf_list_file.txt
   
 2. **Create a** ``job config file``
 
-The easiest way to create a job config file is to base it off the appropriate sample and update
+   The easiest way to create a job config file is to base it off the
+   appropriate sample and update
 
-* INPUT_LIST_FILE
-* OUTPUT_PATH
-* OUTPUT_LOG_PATH
+     * INPUT_LIST_FILE
+     * OUTPUT_PATH
+     * OUTPUT_LOG_PATH
 
+   Save the job config file to ``${WS_ROOT}/my_jobs/``.
+
+   |br|
 3. .. include:: /includes/grid-computing-tools-steps-sizing-disks.rst
 
 4. .. include:: /includes/grid-computing-tools-steps-upload-your-config.rst
 
-5. **Do a "dry run"** (*optional*)
+5. .. include:: /includes/grid-computing-tools-steps-do-a-dry-run.rst
 
-  The ``compress`` tool supports the DRYRUN environment variable.
-  Setting this value to 1 when launching your job will cause the queued job to
-  execute *without downloading or uploading* any files.
+   For example:
 
-  The local output files, however, will be populated with useful information
-  about what files *would* be copied. This can be useful for ensuring your
-  file list is valid and that the output path is correct.
-
-  For example:
-
-  .. code-block:: shell
+   .. code-block:: shell
 
      $ DRYRUN=1 ./src/compress/launch_compress.sh ./samples/compress/gzip_compress_config.sh
      Your job-array 5.1-6:1 ("compress") has been submitted
 
-  Then after waiting for the job to complete, inspect:
+   Then after waiting for the job to complete, inspect:
 
-  .. code-block:: shell
+   .. code-block:: shell
 
      $ head -n 5 compress.o3.1 
      Task host: compute001
@@ -227,15 +223,27 @@ The easiest way to create a job config file is to base it off the appropriate sa
      compress.o5.5:Will download: gs://genomics-public-data/platinum-genomes/vcf/NA12881_S1.genome.vcf to /scratch/compress.5.5/in/
      compress.o5.6:Will download: gs://genomics-public-data/platinum-genomes/vcf/NA12882_S1.genome.vcf to /scratch/compress.5.6/in/
 
-6. **Launch the job**
+6. .. include:: /includes/grid-computing-tools-steps-do-a-test-run.rst
 
-  SSH to the master instance
- 
-  .. code-block:: shell
+   |br|
+   For example to launch a Grid Engine array job that only processes line 1:
 
-    elasticluster ssh gridengine
+   .. code-block:: shell
 
-  Run the launch script, passing in the config file:
+     $ LAUNCH_MIN=1 LAUNCH_MAX=1 ./src/compress/launch_compress.sh ./samples/compress/gzip_compress_config.sh
+     Your job-array 5.1-1:1 ("compress") has been submitted
+
+   The ``LAUNCH_MIN`` and ``LAUNCH_MAX`` values can be used with the
+   ``DRYRUN`` environment variable:
+
+   .. code-block:: shell
+
+     $ DRYRUN=1 LAUNCH_MIN=1 LAUNCH_MAX=1 ./src/compress/launch_compress.sh ./samples/compress/gzip_compress_config.sh
+     Your job-array 6.1-5:1 ("compress") has been submitted
+
+7. **Launch the job**
+
+  On the master instance, run the launch script, passing in the config file:
 
   .. code-block:: shell
 

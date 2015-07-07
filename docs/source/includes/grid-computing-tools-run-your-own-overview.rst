@@ -3,6 +3,7 @@
 #. Create a gridengine cluster with sufficient disk space attached to each ``compute`` node
 #. Upload input list file, config file, and ``grid-computing-tools`` source to the gridengine cluster master
 #. Do a "dry run" (*optional*)
+#. Do a "test run" (*optional*)
 #. Launch the job
 
 The following instructions provide guidance on each of these steps.
