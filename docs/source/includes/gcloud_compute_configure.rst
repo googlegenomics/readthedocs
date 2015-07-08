@@ -1,4 +1,4 @@
-(1) Set your default project ID.  *Note: Project ID is not the same as project name.  You can view your project ID on the overview page of the Developers Console*.
+(1) Set your default project ID.  *Note: Project ID is not the same as project name.  You can view your project ID on the overview page of the* `Google Developers Console`_.
 
   ``gcloud config set project YOUR-PROJECT-ID``
 
