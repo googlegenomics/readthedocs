@@ -137,18 +137,23 @@ rst_epilog = """
 .. _Google Genomics: https://cloud.google.com/genomics/
 
 .. ### Deep links into cloud.google.com documentation
+.. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas
+.. _Compute Engine quota request form: https://docs.google.com/a/google.com/forms/d/1vb2MkAr9JcHrp6myQ3oTxCyBv2c7Iyc5wqIKqE3K4IE/viewform
 .. _Google Genomics Tools: https://cloud.google.com/genomics/install-genomics-tools
 .. _Google Genomics API: https://cloud.google.com/genomics/v1beta2/reference/
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/variants
 .. _Google Genomics Variants API: https://cloud.google.com/genomics/v1beta2/reference/reads
 .. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
+.. _gsutil: https://cloud.google.com/storage/docs/gsutil
 .. _install gcloud: https://cloud.google.com/sdk/
 .. _persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
+.. _selecting the right persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence#selecting_the_right_disk
 
 .. ### Open ecosystem links
 .. _Apache Spark: https://spark.apache.org/
 .. _Apache Hadoop: https://hadoop.apache.org/
 .. _Elasticluster: https://elasticluster.readthedocs.org
+.. _Elasticluster repo: https://github.com/gc3-uzh-ch/elasticluster
 .. _Grid Engine: http://gridengine.info/
 .. _S3IT: http://www.s3it.uzh.ch/
 .. _SLURM: https://computing.llnl.gov/linux/slurm/
@@ -161,11 +166,14 @@ rst_epilog = """
 .. _Picard: http://broadinstitute.github.io/picard/
 .. _GATK: https://www.broadinstitute.org/gatk/
 
+.. _gridengine array job: http://wiki.gridengine.info/wiki/index.php/Simple-Job-Array-Howto
+
 .. ### googlegenomics github links
 .. _gatk-tools-java: https://github.com/googlegenomics/gatk-tools-java
 .. _Data Analysis using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/1000Genomes-BRCA1-analysis
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
 .. _BiocDockerOnGCE launch script: https://raw.githubusercontent.com/googlegenomics/gce-images/master/launch-scripts/bioconductorRStudioGCE.sh
+.. _Grid Computing Tools github repo: https://github.com/googlegenomics/grid-computing-tools
 
 .. ### R package links
 .. _VariantAnnotation: http://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html
