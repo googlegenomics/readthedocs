@@ -55,7 +55,7 @@ Data Visualization Application Samples
 `api-client-r <https://github.com/googlegenomics/api-client-r>`_
   An R package for Google Genomics API queries.
    * See the `Shiny example <https://github.com/googlegenomics/api-client-r/tree/master/shiny>`_.
-   * See the `ggbio example <https://github.com/googlegenomics/api-client-r/blob/master/inst/doc/PlottingAlignments.md>`_.
+   * See the `ggbio example <http://bioconductor.org/packages/devel/bioc/vignettes/GoogleGenomics/inst/doc/PlottingAlignments.html>`_.
 
 Data Analysis Application Samples
 -----------------------------------------------
