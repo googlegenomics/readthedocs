@@ -1,4 +1,6 @@
-If you would also like a shell prompt, ssh to the instance and:
+If you would also like a shell prompt, use the `Google Developers Console`_ to ssh to the instance and:
+
+**TODO: where to find ssh in developers console**
 
 .. code:: bash
 
@@ -15,8 +17,11 @@ If you would also like a shell prompt, ssh to the instance and:
 
 To run on a larger machine ... *more here*
 
-To attach a data disk ... *more here*
+See https://github.com/googlegenomics/gce-images for the Docker file.  It depends upon http://www.bioconductor.org/help/docker/ which depends upon https://github.com/rocker-org/rocker/wiki
 
 To save changes to your docker image ... *more here*
+https://github.com/rocker-org/rocker/wiki/How-to-save-data
 
-See https://github.com/googlegenomics/gce-images for the Docker file.
+To attach a data disk ... *more here*
+https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine
+
