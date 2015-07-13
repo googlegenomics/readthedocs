@@ -128,6 +128,10 @@ rst_epilog = """
 .. _googlegenomics github organization: https://github.com/googlegenomics
 .. _Contact us: google-genomics-contact@googlegroups.com
 
+.. ### Google Guide Links
+.. _Google Developers Console Guide: https://developers.google.com/console/help/new/
+.. _Google Identity Platform Guide: https://developers.google.com/identity/protocols/OAuth2
+
 .. ### Google Product Links
 .. _Google BigQuery: https://cloud.google.com/bigquery/
 .. _Google Cloud Dataflow: https://cloud.google.com/dataflow/
@@ -135,6 +139,9 @@ rst_epilog = """
 .. _Google Compute Engine: https://cloud.google.com/compute/
 .. _Google Developers Console: https://console.developers.google.com/
 .. _Google Genomics: https://cloud.google.com/genomics/
+
+.. ### Deep links into the Developers Console
+.. _Project List: https://console.developers.google.com/project
 
 .. ### Deep links into cloud.google.com documentation
 .. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas
@@ -174,6 +181,8 @@ rst_epilog = """
 .. _Quality Control using Google Genomics: https://github.com/googlegenomics/codelabs/tree/master/R/PlatinumGenomes-QC
 .. _BiocDockerOnGCE launch script: https://raw.githubusercontent.com/googlegenomics/gce-images/master/launch-scripts/bioconductorRStudioGCE.sh
 .. _Grid Computing Tools github repo: https://github.com/googlegenomics/grid-computing-tools
+.. _getting-started-bigquery: https://github.com/googlegenomics/getting-started-bigquery
+.. _bigquery-examples: https://github.com/googlegenomics/bigquery-examples
 
 .. ### R package links
 .. _VariantAnnotation: http://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html
