@@ -34,10 +34,10 @@ Configure gcloud compute
 
 .. include:: /includes/gcloud_compute_configure.rst
 
-Spin up a Google Compute Engine Instance running Bioconductor
+Create a Google Compute Engine Instance running Bioconductor
 -------------------------------------------------------------
 
-This codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_.  All the heavy lifting is happening in the cloud regardless of where R is running.  But if you like, you can run the whole darn thing in the cloud.
+This codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_.  All the heavy lifting is happening in the cloud regardless of where R is running.  But to further the goals of `reproducibility, ease of use, and convenience <http://www.bioconductor.org/help/docker/>`_, you can run this codelab in a Bioconductor Docker container deployed to `Google Compute Engine`_.
 
 Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
@@ -69,7 +69,7 @@ Run the Codelabs
 
 .. code::
 
-  help(package="Bioc2015Workshop")
+  help(package="GoogleGenomicsBioc2015Workshop")
 
 (2) Click on *"User guides, package vignettes and other documentation."*
 
@@ -102,7 +102,7 @@ Wrap up
 "Stop" or "Delete" your VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(1) Go to the Google Developers Console: https://console.developers.google.com/project/_/compute/instances
+(1) Go to the Google Developers Console and select your project: https://console.developers.google.com/project/_/compute/instances
 
 (2) Click on the checkbox next to your VM.
 
