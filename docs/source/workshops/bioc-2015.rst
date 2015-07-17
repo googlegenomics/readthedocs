@@ -82,8 +82,15 @@ Run the Codelabs
   .. image:: /_static/run_rmarkdown.png
     :alt: Run Rmarkdown
 
+If you just want to read the rendered results of the four codelabs, here they are:
+
+* `Working with Reads <http://www.bioconductor.org/packages/devel/bioc/vignettes/GoogleGenomics/inst/doc/PlottingAlignments.html>`_
+* `Working with Variants <http://www.bioconductor.org/packages/devel/bioc/vignettes/GoogleGenomics/inst/doc/AnnotatingVariants.html>`_
+* `Analyzing Variants with BigQuery <https://github.com/googlegenomics/bioconductor-workshop-r/blob/master/inst/doc/BigQueryDemo.md>`_
+* `Data Analysis using Google Genomics <https://github.com/googlegenomics/bioconductor-workshop-r/blob/master/inst/doc/AllModalitiesDemo.md>`_
+
 Looking for more to try?
------------------
+------------------------
 * Try these samples on different datasets :doc:`/use_cases/discover_public_data/index`.
 * Find more example BigQuery queries in:
 
