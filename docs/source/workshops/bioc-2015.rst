@@ -45,7 +45,15 @@ Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio 
 
 You now have access to RStudio via your browser!
 
-See https://github.com/googlegenomics/gce-images for the Docker file.  It depends upon http://www.bioconductor.org/help/docker/ which depends upon https://github.com/rocker-org/rocker/wiki.
+.. container:: toggle
+
+    .. container:: header
+
+        For more details about the Docker image, click here to **Show/Hide Details**
+
+    .. container:: content
+
+      .. include:: /includes/bioconductor_docker_details.rst
 
 .. container:: toggle
 
@@ -55,12 +63,7 @@ See https://github.com/googlegenomics/gce-images for the Docker file.  It depend
 
     .. container:: content
 
-      .. code::
-
-        source("http://bioconductor.org/biocLite.R") # installs BiocInstaller
-        useDevel() # specifies to use bioc-devel (3.2)
-        biocLite("devtools") # needed for the special use of biocLite() below
-        biocLite("googlegenomics/bioconductor-workshop-r", build_vignettes=TRUE, dependencies=TRUE)
+      .. include:: /includes/bioconductor_workshop_r_setup.rst
 
 Run the Codelabs
 ------------------------------------------------------
@@ -73,7 +76,9 @@ Run the Codelabs
 
 (2) Click on *"User guides, package vignettes and other documentation."*
 
-(3) Click on vignette *"Bioc2015Workshop"* and follow the instructions there to run the vignettes **line-by-line** or **chunk-by-chunk**!
+(3) Early on in the workshop you will need an API_KEY.  You can get this by clicking on this link: https://console.developers.google.com/project/_/apiui/credential
+
+(4) Click on vignette *"Bioc2015Workshop"* and follow the instructions there to run the vignettes **line-by-line** or **chunk-by-chunk**!
 
   * To run **line-by-line**, put your cursor on the desired line  and click the "Run" button or use keyboard shortcuts for Windows/Linux: ``Ctrl+Enter`` and Mac: ``Command+Enter``.
 
@@ -82,8 +87,15 @@ Run the Codelabs
   .. image:: /_static/run_rmarkdown.png
     :alt: Run Rmarkdown
 
+If you just want to read the rendered results of the four codelabs, here they are:
+
+* `Working with Reads <http://www.bioconductor.org/packages/devel/bioc/vignettes/GoogleGenomics/inst/doc/PlottingAlignments.html>`_
+* `Working with Variants <http://www.bioconductor.org/packages/devel/bioc/vignettes/GoogleGenomics/inst/doc/AnnotatingVariants.html>`_
+* `Analyzing Variants with BigQuery <https://github.com/googlegenomics/bioconductor-workshop-r/blob/master/inst/doc/BigQueryDemo.md>`_
+* `Data Analysis using Google Genomics <https://github.com/googlegenomics/bioconductor-workshop-r/blob/master/inst/doc/AllModalitiesDemo.md>`_
+
 Looking for more to try?
------------------
+------------------------
 * Try these samples on different datasets :doc:`/use_cases/discover_public_data/index`.
 * Find more example BigQuery queries in:
 
