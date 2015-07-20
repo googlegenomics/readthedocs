@@ -114,6 +114,7 @@ rst_epilog = """
 .. _PGP: http://www.personalgenomes.org/
 .. _ClinVar: http://www.ncbi.nlm.nih.gov/clinvar/
 .. _UCSC Sequence and Annotation Data: http://hgdownload.cse.ucsc.edu/
+.. _Tute's documentation: https://docs.google.com/document/d/1_Kryc4qAqw1NRezaqDJ1tXUSCbxEkKK4SSi_kZuyHtU/pub
 
 .. ### Gene links
 .. _BRCA1: http://ghr.nlm.nih.gov/gene/BRCA1
