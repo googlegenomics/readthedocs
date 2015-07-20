@@ -92,7 +92,10 @@ If you just want to read the rendered results of the four codelabs, here they ar
 * `Working with Reads <http://www.bioconductor.org/packages/devel/bioc/vignettes/GoogleGenomics/inst/doc/PlottingAlignments.html>`_
 * `Working with Variants <http://www.bioconductor.org/packages/devel/bioc/vignettes/GoogleGenomics/inst/doc/AnnotatingVariants.html>`_
 * `Analyzing Variants with BigQuery <https://github.com/googlegenomics/bioconductor-workshop-r/blob/master/inst/doc/BigQueryDemo.md>`_
-* `Data Analysis using Google Genomics <https://github.com/googlegenomics/bioconductor-workshop-r/blob/master/inst/doc/AllModalitiesDemo.md>`_
+* `Data Analysis using Google Genomics <https://github.com/googlegenomics/bioconductor-workshop-r/blob/master/inst/doc/AllModalitiesDemo.md>`_, also available on YouTube:
+
+  * brief video `Google Genomics: Data Analysis Overview <https://www.youtube.com/watch?v=vINpqxhcTt0>`_
+  * extended video `Google Genomics Codelab: Data Analysis in R <https://www.youtube.com/watch?v=tPH5PwjzhBM>`_
 
 Looking for more to try?
 ------------------------
