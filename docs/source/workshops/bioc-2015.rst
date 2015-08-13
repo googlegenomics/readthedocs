@@ -1,6 +1,8 @@
 BioC 2015: Where Software and Biology Connect
 =============================================
 
+*This workshop was presented at the annual* `Bioconductor Developer's Conference <http://www.bioconductor.org/help/course-materials/2015/BioC2015/>`_.
+
 Google has some pretty amazing big data computational "hammers" that they have been applying to search and video data for a long time.  In this workshop we take those same hammers and apply them to whole genome sequences.
 
 We will work with both the :doc:`/use_cases/discover_public_data/1000_genomes` reads and variants and also the :doc:`/use_cases/discover_public_data/platinum_genomes` gVCF variants.
