@@ -21,6 +21,7 @@ Here you will find task-oriented documentation.  What do you want to do today?
   use_cases/build_your_own_api_client/index
   use_cases/run_picard_and_gatk/index
   use_cases/setup_gridengine_cluster_on_compute_engine/index
+  use_cases/setup_gridengine_cluster_on_compute_engine/index
   github_index
   mailinglist
 
