@@ -8,6 +8,7 @@ Create a Grid Engine cluster on Google Compute Engine
 
 +-------------------------------------------------------------------------------+
 | The properly rendered version of this document can be found at Read The Docs. |
+|                                                                               |
 | If you are reading this on github, you should instead click `here`__.         |
 +-------------------------------------------------------------------------------+
 
