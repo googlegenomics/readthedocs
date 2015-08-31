@@ -1,5 +1,7 @@
-What You'll Find on GitHub
-==========================
+Find Samples on GitHub
+======================
+
+Here's a list of what you'll find on GitHub.
 
 Interactive Data Analysis Samples and Tools
 -----------------------------------------------

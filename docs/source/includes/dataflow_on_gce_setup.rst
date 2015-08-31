@@ -23,5 +23,3 @@ If you do not have Java on your local machine, you can set up Java 7 on a `Googl
   sudo apt-get update
   sudo apt-get install --assume-yes openjdk-7-jdk maven
   sudo update-alternatives --config java
-
-*Tip:* Add option ``--noLaunchBrowser`` your dataflow command lines so that the authorization flow prints a URL to be copied instead of launching a web browser.

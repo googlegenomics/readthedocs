@@ -9,7 +9,7 @@ Compute Principal Coordinate Analysis
 `Principal Coordinate Analysis <http://occamstypewriter.org/boboh/2012/01/17/pca_and_pcoa_explained/>`_
 counts the number of variants two samples have in common.  These counts are then placed into an
 ``NxN`` matrix where ``N`` is the number of samples in the dataset.  The matrix is centered,
-scaled, and then the first two principal components are computed for each invididual.
+scaled, and then the first two principal components are computed for each individual.
 
 See the `Data Analysis using Google Genomics codelab <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#cluster-computing>`_ for an example that makes use of the results of this analysis run upon :doc:`/use_cases/discover_public_data/1000_genomes`.
 
