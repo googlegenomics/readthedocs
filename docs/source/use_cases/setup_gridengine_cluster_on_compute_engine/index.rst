@@ -6,11 +6,13 @@
 Create a Grid Engine cluster on Google Compute Engine
 =====================================================
 
-+-------------------------------------------------------------------------------+
-| The properly rendered version of this document can be found at Read The Docs. |
-|                                                                               |
-| If you are reading this on github, you should instead click `here`__.         |
-+-------------------------------------------------------------------------------+
+.. only:: (not html)
+
++-----------------------------------------------------------------------------------+
+| **The properly rendered version of this document can be found at Read The Docs.** |
+|                                                                                   |
+| **If you are reading this on github, you should instead click** `here`__.         |
++-----------------------------------------------------------------------------------+
 
 .. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/setup_gridengine_cluster_on_compute_engine/index.html
 
