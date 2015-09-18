@@ -166,6 +166,9 @@ def update_file(file, target_loc):
 
   os.remove(file)
   os.rename(outfile, file)
+
+# MAIN
+
 file_list = StringIO.StringIO(get_file_list())
 
 for file in file_list.readlines():
