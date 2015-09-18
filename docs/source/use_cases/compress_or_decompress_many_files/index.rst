@@ -9,6 +9,22 @@
 Compress/Decompress files in Google Cloud Storage
 =================================================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/compress_or_decompress_many_files/index.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 Suppose you have thousands of VCFs, which you have stored *compressed* in
 Google Cloud Storage, and you need to perform some operation on them in
 their *decompressed* state.

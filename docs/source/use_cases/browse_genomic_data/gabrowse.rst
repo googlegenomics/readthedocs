@@ -1,6 +1,22 @@
 GABrowse
 ========
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/browse_genomic_data/gabrowse.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 Try it now: https://gabrowse.appspot.com/
 
 GABrowse is a sample application designed to demonstrate the capabilities of the

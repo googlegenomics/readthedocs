@@ -1,6 +1,22 @@
 Reference Genomes
 ===========================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/reference_genomes.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 Reference Genomes such as GRCh37, GRCh37lite, GRCh38, hg19, hs37d5 are available on Google Cloud Platform.
 
 Google Cloud Platform data locations

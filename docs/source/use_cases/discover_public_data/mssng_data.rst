@@ -1,6 +1,22 @@
 MSSNG Database for Autism Researchers
 =====================================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/mssng_data.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 This dataset comprises a growing collection of both Illumina and Complete Genomics genomes of families affected by autism.  **Apply for data access at** `MSSNG Database for Autism Researchers <http://www.mss.ng/>`_.  See the journal article for full details:
 
 |  `Whole-genome sequencing of quartet families with autism spectrum disorder <http://www.nature.com/nm/journal/v21/n2/full/nm.3792.html>`_
