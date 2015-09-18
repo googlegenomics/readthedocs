@@ -6,6 +6,8 @@
 Create a Grid Engine cluster on Google Compute Engine
 =====================================================
 
+.. comment: begin: goto-read-the-docs
+
 .. container:: visible-only-on-github
 
    +-----------------------------------------------------------------------------------+
@@ -17,6 +19,8 @@ Create a Grid Engine cluster on Google Compute Engine
 .. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/setup_gridengine_cluster_on_compute_engine/index.html
 
 __ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
 
 This document provides getting started instructions for using
 `Elasticluster`_ to create clusters of Google Compute Engine instances
