@@ -6,6 +6,22 @@
 Build your own Google Genomics API Client
 ===============================================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/build_your_own_api_client/index.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 The tools for working with the `Google Genomics API`_
 are all open source and available `on GitHub <https://github.com/googlegenomics>`_.
 

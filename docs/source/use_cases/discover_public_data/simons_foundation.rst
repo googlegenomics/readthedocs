@@ -1,6 +1,22 @@
 Simons Genome Diversity Project
 ===============================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/simons_foundation.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 This dataset comprises 25 genomes from 13 diverse populations serving as the pilot project dataset for the `Simons Genome Diversity Project <https://www.simonsfoundation.org/life-sciences/simons-genome-diversity-project/>`_.  See the journal article for full details:
 
 |  `The complete genome sequence of a Neanderthal from the Altai Mountains <http://www.nature.com/nature/journal/v505/n7481/full/nature12886.html>`_

@@ -1,6 +1,22 @@
 Personal Genome Project Data
 ============================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/pgp_public_data.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 This dataset comprises roughly 180 Complete Genomics genomes.  See the `Personal Genome Project`_ and the publication for full details:
 
 |  `A public resource facilitating clinical use of genomes <http://www.ncbi.nlm.nih.gov/pubmed/22797899>`_

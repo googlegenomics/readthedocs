@@ -1,6 +1,22 @@
 Discover Published Data
 ========================
-There is a growing collection of genomic data resident in Google Cloud Platform and shared with the community.  Some datasets are *open-access*, such as 1,000 Genomes, whereas other datasets are *controlled-access*.  Each dataset page describes the source of the data and how to access the data or apply for access as applicable for the dataset.
+
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/index.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 
 
 .. toctree::

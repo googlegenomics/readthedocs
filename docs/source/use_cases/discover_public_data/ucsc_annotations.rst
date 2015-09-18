@@ -1,6 +1,22 @@
 UCSC Annotations
 ================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/ucsc_annotations.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 `UCSC Sequence and Annotation Data`_ were loaded into Google Genomics for use in sample annotation pipelines.  This data reflects the state of `UCSC Sequence and Annotation Data`_ at a particular point in time.
 
 Google Cloud Platform data locations

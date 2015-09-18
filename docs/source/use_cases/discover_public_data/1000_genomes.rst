@@ -1,6 +1,22 @@
 1,000 Genomes
 =============
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/1000_genomes.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 This dataset comprises roughly 2,500 genomes from 25 populations around the world.  See the `1,000 Genomes project website <http://www.1000genomes.org/>`_ and publications for full details:
 
 Pilot publication

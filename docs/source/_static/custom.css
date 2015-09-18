@@ -30,3 +30,7 @@
     font-size: small;
     font-style: italic;
 }
+
+.visible-only-on-github {
+    display: none;
+}

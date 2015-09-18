@@ -1,6 +1,22 @@
 Supercentenarian Genomes
 ========================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/supercentenarians.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 This dataset comprises Complete Genomics genomes for 17 supercentenarians (110 years or older).  **Apply for data access at** http://goo.gl/MGcYJ5.  See the journal article for full details:
 
 |  `Whole-Genome Sequencing of the World's Oldest People <http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0112430>`_

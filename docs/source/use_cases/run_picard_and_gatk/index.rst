@@ -1,6 +1,22 @@
 Run Picard and GATK tools on Cloud-Resident Genomic Data
 =========================================================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/run_picard_and_gatk/index.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 `Picard`_ and `GATK`_ tools are popular utilities used for genomics analysis and
 processing pipelines.
 
