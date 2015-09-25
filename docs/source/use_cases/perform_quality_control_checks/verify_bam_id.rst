@@ -6,7 +6,7 @@ Verify Bam Id
 
 .. contents::
 
-This pipeline tests a set of reads for contamination.  It takes a set of specified ReadGroupSets
+This pipeline tests a set of reads for contamination.  It takes a set of specified ReadGroupSet
 of reads to test and statistics on reference allele frequencies for SNPs with a single alternative
 from a specified set of VariantSets and combines these to produce an estimate of the amount of
 contamination.
@@ -39,7 +39,7 @@ Run the pipeline
 ----------------
 
 The following command will calculate the contamination estimate for a given ReadGroupSet and specific region
-in the 1000 Genomes dataset.  It also uses the VariantSet within 1000 Genomes for retrieving the allele frequencies.
+in the :doc:`/use_cases/discover_public_data/1000_genomes` dataset.  It also uses the VariantSet within :doc:`/use_cases/discover_public_data/1000_genomes` for retrieving the allele frequencies.
 
 .. code-block:: shell
 
@@ -55,7 +55,7 @@ in the 1000 Genomes dataset.  It also uses the VariantSet within 1000 Genomes fo
     --output=gs://YOUR-BUCKET/dataflow-output/test-output.txt
 
 The following command will also calculate the contamination estimate in the same manner as the previous
-command, but will use the entire 1000 Genomes dataset (all ReadGroupSets and the VariantSet within).  This will
+command, but will use the entire :doc:`/use_cases/discover_public_data/1000_genomes` dataset (all ReadGroupSet and the VariantSet within).  This will
 take much longer to run.
 
 .. code-block:: shell

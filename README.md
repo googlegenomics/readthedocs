@@ -8,7 +8,7 @@ alt="Google Genomics: Data Analysis Overview" width="240" height="180" border="1
 2. [Try a few queries on public genomic data](https://github.com/googlegenomics/getting-started-bigquery) using Google BigQuery.
 3. Browse the the [Google Genomics Cookbook](http://googlegenomics.readthedocs.org/en/latest/index.html).
   * There are a *ton* of samples on github for a variety of genomics use cases.
-  * You'll find the samples described both by task (e.g., variant annotation) and technology (e.g. R, Python, BigQuery) on 
+  * You'll find the samples described both by task (e.g., variant annotation) and technology (e.g. R, Python, BigQuery) in the cookbook.
 
 ##### This Repository
 
