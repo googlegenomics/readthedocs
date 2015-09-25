@@ -151,6 +151,7 @@ rst_epilog = """
 .. _Google Genomics API: https://cloud.google.com/genomics/v1beta2/reference/
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/variants
 .. _Google Genomics Variants API: https://cloud.google.com/genomics/v1beta2/reference/reads
+.. _Load Genomic Variants: https://cloud.google.com/genomics/v1/load-variants
 .. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
 .. _gsutil: https://cloud.google.com/storage/docs/gsutil
 .. _install gcloud: https://cloud.google.com/sdk/
