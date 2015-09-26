@@ -6,10 +6,12 @@ Verify Bam Id
 
 .. contents::
 
-This pipeline tests a set of reads for contamination.  It takes a set of specified ReadGroupSet
-of reads to test and statistics on reference allele frequencies for SNPs with a single alternative
-from a specified set of VariantSets and combines these to produce an estimate of the amount of
-contamination.
+This pipeline tests a set of reads for contamination. It takes as input:
+
+* a set of ReadGroupSets to test
+* statistics on reference allele frequencies for SNPs with a single alternative from a set of VariantSets
+
+and combines these to produce an estimate of the amount of contamination.
 
 Uses the sequence data alone approach described in:
 G. Jun, M. Flickinger, K. N. Hetrick, Kurt, J. M. Romm, K. F. Doheny, G. Abecasis, M. Boehnke, and
