@@ -34,3 +34,8 @@
 .visible-only-on-github {
     display: none;
 }
+
+div.list-with-list-items-bottom-padded ul li {
+  padding-bottom: 10px;
+}
+

@@ -124,34 +124,38 @@ table schema in the right-hand pane:
 
 The key fields of the variants table that will be frequently referenced in this lab are:
 
-* reference_name
+.. container:: list-with-list-items-bottom-padded
 
-  The reference on which this variant occurs. (such as "chr20" or "X")
-
-* start
-
-  The position at which this variant occurs (0-based). This corresponds to
-  the first base of the string of reference bases.
-
-* end
-
-  The end position (0-based) of this variant. This corresponds to the
-  first base after the last base in the reference allele. So, the length
-  of the reference allele is (end - start).
-
-* reference_bases
-
-  The reference bases for this variant. They start at the given position.
-
-* alternate_bases
-
-  The bases that appear instead of the reference bases.
+  * reference_name
+  
+    The reference on which this variant occurs. (such as "chr20" or "X")
+  
+  * start
+  
+    The position at which this variant occurs (0-based). This corresponds to
+    the first base of the string of reference bases.
+  
+  * end
+  
+    The end position (0-based) of this variant. This corresponds to the
+    first base after the last base in the reference allele. So, the length
+    of the reference allele is (end - start).
+  
+  * reference_bases
+  
+    The reference bases for this variant. They start at the given position.
+  
+  * alternate_bases
+  
+    The bases that appear instead of the reference bases.
 
 and
 
-* call
+.. container:: list-with-list-items-bottom-padded
 
-  The variant calls for this particular variant.
+  * call
+
+    The variant calls for this particular variant.
 
 The first set of fields are what makes a ``variant`` record unique.
 
