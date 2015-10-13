@@ -35,7 +35,12 @@
     display: none;
 }
 
-div.list-with-list-items-bottom-padded ul li {
-  padding-bottom: 10px;
+/*
+ * By default tables add horizontal scrollbars instead of wrapping.
+ * It is hard to conceive of when you would want this.
+ * Issue discussed and workaround provided here:
+ *   https://github.com/snide/sphinx_rtd_theme/issues/117
+ */
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal !important;
 }
-
