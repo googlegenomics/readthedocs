@@ -116,6 +116,9 @@ rst_epilog = """
 .. _UCSC Sequence and Annotation Data: http://hgdownload.cse.ucsc.edu/
 .. _Tute's documentation: https://docs.google.com/document/d/1_Kryc4qAqw1NRezaqDJ1tXUSCbxEkKK4SSi_kZuyHtU/pub
 
+.. _Illumina Platinum Genomes project data: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/platinum_genomes.html
+.. _1000 Genomes project data: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/1000_genomes.html
+
 .. ### Gene links
 .. _BRCA1: http://ghr.nlm.nih.gov/gene/BRCA1
 .. _BRCA2: http://ghr.nlm.nih.gov/gene/BRCA2
@@ -124,6 +127,15 @@ rst_epilog = """
 .. _GA4GH: http://ga4gh.org/#/api
 .. _Global Alliance for Genomics and Health API: http://ga4gh.org/#/api
 .. _Global Alliance for Genomics and Health Beacon: http://ga4gh.org/#/beacon
+
+.. ### VCF documentation links
+.. _VCF specification: http://samtools.github.io/hts-specs/VCFv4.2.pdf
+.. _gVCF: https://sites.google.com/site/gvcftools/home/about-gvcf
+.. _gVCF conventions: https://sites.google.com/site/gvcftools/home/about-gvcf/gvcf-conventions
+
+.. ### Corporate ecosystem links
+.. _Complete Genomics: http://www.completegenomics.com
+.. _Illumina: https://www.illumina.com
 
 .. ### Google genomics organizational links
 .. _googlegenomics github organization: https://github.com/googlegenomics
@@ -147,10 +159,14 @@ rst_epilog = """
 .. ### Deep links into cloud.google.com documentation
 .. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas
 .. _Compute Engine quota request form: https://docs.google.com/a/google.com/forms/d/1vb2MkAr9JcHrp6myQ3oTxCyBv2c7Iyc5wqIKqE3K4IE/viewform
+.. _Google BigQuery query reference: https://cloud.google.com/bigquery/query-reference
 .. _Google Genomics Tools: https://cloud.google.com/genomics/install-genomics-tools
 .. _Google Genomics API: https://cloud.google.com/genomics/v1beta2/reference/
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/variants
 .. _Google Genomics Variants API: https://cloud.google.com/genomics/v1beta2/reference/reads
+.. _Load Genomic Variants: https://cloud.google.com/genomics/v1/load-variants
+.. _Understanding the BigQuery Variants Table Schema: https://cloud.google.com/genomics/v1/bigquery-variants-schema
+
 .. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
 .. _gsutil: https://cloud.google.com/storage/docs/gsutil
 .. _install gcloud: https://cloud.google.com/sdk/
