@@ -155,6 +155,7 @@ rst_epilog = """
 
 .. ### Deep links into the Developers Console
 .. _Project List: https://console.developers.google.com/project
+.. _click-to-deploy NCBI BLAST: https://console.developers.google.com/project/_/launcher/details/click-to-deploy-images/ncbiblast
 
 .. ### Deep links into cloud.google.com documentation
 .. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas
@@ -176,6 +177,7 @@ rst_epilog = """
 .. ### Open ecosystem links
 .. _Apache Spark: https://spark.apache.org/
 .. _Apache Hadoop: https://hadoop.apache.org/
+.. _NCBI BLAST: http://blast.ncbi.nlm.nih.gov/Blast.cgi
 .. _Elasticluster: https://elasticluster.readthedocs.org
 .. _Elasticluster repo: https://github.com/gc3-uzh-ch/elasticluster
 .. _Grid Engine: http://gridengine.info/
