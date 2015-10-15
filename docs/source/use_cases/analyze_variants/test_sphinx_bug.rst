@@ -228,20 +228,3 @@ field (similar to a list).
 
 The ``alternate_bases`` field is a simple REPEATED field in that it allows
 for multiple scalar STRING values. Examples:
-
-   +----------------+----------+----------+-----------------+
-   + reference_name | start    | end      | alternate_bases |
-   +================+==========+==========+=================+
-   | chr4           | 6214126  | 6214135  | - A             |
-   |                |          |          | - AACAC         |
-   +----------------+----------+----------+-----------------+
-   | chr9           | 16011409 | 16011412 | - C             |
-   |                |          |          | - CT            |
-   +----------------+----------+----------+-----------------+
-
-The ``call`` field is a complex REPEATED field in that it contains
-NESTED fields (making it a hierarchical field).
-The ``call`` field contains 14 nested fields, such as ``call_set_name``,
-``genotype``, and ``FILTER``. Some fields, such as ``genotype`` and
-``FILTER``, are themselves REPEATED fields. We will see examples of
-working with these fields below.
