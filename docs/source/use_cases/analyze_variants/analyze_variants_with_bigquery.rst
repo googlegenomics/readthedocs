@@ -255,12 +255,17 @@ Having the reference calls in the variants table, following the
 `gVCF conventions`_, "makes it straightforward to distinguish variant,
 reference and no-call states for any site of interest".
 
-In a `variants` table exported from Google Genomics, the non-variant segments
-are commonly represented in one of two ways (depending on the variant caller
-that generated the source data):
+   +--------------------------------------------------------------+
+   | Other variant sources, besides VCFs, can contain non-variant |
+   | segments, including `Complete Genomics`_ masterVar files.    |
+   +--------------------------------------------------------------+
 
-* With a NULL alternate_bases value, or
-* With the text string '<NON_REF>' as the alternate_bases value
+In a ``variants`` table exported from Google Genomics, the non-variant segments
+are commonly represented in one of two ways (the representation depends on
+the variant caller that generated the source data):
+
+* With a NULL ``alternate_bases`` value, or
+* With the text string '<NON_REF>' as the ``alternate_bases`` value
 
 For example:
 
@@ -283,8 +288,8 @@ starting at position 1000. The reference base at position 1000 is an "A"
 (the reference bases at the other positions of this block are not represented).
 
 The Platinum Genomes data represents non-variant segments with a NULL
-alternate_bases value, however the queries in this lab are designed to
-account for either representation.
+``alternate_bases`` value, however the queries in this lab are designed to
+accommodate either representation.
 
 Table summary data
 ~~~~~~~~~~~~~~~~~~
