@@ -229,20 +229,20 @@ field (similar to a list).
 The ``alternate_bases`` field is a simple REPEATED field in that it allows
 for multiple scalar STRING values. Examples:
 
+.. When RTD uses Sphinx 4.x, turn the table below into a proper RST table.
+   Until then, using a proper table triggers
+   https://github.com/sphinx-doc/sphinx/issues/1871
+
+::
+
    +----------------+----------+----------+-----------------+
-   + reference_name | start    | end      | alternate_bases |
-   +================+==========+==========+=================+
-   | chr4           | 6214126  | 6214135  | +-------------+ |
-   |                |          |          | | A           | |
-   |                |          |          | +-------------+ |
-   |                |          |          | | AACAC       | |
-   |                |          |          | +-------------+ |
-   +----------------+----------+----------+-----------------+
-   | chr9           | 16011409 | 16011412 | +-------------+ |
-   |                |          |          | | C           | |
-   |                |          |          | +-------------+ |
-   |                |          |          | | CT          | |
-   |                |          |          | +-------------+ |
+   | reference_name | start    | end      | alternate_bases |
+   |================+==========+==========+=================|
+   | chr4           | 6214126  | 6214135  | A               |
+   |                |          |          | AACAC           |
+   |----------------+----------+----------+-----------------|
+   | chr9           | 16011409 | 16011412 | C               |
+   |                |          |          | CT              |
    +----------------+----------+----------+-----------------+
 
 The ``call`` field is a complex REPEATED field in that it contains
