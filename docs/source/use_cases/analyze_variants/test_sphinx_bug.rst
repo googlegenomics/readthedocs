@@ -190,3 +190,58 @@ More details about other fields can be found at
    | implements), but differs from the VCF specification in which the start |
    | column is 1-based and the end column is 0-based.                       |
    +------------------------------------------------------------------------+
+
+How was this table created?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The data in the Platinum Genomes variants table was created by:
+
+1. Copying VCFs into Google Cloud Storage
+2. Importing the VCFs into Google Genomics
+3. Exporting the variants to Google BigQuery
+
+More on the process can be found
+`here <https://cloud.google.com/genomics/v1/load-variants>`_ on
+`cloud.google.com/genomics <https://cloud.google.com/genomics>`_.
+
+More on the Google Genomics variant representation can be found
+`here <https://cloud.google.com/genomics/reference/rest/v1/variants>`_
+`cloud.google.com/genomics <https://cloud.google.com/genomics>`_.
+
+More on the origin of the data can be found
+`here <http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/platinum_genomes.html>`_ on
+`googlegenomics.readthedocs.org <http://googlegenomics.readthedocs.org>`_.
+
+.. _repeated-and-nested-fields:
+
+REPEATED and NESTED fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+BigQuery supports REPEATED fields for lists of values and NESTED fields for
+hierarchical values. These field types are useful for representing rich data
+without duplication.
+
+Two of the fields noted above, the ``alternate_bases`` and the ``call``
+field, are REPEATED fields.  REPEATED fields are a feature of BigQuery
+that allow for embedding multiple values of the same type into the same
+field (similar to a list). 
+
+The ``alternate_bases`` field is a simple REPEATED field in that it allows
+for multiple scalar STRING values. Examples:
+
+   +----------------+----------+----------+-----------------+
+   + reference_name | start    | end      | alternate_bases |
+   +================+==========+==========+=================+
+   | chr4           | 6214126  | 6214135  | - A             |
+   |                |          |          | - AACAC         |
+   +----------------+----------+----------+-----------------+
+   | chr9           | 16011409 | 16011412 | - C             |
+   |                |          |          | - CT            |
+   +----------------+----------+----------+-----------------+
+
+The ``call`` field is a complex REPEATED field in that it contains
+NESTED fields (making it a hierarchical field).
+The ``call`` field contains 14 nested fields, such as ``call_set_name``,
+``genotype``, and ``FILTER``. Some fields, such as ``genotype`` and
+``FILTER``, are themselves REPEATED fields. We will see examples of
+working with these fields below.
