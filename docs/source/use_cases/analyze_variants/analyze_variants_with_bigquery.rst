@@ -227,7 +227,14 @@ that allow for embedding multiple values of the same type into the same
 field (similar to a list). 
 
 The ``alternate_bases`` field is a simple REPEATED field in that it allows
-for multiple scalar STRING values. Examples:
+for multiple scalar STRING values.  For example:
+
+   .. image:: analyze_variants_with_bigquery/repeated_fields_example.png
+      :width: 85%
+
+.. When RTD uses Sphinx 4.x, use the table below instead of an image
+   Until then, using a proper table triggers
+   https://github.com/sphinx-doc/sphinx/issues/1871
 
    +----------------+----------+----------+-----------------+
    + reference_name | start    | end      | alternate_bases |
