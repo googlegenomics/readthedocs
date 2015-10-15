@@ -256,6 +256,8 @@ Having the reference calls in the variants table, following the
 reference and no-call states for any site of interest".
 
    +--------------------------------------------------------------+
+   | Note                                                         |
+   +==============================================================+
    | Other variant sources, besides VCFs, can contain non-variant |
    | segments, including `Complete Genomics`_ masterVar files.    |
    +--------------------------------------------------------------+
