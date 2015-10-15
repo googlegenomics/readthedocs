@@ -255,13 +255,6 @@ Having the reference calls in the variants table, following the
 `gVCF conventions`_, "makes it straightforward to distinguish variant,
 reference and no-call states for any site of interest".
 
-   +--------------------------------------------------------------+
-   | Note                                                         |
-   +==============================================================+
-   | Other variant sources, besides VCFs, can contain non-variant |
-   | segments, including `Complete Genomics`_ masterVar files.    |
-   +--------------------------------------------------------------+
-
 In a ``variants`` table exported from Google Genomics, the non-variant segments
 are commonly represented in one of two ways (the representation depends on
 the variant caller that generated the source data):
