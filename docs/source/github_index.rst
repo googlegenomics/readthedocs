@@ -69,7 +69,7 @@ Miscellaneous
 -----------------------------------------------
 
 `gce-images <https://github.com/googlegenomics/gce-images>`_
-  Scripts that create Google Compute Engine images and Docker images containing sets of popular genomics software.
+  Scripts that create Google Compute Engine images and Docker containers with popular genomics software installed.
 
 `utils-java <https://github.com/googlegenomics/utils-java>`_
   Common Java files for Google Genomics integrations.

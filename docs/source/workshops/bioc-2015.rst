@@ -31,31 +31,34 @@ Install gcloud
 
 .. include:: /includes/gcloud_setup.rst
 
-Configure gcloud compute
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: /includes/gcloud_compute_configure.rst
-
-Create a Google Compute Engine Instance running Bioconductor
+Set up R/Bioconductor
 -------------------------------------------------------------
 
-This codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_.  All the heavy lifting is happening in the cloud regardless of where R is running.  But to further the goals of `reproducibility, ease of use, and convenience <http://www.bioconductor.org/help/docker/>`_, you can run this codelab in a Bioconductor Docker container deployed to `Google Compute Engine`_.
+This codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_.  All the heavy lifting is happening in the cloud regardless of where R is running.  Here are three options to set up your environment
 
-Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
+Run the Bioconductor Docker container on Google Compute Engine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Bioconductor maintains Docker containers with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
-.. include:: /includes/r_workbench_setup.rst
+But to further the goals of `reproducibility, ease of use, and convenience <http://www.bioconductor.org/help/docker/>`_, you can run this codelab in a Bioconductor Docker container deployed to `Google Compute Engine`_.
+
 
 You now have access to RStudio via your browser!
 
+Run the Bioconductor Docker container locally
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. container:: toggle
 
     .. container:: header
 
-        For more details about the Docker image, click here to **Show/Hide Details**
+        If you prefer to run this docker container locally, click here to **Show/Hide Instructions**
 
     .. container:: content
 
       .. include:: /includes/bioconductor_docker_details.rst
+
+Configure your local R installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. container:: toggle
 
