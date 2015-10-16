@@ -22,6 +22,7 @@ Here are some analyses that operate on cloud-resident genomic variants.
 .. toctree::
   :maxdepth: 1
 
+  analyze_variants_with_bigquery
   data_analysis_codelab.rst
   transition_transversion
   hardy_weinberg_equilibrium
