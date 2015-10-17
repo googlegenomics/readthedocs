@@ -31,22 +31,20 @@ Install gcloud
 
 .. include:: /includes/gcloud_setup.rst
 
-Set up R/Bioconductor
+Set up Bioconductor
 -------------------------------------------------------------
 
-This codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_.  All the heavy lifting is happening in the cloud regardless of where R is running.  Here are three options to set up your environment
+To further the goals of `reproducibility, ease of use, and convenience <http://www.bioconductor.org/help/docker/>`_, you can run this codelab in a Bioconductor Docker container deployed to `Google Compute Engine`_.  But this codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_ since all the heavy lifting is happening in the cloud regardless of where R is running.
 
-Run the Bioconductor Docker container on Google Compute Engine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Bioconductor maintains Docker containers with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
-But to further the goals of `reproducibility, ease of use, and convenience <http://www.bioconductor.org/help/docker/>`_, you can run this codelab in a Bioconductor Docker container deployed to `Google Compute Engine`_.
+ 1. Click on `click-to-deploy Bioconductor`_ to navigate to the deployer page on the Developers Console.
+ 2. In field "Docker Image" choose item ``custom``.
+ 3. Click on "More" to display the additional form fields.
+ 4. In field "Custom docker image" paste in value ``gcr.io/bioc_2015/devel_sequencing``.
+ 5. Click on the "Deploy Bioconductor" button.
+ 6. Follow the deployment instructions to log into RStudioServer via your browser!
 
-
-You now have access to RStudio via your browser!
-
-Run the Bioconductor Docker container locally
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. container:: toggle
 
     .. container:: header
@@ -56,9 +54,6 @@ Run the Bioconductor Docker container locally
     .. container:: content
 
       .. include:: /includes/bioconductor_docker_details.rst
-
-Configure your local R installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. container:: toggle
 
