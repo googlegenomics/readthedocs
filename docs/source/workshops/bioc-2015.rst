@@ -38,12 +38,17 @@ To further the goals of `reproducibility, ease of use, and convenience <http://w
 
 Bioconductor maintains Docker containers with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
- 1. Click on `click-to-deploy Bioconductor`_ to navigate to the deployer page on the Developers Console.
- 2. In field "Docker Image" choose item ``custom``.
- 3. Click on "More" to display the additional form fields.
- 4. In field "Custom docker image" paste in value ``gcr.io/bioc_2015/devel_sequencing``.
- 5. Click on the "Deploy Bioconductor" button.
- 6. Follow the deployment instructions to log into RStudioServer via your browser!
+.. sidebar:: Details
+
+  This will create a virtual machine on Google Cloud Platform with a locked down network (only SSH port 22 open).  Your local machine will securely connect to the VM via an ssh tunnel.
+
+
+1. Click on `click-to-deploy Bioconductor`_ to navigate to the deployer page on the Developers Console.
+2. In field "Docker Image" choose item ``custom``.
+3. Click on "More" to display the additional form fields.
+4. In field "Custom docker image" paste in value ``gcr.io/bioc_2015/devel_sequencing``.
+5. Click on the "Deploy Bioconductor" button.
+6. Follow the deployment instructions to log into RStudioServer via your browser!
 
 .. container:: toggle
 
