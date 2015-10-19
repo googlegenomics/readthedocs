@@ -31,27 +31,30 @@ Install gcloud
 
 .. include:: /includes/gcloud_setup.rst
 
-Configure gcloud compute
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: /includes/gcloud_compute_configure.rst
-
-Create a Google Compute Engine Instance running Bioconductor
+Set up Bioconductor
 -------------------------------------------------------------
 
-This codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_.  All the heavy lifting is happening in the cloud regardless of where R is running.  But to further the goals of `reproducibility, ease of use, and convenience <http://www.bioconductor.org/help/docker/>`_, you can run this codelab in a Bioconductor Docker container deployed to `Google Compute Engine`_.
+To further the goals of `reproducibility, ease of use, and convenience <http://www.bioconductor.org/help/docker/>`_, you can run this codelab in a Bioconductor Docker container deployed to `Google Compute Engine`_.  But this codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_ since all the heavy lifting is happening in the cloud regardless of where R is running.
 
-Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
+Bioconductor maintains Docker containers with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
-.. include:: /includes/r_workbench_setup.rst
+.. sidebar:: Details
 
-You now have access to RStudio via your browser!
+  This will create a virtual machine on Google Cloud Platform with a locked down network (only SSH port 22 open).  Your local machine will securely connect to the VM via an ssh tunnel.
+
+
+1. Click on `click-to-deploy Bioconductor`_ to navigate to the deployer page on the Developers Console.
+2. In field "Docker Image" choose item ``custom``.
+3. Click on "More" to display the additional form fields.
+4. In field "Custom docker image" paste in value ``gcr.io/bioc_2015/devel_sequencing``.
+5. Click on the "Deploy Bioconductor" button.
+6. Follow the deployment instructions to log into RStudioServer via your browser!
 
 .. container:: toggle
 
     .. container:: header
 
-        For more details about the Docker image, click here to **Show/Hide Details**
+        If you prefer to run this docker container locally, click here to **Show/Hide Instructions**
 
     .. container:: content
 
