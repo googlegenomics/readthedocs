@@ -6,23 +6,26 @@
 Google Genomics Cookbook
 ========================
 
-Here you will find task-oriented documentation.  What do you want to do today?
+Welcome to the Google Genomics Cookbook on readthedocs. 
+
+The official Google Genomics documentation can be found at
+`cloud.google.com/genomics`_. There you will find information such
+as `What is Google Genomics`_,
+how to `Load Genomic Variants`_ into Google Cloud for analysis,
+and details of the `Google Genomics API`_.
+
+Here on readthedocs, you will find documentation and tutorials for 
+common tasks including moving, transforming, and analyzing genomic data.
+
+Some pages here are specific to using Google Genomics while
+others demonstrate using common genomics tools and accomplishing tasks
+on Google Cloud independent of Google Genomics.
 
 .. toctree::
-  :maxdepth: 1
+   :maxdepth: 2
 
-  use_cases/discover_public_data/index
-  use_cases/load_data/index
-  use_cases/browse_genomic_data/index
-  use_cases/perform_quality_control_checks/index
-  use_cases/annotate_variants/index
-  use_cases/analyze_reads/index
-  use_cases/analyze_variants/index
-  use_cases/run_familiar_tools/index
-  use_cases/build_your_own_api_client/index
-  workshops/index
-  mailinglist
-
-.. # See http://stackoverflow.com/questions/13094652/include-another-page-s-toc-in-sphinx for hand-created table of contents
-
-If instead you want to browse github samples by technology or language used, see :doc:`github_index`.
+   sections/select_genomic_data
+   sections/analyze_data
+   sections/access_data
+   sections/process_data
+   sections/learn_more

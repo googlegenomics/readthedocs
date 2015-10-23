@@ -161,6 +161,9 @@ rst_epilog = """
 .. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas
 .. _Compute Engine quota request form: https://docs.google.com/a/google.com/forms/d/1vb2MkAr9JcHrp6myQ3oTxCyBv2c7Iyc5wqIKqE3K4IE/viewform
 .. _Google BigQuery query reference: https://cloud.google.com/bigquery/query-reference
+.. _cloud.google.com/genomics: https://cloud.google.com/genomics
+.. _What is Google Genomics: https://cloud.google.com/genomics/what-is-google-genomics
+.. _Google Genomics Pricing: https://cloud.google.com/genomics/pricing
 .. _Google Genomics Tools: https://cloud.google.com/genomics/install-genomics-tools
 .. _Google Genomics API: https://cloud.google.com/genomics/v1beta2/reference/
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/v1beta2/reference/variants
