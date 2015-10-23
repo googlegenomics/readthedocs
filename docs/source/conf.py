@@ -152,11 +152,13 @@ rst_epilog = """
 .. _Google Compute Engine: https://cloud.google.com/compute/
 .. _Google Developers Console: https://console.developers.google.com/
 .. _Google Genomics: https://cloud.google.com/genomics/
+.. _Google Cloud Datalab: https://cloud.google.com/datalab/.
 
 .. ### Deep links into the Developers Console
 .. _Project List: https://console.developers.google.com/project
 .. _click-to-deploy NCBI BLAST: https://console.developers.google.com/project/_/launcher/details/click-to-deploy-images/ncbiblast
 .. _click-to-deploy Bioconductor: https://console.developers.google.com/project/_/mc/template/bioconductor
+.. _Deployments: https://console.developers.google.com/project/_/deployments
 
 .. ### Deep links into cloud.google.com documentation
 .. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas
@@ -190,6 +192,7 @@ rst_epilog = """
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
 .. _Dockerized Bioconductor: http://bioconductor.org/help/docker/
+.. _GoogleGenomics Bioconductor package: http://bioconductor.org/packages/release/bioc/html/GoogleGenomics.html
 
 .. _IGV: https://www.broadinstitute.org/igv/
 .. _Picard: http://broadinstitute.github.io/picard/
