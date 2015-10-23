@@ -163,6 +163,7 @@ rst_epilog = """
 .. _Google BigQuery query reference: https://cloud.google.com/bigquery/query-reference
 .. _cloud.google.com/genomics: https://cloud.google.com/genomics
 .. _What is Google Genomics: https://cloud.google.com/genomics/what-is-google-genomics
+.. _Google Genomics fundamentals: https://cloud.google.com/genomics/what-is-google-genomics#fundamentals
 .. _Google Genomics Pricing: https://cloud.google.com/genomics/pricing
 .. _Google Genomics Tools: https://cloud.google.com/genomics/install-genomics-tools
 .. _Google Genomics API: https://cloud.google.com/genomics/v1beta2/reference/

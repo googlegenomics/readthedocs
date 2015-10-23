@@ -6,20 +6,21 @@
 Google Genomics Cookbook
 ========================
 
-Welcome to the Google Genomics Cookbook on readthedocs. 
+Welcome to the Google Genomics Cookbook on Read the Docs. 
 
-The official Google Genomics documentation can be found at
-`cloud.google.com/genomics`_. There you will find information such
-as `What is Google Genomics`_,
-how to `Load Genomic Variants`_ into Google Cloud for analysis,
-and details of the `Google Genomics API`_.
+  +--------------------------------------------------------------------+
+  | The official Google Genomics documentation can be found at         |
+  | `cloud.google.com/genomics`_. There you will find information such |
+  | as `What is Google Genomics`_, `Google Genomics fundamentals`_,    |
+  | and details of the `Google Genomics API`_.                         |
+  +--------------------------------------------------------------------+
 
-Here on readthedocs, you will find documentation and tutorials for 
+Here on Read the Docs, you will find documentation and tutorials for 
 common tasks including moving, transforming, and analyzing genomic data.
 
-Some pages here are specific to using Google Genomics while
-others demonstrate using common genomics tools and accomplishing tasks
-on Google Cloud independent of Google Genomics.
+Some pages here are specific to interacting with the Google Genomics API,
+while others demonstrate using virtual machines and storage on Google Cloud
+to run traditional genomics tools.
 
 .. toctree::
    :maxdepth: 2
