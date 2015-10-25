@@ -193,6 +193,7 @@ rst_epilog = """
 .. _IGV: https://www.broadinstitute.org/igv/
 .. _Picard: http://broadinstitute.github.io/picard/
 .. _GATK: https://www.broadinstitute.org/gatk/
+.. _HTSJDK: https://github.com/samtools/htsjdk/
 
 .. _gridengine array job: http://wiki.gridengine.info/wiki/index.php/Simple-Job-Array-Howto
 
