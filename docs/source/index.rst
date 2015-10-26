@@ -18,15 +18,11 @@ Welcome to the Google Genomics Cookbook on Read the Docs.
 Here on Read the Docs, you will find documentation and tutorials for 
 common tasks including moving, transforming, and analyzing genomic data.
 
-Some pages here are specific to interacting with the Google Genomics API,
-while others demonstrate using virtual machines and storage on Google Cloud
-to run traditional genomics tools.
-
 .. toctree::
    :maxdepth: 2
 
    sections/select_genomic_data
-   sections/analyze_data
-   sections/access_data
    sections/process_data
+   sections/access_data
+   sections/analyze_data
    sections/learn_more

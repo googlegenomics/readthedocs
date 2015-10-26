@@ -8,5 +8,6 @@ Access Genomic Data using...
    /api-client-r/index
    /api-client-python/index
    /api-client-java/index
-   /use_cases/run_picard_and_gatk/index
+   Picard and GATK tools </use_cases/run_picard_and_gatk/index>
+   /use_cases/browse_genomic_data/gabrowse
 
