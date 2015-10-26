@@ -21,8 +21,8 @@ __ RenderedVersion_
 
 Bioconductor maintains Docker containers with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions to deploy it to Google Compute Engine are below but if you want to learn more about these containers, see http://www.bioconductor.org/help/docker/.
 
-1. Click on `click-to-deploy Bioconductor`_ to navigate to the deployer page on the Developers Console.
-  2. Optional: change the *Machine type* if you would like to deploy a machine with more RAM.
+1. Click on `click-to-deploy Bioconductor`_ to navigate to the launcher page on the Developers Console.
+  2. Optional: change the *Machine type* if you would like to deploy a machine with more CPU cores or RAM.
   3. Optional: change the *Data disk size (GB)* if you would like to use a larger persistent disk for your own files.
   4. Optional: change *Docker image* if you would like to install a container with additional Bioconductor packages preinstalled.
 5. Click on the *Deploy Bioconductor* button.
