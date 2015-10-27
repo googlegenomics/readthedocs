@@ -1,6 +1,22 @@
 BioC 2015: Where Software and Biology Connect
 =============================================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/workshops/bioc-2015.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 *This workshop was presented at the annual* `Bioconductor Developer's Conference <http://www.bioconductor.org/help/course-materials/2015/BioC2015/>`_.
 
 Google has some pretty amazing big data computational "hammers" that they have been applying to search and video data for a long time.  In this workshop we take those same hammers and apply them to whole genome sequences.
@@ -31,27 +47,27 @@ Install gcloud
 
 .. include:: /includes/gcloud_setup.rst
 
-Configure gcloud compute
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: /includes/gcloud_compute_configure.rst
-
-Create a Google Compute Engine Instance running Bioconductor
+Set up Bioconductor
 -------------------------------------------------------------
 
-This codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_.  All the heavy lifting is happening in the cloud regardless of where R is running.  But to further the goals of `reproducibility, ease of use, and convenience <http://www.bioconductor.org/help/docker/>`_, you can run this codelab in a Bioconductor Docker container deployed to `Google Compute Engine`_.
+.. include:: /includes/bioconductor_deployment_sidebar.rst
 
-Bioconductor maintains Docker images with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
+To further the goals of `reproducibility, ease of use, and convenience <http://www.bioconductor.org/help/docker/>`_, you can run this codelab in a Bioconductor Docker container deployed to `Google Compute Engine`_.  But this codelab `can be run from anywhere <https://github.com/googlegenomics/bioconductor-workshop-r>`_ since all the heavy lifting is happening in the cloud regardless of where R is running.
 
-.. include:: /includes/r_workbench_setup.rst
+Bioconductor maintains Docker containers with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
-You now have access to RStudio via your browser!
+1. Click on `click-to-deploy Bioconductor`_ to navigate to the deployer page on the Developers Console.
+2. In field *Docker Image* choose item ``custom``.
+3. Click on *More* to display the additional form fields.
+4. In field *Custom docker image* paste in value ``gcr.io/bioc_2015/devel_sequencing``.
+5. Click on the *Deploy Bioconductor* button.
+6. Follow the post-deployment instructions to log into RStudioServer via your browser!
 
 .. container:: toggle
 
     .. container:: header
 
-        For more details about the Docker image, click here to **Show/Hide Details**
+        If you prefer to run this docker container locally, click here to **Show/Hide Instructions**
 
     .. container:: content
 
@@ -119,13 +135,7 @@ Wrap up
 "Stop" or "Delete" your VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(1) Go to the Google Developers Console and select your project: https://console.developers.google.com/project/_/compute/instances
-
-(2) Click on the checkbox next to your VM.
-
-(3) Click on "Stop" to pause your VM or "Delete" to delete it.
-
-For more detail, see: https://cloud.google.com/compute/docs/instances/#stop_job
+.. include:: /includes/c2d_deployment_teardown.rst
 
 Stay Involved
 ^^^^^^^^^^^^^

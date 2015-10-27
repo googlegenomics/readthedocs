@@ -152,10 +152,13 @@ rst_epilog = """
 .. _Google Compute Engine: https://cloud.google.com/compute/
 .. _Google Developers Console: https://console.developers.google.com/
 .. _Google Genomics: https://cloud.google.com/genomics/
+.. _Google Cloud Datalab: https://cloud.google.com/datalab/.
 
 .. ### Deep links into the Developers Console
 .. _Project List: https://console.developers.google.com/project
 .. _click-to-deploy NCBI BLAST: https://console.developers.google.com/project/_/launcher/details/click-to-deploy-images/ncbiblast
+.. _click-to-deploy Bioconductor: https://console.developers.google.com/project/_/mc/template/bioconductor
+.. _Deployments: https://console.developers.google.com/project/_/deployments
 
 .. ### Deep links into cloud.google.com documentation
 .. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas
@@ -181,16 +184,19 @@ rst_epilog = """
 .. ### Open ecosystem links
 .. _Apache Spark: https://spark.apache.org/
 .. _Apache Hadoop: https://hadoop.apache.org/
-.. _NCBI BLAST: http://blast.ncbi.nlm.nih.gov/Blast.cgi
+.. _Docker: https://www.docker.com/
 .. _Elasticluster: https://elasticluster.readthedocs.org
 .. _Elasticluster repo: https://github.com/gc3-uzh-ch/elasticluster
 .. _Grid Engine: http://gridengine.info/
+.. _NCBI BLAST: http://blast.ncbi.nlm.nih.gov/Blast.cgi
+.. _NCBI BLAST Cloud Documentation: http://ncbi.github.io/blast-cloud/
 .. _S3IT: http://www.s3it.uzh.ch/
 .. _SLURM: https://computing.llnl.gov/linux/slurm/
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
 .. _Dockerized Bioconductor: http://bioconductor.org/help/docker/
+.. _GoogleGenomics Bioconductor package: http://bioconductor.org/packages/release/bioc/html/GoogleGenomics.html
 
 .. _IGV: https://www.broadinstitute.org/igv/
 .. _Picard: http://broadinstitute.github.io/picard/

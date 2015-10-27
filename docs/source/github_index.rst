@@ -15,6 +15,9 @@ Interactive Data Analysis Samples and Tools
 `bigquery-examples <https://github.com/googlegenomics/bigquery-examples>`_
   Advanced BigQuery examples on genomic data.
 
+`datalab-examples <https://github.com/googlegenomics/datalab-examples>`_
+  Example `Google Cloud Datalab`_ iPython Notebooks for genomics use cases.
+
 `api-client-java <https://github.com/googlegenomics/api-client-java>`_
   A command line tool for Google Genomics API queries.
 
@@ -69,7 +72,7 @@ Miscellaneous
 -----------------------------------------------
 
 `gce-images <https://github.com/googlegenomics/gce-images>`_
-  Scripts that create Google Compute Engine images and Docker images containing sets of popular genomics software.
+  Scripts that create Google Compute Engine images and Docker containers with popular genomics software installed.
 
 `utils-java <https://github.com/googlegenomics/utils-java>`_
   Common Java files for Google Genomics integrations.
