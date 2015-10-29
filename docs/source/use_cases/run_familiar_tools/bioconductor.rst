@@ -24,7 +24,7 @@ Bioconductor maintains Docker containers with R, Bioconductor packages, and RStu
 1. Click on `click-to-deploy Bioconductor`_ to navigate to the launcher page on the Developers Console.
   2. Optional: change the *Machine type* if you would like to deploy a machine with more CPU cores or RAM.
   3. Optional: change the *Data disk size (GB)* if you would like to use a larger persistent disk for your own files.
-  4. Optional: change *Docker image* if you would like to install a container with additional Bioconductor packages preinstalled.
+  4. Optional: change *Docker image* if you would like to run a container with additional Bioconductor packages preinstalled.
 5. Click on the *Deploy Bioconductor* button.
 6. Follow the post-deployment instructions to log into RStudioServer via your browser!
 
@@ -32,7 +32,7 @@ If you want to deploy a different docker container, such as the one from :doc:`/
 
 1. In field *Docker Image* choose item ``custom``.
 2. Click on *More* to display the additional form fields.
-3. In field *Custom docker image* paste in value ``gcr.io/bioc_2015/devel_sequencing``.
+3. In field *Custom docker image* paste in the docker image path, such as ``gcr.io/bioc_2015/devel_sequencing``.
 
 "Stop" or "Delete" your virtual machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
