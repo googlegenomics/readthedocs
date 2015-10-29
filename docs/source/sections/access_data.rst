@@ -10,4 +10,4 @@ Access Genomic Data using...
    /use_cases/getting-started-with-the-api/python
    /use_cases/getting-started-with-the-api/java
    /use_cases/getting-started-with-the-api/go
-   AppEngine </use_cases/browse_genomic_data/gabrowse>
+   AppEngine (GABrowse) </use_cases/browse_genomic_data/gabrowse>
