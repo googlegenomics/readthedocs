@@ -23,9 +23,10 @@ Many familiar tools are easy to run on Google Cloud Platform and/or work with th
   :maxdepth: 1
 
   /use_cases/browse_genomic_data/igv
-  /use_cases/browse_genomic_data/bioconductor
+  bioconductor
   /use_cases/run_picard_and_gatk/index
   ncbiblast
+  datalab
   /use_cases/setup_gridengine_cluster_on_compute_engine/index
   /use_cases/run_samtools_over_many_files/index
   /use_cases/compress_or_decompress_many_files/index

@@ -15,6 +15,9 @@ Interactive Data Analysis Samples and Tools
 `bigquery-examples <https://github.com/googlegenomics/bigquery-examples>`_
   Advanced BigQuery examples on genomic data.
 
+`datalab-examples <https://github.com/googlegenomics/datalab-examples>`_
+  Example `Google Cloud Datalab`_ iPython Notebooks for genomics use cases.
+
 `api-client-java <https://github.com/googlegenomics/api-client-java>`_
   A command line tool for Google Genomics API queries.
 

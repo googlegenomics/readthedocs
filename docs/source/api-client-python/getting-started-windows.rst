@@ -1,4 +1,4 @@
-Setting up the python client on Windows
+Setting up the Python client on Windows
 ---------------------------------------
 
 * In order to setup Python 2.7 for Windows, first download it from
@@ -22,7 +22,7 @@ Setting up the python client on Windows
 
 Running the client with App Engine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Only follow the instructions in this section if you want to run the python client with App Engine.
+Only follow the instructions in this section if you want to run the Python client with App Engine.
 
 * Download the "Google App Engine SDK for Python" for Windows from
   https://cloud.google.com/appengine/downloads and install it.
