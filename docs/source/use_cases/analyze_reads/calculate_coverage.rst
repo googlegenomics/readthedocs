@@ -93,14 +93,18 @@ dataset id:
 This can take several minutes to run.  You can check your results by using the Genomics API Explorer:
 
 1. First go to the `AnnotationSets search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotationSets.search>`_ to determine what your newly created AnnotationSetId is.
+
   a. Put your output dataset id in the ``datasetIds`` field.
   b. Turn on authorizing requests in the upper right corner of the window.
   c. Press Execute.
+
 2. Then go to the `Annotations search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotations.search>`_ to be able to see your newly created Annotation.
+
   a. Put the AnnotationSetId you just found in the ``annotationSetIds`` field.
   b. Select ``info`` and ``position`` in the fields editor.
   c. Turn on authorizing requests in the upper right corner of the window.
   d. Press Execute.
+
 3. Your Annotation should look like this:
 
 .. code-block:: shell

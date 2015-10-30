@@ -44,7 +44,7 @@ __ RenderedVersion_
                           varAllele=unlist(granges$ALT, use.names=FALSE))
   coding
 
-A more extensive example of variant annotation with `Bioconductor`_ is documented towards the end of codelab  `Data Analysis using Google Genomics <https://github.com/googlegenomics/codelabs/tree/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#annotate-variants-with-bioconductor>`_.
+A more extensive example of variant annotation with `Bioconductor`_ is documented towards the end of codelab  `Data Analysis using Google Genomics <https://github.com/googlegenomics/codelabs/tree/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#annotate-variants-with-bioconductor>`__.
 
 To make use of this upon your own data:
 
