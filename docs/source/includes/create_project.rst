@@ -1,0 +1,1 @@
+If you do not yet have a cloud project, `create a Genomics and Cloud Storage enabled project via the Google Developers Console <https://console.developers.google.com/start/api?id=genomics,storage_api>`_.
