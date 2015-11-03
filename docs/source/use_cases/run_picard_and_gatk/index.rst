@@ -18,10 +18,11 @@ __ RenderedVersion_
 .. comment: end: goto-read-the-docs
 
 Introduction
-============
+------------
+
 `Picard`_/`GATK`_ tools are command line utilities for genomic sequencing data processing that typically take BAM and other files as input and produce modified BAM files.
 
-These tools are frequently chained together into pipelines to perform step-by-step processing of the sequencing data all the way from unaligned sequencer output to variant calls (e.g. see `Broad best practices <https://www.broadinstitute.org/gatk/guide/best-practices>`_). 
+These tools are frequently chained together into pipelines to perform step-by-step processing of the sequencing data all the way from unaligned sequencer output to variant calls (e.g. see `Broad best practices <https://www.broadinstitute.org/gatk/guide/best-practices>`_).
 
 =====
 
@@ -38,21 +39,23 @@ By the end of this tutorial you will be able run a Picard tool, giving it a URL 
 We also have detailed description of changes to HTSJDK and Picard to help you write your own cloud-aware client on top of HTSDK or help us convert more Picard tools.
 
 Set up access to genomics data in Google Cloud
-==============================================
-We will assume you are starting from a completely blank slate so please skip the steps that are redundant for you. 
+-------------------------------------------------
+
+We will assume you are starting from a completely blank slate so please skip the steps that are redundant for you.
 
 If you are already using Google Genomics API and have a project set up for this you can skip this section and go directly to `Build Picard tools with GA4GH support`_.
 
 .. include:: /includes/genomics_tools_setup.rst
 
-.. _Build Picard tools with GA4GH support:  
-  
+.. _Build Picard tools with GA4GH support:
+
 Build Picard tools with GA4GH support
-=====================================
+-------------------------------------
+
 1. Fetch `Picard`_, `HTSJDK`_ and `gatk-tools-java`_ projects required for building Picard with GA4GH support.
 
 .. code-block:: shell
-  
+
   $ git clone git@github.com:broadinstitute/picard.git
   $ cd picard
   $ git clone git@github.com:samtools/htsjdk.git
@@ -68,7 +71,7 @@ Build Picard tools with GA4GH support
   $ mkdir ../picard/lib/gatk-tools-java
   $ cp target/gatk-tools-java*minimized.jar ../picard/lib/gatk-tools-java/
 
-3. Build Picard version with GA4GH support: 
+3. Build Picard version with GA4GH support:
 
 .. code-block:: shell
 
@@ -88,8 +91,9 @@ You should end up with the following directory structure:
 
 
 Run Picard tools with an input from the cloud
-=============================================
-You can now run ViewSam tool that prints the contents of the supplied INPUT 
+---------------------------------------------
+
+You can now run ViewSam tool that prints the contents of the supplied INPUT
 
 .. code-block:: shell
 
@@ -112,24 +116,24 @@ This command uses an older, slower REST based API. To run using GRPC API impleme
 
 For Java 7 (as opposed to 8) use *alpn-boot-7.1.3.v20150130.jar*.
 
-We use a test readset here from `genomics-test-data <https://console.developers.google.com/project/genomics-test-data/storage/browser/gatk-tools-java/>`_ project. 
+We use a test readset here from `genomics-test-data <https://console.developers.google.com/project/genomics-test-data/storage/browser/gatk-tools-java/>`_ project.
 
 Specifying a genomics region to use from the readset
-----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The INPUT urls are of the form **https://<GA4GH provider>/readgroupsets/<readgroupset id>[/sequence][/start-end]**.
 
 For example:
 
 .. code-block:: shell
 
-  java -jar dist/picard.jar ViewSam \ 
+  java -jar dist/picard.jar ViewSam \
   INPUT=https://www.googleapis.com/genomics/v1beta2/readgroupsets\
   /CMvnhpKTFhD3he72j4KZuyc/chr17/41196311-42677499 \
   GA4GH_CLIENT_SECRETS=../client_secrets.json
 
 
 Timing the reading speed from the cloud
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You can run `gatk-tools-java/src/main/scripts/example.sh <https://github.com/googlegenomics/gatk-tools-java/blob/master/src/main/scripts/example.sh>`_ with and without "grpc" command line parameter to see the difference in reading speed. The timing statistics are dumped to the terminal.
 We benchmarked **x11** speed improvements with GRPC compared to REST, giving **~12,000 reads/second**.
 
@@ -138,7 +142,7 @@ The tests were done on `Platinum Genomes NA12877_S1.bam dataset <https://console
 We therefore recommend running GRPC variants of command line.
 
 Other Picard tools you can run
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You can run MarkDuplicates or MarkDuplicatesWithMateCigar tools like this:
 
 .. code-block:: shell
@@ -153,12 +157,12 @@ You can run MarkDuplicates or MarkDuplicatesWithMateCigar tools like this:
     GA4GH_CLIENT_SECRETS=../client_secrets.json
 
 Figuring out a url for your dataset
------------------------------------
-In the examples above we have been using urls of the form https://www.googleapis.com/genomics/v1beta2/readgroupsets/XXX where XXX is the id of the readset. 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In the examples above we have been using urls of the form https://www.googleapis.com/genomics/v1beta2/readgroupsets/XXX where XXX is the id of the readset.
 
-How do you find an ID of the readset from the  :doc:`/use_cases/discover_public_data/index` set or from your own project ? 
+How do you find an ID of the readset from the  :doc:`/use_cases/discover_public_data/index` set or from your own project ?
 
-We will do it step by step using the command line API client. 
+We will do it step by step using the command line API client.
 
 * Lets say we want to use `Platinum Genomes NA12877_S1.bam readgroupset <https://console.developers.google.com/storage/browser/genomics-public-data/platinum-genomes/bam/?_ga=1.197206447.160385476.1431305548>`_ from :doc:`/use_cases/discover_public_data/1000_genomes` project.
 
