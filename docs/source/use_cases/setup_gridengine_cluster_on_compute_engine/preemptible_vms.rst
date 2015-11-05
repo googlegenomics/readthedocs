@@ -8,6 +8,22 @@
 Create a Grid Engine cluster with Preemptible VM workers
 ========================================================
 
+.. comment: begin: goto-read-the-docs
+
+.. container:: visible-only-on-github
+
+   +-----------------------------------------------------------------------------------+
+   | **The properly rendered version of this document can be found at Read The Docs.** |
+   |                                                                                   |
+   | **If you are reading this on github, you should instead click** `here`__.         |
+   +-----------------------------------------------------------------------------------+
+
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/setup_gridengine_cluster_on_compute_engine/preemptible_vms.html
+
+__ RenderedVersion_
+
+.. comment: end: goto-read-the-docs
+
 With `Compute Engine Preemptible Virtual Machines`_ you can create and
 run VMs in the cloud at a much
 `lower price <https://cloud.google.com/compute/pricing#machinetype>`_

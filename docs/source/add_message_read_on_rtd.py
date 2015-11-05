@@ -68,7 +68,8 @@ def run_command(argv):
 
 # Process all RST files in the use_cases directory
 def get_file_list():
-  return run_command(["find", "use_cases/", "-name", "*.rst"])
+  return run_command(["find", "sections/", "-name", "*.rst"]) + \
+         run_command(["find", "use_cases/", "-name", "*.rst"])
 
 # The function below, "find_target" returns a list with three elements
 # indicating where we found:
@@ -90,7 +91,7 @@ TITLE_END_IDX = 2
 # target content (if present), and the end of the page title.
 #
 # Finding the page title is not precise - we look for the last line
-# (in the first 20) that starts with "====".
+# (in the first 20) that starts with "==".
 #
 def find_target(file):
   lines = [-1, -1, -1]
@@ -102,7 +103,7 @@ def find_target(file):
     elif line.startswith(TARGET_END):
       lines[TARGET_END_IDX] = line_no
     elif line_no < 20 and \
-         line.startswith("===="):
+         line.startswith("=="):
       lines[TITLE_END_IDX] = line_no
 
   return lines
