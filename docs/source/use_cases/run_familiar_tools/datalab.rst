@@ -24,9 +24,9 @@ The https://github.com/googlegenomics/datalab-examples repository contains examp
 You can read them on github:
 
 * `Exploring Genomic Data <https://github.com/GoogleCloudPlatform/datalab/blob/master/content/datalab/samples/Exploring%20Genomics%20Data.ipynb>`_
-* `Explore the 1000 Genomes Sample Information <datalab/genomics/Explore%201000%20Genomes%20Samples.ipynb>`_
-* `Genome-wide association study <datalab/genomics/Genome-wide%20association%20study%20(GWAS).ipynb>`_
-* `Getting started with the Google Genomics API <datalab/genomics/Getting%20started%20with%20the%20Genomics%20API.ipynb>`_
+* `Explore the 1000 Genomes Sample Information <https://github.com/googlegenomics/datalab-examples/blob/master/datalab/genomics/Explore%201000%20Genomes%20Samples.ipynb>`_
+* `Genome-wide association study <https://github.com/googlegenomics/datalab-examples/blob/master/datalab/genomics/Genome-wide%20association%20study%20(GWAS).ipynb>`_
+* `Getting started with the Google Genomics API <https://github.com/googlegenomics/datalab-examples/blob/master/datalab/genomics/Getting%20started%20with%20the%20Genomics%20API.ipynb>`_
 
 To run the examples yourself:
 
