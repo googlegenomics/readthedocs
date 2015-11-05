@@ -55,7 +55,22 @@ below demonstrate spreading the processing over 3 worker instances.
 
 2. .. include:: /includes/grid-computing-tools-steps-download-grid-computing-repo.rst
 
-3. .. include:: /includes/grid-computing-tools-steps-upload-source.rst
+3. **Upload the** ``src`` **and** ``samples`` **directories to the Grid Engine master instance:**
+
+  .. code-block:: shell
+  
+    cd grid-computing-tools
+    
+    elasticluster sftp gridengine << 'EOF'
+    mkdir src
+    mkdir src/common
+    mkdir src/samtools
+    put src/common/* src/common/
+    put src/samtools/* src/samtools/
+    mkdir samples
+    mkdir samples/samtools
+    put samples/samtools/* samples/samtools/
+    EOF
 
 4. .. include:: /includes/grid-computing-tools-steps-ssh-to-master.rst
   
@@ -178,7 +193,18 @@ To run your own job to index a list of BAM files requires the following:
    |br|
 3. .. include:: /includes/grid-computing-tools-steps-sizing-disks.rst
 
-4. .. include:: /includes/grid-computing-tools-steps-upload-your-config.rst
+4. **Upload input list file, config file, and** ``grid-computing-tools`` **source to the gridengine cluster master**
+
+  .. code-block:: shell
+  
+    elasticluster sftp gridengine << EOF
+    put ../my_jobs/*
+    mkdir src
+    mkdir src/common
+    mkdir src/samtools
+    put src/common/* src/common/
+    put src/samtools/* src/samtools/
+    EOF
 
 5. .. include:: /includes/grid-computing-tools-steps-do-a-dry-run.rst
 

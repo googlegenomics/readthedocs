@@ -163,6 +163,7 @@ rst_epilog = """
 .. ### Deep links into cloud.google.com documentation
 .. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas
 .. _Compute Engine quota request form: https://docs.google.com/a/google.com/forms/d/1vb2MkAr9JcHrp6myQ3oTxCyBv2c7Iyc5wqIKqE3K4IE/viewform
+.. _Compute Engine Preemptible Virtual Machines: https://cloud.google.com/preemptible-vms/
 .. _Google BigQuery query reference: https://cloud.google.com/bigquery/query-reference
 .. _cloud.google.com/genomics: https://cloud.google.com/genomics
 .. _What is Google Genomics: https://cloud.google.com/genomics/what-is-google-genomics
