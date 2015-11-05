@@ -38,7 +38,7 @@ __ RenderedVersion_
 
 .. |browse-reads| image:: https://raw.githubusercontent.com/googlegenomics/codelabs/master/R/1000Genomes-BRCA1-analysis/figure/alignments-1.png
 
-A more extensive example of read browsing with `Bioconductor`_ is documented towards the end of codelab  `Data Analysis using Google Genomics <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#visualize-reads-with-bioconductor>`_.
+A more extensive example of read browsing with `Bioconductor`_ is documented towards the end of codelab  `Data Analysis using Google Genomics <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#visualize-reads-with-bioconductor>`__.
 
 To make use of this upon your own data:
 

@@ -74,7 +74,7 @@ be able to access the BigQuery web interface. Just go to
 
 On the left-hand side of the browser window you should see your Cloud project
 name displayed like:
-  
+
    .. image:: analyze_variants_with_bigquery/My_Project_left_hand_nav.png
       :width: 250 px
 
@@ -127,19 +127,19 @@ in this lab are:
 
   reference_name
     The reference on which this variant occurs. (such as "chr20" or "X")
-  
+
   start
     The position at which this variant occurs (0-based). This corresponds to
     the first base of the string of reference bases.
-  
+
   end
     The end position (0-based) of this variant. This corresponds to the
     first base after the last base in the reference allele. So, the length
     of the reference allele is (end - start).
-  
+
   reference_bases
     The reference bases for this variant. They start at the given position.
-  
+
   alternate_bases
     The bases that appear instead of the reference bases.
 
@@ -201,11 +201,11 @@ The data in the Platinum Genomes variants table was created by:
 3. Exporting the variants to Google BigQuery
 
 More on the process can be found
-`here <https://cloud.google.com/genomics/v1/load-variants>`_ on
+`here <https://cloud.google.com/genomics/v1/load-variants>`__ on
 `cloud.google.com/genomics <https://cloud.google.com/genomics>`_.
 
 More on the Google Genomics variant representation can be found
-`here <https://cloud.google.com/genomics/reference/rest/v1/variants>`_
+`here <https://cloud.google.com/genomics/reference/rest/v1/variants>`__
 `cloud.google.com/genomics <https://cloud.google.com/genomics>`_.
 
 More on the origin of the data can be found
@@ -224,7 +224,7 @@ without duplication.
 Two of the fields noted above, the ``alternate_bases`` and the ``call``
 field, are REPEATED fields.  REPEATED fields are a feature of BigQuery
 that allow for embedding multiple values of the same type into the same
-field (similar to a list). 
+field (similar to a list).
 
 The ``alternate_bases`` field is a simple REPEATED field in that it allows
 for multiple scalar STRING values.  For example:
@@ -831,7 +831,7 @@ per-call ``FILTER`` values for the Platinum Genomes dataset:
 
 Returns:
 
-   .. image:: analyze_variants_with_bigquery/FILTER_count.png 
+   .. image:: analyze_variants_with_bigquery/FILTER_count.png
       :width: 60%
       :align: center
 

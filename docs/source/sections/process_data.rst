@@ -9,3 +9,5 @@ Process Data on Google Cloud
    /use_cases/run_samtools_over_many_files/index
    /use_cases/compress_or_decompress_many_files/index
    /use_cases/run_familiar_tools/ncbiblast.rst
+   /use_cases/run_familiar_tools/bioconductor.rst
+   /use_cases/run_familiar_tools/datalab.rst

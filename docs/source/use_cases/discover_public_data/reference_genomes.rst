@@ -17,13 +17,13 @@ __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-Reference Genomes such as GRCh37, GRCh37lite, GRCh38, hg19, hs37d5 are available on Google Cloud Platform.
+Reference Genomes such as GRCh37, GRCh37lite, GRCh38, hg19, hs37d5, and b37 are available on Google Cloud Platform.
 
 Google Cloud Platform data locations
 ------------------------------------
 
 * Google Cloud Storage folder `gs://genomics-public-data/references <https://console.developers.google.com/storage/genomics-public-data/references/>`_
-* Google Genomics `reference sets <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.referencesets.search>`_
+* Google Genomics `reference sets <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.referencesets.search>`_
 
 Provenance
 ----------
@@ -71,3 +71,10 @@ hs37d5
 Includes data from GRCh37, the rCRS mitochondrial sequence, Human herpesvirus 4 type 1 and the concatenated decoy sequences in one file: `hs37d5.fa.gz <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence>`_
 
 More information on this source data can be found in the `FTP README <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/README_human_reference_20110707>`_.
+
+b37
+^^^
+
+The reference genome included by some versions of the GATK software which includes data from GRCh37, the rCRS mitochondrial sequence, and the Human herpesvirus 4 type 1 in one file: `Homo_sapiens_assembly19.fasta <http://www.broadinstitute.org/ftp/pub/seq/references>`_.
+
+More information on this source data can be found in the `GATK FAQs <https://www.broadinstitute.org/gatk/guide/article.php?id=1213>`_.

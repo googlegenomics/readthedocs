@@ -1,9 +1,8 @@
 
 To run the docker container locally:
 
- 1. Install `Docker`_ for your platform.
- 2. Run command
-  ``docker run gcr.io/bioc_2015/devel_sequencing``
+1. Install `Docker`_ for your platform.
+2. Run command ``docker run gcr.io/bioc_2015/devel_sequencing``
 
 See https://github.com/googlegenomics/gce-images for the Docker file.  It depends upon http://www.bioconductor.org/help/docker/ which depends upon https://github.com/rocker-org/rocker/wiki.
 

@@ -49,11 +49,11 @@ Google Cloud Platform data locations
    * `10473108253681171589 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=10473108253681171589>`_ phase 3 reads and phase 1 variants
 
      * `ReadGroupSet IDs <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.readgroupsets.search?fields=readGroupSets(id%252Cname)&_h=5&resource=%257B%250A++%2522datasetIds%2522%253A+%250A++%255B%252210473108253681171589%2522%250A++%255D%250A%257D&>`_
-     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.variantsets.get?variantSetId=10473108253681171589&_h=2&>`_
+     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.variantsets.get?variantSetId=10473108253681171589&_h=2&>`__
 
    * `4252737135923902652 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=4252737135923902652>`_ phase 3 variants
 
-     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.variantsets.get?variantSetId=4252737135923902652&_h=2&>`_
+     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.variantsets.get?variantSetId=4252737135923902652&_h=2&>`__
 
 * Google BigQuery Dataset IDs
    * `genomics-public-data:1000_genomes <https://bigquery.cloud.google.com/table/genomics-public-data:1000_genomes.variants>`_ phase 1 variants and sample information
@@ -69,6 +69,9 @@ Provenance
 
 The source files for this dataset include:
  * The mapped full-genome phase 3 BAM files listed at `the 1000 Genomes FTP site <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/alignment_indices/20130502.low_coverage.alignment.index>`_.
-  * All of the phase 1 VCF files listed at `the 1000 Genomes FTP site <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/analysis_results/integrated_call_sets/>`_.
-  * All of the phase 3 VCF files listed at `the 1000 Genomes FTP site <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502>`_.
+
+  * All of the phase 1 VCF files listed at `the 1000 Genomes FTP site <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/analysis_results/integrated_call_sets/>`__.
+  * All of the phase 3 VCF files listed at `the 1000 Genomes FTP site <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502>`__.
+
 * These files were copied to Google Cloud Storage, uploaded to Google Genomics, and the variants were exported to Google BigQuery.
+
