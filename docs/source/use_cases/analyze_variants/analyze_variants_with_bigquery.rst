@@ -26,7 +26,7 @@ __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-The purpose of this lab is to help you:
+The purpose of this code lab is to help you:
 
 * learn how to use the Google BigQuery query tool
 * learn valuable BigQuery SQL syntax
@@ -37,14 +37,17 @@ This means you can use it to interact with genomic data in an ad-hoc fashion.
 Queries that on traditional systems take hours to run (as batch jobs) can
 instead be processed in seconds with BigQuery.
 
-This lab focuses on genomic variant data that has been exported from Google
+This code lab focuses on genomic variant data that has been exported from Google
 Genomics to BigQuery. The dataset used is from the public
 `Illumina Platinum Genomes project data`_ (17 samples). You may run the same
-queries against other datasets exported from Google Genomics, including the
-`1000 Genomes project data`_.
+queries against other datasets exported from Google Genomics, including:
+
+* the `1000 Genomes project data`_
+* your own data which you can `load into Google BigQuery <https://cloud.google.com/genomics/v1/load-variants>`_
+
 All output below is for queries against the Platinum Genomes.
 
-Here are some of the questions you'll answer in this lab about the variant data:
+Here are some of the questions you'll answer in this code lab about the variant data:
 
 * How many records are in the variants table
 * How many variant calls are in the variants table
@@ -79,7 +82,7 @@ name displayed like:
       :width: 250 px
 
 If you have multiple projects, be sure that the one you want the queries of
-this lab to be billed against is selected. If it is not, then click on the
+this code lab to be billed against is selected. If it is not, then click on the
 down-arrow icon, select "Switch to Project" and then select the correct
 project.
 
@@ -123,7 +126,7 @@ table schema in the right-hand pane:
       :width: 95%
 
 The key fields of the variants table that will be frequently referenced
-in this lab are:
+in this code lab are:
 
   reference_name
     The reference on which this variant occurs. (such as "chr20" or "X")
@@ -295,7 +298,7 @@ starting at position 1000. The reference base at position 1000 is an "A"
 (the reference bases at the other positions of this block are not represented).
 
 The Platinum Genomes data represents non-variant segments with a NULL
-``alternate_bases`` value, however the queries in this lab are designed to
+``alternate_bases`` value, however the queries in this code lab are designed to
 accommodate either representation.
 
 Table summary data
