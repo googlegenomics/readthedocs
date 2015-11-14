@@ -91,6 +91,8 @@ You don't need to explicitly create an ``elasticluster`` directory (that will ha
 
 This creates a directory named ``elasticluster`` and populates it with the necessary Python library files and shell scripts to contain the Elasticluster installation.  No Elasticluster software has yet been installed.
 
+.. _index--activate-elasticluster-virtualenv:
+
 3. **Activate the** ``elasticluster`` **virtualenv for the current shell session:**
 
 .. code-block:: shell
@@ -104,6 +106,8 @@ This script will set environment variables necessary for the virtualenv:
 * ``PYTHONHOME``: unset if currently set
 
 The script also saves away changed environment variables and installs a ``deactivate`` function into the bash environment.
+
+.. _index--install-elasticluster:
 
 4. **Install elasticluster** (select one):
 
@@ -134,6 +138,8 @@ The script also saves away changed environment variables and installs a ``deacti
     git clone https://github.com/googlegenomics/elasticluster.git src
     cd src
     python setup.py install
+
+.. _index--create-your-cluster-definition-file:
 
 Create your cluster definition file
 -----------------------------------
@@ -187,7 +193,7 @@ template into the config file.
 
 Install a minimal template
 ==========================
-Copy the following into ``~/.elasticluster/config`` and update the fields marked with ****.
+Copy the following into ``~/.elasticluster/config`` and update the fields marked with \*\*\*\*.
 
 Instructions for getting your client_id and client_secret can be found below.
 
