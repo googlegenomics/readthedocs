@@ -24,7 +24,7 @@ Install gcloud tool and validate access to genomics data
 
 .. code-block:: shell
 
-     $ cloud alpha genomics readgroupsets list 10473108253681171589 --limit 10
+     $ gcloud alpha genomics readgroupsets list 10473108253681171589 --limit 10
      ID                      NAME     REFERENCE_SET_ID
      CMvnhpKTFhDq9e2Yy9G-Bg  HG02573  EOSt9JOVhp3jkwE
      CMvnhpKTFhCEmf_d_o_JCQ  HG03894  EOSt9JOVhp3jkwE

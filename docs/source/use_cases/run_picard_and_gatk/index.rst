@@ -51,14 +51,15 @@ If you are already using Google Genomics API and have a project set up for this 
 
 Build Picard tools with GA4GH support
 -------------------------------------
+You will need `Maven <https://maven.apache.org/install.html>`_ and `Ant <http://ant.apache.org/manual/install.html>`_ build tools installed on your machine.
 
 1. Fetch `Picard`_, `HTSJDK`_ and `gatk-tools-java`_ projects required for building Picard with GA4GH support.
 
 .. code-block:: shell
 
-  $ git clone git@github.com:broadinstitute/picard.git
+  $ git clone https://github.com/broadinstitute/picard.git
   $ cd picard
-  $ git clone git@github.com:samtools/htsjdk.git
+  $ git clone https://github.com/samtools/htsjdk
   $ cd ..
   $ git clone https://github.com/googlegenomics/gatk-tools-java
 
@@ -74,8 +75,9 @@ Build Picard tools with GA4GH support
 3. Build Picard version with GA4GH support:
 
 .. code-block:: shell
-
-  $ cd picard
+  
+  // Assuming you are still in gatk-tools-java directory
+  $ cd ../picard
   $ ant -lib lib/ant package-commands-ga4gh
 
 4. Make sure you put **client_secrets.json** file in the parent folder just above Picard.
@@ -128,7 +130,7 @@ For example:
 
   java -jar dist/picard.jar ViewSam \
   INPUT=https://www.googleapis.com/genomics/v1beta2/readgroupsets\
-  /CMvnhpKTFhD3he72j4KZuyc/chr17/41196311-42677499 \
+  /CMvnhpKTFhD3he72j4KZuyc/chr17/41196311-41207499 \
   GA4GH_CLIENT_SECRETS=../client_secrets.json
 
 
@@ -172,7 +174,7 @@ We will do it step by step using the command line API client.
 
 .. code-block:: shell
 
-     $ cloud alpha genomics readgroupsets list 10473108253681171589 --limit 10
+     $ gcloud alpha genomics readgroupsets list 10473108253681171589 --limit 10
      ID                      NAME     REFERENCE_SET_ID
      CMvnhpKTFhDq9e2Yy9G-Bg  HG02573  EOSt9JOVhp3jkwE
      CMvnhpKTFhCEmf_d_o_JCQ  HG03894  EOSt9JOVhp3jkwE
@@ -186,13 +188,17 @@ In this case we need to figure out the *dataset id* for our files first, before 
 
 * Lets say we want to figure out which dataset ids are present under `genomics test data <https://console.developers.google.com/project/genomics-test-data/storage/browser>`_ project.
 
-* First we note the project id in the "home" in the `Developers Console <https://console.developers.google.com/project/genomics-test-data>`_ : **853077023917**.
+* First we need to set the project id for subsequent commands to be our project using 
 
+.. code-block:: shell
+
+	$ gcloud config set project genomics-test-data
+	
 * Now we can issue this command:
 
 .. code-block:: shell
 
-     $ cloud alpha genomics datasetssets list 853077023917 --limit 10
+     $ gcloud alpha genomics datasets list --limit 10
 
 * The output will list dataset(s) present in the project together with their ids and we can then use the "readgroupsets list" command to get the id of the readgroupset under one of the datasets.
 
