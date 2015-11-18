@@ -1,7 +1,7 @@
 .. _SFTP: http://linux.die.net/man/1/sftp
 .. _HERE DOCUMENTS: http://tldp.org/LDP/abs/html/here-docs.html
 .. _xcode-select: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/xcode-select.1.html
-.. |client_id_name| replace:: Elasticluster
+.. |suggested_client_id_name| replace:: ``Elasticluster``
 
 =====================================================
 Create a Grid Engine cluster on Google Compute Engine
