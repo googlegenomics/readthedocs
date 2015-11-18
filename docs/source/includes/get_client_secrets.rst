@@ -1,21 +1,18 @@
-Get your ``client_secrets.json`` file by visiting the following page:
+Get your ``client_id`` and ``client_secrets`` by visiting the following page:
 
   https://console.developers.google.com/project/_/apiui/credential
 
-#. Select your project.  If a "Client ID for native application" is listed on this page, skip to step 7.
-#. Under the OAuth section, click "Create new Client ID".
-#. Select "Installed Application".
-#. If prompted, click "Configure consent screen" and follow the instructions to set a "product name" to identify your Cloud project in the consent screen and hit "Save".
-#. In the Create Client ID dialog, be sure the following are selected:
+After you select your Google Cloud project, this link will
+automatically take you to the Credentials tab under the API Manager.
 
-   * **Application type**: Installed application
-   * **Installed application type**: Other
+1. Select **New credentials**
+2. Select **OAuth client ID**
+3. Under **Application Type** choose **Other**
+4. Give your client ID a name, so you can remember why it was created (suggestion: |client_id_name|)
+5. Select **Create**
 
-   .. image:: /_static/create_client_id.png
-      :alt: Create Client ID Dialog
+After successful creation, the interface should display your client ID
+and client secret.
 
-#. Click the "Create Client ID" button.
-#. You'll see your Client ID and Client secret listed under "Client ID for native application".
-#. Under Client ID for native application, click "Download JSON".
-
-Throughout this documentation we refer to this file as ``client_secrets.json`` even though upon download it has a much longer filename.  You might rename the file or add a symlink to it with the shorter name.
+You can find these values at any time by returning the Credentials tab
+and clicking on the name you specified in step 4 above.
