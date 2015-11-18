@@ -1,3 +1,5 @@
+.. |suggested_client_id_name| replace:: ``Genomics Tools``
+
 Run Picard and GATK tools on Cloud-Resident Genomic Data
 ========================================================
 

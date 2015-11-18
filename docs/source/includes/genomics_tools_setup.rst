@@ -33,7 +33,7 @@ Install gcloud tool and validate access to genomics data
 Set up credentials for programs accessing the genomics data
 -----------------------------------------------------------
 
-.. include:: /includes/collapsible_get_client_secrets.rst
+.. include:: /includes/collapsible_get_client_secrets_json.rst
 
 Copy **client_secrets.json** to the directory where you installed the Genomics tools.
 

@@ -2,7 +2,7 @@
 
     .. container:: header
 
-        If you do not have it already, get your ``client_secrets.json`` file: **Show/Hide Instructions**
+        If you do not have it already, get your ``client ID`` and ``client secret``: **Show/Hide Instructions**
 
     .. container:: content
 
