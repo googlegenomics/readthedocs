@@ -197,9 +197,11 @@ Install a minimal template
 ==========================
 Copy the following into ``~/.elasticluster/config`` and update the fields marked with \*\*\*\*.
 
-Instructions for getting your client_id and client_secret can be found below.
+Instructions for getting your client_id and client_secret can be found
+:ref:`below <index--obtaining-client_id_and_client_secrets>`.
 
-Instructions for ensuring your SSH keypair exists can be found below.
+Instructions for ensuring your SSH keypair exists can be found
+:ref:`below <index--generating-ssh-keypair>`.
 
 .. code:: ini
 
@@ -275,10 +277,12 @@ or to configure all of the ``compute`` worker nodes to have a 2 TB Standard (HDD
    boot_disk_type=pd-standard
    boot_disk_size=2000
 
+.. _index--generating-ssh-keypair:
+
 Generating your SSH keypair
 ===========================
 
-If you have already connected to a Google Compute Engine instance using ``gcloud ssh``, then you will have a keypair generated in:
+If you have already connected to a Google Compute Engine instance using ``gcloud compute ssh``, then you will have a keypair generated in:
 
 * ``~/.ssh/google_compute_engine``
 * ``~/.ssh/google_compute_engine.pub``
@@ -290,6 +294,43 @@ You can generate your keypair with the command:
 .. code:: bash
 
    gcloud compute config-ssh
+
+.. _index--running-elasticluster-remote:
+
+Running Elasticluster on a remote workstation
+=============================================
+The first time you run an Elasticluster command that needs to make
+Compute Engine API calls (such as ``elasticluster start``, you will
+be required to authorize Elasticluster to issue Compute Engine API
+requests on your behalf.
+
+The authorization flow by default will launch a web browser session
+on the machine that the Elasticluster command is run on.
+If that machine (such as a remote workstation or a virtual machine)
+is not able to open a web browser, the operation will fail
+with a message like:
+
+.. code:: bash
+
+  If your browser is on a different machine then exit and re-run this
+  application with the command-line parameter 
+
+    --noauth_local_webserver
+
+Passing the ``noauth_local_webserver`` value to Elasticluster is done
+by setting the ``noauth_local_webserver`` configuration value in the
+**cloud provider** section of ``~/.elasticluster/config``:
+
+.. code:: bash
+
+  # Create a cloud provider
+  [cloud/google-cloud]
+  provider=google
+  noauth_local_webserver=True
+  ...
+
+
+.. _index--obtaining-client_id_and_client_secrets:
 
 Obtaining your client_id and client_secret
 ==========================================
