@@ -22,8 +22,3 @@ The Basic Local Alignment Search Tool (BLAST) finds regions of local similarity 
 
  * For more information, see `NCBI BLAST Cloud Documentation`_ and `NCBI BLAST`_.
  * To deploy BLAST to Google Compute Engine, you can `click-to-deploy NCBI BLAST`_.
-
-"Stop" or "Delete" your virtual machine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: /includes/c2d_deployment_teardown.rst
