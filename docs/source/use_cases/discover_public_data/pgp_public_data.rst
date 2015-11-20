@@ -31,8 +31,7 @@ Google Cloud Platform data locations
 * Google Cloud Storage folder `gs://pgp-harvard-data-public <https://console.developers.google.com/storage/pgp-harvard-data-public>`_
 * Google Genomics Dataset ID `9170389916365079788 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=9170389916365079788>`_
 * Google BigQuery Dataset IDs
-   * `google.com:biggene:pgp_20150205.variants <https://bigquery.cloud.google.com/table/google.com:biggene:pgp_20150205.variants>`_
-   * `google.com:biggene:pgp_20150205.variants_cgi_only <https://bigquery.cloud.google.com/table/google.com:biggene:pgp_20150205.variants_cgi_only>`_ where the export excluded the single variants-only Illumina genome
+   * `google.com:biggene:pgp_20150205.genome_calls <https://bigquery.cloud.google.com/table/google.com:biggene:pgp_20150205.genome_calls>`_
 
 Provenance
 ----------
@@ -40,8 +39,6 @@ Provenance
 Google Genomics variant set for dataset ``pgp_20150205``: `9170389916365079788 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=9170389916365079788>`_ contains:
 
 * the Complete Genomics datasets from `gs://pgp-harvard-data-public/**/masterVar*bz2 <https://console.developers.google.com/storage/pgp-harvard-data-public>`_
-* a few additional `PGP`_ Complete Genomics genomes
-* and one `PGP`_ variants-only Illumina genome
 
 Appendix
 --------
