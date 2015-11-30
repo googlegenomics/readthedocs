@@ -24,6 +24,7 @@ __ RenderedVersion_
   platinum_genomes
   reference_genomes
   mssng_data
+  isb_cgc_data
   supercentenarians
   pgp_public_data
   dream_smc_dna
