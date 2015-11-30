@@ -30,11 +30,11 @@ Bioconductor maintains Docker containers with R, Bioconductor packages, and RStu
 2. Click on the *Deploy Bioconductor* button.
 3. Follow the post-deployment instructions to log into RStudioServer via your browser!
 
-If you want to deploy a different docker container, such as the one from :doc:`/workshops/bioc-2015`
+If you want to deploy a different docker container, such as the one from :doc:`/workshops/bioc-2015` or from https://github.com/isb-cgc/examples-R:
 
 1. In field *Docker Image* choose item ``custom``.
 2. Click on *More* to display the additional form fields.
-3. In field *Custom docker image* paste in the docker image path, such as ``gcr.io/bioc_2015/devel_sequencing``.
+3. In field *Custom docker image* paste in the docker image path, such as ``gcr.io/bioc_2015/devel_sequencing`` or ``b.gcr.io/isb-cgc-public-docker-images/r-examples``.
 
 "Stop" or "Delete" your virtual machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
