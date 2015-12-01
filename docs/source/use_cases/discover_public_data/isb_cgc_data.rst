@@ -1,5 +1,5 @@
-Cancer Genomics Cloud: TCGA Data
-=====================================
+TCGA Cancer Genomics Data in the Cloud
+======================================
 
 .. comment: begin: goto-read-the-docs
 
@@ -17,7 +17,7 @@ __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-Want to use BigQuery to understand cancer? The Institute for Systems Biology (ISB) has made public a great dataset from The Cancer Genome Atlas, including genetic variants, clinical data, gene expression, and methylation from 33 different tumor types. It's part of their `Cancer Genomics Cloud`_, funded by the National Cancer Institute. They've also created public `examples in Python <https://github.com/isb-cgc/examples-Python>`_ and `examples in R <https://github.com/isb-cgc/examples-R>`_ so you can try out sample queries and analyses in `Google Cloud Datalab`_.
+Use the power of BigQuery to analyze the wealth of data created by `The Cancer Genome Atlas <http://cancergenome.nih.gov/>`_ (TCGA) project! The Institute for Systems Biology (ISB) has created and made public a dataset based on the open-access TCGA data including somatic mutation calls, clinical data, mRNA and miRNA expression, DNA methylation and protein expression from 33 different tumor types. It's part of their `Cancer Genomics Cloud <isb-cgc.org>`_, funded by the National Cancer Institute. They've also created public github repositories with `examples in R <https://github.com/isb-cgc/examples-R>`_ and `examples in Python <https://github.com/isb-cgc/examples-Python>`_  so you can try out sample queries and analyses in `Google Cloud Datalab <https://cloud.google.com/datalab/>`_.
 
 Google Cloud Platform data locations
 ------------------------------------
