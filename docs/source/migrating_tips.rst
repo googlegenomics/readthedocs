@@ -64,8 +64,8 @@ Reads
       flags = 0
       flags += read.numberReads == 2 ? 1 : 0 #read_paired
       flags += read.properPlacement ? 2 : 0 #read_proper_pair
-      flags += read.alignment.position.position == null ? 4 : 0 #read_unmapped
-      flags += read.nextMatePosition.position == null ? 8 : 0 #mate_unmapped
+      flags += read.alignment == null ? 4 : 0 #read_unmapped
+      flags += read.nextMatePosition == null ? 8 : 0 #mate_unmapped
       flags += read.alignment.position.reverseStrand ? 16 : 0 #read_reverse_strand
       flags += read.nextMatePosition.reverseStrand ? 32 : 0 #mate_reverse_strand
       flags += read.readNumber == 0 ? 64 : 0 #first_in_pair
