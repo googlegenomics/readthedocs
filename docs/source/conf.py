@@ -145,6 +145,7 @@ rst_epilog = """
 .. ### Google Guide Links
 .. _Google Developers Console Guide: https://developers.google.com/console/help/new/
 .. _Google Identity Platform Guide: https://developers.google.com/identity/protocols/OAuth2
+.. _Application Default Credentials: https://developers.google.com/identity/protocols/application-default-credentials
 
 .. ### Google Product Links
 .. _Google BigQuery: https://cloud.google.com/bigquery/
@@ -153,7 +154,8 @@ rst_epilog = """
 .. _Google Compute Engine: https://cloud.google.com/compute/
 .. _Google Developers Console: https://console.developers.google.com/
 .. _Google Genomics: https://cloud.google.com/genomics/
-.. _Google Cloud Datalab: https://cloud.google.com/datalab/.
+.. _Google Cloud Datalab: https://cloud.google.com/datalab/
+.. _Google Cloud Dataproc: https://cloud.google.com/dataproc/
 
 .. ### Deep links into the Developers Console
 .. _Project List: https://console.developers.google.com/project
@@ -194,6 +196,7 @@ rst_epilog = """
 .. _NCBI BLAST Cloud Documentation: http://ncbi.github.io/blast-cloud/
 .. _S3IT: http://www.s3it.uzh.ch/
 .. _SLURM: https://computing.llnl.gov/linux/slurm/
+.. _ALPN: http://www.eclipse.org/jetty/documentation/9.2.10.v20150310/alpn-chapter.html
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
