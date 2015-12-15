@@ -74,7 +74,7 @@ Spark
 Setup
 ^^^^^
 
-.. include:: /includes/collapsible_spark_setup_instructions.rst
+.. include:: /includes/spark_setup.rst
 
 Run the job
 ^^^^^^^^^^^
@@ -86,20 +86,23 @@ The following command will run PCA over the BRCA1 region within the :doc:`/use_c
   spark-submit \
     --class com.google.cloud.genomics.spark.examples.VariantsPcaDriver \
     --conf spark.shuffle.spill=true \
-    --master spark://hadoop-m:7077 \
-    /PATH/TO/googlegenomics-spark-examples-assembly-1.0.jar \
-    --client-secrets /PATH/TO/YOUR/client_secrets.json \
+    googlegenomics-spark-examples-assembly-1.0.jar \
     --variant-set-id 3049512673186936334 \
     --references chr17:41196311:41277499 \
     --output-path gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv
 
-The above command line runs the job over a small portion of the genome, only taking a few minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are in the Spark cluster.
+The above command line runs the job over a small portion of the genome, only taking a couple minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are in the Spark cluster.
 
 To run this job over the entire genome:
 
+* Create a larger cluster: ``gcloud beta dataproc clusters create cluster-2 --scopes cloud-platform --num-workers #``
 * Add ``--num-reduce-partitions #`` to be equal to the number of cores in your cluster.
 * Use ``--all-references`` instead of ``--references chr17:41196311:41277499`` to run over the entire genome.
-* To run the job on a different dataset, change the variant set id for the ``--variant-set-id`` id parameter.
+
+To run the job on a different dataset:
+
+* Change the variant set id for the ``--variant-set-id`` id parameter.
+* If the `Application Default Credentials`_ are not sufficient, use ``--client-secrets PATH/TO/YOUR/client_secrets.json``.  If you do not already have this file, see the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
 
 Additional details
 ^^^^^^^^^^^^^^^^^^
