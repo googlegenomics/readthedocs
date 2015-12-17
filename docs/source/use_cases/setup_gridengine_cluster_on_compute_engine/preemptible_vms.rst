@@ -1,4 +1,3 @@
-.. _preemptible_rollup branch: https://github.com/googlegenomics/elasticluster/tree/preemptible_rollup
 .. _googlegenomics fork: https://github.com/googlegenomics/elasticluster
 .. _cluster_monitor.sh: https://github.com/googlegenomics/grid-computing-tools/blob/master/bin/cluster_monitor.sh
 .. _array_job_monitor.sh: https://github.com/googlegenomics/grid-computing-tools/blob/master/tools/array_job_monitor.sh
@@ -51,11 +50,6 @@ here employ three tools:
 
 * `array_job_monitor.sh`_ - to requeue failed Grid Engine tasks
 
-The main Elasticluster fork does not currently have support built in for
-Compute Engine preemptible VMs.
-For this the Google Genomics team has created a branch of Elasticluster,
-along with the supporting "grid computing" tools.
-
 Steps
 -----
 
@@ -63,41 +57,8 @@ Setting up your cluster
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a Grid Engine cluster with preemptible VMs, follow the instructions
-provided in :doc:`index` with the following changes:
-
-#. Use the `preemptible_rollup branch`_ of the googlegenomics fork
-#. Configure the compute nodes of your cluster to be preemptible
-
-Use the preemptible_rollup branch
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-At step 4 (:ref:`Install elasticluster <index--install-elasticluster>`) do the following:
-
-::
-
-  cd elasticluster
-  git clone https://github.com/googlegenomics/elasticluster.git src
-  cd src
-  git checkout preemptible_rollup
-  python setup.py install
-
-The two key lines here are:
-
-::
-
-  git clone https://github.com/googlegenomics/elasticluster.git src
-
-which pulls from the `googlegenomics fork`_ of elasticluster, and
-
-::
-
-  git checkout preemptible_rollup
-
-which sets the git branch for the ``elasticluster`` directory to the
-``preemptible_rollup`` branch for installation.
-
-Configure the compute nodes of your cluster to be preemptible
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+provided in :doc:`index` and configure the compute nodes of your cluster
+to be preemptible.
 
 A gridengine cluster is composed of one ``frontend`` node, and multiple
 ``compute`` nodes. The ``frontend`` node should NOT be preemptible. Only the
