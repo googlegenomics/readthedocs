@@ -7,5 +7,5 @@ Most users *kick off* Dataflow jobs from their local machine.  This is unrelated
 #. Download the latest GoogleGenomics dataflow **runnable** jar from the `Maven Central Repository <https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.cloud.genomics%22%20AND%20a%3A%22google-genomics-dataflow%22>`_.
 
 #. Download the correct version of the `ALPN`_.  Many of these pipelines require `ALPN`_.  When running locally, this must be provided on the boot classpath but when running on Google Cloud this is already configured for you.
-  #. See the `ALPN documentation <http://www.eclipse.org/jetty/documentation/9.2.10.v20150310/alpn-chapter.html>`_ for a table of which ALPN jar to use for your JRE version.
+  #. See the `ALPN`_ documentation for a table of which ALPN jar to use for your JRE version.
   #. Then download the correct version from `here <http://mvnrepository.com/artifact/org.mortbay.jetty.alpn/alpn-boot>`__.
