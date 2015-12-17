@@ -24,7 +24,7 @@ __ RenderedVersion_
 
 `Principal Coordinate Analysis <http://occamstypewriter.org/boboh/2012/01/17/pca_and_pcoa_explained/>`_
 counts the number of variants two samples have in common.  These counts are then placed into an
-``NxN`` matrix where ``N`` is the number of samples in the dataset.  The matrix is centered,
+``NxN`` matrix where ``N`` is the number of samples in the variant set.  The matrix is centered,
 scaled, and then the first two principal components are computed for each individual.
 
 See the `Data Analysis using Google Genomics codelab <https://github.com/googlegenomics/codelabs/blob/master/R/1000Genomes-BRCA1-analysis/AllModalitiesDemo.md#cluster-computing>`_ for an example that makes use of the results of this analysis run upon :doc:`/use_cases/discover_public_data/1000_genomes`.
@@ -42,26 +42,27 @@ Setup
 Run the pipeline
 ^^^^^^^^^^^^^^^^
 
-The following command will run PCA over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset.
+The following command will run PCA over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` variant set.
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
+    -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.VariantSimilarity \
-    --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
-    --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
-    --datasetId=3049512673186936334 \
+    --variantSetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
     --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv
 
-The above command line runs the pipeline over a small portion of the genome, only taking a few minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are configured to run concurrently via ``--numWorkers``.
+.. include:: /includes/dataflow_on_gce_run.rst
 
-To run this pipeline over the entire genome:
+|dataflowSomeRefs|
 
-* Add ``--runner=DataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally.
-* Use ``--allReferences`` instead of ``--references=chr17:41196311:41277499`` to run over the entire genome.
-* To run the pipeline on a different dataset, change the variant set id for the ``--datasetId`` id parameter.
+|dataflowAllRefs|
+
+To run the pipeline on a different variant set:
+
+* Change the variant set id for the ``--variantSetId`` id parameter.
+* Update the ``--references`` as appropriate (e.g., add/remove the 'chr' prefix on reference names).
 
 Additional details
 ^^^^^^^^^^^^^^^^^^
@@ -79,7 +80,7 @@ Setup
 Run the job
 ^^^^^^^^^^^
 
-The following command will run PCA over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset.
+The following command will run PCA over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` variant set.
 
 .. code-block:: shell
 
@@ -93,16 +94,17 @@ The following command will run PCA over the BRCA1 region within the :doc:`/use_c
 
 The above command line runs the job over a small portion of the genome, only taking a couple minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are in the Spark cluster.
 
-To run this job over the entire genome:
+To run this job over a large portion of the genome or the entire genome:
 
 * Create a larger cluster: ``gcloud beta dataproc clusters create cluster-2 --scopes cloud-platform --num-workers #``
 * Add ``--num-reduce-partitions #`` to be equal to the number of cores in your cluster.
+* Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references chr13:32889610:32973808,chr17:41196311:41277499``.
 * Use ``--all-references`` instead of ``--references chr17:41196311:41277499`` to run over the entire genome.
 
-To run the job on a different dataset:
+To run the job on a different variant set:
 
 * Change the variant set id for the ``--variant-set-id`` id parameter.
-* If the `Application Default Credentials`_ are not sufficient, use ``--client-secrets PATH/TO/YOUR/client_secrets.json``.  If you do not already have this file, see the `sign up instructions <https://cloud.google.com/genomics/install-genomics-tools#authenticate>`_ to obtain it.
+* Update the ``--references`` as appropriate (e.g., add/remove the 'chr' prefix on reference names).
 
 Additional details
 ^^^^^^^^^^^^^^^^^^

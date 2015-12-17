@@ -42,31 +42,16 @@ Setup Dataflow
 
 .. include:: /includes/collapsible_dataflow_setup_instructions.rst
 
-Your project must be whitelisted to use gRPC in order to run this pipeline, as it makes use of
-gRPC streaming to retrieve data.  `Contact us`_ if you are interested in being whitelisted to test this pipeline and other gRPC tools.
-
 Create Output Dataset
 ---------------------
 
-In order to run this pipeline, you must create a dataset using the Genomics API that the pipeline
-can output its AnnotationSet and Annotations to.  If you already have a dataset in which you have
-write access, you may use it.  If not, you can do the following to create one:
+In order to run this pipeline, you must have a Google Genomics dataset to which the pipeline
+can output its AnnotationSet and Annotations.
+* If you already have a dataset in which you have write access, you may use it.  Click here to see your datasets: https://console.developers.google.com/project/_/genomics/datasets
+* If not, you can click on the following link to use the Developers Control to create one: https://console.developers.google.com/project/_/genomics/datasets/create.
 
-#. Go to `this link <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.create>`_ in the Genomics API Explorer for creating datasets.
-#. Put your Google Cloud Platform project ID in the ``projectId`` field of the request body.
-#. Give your dataset a name in the ``name`` field of the request body.
-#. Press the `Authorize and Execute` button.
-
-The ``id`` that is generated in the response output is the output dataset id you should use when running
+In either case, the ``ID`` of the dataset is the output dataset id you should use when running
 the pipeline.
-
-Download ALPN
--------------
-
-Running this pipeline locally requires that you have the ALPN jar that matches your JRE version
-on your computer.  See the `ALPN documentation <http://www.eclipse.org/jetty/documentation/9.2.10.v20150310/alpn-chapter.html>`_ for a table of which ALPN jar to use.
-
-You will not need to provide the ALPN jar if you run the pipeline on Google Cloud instead of locally.
 
 Run the pipeline
 ----------------
@@ -79,7 +64,6 @@ region, using a bucket width of 1024 (in this case one bucket output) on the :do
   java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
     -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CalculateCoverage \
-    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr1:552960:553984 \
     --bucketWidth=1024 \
     --inputDatasetId=3049512673186936334 \
@@ -178,7 +162,6 @@ fewer read group sets then the default requirement of 11:
   java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
     -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CalculateCoverage \
-    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr1:552960:553984 \
     --bucketWidth=1024 \
     --numQuantiles=3 \
@@ -225,23 +208,11 @@ described above, except now your Annotation should look like this:
   ]
  }
 
-The above command lines run the pipeline over a small portion of the genome, only taking a few minutes.
-If modified to run over a larger portion of the genome or the entire genome, it may take a few hours
-depending upon how many machines are configured to run concurrently via ``--numWorkers``.
+.. include:: /includes/dataflow_on_gce_run.rst
 
-To run this pipeline over a large portion of the genome:
+|dataflowSomeRefs|
 
-* Add the following additional command line parameters to run the pipeline on Google Cloud instead of locally::
-
-  --runner=DataflowPipelineRunner \
-  --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
-  --stagingLocation=gs://YOUR-BUCKET/dataflow-staging
-
-* Add ``--numWorkers=#`` for faster processing that will shard the data.
-* Add more references:
-
-  * Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=13:32889610:32973808,17:41196311:41277499``
-  * Or use ``--allReferences`` instead of ``--references=1:552960:557056`` to run over the entire genome.
+|dataflowAllRefs|
 
 To run the pipeline on a different dataset, change the ``--inputDatasetId`` parameter.
 
@@ -250,7 +221,6 @@ To run the pipeline on a different group of read group sets, change the ``--read
 To run the pipeline with a different bucket width, change the ``--bucketWidth`` parameter.
 
 To run the pipeline with a different number of output quantiles, change the ``--numQuantiles`` parameter.
-
 
 Additional details
 ------------------

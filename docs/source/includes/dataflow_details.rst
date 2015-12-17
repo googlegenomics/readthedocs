@@ -1,3 +1,5 @@
+|dataflowADC|
+
 Use ``--help`` to get more information about the command line options.  Change
 the pipeline class name below to match the one you would like to run.
 
