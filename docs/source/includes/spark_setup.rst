@@ -10,7 +10,7 @@
 
     gcloud compute ssh example-cluster-m
 
-* Compile and build the pipeline jar.  You can `build locally <https://github.com/googlegenomics/spark-examples>`_ or build on the Spark master running on Google Compute Engine.
+* Compile and build the pipeline jar.  You can `build locally <https://github.com/googlegenomics/spark-examples>`_ or build on the Spark master Google Compute Engine virtual machine.
 
 .. container:: toggle
 

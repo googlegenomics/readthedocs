@@ -107,7 +107,7 @@ rst_epilog = """
 
   Need more help?  Please see https://cloud.google.com/genomics/support.
 
-.. GLOBAL REPLACEMENTS CAN GO HERE
+.. GLOBAL LINK REPLACEMENTS CAN GO HERE
 
 .. ### Data links
 .. _Personal Genome Project: http://www.personalgenomes.org/
@@ -171,6 +171,7 @@ rst_epilog = """
 .. _cloud.google.com/genomics: https://cloud.google.com/genomics
 .. _What is Google Genomics: https://cloud.google.com/genomics/what-is-google-genomics
 .. _Google Genomics fundamentals: https://cloud.google.com/genomics/what-is-google-genomics#fundamentals
+.. _authentication instructions: https://cloud.google.com/genomics/install-genomics-tools#authenticate
 .. _Google Genomics Pricing: https://cloud.google.com/genomics/pricing
 .. _Google Genomics Tools: https://cloud.google.com/genomics/install-genomics-tools
 .. _Google Genomics API: https://cloud.google.com/genomics/reference/rest/
@@ -182,6 +183,7 @@ rst_epilog = """
 .. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
 .. _gsutil: https://cloud.google.com/storage/docs/gsutil
 .. _install gcloud: https://cloud.google.com/sdk/
+.. _gcloud: https://cloud.google.com/sdk/
 .. _persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence
 .. _selecting the right persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence#selecting_the_right_disk
 
@@ -235,6 +237,13 @@ rst_epilog = """
 .. _Python getting started: https://github.com/googlegenomics/getting-started-with-the-api/tree/master/python
 .. _Java getting started: https://github.com/googlegenomics/getting-started-with-the-api/tree/master/java
 .. _Go getting started: https://github.com/googlegenomics/getting-started-with-the-api/tree/master/go
+
+.. GLOBAL SUBSTITUTIONS CAN GO HERE
+
+.. |sparkADC| replace:: If the `Application Default Credentials`_ are not sufficient, use ``--secretsFile=PATH/TO/YOUR/client_secrets.json``.  If you do not already have this file, see the `authentication instructions`_ to obtain it.
+.. |dataflowADC| replace:: If the `Application Default Credentials`_ are not sufficient, use ``--client-secrets PATH/TO/YOUR/client_secrets.json``.  If you do not already have this file, see the `authentication instructions`_ to obtain it.
+.. |dataflowSomeRefs| replace:: Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=chr13:32889610:32973808,chr17:41196311:41277499``.
+.. |dataflowAllRefs| replace:: To run this pipeline over the entire genome, use ``--allReferences`` instead of ``--references=chr17:41196311:41277499``.
 
 """
 
