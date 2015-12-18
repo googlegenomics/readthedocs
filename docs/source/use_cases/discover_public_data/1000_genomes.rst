@@ -32,7 +32,7 @@ Phase 1 publication
 | `A map of human genome variation from population scale sequencing <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3042601/>`_
 | The 1000 Genomes Project Consortium
 | Published: October 28, 2010
-| DOI:  10.1038/nature09534
+| DOI: 10.1038/nature09534
 |
 
 Phase 3 `announcement <http://www.1000genomes.org/announcements/phase-3-variant-set-additional-allele-frequencies-functional-annotation-and-other-data>`_.

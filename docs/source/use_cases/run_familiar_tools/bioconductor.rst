@@ -1,4 +1,4 @@
-Run Bioconductor on Google Compute Engine
+Run Bioconductor on Compute Engine
 =========================================
 
 .. comment: begin: goto-read-the-docs

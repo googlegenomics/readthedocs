@@ -25,3 +25,4 @@ There are many ways one can browse genomic data exposed via the Google Genomics 
   igv
   gabrowse
   bioconductor
+  beacon

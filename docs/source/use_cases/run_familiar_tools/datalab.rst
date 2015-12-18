@@ -1,4 +1,4 @@
-Run iPython Notebooks on Google Compute Engine
+Run iPython Notebooks on Compute Engine
 ===============================================
 
 .. comment: begin: goto-read-the-docs

@@ -4,7 +4,7 @@
 .. |suggested_client_id_name| replace:: ``Elasticluster``
 
 =====================================================
-Create a Grid Engine cluster on Google Compute Engine
+Create a Grid Engine cluster on Compute Engine
 =====================================================
 
 .. comment: begin: goto-read-the-docs
@@ -150,11 +150,11 @@ Elasticluster cluster definitions are driven from a configuration file.  By defa
 .. code:: bash
 
    ~/.elasticluster/config
-   
+
 Details of the config file can be found at:
 
    https://elasticluster.readthedocs.org/en/latest/configure.html
-   
+
 Elasticluster provides a command to automatically create the config file for you, however
 using this command will create a template configuration file which you cannot immediately
 use as it includes a list of clusters that are not correctly configured.
@@ -175,7 +175,7 @@ If you install the default template using the command:
 .. code:: bash
 
    elasticluster list-templates
-   
+
 It will copy a default file to ``~/.elasticluster/config`` and will emit a number of WARNINGS
 and ERRORS to the console.  To use this configuration file, you must then comment out or remove
 all of the "cluster" examples.  Look for the section:
@@ -183,13 +183,13 @@ all of the "cluster" examples.  Look for the section:
 .. code:: ini
 
    # Cluster Section
-   
+
 and then comment out or remove everything up to the:
 
 .. code:: ini
 
   # Cluster node section
-  
+
 You can then copy each element (except ``setup/ansible-gridengine``) of the following minimal
 template into the config file.
 
@@ -210,14 +210,14 @@ Instructions for ensuring your SSH keypair exists can be found
    provider=ansible
    frontend_groups=gridengine_master
    compute_groups=gridengine_clients
-   
+
    # Create a cloud provider (call it "google-cloud")
    [cloud/google-cloud]
    provider=google
    gce_project_id=****REPLACE WITH YOUR PROJECT ID****
    gce_client_id=****REPLACE WITH YOUR CLIENT ID****
    gce_client_secret=****REPLACE WITH YOUR SECRET KEY****
-   
+
    # Create a login (call it "google-login")
    [login/google-login]
    image_user=****REPLACE WITH YOUR GOOGLE USERID (just the userid, not email)****
@@ -226,7 +226,7 @@ Instructions for ensuring your SSH keypair exists can be found
    user_key_name=elasticluster
    user_key_private=~/.ssh/google_compute_engine
    user_key_public=~/.ssh/google_compute_engine.pub
-   
+
    # Bring all of the elements together to define a cluster called "gridengine"
    [cluster/gridengine]
    cloud=google-cloud
@@ -313,7 +313,7 @@ with a message like:
 .. code:: bash
 
   If your browser is on a different machine then exit and re-run this
-  application with the command-line parameter 
+  application with the command-line parameter
 
     --noauth_local_webserver
 

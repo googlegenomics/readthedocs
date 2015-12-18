@@ -1,4 +1,4 @@
-.. _gzip: http://www.gzip.org/ 
+.. _gzip: http://www.gzip.org/
 .. _bzip2: http://www.bzip.org/
 
 .. |br| raw:: html
@@ -6,7 +6,7 @@
    <br />
 
 =================================================
-Compress/Decompress files in Google Cloud Storage
+Compress/Decompress files in Cloud Storage
 =================================================
 
 .. comment: begin: goto-read-the-docs
@@ -75,9 +75,9 @@ instructions below demonstrate spreading the processing over 3 worker instances.
 3. **Upload the** ``src`` **and** ``samples`` **directories to the Grid Engine master instance:**
 
   .. code-block:: shell
-  
+
     cd grid-computing-tools
-    
+
     elasticluster sftp gridengine << 'EOF'
     mkdir src
     mkdir src/common
@@ -90,7 +90,7 @@ instructions below demonstrate spreading the processing over 3 worker instances.
     EOF
 
 4. .. include:: /includes/grid-computing-tools-steps-ssh-to-master.rst
-  
+
 5. **Set up the configuration files for the samples**
 
    The syntax for running each of the samples is the same:
@@ -209,7 +209,7 @@ To run your own job to compress/decompress a list of files requires the followin
    .. code-block:: shell
 
      gsutil ls gs://MY_BUCKET/PATH/*.vcf.bz2 > ${WS_ROOT}/my_jobs/compressed_vcf_list_file.txt
-  
+
 2. **Create a** ``job config file``
 
    The easiest way to create a job config file is to base it off the
@@ -227,7 +227,7 @@ To run your own job to compress/decompress a list of files requires the followin
 4. **Upload input list file, config file, and** ``grid-computing-tools`` **source to the gridengine cluster master**
 
   .. code-block:: shell
-  
+
     elasticluster sftp gridengine << EOF
     put ../my_jobs/*
     mkdir src
@@ -250,7 +250,7 @@ To run your own job to compress/decompress a list of files requires the followin
 
    .. code-block:: shell
 
-     $ head -n 5 compress.o3.1 
+     $ head -n 5 compress.o3.1
      Task host: compute001
      Task start: 1
      Input list file: ./samples/compress/gzip_compress_file_list.txt
@@ -290,7 +290,7 @@ To run your own job to compress/decompress a list of files requires the followin
   .. code-block:: shell
 
     ./src/compress/launch_compress.sh my_job_config.sh
-  
+
   where *my_job_config.sh* is replaced by the name of your config file created
   in step 2.
 
