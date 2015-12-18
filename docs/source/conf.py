@@ -115,7 +115,7 @@ rst_epilog = """
 .. _ClinVar: http://www.ncbi.nlm.nih.gov/clinvar/
 .. _UCSC Sequence and Annotation Data: http://hgdownload.cse.ucsc.edu/
 .. _Tute's documentation: https://docs.google.com/document/d/1_Kryc4qAqw1NRezaqDJ1tXUSCbxEkKK4SSi_kZuyHtU/pub
-.. _Cancer Genomics Cloud: http://cgc.systemsbiology.net/
+.. _Cancer Genomics Cloud: http://isb-cgc.org
 
 .. _Illumina Platinum Genomes project data: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/platinum_genomes.html
 .. _1000 Genomes project data: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/1000_genomes.html
@@ -188,17 +188,18 @@ rst_epilog = """
 .. _selecting the right persistent disk: https://cloud.google.com/compute/docs/tutorials/compute-engine-disks-price-performance-and-persistence#selecting_the_right_disk
 
 .. ### Open ecosystem links
+.. _ALPN: http://www.eclipse.org/jetty/documentation/9.2.10.v20150310/alpn-chapter.html
 .. _Apache Spark: https://spark.apache.org/
 .. _Apache Hadoop: https://hadoop.apache.org/
 .. _Docker: https://www.docker.com/
 .. _Elasticluster: https://elasticluster.readthedocs.org
 .. _Elasticluster repo: https://github.com/gc3-uzh-ch/elasticluster
+.. _Galaxy: https://galaxyproject.org/
 .. _Grid Engine: http://gridengine.info/
 .. _NCBI BLAST: http://blast.ncbi.nlm.nih.gov/Blast.cgi
 .. _NCBI BLAST Cloud Documentation: http://ncbi.github.io/blast-cloud/
 .. _S3IT: http://www.s3it.uzh.ch/
 .. _SLURM: https://computing.llnl.gov/linux/slurm/
-.. _ALPN: http://www.eclipse.org/jetty/documentation/9.2.10.v20150310/alpn-chapter.html
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
