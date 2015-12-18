@@ -1,5 +1,5 @@
-Verify Bam Id
-==============
+Perform Quality Control Checks on Reads
+=======================================
 
 .. comment: begin: goto-read-the-docs
 
@@ -30,15 +30,19 @@ This pipeline tests a set of reads for contamination. It takes as input:
 and combines these to produce an estimate of the amount of contamination.
 
 Uses the sequence data alone approach described in:
-G. Jun, M. Flickinger, K. N. Hetrick, Kurt, J. M. Romm, K. F. Doheny, G. Abecasis, M. Boehnke, and
-H. M. Kang, Detecting and Estimating Contamination of Human DNA Samples in Sequencing and Array-Based
-Genotype Data, American journal of human genetics doi:10.1016/j.ajhg.2012.09.004 (volume 91 issue 5 pp.839 - 848).
-`See here for more details. <http://www.sciencedirect.com/science/article/pii/S0002929712004788>`_
+
+| `Detecting and Estimating Contamination of Human DNA Samples in Sequencing and Array-Based Genotype Data <http://www.sciencedirect.com/science/article/pii/S0002929712004788>`_
+| Jun, Goo et al.
+| The American Journal of Human Genetics, Volume 91, Issue 5, 839 - 848
+| DOI: http://dx.doi.org/10.1016/j.ajhg.2012.09.004
+|
 
 The pipeline is implemented on `Google Cloud Dataflow`_.
 
 Setup Dataflow
 --------------
+
+**Note: this pipeline is new and still** `undergoing testing <https://github.com/googlegenomics/dataflow-java/issues/155>`_.  We recommend that you follow the instructions `here <https://github.com/googlegenomics/dataflow-java>`__ to build the latest version of the source code.
 
 .. include:: /includes/collapsible_dataflow_setup_instructions.rst
 
