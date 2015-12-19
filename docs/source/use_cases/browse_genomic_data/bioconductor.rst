@@ -1,5 +1,5 @@
 Browse Reads with Bioconductor
-===================================
+==============================
 
 .. comment: begin: goto-read-the-docs
 

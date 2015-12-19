@@ -22,6 +22,7 @@ __ RenderedVersion_
 
    /use_cases/browse_genomic_data/igv
    Picard and GATK tools </use_cases/run_picard_and_gatk/index>
+   /use_cases/browse_genomic_data/beacon
    R </api-client-r/index>
    /use_cases/getting-started-with-the-api/python
    /use_cases/getting-started-with-the-api/java

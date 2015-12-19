@@ -4,9 +4,9 @@
 
    <br />
 
-=======================================================
-Run SAMtools to index BAM files in Google Cloud Storage
-=======================================================
+================================================
+Run SAMtools to index BAM files in Cloud Storage
+================================================
 
 .. comment: begin: goto-read-the-docs
 
@@ -58,9 +58,9 @@ below demonstrate spreading the processing over 3 worker instances.
 3. **Upload the** ``src`` **and** ``samples`` **directories to the Grid Engine master instance:**
 
   .. code-block:: shell
-  
+
     cd grid-computing-tools
-    
+
     elasticluster sftp gridengine << 'EOF'
     mkdir src
     mkdir src/common
@@ -73,7 +73,7 @@ below demonstrate spreading the processing over 3 worker instances.
     EOF
 
 4. .. include:: /includes/grid-computing-tools-steps-ssh-to-master.rst
-  
+
 5. **Set up the configuration files for the samples**
 
    The syntax for running the sample is:
@@ -171,7 +171,7 @@ To run your own job to index a list of BAM files requires the following:
    .. code-block:: shell
 
      gsutil ls gs://MY_BUCKET/PATH/*.bam > ${WS_ROOT}/my_jobs/bam_indexing_list_file.txt
-  
+
 2. **Create a** ``job config file``
 
    The easiest way to create a job config file is to base it off the
@@ -196,7 +196,7 @@ To run your own job to index a list of BAM files requires the following:
 4. **Upload input list file, config file, and** ``grid-computing-tools`` **source to the gridengine cluster master**
 
   .. code-block:: shell
-  
+
     elasticluster sftp gridengine << EOF
     put ../my_jobs/*
     mkdir src
@@ -267,7 +267,7 @@ To run your own job to index a list of BAM files requires the following:
   .. code-block:: shell
 
     ./src/samtools/launch_samtools.sh my_job_config.sh
-  
+
   where *my_job_config.sh* is replaced by the name of your config file
   created in step 2.
 
