@@ -3,9 +3,9 @@
 .. _xcode-select: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/xcode-select.1.html
 .. |suggested_client_id_name| replace:: ``Elasticluster``
 
-=====================================================
+==============================================
 Create a Grid Engine cluster on Compute Engine
-=====================================================
+==============================================
 
 .. comment: begin: goto-read-the-docs
 

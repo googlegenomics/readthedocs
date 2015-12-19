@@ -1,5 +1,5 @@
 Beacon
-========
+======
 
 .. comment: begin: goto-read-the-docs
 

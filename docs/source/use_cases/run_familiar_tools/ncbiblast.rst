@@ -1,5 +1,5 @@
 Run NCBI BLAST on Compute Engine
-========================================
+================================
 
 .. comment: begin: goto-read-the-docs
 
