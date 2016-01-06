@@ -29,14 +29,14 @@ Google Cloud Platform data locations
 ------------------------------------
 
 * Google Cloud Storage folder `gs://pgp-harvard-data-public <https://console.developers.google.com/storage/pgp-harvard-data-public>`_
-* Google Genomics Dataset ID `9170389916365079788 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=9170389916365079788>`_
+* Google Genomics Dataset ID `9170389916365079788 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=9170389916365079788>`_
 * Google BigQuery Dataset IDs
    * `google.com:biggene:pgp_20150205.genome_calls <https://bigquery.cloud.google.com/table/google.com:biggene:pgp_20150205.genome_calls>`_
 
 Provenance
 ----------
 
-Google Genomics variant set for dataset ``pgp_20150205``: `9170389916365079788 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=9170389916365079788>`_ contains:
+Google Genomics variant set for dataset ``pgp_20150205``: `9170389916365079788 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=9170389916365079788>`_ contains:
 
 * the Complete Genomics datasets from `gs://pgp-harvard-data-public/**/masterVar*bz2 <https://console.developers.google.com/storage/pgp-harvard-data-public>`_
 
