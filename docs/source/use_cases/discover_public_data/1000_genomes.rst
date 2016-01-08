@@ -22,7 +22,7 @@ This dataset comprises roughly 2,500 genomes from 25 populations around the worl
 Pilot publication
 
 | `An integrated map of genetic variation from 1,092 human genomes <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3498066/>`_
-| The 1000 Genomes Project Consortiuma
+| The 1000 Genomes Project Consortium
 | Published: November 1, 2012
 | DOI: 10.1038/nature11632
 |
