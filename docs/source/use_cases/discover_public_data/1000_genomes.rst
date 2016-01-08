@@ -35,7 +35,19 @@ Phase 1 publication
 | DOI: 10.1038/nature09534
 |
 
-Phase 3 `announcement <http://www.1000genomes.org/announcements/phase-3-variant-set-additional-allele-frequencies-functional-annotation-and-other-data>`_.
+Phase 3 publications
+
+| `A global reference for human genetic variation <http://www.nature.com/nature/journal/v526/n7571/full/nature15393.html>`_
+| The 1000 Genomes Project Consortium
+| Published: September 30,2015
+| DOI: 10.1038/nature15393
+|
+
+| `An integrated map of structural variation in 2,504 human genomes <http://www.nature.com/nature/journal/v526/n7571/full/nature15394.html>`_
+| The 1000 Genomes Project Consortium
+| Published: September 30,2015
+| DOI: 10.1038/nature15394
+|
 
 Google Cloud Platform data locations
 ------------------------------------
@@ -46,14 +58,24 @@ Google Cloud Platform data locations
       * `gs://genomics-public-data/1000-genomes-phase-3 <https://console.developers.google.com/storage/genomics-public-data/1000-genomes-phase-3/>`_
    * A full mirror of http://ftp-trace.ncbi.nih.gov/1000genomes/ftp/ `gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/ <https://console.developers.google.com/storage/browser/genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/>`_.
 * Google Genomics Dataset IDs
-   * `10473108253681171589 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=10473108253681171589>`_ phase 3 reads and phase 1 variants
+   * Dataset Id `10473108253681171589 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=10473108253681171589>`_
 
-     * `ReadGroupSet IDs <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.readgroupsets.search?fields=readGroupSets(id%252Cname)&_h=5&resource=%257B%250A++%2522datasetIds%2522%253A+%250A++%255B%252210473108253681171589%2522%250A++%255D%250A%257D&>`_
-     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.variantsets.get?variantSetId=10473108253681171589&_h=2&>`__
+     * `ReadGroupSet IDs <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.readgroupsets.search?fields=readGroupSets(id%252Cname)&_h=5&resource=%257B%250A++%2522datasetIds%2522%253A+%250A++%255B%252210473108253681171589%2522%250A++%255D%250A%257D&>`_ for the Phase 3 reads
+     * Phase 1 variants
 
-   * `4252737135923902652 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=4252737135923902652>`_ phase 3 variants
+       * Variant Set Id: ``10473108253681171589``
+       * `Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.variantsets.get?variantSetId=10473108253681171589&_h=2&>`__
+     * Phase 3 variants - `20150220 Release <http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/README_phase3_callset_20150220>`_
 
-     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.variantsets.get?variantSetId=4252737135923902652&_h=2&>`__
+       * Variant Set Id: ``11027761582969783635``
+       * `Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.variantsets.get?variantSetId=11027761582969783635&_h=2&>`__
+
+   * Dataset Id `4252737135923902652 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=4252737135923902652>`_
+
+     * Phase 3 variants - initial release
+
+       * Variant Set Id: ``4252737135923902652``
+       * `Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.variantsets.get?variantSetId=4252737135923902652&_h=2&>`__
 
 * Google BigQuery Dataset IDs
    * `genomics-public-data:1000_genomes <https://bigquery.cloud.google.com/table/genomics-public-data:1000_genomes.variants>`_ phase 1 variants and sample information
