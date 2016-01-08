@@ -28,4 +28,4 @@ This dataset comprises 25 genomes from 13 diverse populations serving as the pil
 Google Cloud Platform data locations
 ------------------------------------
 
-* Google Genomics dataset `461916304629 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=461916304629>`_.
+* Google Genomics dataset `461916304629 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=461916304629>`_.

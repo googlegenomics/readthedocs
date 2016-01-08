@@ -46,14 +46,14 @@ Google Cloud Platform data locations
       * `gs://genomics-public-data/1000-genomes-phase-3 <https://console.developers.google.com/storage/genomics-public-data/1000-genomes-phase-3/>`_
    * A full mirror of http://ftp-trace.ncbi.nih.gov/1000genomes/ftp/ `gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/ <https://console.developers.google.com/storage/browser/genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/>`_.
 * Google Genomics Dataset IDs
-   * `10473108253681171589 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=10473108253681171589>`_ phase 3 reads and phase 1 variants
+   * `10473108253681171589 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=10473108253681171589>`_ phase 3 reads and phase 1 variants
 
-     * `ReadGroupSet IDs <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.readgroupsets.search?fields=readGroupSets(id%252Cname)&_h=5&resource=%257B%250A++%2522datasetIds%2522%253A+%250A++%255B%252210473108253681171589%2522%250A++%255D%250A%257D&>`_
-     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.variantsets.get?variantSetId=10473108253681171589&_h=2&>`__
+     * `ReadGroupSet IDs <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.readgroupsets.search?fields=readGroupSets(id%252Cname)&_h=5&resource=%257B%250A++%2522datasetIds%2522%253A+%250A++%255B%252210473108253681171589%2522%250A++%255D%250A%257D&>`_
+     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.variantsets.get?variantSetId=10473108253681171589&_h=2&>`__
 
-   * `4252737135923902652 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=4252737135923902652>`_ phase 3 variants
+   * `4252737135923902652 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=4252737135923902652>`_ phase 3 variants
 
-     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.variantsets.get?variantSetId=4252737135923902652&_h=2&>`__
+     * `Variant Reference Bounds <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.variantsets.get?variantSetId=4252737135923902652&_h=2&>`__
 
 * Google BigQuery Dataset IDs
    * `genomics-public-data:1000_genomes <https://bigquery.cloud.google.com/table/genomics-public-data:1000_genomes.variants>`_ phase 1 variants and sample information

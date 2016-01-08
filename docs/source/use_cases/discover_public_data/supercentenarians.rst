@@ -28,7 +28,7 @@ This dataset comprises Complete Genomics genomes for 17 supercentenarians (110 y
 Google Cloud Platform data locations
 ------------------------------------
 
-* Google Genomics dataset `18254571932956699773 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=18254571932956699773>`_ once access has been granted.
+* Google Genomics dataset `18254571932956699773 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=18254571932956699773>`_ once access has been granted.
 
 Provenance
 ----------
