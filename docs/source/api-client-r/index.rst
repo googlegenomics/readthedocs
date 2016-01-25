@@ -8,8 +8,3 @@ Additionally it provides converters to `Bioconductor`_ datatypes such as:
 * `GAlignments <http://www.bioconductor.org/packages/release/bioc/html/GenomicAlignments.html>`_
 * `GRanges <http://www.bioconductor.org/packages/release/bioc/html/GenomicRanges.html>`_
 * `VRanges <http://www.bioconductor.org/packages/release/bioc/html/VariantAnnotation.html>`_
-
-.. toctree::
-   :maxdepth: 2
-
-
