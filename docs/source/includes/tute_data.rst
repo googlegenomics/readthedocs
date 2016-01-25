@@ -1,4 +1,9 @@
-Tute Genomics `has made available to the community <http://googlecloudplatform.blogspot.com/2015/03/Exploring-Genetic-Variation-with-Google-Genomics-and-Tute.html>`_ annotations for all hg19 SNPs as a BigQuery table.  See `Tute's documentation`_ for more details about the annotation databases included and **sample queries** upon public data.
+Tute Genomics `has made available to the community <http://googlecloudplatform.blogspot.com/2015/03/Exploring-Genetic-Variation-with-Google-Genomics-and-Tute.html>`_ annotations for all hg19 SNPs as a BigQuery table.
+
+See `Tute's documentation`_ for more details about:
+
+* the annotation databases included
+* **sample queries** upon public data.
 
 Google Cloud Platform data locations
 ------------------------------------

@@ -17,7 +17,28 @@ __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-There are a collection of quality control checks for variants documented in codelab `Quality Control using Google Genomics`_.
+There are a collection of quality control checks for variants documented in codelab `Quality Control using Google Genomics`_.  The methods include:
+
+* Sample Level
+
+  * Genome Call Rate
+  * Missingness Rate
+  * Singleton Rate
+  * Heterozygosity Rate
+  * Homozygosity Rate
+  * Inbreeding Coefficient
+  * Sex Inference
+  * Ethnicity Inference
+  * Genome Similarity
+
+* Variant Level
+
+  * Ti/Tv by Genomic Window
+  * Ti/Tv by Alternate Allele Counts
+  * Ti/Tv by Depth
+  * Missingness Rate
+  * Hardy-Weinberg Equilibrium
+  * Heterozygous Haplotype
 
 These methods were co-developed with researchers working on the Million Veterans Program data. For more detail, please see `the paper <http://biorxiv.org/content/early/2015/12/24/035295>`__ and `diagram of their full pipeline <https://github.com/StanfordBioinformatics/mvp_aaa_codelabs/blob/master/README.md>`__ with some additional quality control checks on `github <https://github.com/StanfordBioinformatics/mvp_aaa_codelabs>`__.
 
