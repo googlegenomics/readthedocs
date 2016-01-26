@@ -18,6 +18,9 @@ Interactive Data Analysis Samples and Tools
 `datalab-examples <https://github.com/googlegenomics/datalab-examples>`_
   Example `Google Cloud Datalab`_ iPython Notebooks for genomics use cases.
 
+`bioconductor-workshop-r <https://github.com/googlegenomics/bioconductor-workshop-r>`_
+  R package containing instructional materials for using GoogleGenomics Bioconductor and bigrquery packages.
+
 `api-client-java <https://github.com/googlegenomics/api-client-java>`_
   A command line tool for Google Genomics API queries.
 
@@ -27,6 +30,9 @@ Interactive Data Analysis Samples and Tools
 `gatk-tools-java <https://github.com/googlegenomics/gatk-tools-java>`_
   Tools for using Picard and GATK with the Google Genomics API.
 
+`beacon-go <https://github.com/googlegenomics/beacon-go>`_
+  AppEngine implementation of the Beacon API from the Global Alliance for Genomics and Health written in Go.
+
 Cluster Computing Data Analysis Samples
 -----------------------------------------------
 
@@ -35,6 +41,9 @@ Cluster Computing Data Analysis Samples
 
 `spark-examples <https://github.com/googlegenomics/spark-examples>`_
   Apache Spark jobs such as Principal Coordinate Analysis.
+
+`grid-computing-tools <https://github.com/googlegenomics/grid-computing-tools>`_
+  Scripts and samples for using Grid Engine on Google Cloud Platform.
 
 Working with the Google Genomics API
 -----------------------------------------------
