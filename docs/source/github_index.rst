@@ -64,7 +64,7 @@ Data Visualization Application Samples
   A sample Android app that calls the Google Genomics API.
 
 `api-client-python <https://github.com/googlegenomics/api-client-python>`_
-  Google AppEngine implelmentation of a simple genome browser that pulls data from the Google Genomics API.
+  Google AppEngine implementation of a simple genome browser that pulls data from the Google Genomics API.
 
 `api-client-r <https://github.com/googlegenomics/api-client-r>`_
   An R package for Google Genomics API queries.
@@ -76,6 +76,9 @@ Data Analysis Application Samples
 
 `denovo-variant-caller-java <https://github.com/googlegenomics/denovo-variant-caller-java>`_
   A de novo variant caller which uses information from a mother, father and child trio with a bayesian inference method.
+
+`linkage-disequilibrium <https://github.com/googlegenomics/linkage-disequilibrium>`_
+  A suite of Java tools to calculate linkage disequilibrium between variants and load the results into BigQuery and BigTable.
 
 Miscellaneous
 -----------------------------------------------

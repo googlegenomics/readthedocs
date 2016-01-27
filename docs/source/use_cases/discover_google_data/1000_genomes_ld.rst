@@ -1,5 +1,5 @@
-Analyze Data in Google Genomics
-===============================
+1,000 Genomes Phase 3 Linkage Disequilibrium Data
+=================================================
 
 .. comment: begin: goto-read-the-docs
 
@@ -11,17 +11,15 @@ Analyze Data in Google Genomics
    | **If you are reading this on github, you should instead click** `here`__.         |
    +-----------------------------------------------------------------------------------+
 
-.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/sections/analyze_data.html
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_google_data/1000_genomes_ld.html
 
 __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-.. toctree::
-   :maxdepth: 1
 
-   /use_cases/analyze_reads/index
-   /use_cases/analyze_variants/index
-   /use_cases/annotate_variants/index
-   /use_cases/perform_quality_control_checks/index
-   /use_cases/linkage_disequilibrium/index
+.. toctree::
+  :maxdepth: 2
+
+  :doc:`/use_cases/discover_google_data/1000_genomes_ld`
+

@@ -1,5 +1,5 @@
-Analyze Data in Google Genomics
-===============================
+Compute and Analyze Linkage Disequilibrium
+==============================
 
 .. comment: begin: goto-read-the-docs
 
@@ -11,17 +11,16 @@ Analyze Data in Google Genomics
    | **If you are reading this on github, you should instead click** `here`__.         |
    +-----------------------------------------------------------------------------------+
 
-.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/sections/analyze_data.html
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/linkage_disequilibrium/index.html
 
 __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
 .. toctree::
-   :maxdepth: 1
+  :maxdepth: 1
 
-   /use_cases/analyze_reads/index
-   /use_cases/analyze_variants/index
-   /use_cases/annotate_variants/index
-   /use_cases/perform_quality_control_checks/index
-   /use_cases/linkage_disequilibrium/index
+  compute_linkage_disequilibrium
+  transform_ld_results
+  public_ld_datasets
+  analyze_ld_results
