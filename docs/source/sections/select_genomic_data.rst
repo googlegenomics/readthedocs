@@ -21,5 +21,6 @@ __ RenderedVersion_
    :maxdepth: 1
 
    /use_cases/discover_public_data/index
+   /use_cases/discover_google_data/index
    Load Variant Data into Google Genomics <https://cloud.google.com/genomics/v1/load-variants>
 

@@ -57,7 +57,7 @@ in the :doc:`/use_cases/discover_public_data/1000_genomes` dataset.  It also use
   java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
     -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.VerifyBamId \
-    --references=17:41196311:4127749 \
+    --references=17:41196311:41277499 \
     --readGroupSetIds=CMvnhpKTFhDq9e2Yy9G-Bg \
     --variantSetId=10473108253681171589 \
     --output=gs://YOUR-BUCKET/dataflow-output/verifyBamId-platinumGenomes-BRCA1-readGroupSet-CMvnhpKTFhCAv6TKo6Dglgg.txt
