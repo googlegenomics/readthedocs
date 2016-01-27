@@ -1,4 +1,4 @@
-* Deploy your Spark cluster using `Google Cloud Dataproc`_.
+* Deploy your Spark cluster using `Google Cloud Dataproc`_.  This can be done using the `Cloud Console <https://console.developers.google.com/project/_/dataproc/clustersAdd>`__ or the following ``gcloud`` command:
 
   .. code-block:: shell
 

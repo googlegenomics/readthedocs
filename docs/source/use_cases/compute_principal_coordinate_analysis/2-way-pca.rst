@@ -22,10 +22,7 @@ __ RenderedVersion_
 
 .. contents::
 
-`Principal Coordinate Analysis <http://occamstypewriter.org/boboh/2012/01/17/pca_and_pcoa_explained/>`_
-counts the number of variants two samples have in common.  These counts are then placed into an
-``NxN`` matrix where ``N`` is the number of samples in the variant set.  The matrix is centered,
-scaled, and then the first two principal components are computed for each invididual.
+`Principal Coordinate Analysis <http://occamstypewriter.org/boboh/2012/01/17/pca_and_pcoa_explained/>`_ counts the number of variants two samples have in common.  These counts are then placed into an ``(N+M)x(N+M)`` matrix where ``N`` is the number of samples in the control variant set (e.g., 1,000 Genomes) and ``M`` is the number of samples in the case variant set.  The matrix is centered, scaled, and then the first two principal components are computed for each invididual.
 
 In the two-way version, the variants shared between two variant sets are used to compute PCA among the individuals in both variant sets.  This can be useful, for example, as an ethnicity check when comparing a variant set to 1,000 Genomes.  See codelab `Quality Control using Google Genomics`_ for an example of this.
 
@@ -63,6 +60,7 @@ To run the job on a different variant set:
 
 * Change the second variant set id for the ``--variant-set-id`` id parameter.
 * Update the second value in ``--references`` as appropriate (e.g., add/remove the 'chr' prefix on reference names).
+* Increase the memory used when running with a large ``M`` via ``--conf spark.driver.maxResultSize=10G`` and ``--driver-memory 20G``
 
 Additional details
 ------------------

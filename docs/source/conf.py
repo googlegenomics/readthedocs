@@ -198,6 +198,7 @@ rst_epilog = """
 .. _Grid Engine: http://gridengine.info/
 .. _NCBI BLAST: http://blast.ncbi.nlm.nih.gov/Blast.cgi
 .. _NCBI BLAST Cloud Documentation: http://ncbi.github.io/blast-cloud/
+.. _R: http://www.r-project.org/
 .. _S3IT: http://www.s3it.uzh.ch/
 .. _SLURM: https://computing.llnl.gov/linux/slurm/
 

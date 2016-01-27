@@ -17,9 +17,6 @@ __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-.. toctree::
-   :maxdepth: 2
-
 `Bioconductor`_ provides a convenient way to browse regions of the genome. |browse-reads|
 
 .. code-block:: shell
@@ -44,6 +41,6 @@ To make use of this upon your own data:
 
 (1) First, load your data into `Google Genomics`_.  See :doc:`/use_cases/load_data/index` for more detail as to how to do this.
 
-(2) If you do not have them already, install the necessary `Bioconductor`_ packages.  See `Using Bioconductor`_ for more detail as to how to do this.
+(2) If you do not have them already, install the necessary `Bioconductor`_ packages.  See `Using Bioconductor`_ for more detail as to how to do this.  Alternatively, you can :doc:`/use_cases/run_familiar_tools/bioconductor`.
 
 (3) Update the parameters to the ``getReads`` call the example above to match that of your data and desired genomic region to view.
