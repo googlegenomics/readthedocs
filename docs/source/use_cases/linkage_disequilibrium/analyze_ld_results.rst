@@ -27,4 +27,5 @@ There are several examples of interacting with LD results stored in BigQuery usi
 * Exploring `summary statistics of LD data <https://github.com/googlegenomics/linkage-disequilibrium/blob/master/datalab/Exploring_Linkage_Disequilibrium_Data.ipynb>`_.
 * `Visualizing LD patterns <https://github.com/googlegenomics/linkage-disequilibrium/blob/master/datalab/Visualizing_Regional_LD.ipynb>`_ in specific genomic regions.
 * Examining the rate of `LD decay <https://github.com/googlegenomics/linkage-disequilibrium/blob/master/datalab/LD_decay.ipynb>`_ as a function of distance.
+* Selecting "tag variants" and visualizing `tag variant distributions <https://github.com/googlegenomics/linkage-disequilibrium/blob/master/datalab/Tag_variant_identification.ipynb>`_.
 
