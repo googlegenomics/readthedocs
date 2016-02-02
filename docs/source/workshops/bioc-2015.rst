@@ -40,7 +40,7 @@ Create a Google Cloud Platform project
 Enable APIs
 ^^^^^^^^^^^
 
-Enable all the Google Cloud Platform APIs we will use in this workshop by clicking on this `link <https://console.developers.google.com/flows/enableapi?apiid=genomics,bigquery>`_.
+Enable all the Google Cloud Platform APIs we will use in this workshop by clicking on this `link <https://console.cloud.google.com/flows/enableapi?apiid=genomics,bigquery>`_.
 
 Install gcloud
 ^^^^^^^^^^^^^^
@@ -56,7 +56,7 @@ To further the goals of `reproducibility, ease of use, and convenience <http://w
 
 Bioconductor maintains Docker containers with R, Bioconductor packages, and RStudio Server all ready to go!  Its a great way to set up your R environment quickly and start working.  The instructions are below but if you want to learn more, see http://www.bioconductor.org/help/docker/.
 
-1. Click on `click-to-deploy Bioconductor`_ to navigate to the deployer page on the Developers Console.
+1. Click on `click-to-deploy Bioconductor`_ to navigate to the deployer page on the Cloud Platform Console.
 2. In field *Docker Image* choose item ``custom``.
 3. Click on *More* to display the additional form fields.
 4. In field *Custom docker image* paste in value ``gcr.io/bioc_2015/devel_sequencing``.
@@ -94,7 +94,7 @@ Run the Codelabs
 
 (2) Click on *"User guides, package vignettes and other documentation."*
 
-(3) Early on in the workshop you will need an API_KEY.  You can get this by clicking on this link: https://console.developers.google.com/project/_/apiui/credential
+(3) Early on in the workshop you will need an API_KEY.  You can get this by clicking on this link: https://console.cloud.google.com/project/_/apiui/credential
 
 (4) Click on vignette *"Bioc2015Workshop"* and follow the instructions there to run the vignettes **line-by-line** or **chunk-by-chunk**!
 

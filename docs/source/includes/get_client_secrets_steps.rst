@@ -1,4 +1,4 @@
-  https://console.developers.google.com/project/_/apiui/credential
+  https://console.cloud.google.com/project/_/apiui/credential
 
 After you select your Google Cloud project, this link will
 automatically take you to the Credentials tab under the API Manager.

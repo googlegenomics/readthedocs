@@ -8,5 +8,5 @@ See `Tute's documentation`_ for more details about:
 Google Cloud Platform data locations
 ------------------------------------
 
-* Google Cloud Storage folder `gs://tute_db <https://console.developers.google.com/storage/tute_db>`_
+* Google Cloud Storage folder `gs://tute_db <https://console.cloud.google.com/storage/tute_db>`_
 * Google BigQuery Dataset ID `silver-wall-555:TuteTable.hg19 <https://bigquery.cloud.google.com/table/silver-wall-555:TuteTable.hg19>`_

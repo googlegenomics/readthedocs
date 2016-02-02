@@ -143,8 +143,6 @@ rst_epilog = """
 .. _Contact us: google-genomics-contact@googlegroups.com
 
 .. ### Google Guide Links
-.. _Google Developers Console Guide: https://developers.google.com/console/help/new/
-.. _Google Identity Platform Guide: https://developers.google.com/identity/protocols/OAuth2
 .. _Application Default Credentials: https://developers.google.com/identity/protocols/application-default-credentials
 
 .. ### Google Product Links
@@ -152,16 +150,15 @@ rst_epilog = """
 .. _Google Cloud Dataflow: https://cloud.google.com/dataflow/
 .. _Google Cloud Storage: https://cloud.google.com/storage/
 .. _Google Compute Engine: https://cloud.google.com/compute/
-.. _Google Developers Console: https://console.developers.google.com/
+.. _Google Cloud Platform Console: https://console.cloud.google.com/
 .. _Google Genomics: https://cloud.google.com/genomics/
 .. _Google Cloud Datalab: https://cloud.google.com/datalab/
 .. _Google Cloud Dataproc: https://cloud.google.com/dataproc/
 
 .. ### Deep links into the Developers Console
-.. _Project List: https://console.developers.google.com/project
-.. _click-to-deploy NCBI BLAST: https://console.developers.google.com/project/_/launcher/details/click-to-deploy-images/ncbiblast
-.. _click-to-deploy Bioconductor: https://console.developers.google.com/project/_/mc/template/bioconductor
-.. _Deployments: https://console.developers.google.com/project/_/deployments
+.. _click-to-deploy NCBI BLAST: https://console.cloud.google.com/project/_/launcher/details/click-to-deploy-images/ncbiblast
+.. _click-to-deploy Bioconductor: https://console.cloud.google.com/project/_/mc/template/bioconductor
+.. _Deployments: https://console.cloud.google.com/project/_/deployments
 
 .. ### Deep links into cloud.google.com documentation
 .. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas

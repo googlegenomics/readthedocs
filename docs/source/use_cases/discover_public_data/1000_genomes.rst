@@ -54,9 +54,9 @@ Google Cloud Platform data locations
 
 * Google Cloud Storage folders
    * These files were loaded into Google Genomics datasets:
-      * `gs://genomics-public-data/1000-genomes <https://console.developers.google.com/storage/genomics-public-data/1000-genomes/>`_
-      * `gs://genomics-public-data/1000-genomes-phase-3 <https://console.developers.google.com/storage/genomics-public-data/1000-genomes-phase-3/>`_
-   * A full mirror of http://ftp-trace.ncbi.nih.gov/1000genomes/ftp/ `gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/ <https://console.developers.google.com/storage/browser/genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/>`_.
+      * `gs://genomics-public-data/1000-genomes <https://console.cloud.google.com/storage/genomics-public-data/1000-genomes/>`_
+      * `gs://genomics-public-data/1000-genomes-phase-3 <https://console.cloud.google.com/storage/genomics-public-data/1000-genomes-phase-3/>`_
+   * A full mirror of http://ftp-trace.ncbi.nih.gov/1000genomes/ftp/ `gs://genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/ <https://console.cloud.google.com/storage/browser/genomics-public-data/ftp-trace.ncbi.nih.gov/1000genomes/ftp/>`_.
 * Google Genomics Dataset IDs
    * Dataset Id `10473108253681171589 <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.get?datasetId=10473108253681171589>`_
 
