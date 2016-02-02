@@ -35,39 +35,36 @@ Setup Dataflow
 
 Run the pipeline
 ----------------
-The following command will run Identity-by-State over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset.
+The following command will run Identity-by-State over the BRCA1 region within the :doc:`/use_cases/discover_public_data/platinum_genomes` variant set.
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
+    -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.IdentityByState \
-    --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
-    --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
-    --datasetId=3049512673186936334 \
+    --variantSetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
     --hasNonVariantSegments \
     --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-ibs.tsv
 
 Note that there are several IBS calculators from which to choose. Use the ``--callSimilarityCalculatorFactory`` to switch between them.
 
-Also notice use of the ``--hasNonVariantSegments`` parameter when running this pipeline on the :doc:`/use_cases/discover_public_data/platinum_genomes` dataset.
+Also notice use of the ``--hasNonVariantSegments`` parameter when running this pipeline on the :doc:`/use_cases/discover_public_data/platinum_genomes` variant set.
 
- * For data with non-variant segments (such as Complete Genomics data or data in Genome VCF (gVCF) format), specify this flag so that the pipeline correctly takes into account non-variant segment records that overlap variants within the dataset.
+ * For data with non-variant segments (such as Complete Genomics data or data in Genome VCF (gVCF) format), specify this flag so that the pipeline correctly takes into account non-variant segment records that overlap variants within the variant set.
  * The source :doc:`/use_cases/discover_public_data/platinum_genomes` data imported into `Google Genomics`_ was in gVCF format.
 
-To run the pipeline on a different dataset:
+.. include:: /includes/dataflow_on_gce_run.rst
 
- * change the variant set id for the ``--datasetId`` id parameter.
- * Also, remove the ``--nonVariantSegments`` parameter if it is not applicable.
+|dataflowSomeRefs|
 
-The above command line runs the pipeline over a small portion of the genome, only taking a few minutes.  If modified to run over a larger portion of the genome or the entire genome, it may take a few hours depending upon how many machines are configured to run concurrently via ``--numWorkers``.  To run this pipeline over a large portion of the genome:
+|dataflowAllRefs|
 
-  #. add ``--runner=DataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally
-  #. add more references
+To run the pipeline on a different variant set:
 
-    * Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=chr13:32889610:32973808,chr17:41196311:41277499``
-    * Use ``--allReferences`` instead of ``--references=chr17:41196311:41277499`` to run over the entire genome.
+* Change the variant set id for the ``--variantSetId`` id parameter.
+* Update the ``--references`` as appropriate (e.g., add/remove the 'chr' prefix on reference names).
+* Remove the ``--nonVariantSegments`` parameter if it is not applicable.
 
 Gather the results into a single file
 -------------------------------------

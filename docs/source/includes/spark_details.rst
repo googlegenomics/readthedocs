@@ -1,3 +1,5 @@
+|sparkADC|
+
 Use ``--help`` to get more information about the job-specific command line options.  Change
 the job class name below to match the one you would like to run.
 

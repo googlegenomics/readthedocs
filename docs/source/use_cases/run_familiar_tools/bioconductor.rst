@@ -1,5 +1,5 @@
-Run Bioconductor on Google Compute Engine
-=========================================
+Run Bioconductor on Compute Engine
+==================================
 
 .. comment: begin: goto-read-the-docs
 
@@ -35,6 +35,12 @@ If you want to deploy a different docker container, such as the one from :doc:`/
 1. In field *Docker Image* choose item ``custom``.
 2. Click on *More* to display the additional form fields.
 3. In field *Custom docker image* paste in the docker image path, such as ``gcr.io/bioc_2015/devel_sequencing`` or ``b.gcr.io/isb-cgc-public-docker-images/r-examples``.
+
+Change your virtual machine type (number of cores, amount of memory)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. First, make sure results from your current R session are saved to the data disk (underneath ``/home/rstudio/data``) or another location outside of the container.
+2. Follow these instructions to stop, resize, and start your VM: https://cloud.google.com/compute/docs/instances/changing-machine-type-of-stopped-instance
 
 "Stop" or "Delete" your virtual machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

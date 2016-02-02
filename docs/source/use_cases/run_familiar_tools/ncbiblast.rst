@@ -1,5 +1,5 @@
-Run NCBI BLAST on Google Compute Engine
-========================================
+Run NCBI BLAST on Compute Engine
+================================
 
 .. comment: begin: goto-read-the-docs
 

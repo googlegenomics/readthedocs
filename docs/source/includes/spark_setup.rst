@@ -1,4 +1,4 @@
-* Deploy your Spark cluster using `Google Cloud Dataproc`_.
+* Deploy your Spark cluster using `Google Cloud Dataproc`_.  This can be done using the `Cloud Console <https://console.developers.google.com/project/_/dataproc/clustersAdd>`__ or the following ``gcloud`` command:
 
   .. code-block:: shell
 
@@ -10,7 +10,7 @@
 
     gcloud compute ssh example-cluster-m
 
-* Compile and build the pipeline jar.  You can `build locally <https://github.com/googlegenomics/spark-examples>`_ or build on the Spark master running on Google Compute Engine.
+* Compile and build the pipeline jar.  You can `build locally <https://github.com/googlegenomics/spark-examples>`_ or build on the Spark master Google Compute Engine virtual machine.
 
 .. container:: toggle
 

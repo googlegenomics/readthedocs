@@ -46,9 +46,6 @@ specifically those in the BRCA1 region for sample NA12877 within the :doc:`/use_
 
   java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
-    --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
-    --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr17:41196311:41277499 \
     --BAMFilePath=gs://genomics-public-data/platinum-genomes/bam/NA12877_S1.bam \
     --output=gs://YOUR-BUCKET/dataflow-output/NA12877-BAM-reads.tsv
@@ -59,31 +56,27 @@ The following command will count those same reads but from the `Google Genomics 
 
   java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
-    --project=YOUR-GOOGLE-CLOUD-PLATFORM-PROJECT-ID \
-    --stagingLocation=gs://YOUR-BUCKET/dataflow-staging \
-    --secretsFile=/PATH/TO/YOUR/client_secrets.json \
     --references=chr17:41196311:41277499 \
     --readGroupSetId=CMvnhpKTFhD3he72j4KZuyc \
     --output=gs://YOUR-BUCKET/dataflow-output/NA12877-API-reads.tsv
 
 You can check your results by ensuring that both of these examples return the answer 45,081 in their output files.
 
-The above command lines run the pipeline over a small portion of the genome, only taking a few minutes.
-If modified to run over a larger portion of the genome or the entire genome, it may take a few hours
-depending upon how many machines are configured to run concurrently via ``--numWorkers``.
+.. include:: /includes/dataflow_on_gce_run.rst
 
-To run this pipeline over a large portion of the genome:
+|dataflowSomeRefs|
 
-* Add ``--runner=DataflowPipelineRunner`` to run the pipeline on Google Cloud instead of locally.
-* Add  ``--numWorkers=#`` for faster processing that will shard the data.
-* Add more references:
+|dataflowAllRefs|
 
-  #. Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=chr13:32889610:32973808,chr17:41196311:41277499``
-  #. Use ``--allReferences`` instead of ``--references=chr17:41196311:41277499`` to run over the entire genome.
+To run the pipeline on a different read group set:
 
-To run the pipeline on a different read group set, change the ``--readGroupSetId`` id parameter.
+* Change the ``--readGroupSetId`` id parameter.
+* Update the ``--references`` as appropriate (e.g., add/remove the 'chr' prefix on reference names).
 
-To run the pipeline over a different BAM file, change ``--BAMFilePath`` parameter.  Set ``--shardBAMReading=false`` if no BAM index file is available.
+To run the pipeline over a different BAM file:
+
+* Change ``--BAMFilePath`` parameter.  Set ``--shardBAMReading=false`` if no BAM index file is available.
+* Update the ``--references`` as appropriate (e.g., add/remove the 'chr' prefix on reference names).
 
 Additional details
 ------------------

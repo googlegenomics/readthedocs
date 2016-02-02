@@ -1050,5 +1050,6 @@ in BigQuery see:
 
 * https://github.com/googlegenomics/getting-started-bigquery
 * https://github.com/googlegenomics/bigquery-examples
-* http://googlegenomics.readthedocs.org/en/latest/use_cases/analyze_variants/index.html
+* :doc:`/use_cases/discover_public_data/tute_genomics_public_data`
+* :doc:`/use_cases/analyze_variants/index`
 

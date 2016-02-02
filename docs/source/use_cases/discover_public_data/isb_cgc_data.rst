@@ -17,7 +17,13 @@ __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-Use the power of BigQuery to analyze the wealth of data created by `The Cancer Genome Atlas <http://cancergenome.nih.gov/>`_ (TCGA) project! The Institute for Systems Biology (ISB) has created and made public a dataset based on the open-access TCGA data including somatic mutation calls, clinical data, mRNA and miRNA expression, DNA methylation and protein expression from 33 different tumor types. It's part of their `Cancer Genomics Cloud <http://isb-cgc.org>`_, funded by the National Cancer Institute. They've also created public github repositories with `examples in R <https://github.com/isb-cgc/examples-R>`_ and `examples in Python <https://github.com/isb-cgc/examples-Python>`_  so you can try out sample queries and analyses in `Google Cloud Datalab <https://cloud.google.com/datalab/>`_.
+Use the power of BigQuery to analyze the wealth of data created by `The Cancer Genome Atlas <http://cancergenome.nih.gov/>`_ (TCGA) project!
+
+The Institute for Systems Biology (ISB) has created and made public a dataset based on the open-access TCGA data including somatic mutation calls, clinical data, mRNA and miRNA expression, DNA methylation and protein expression from 33 different tumor types. It's part of their `Cancer Genomics Cloud`_, funded by the National Cancer Institute. They've also created public github repositories  so you can try out sample queries and analyses in R or `Google Cloud Datalab`_.
+
+ * `documentation <http://isb-cancer-genomics-cloud.readthedocs.org/>`__
+ * `examples in R <https://github.com/isb-cgc/examples-R>`_
+ * `examples in Python <https://github.com/isb-cgc/examples-Python>`_
 
 Google Cloud Platform data locations
 ------------------------------------

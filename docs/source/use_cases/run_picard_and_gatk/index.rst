@@ -34,6 +34,8 @@ If your dataset is loaded into a cloud provider supporting `GA4GH`_ API (e.g. `G
 
 =====
 
+**New**: see `the video version <https://www.youtube.com/playlist?list=PLYKy4VbxNln5j89ESpYBVUkeFDbmQwxYG>`__ of this tutorial.
+
 Below is a step by step guide on how to build Picard tools with GA4GH support, set-up access to genomics data in the cloud and run the tools.
 
 By the end of this tutorial you will be able run a Picard tool, giving it a URL identifying a genomic dataset in the cloud and see the output of processing the data directly from the cloud.
@@ -77,7 +79,7 @@ You will need `Maven <https://maven.apache.org/install.html>`_ and `Ant <http://
 3. Build Picard version with GA4GH support:
 
 .. code-block:: shell
-  
+
   // Assuming you are still in gatk-tools-java directory
   $ cd ../picard
   $ ant -lib lib/ant package-commands-ga4gh
@@ -190,12 +192,12 @@ In this case we need to figure out the *dataset id* for our files first, before 
 
 * Lets say we want to figure out which dataset ids are present under `genomics test data <https://console.cloud.google.com/project/genomics-test-data/storage/browser>`_ project.
 
-* First we need to set the project id for subsequent commands to be our project using 
+* First we need to set the project id for subsequent commands to be our project using
 
 .. code-block:: shell
 
 	$ gcloud config set project genomics-test-data
-	
+
 * Now we can issue this command:
 
 .. code-block:: shell
