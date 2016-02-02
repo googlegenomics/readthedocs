@@ -1,8 +1,8 @@
 If you do not have Java on your local machine, you can set up Java 7 on a `Google Compute Engine`_ instance.  The following setup instructions will allow you to *launch* Dataflow jobs from a Compute Engine instance:
 
-(1) If you have not already enabled the Google Cloud Platform APIs used by `Google Cloud Dataflow`_, click `here <https://console.developers.google.com/flows/enableapi?apiid=dataflow,compute_component,logging,storage_component,storage_api,bigquery,pubsub,datastore&_ga=1.38537760.2067798380.1406160784>`_ to do so.
+(1) If you have not already enabled the Google Cloud Platform APIs used by `Google Cloud Dataflow`_, click `here <https://console.cloud.google.com/flows/enableapi?apiid=dataflow,compute_component,logging,storage_component,storage_api,bigquery,pubsub,datastore&_ga=1.38537760.2067798380.1406160784>`_ to do so.
 
-(2) Use the `Google Developers Console`_ to spin up a `Google Compute Engine`_ instance and ssh into it.  If you have not done this before, see the `step-by-step instructions <https://cloud.google.com/compute/docs/quickstart-developer-console>`_.
+(2) Use the `Google Cloud Platform Console`_ to spin up a `Google Compute Engine`_ instance and ssh into it.  If you have not done this before, see the `step-by-step instructions <https://cloud.google.com/compute/docs/quickstart-developer-console>`_.
 
 (3) Run the following command from your local machine to copy the **runnable** jar to the Compute Engine instance.  You can download the latest GoogleGenomics dataflow **runnable** jar from the `Maven Central Repository <https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.cloud.genomics%22%20AND%20a%3A%22google-genomics-dataflow%22>`_.
 

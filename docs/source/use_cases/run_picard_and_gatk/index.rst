@@ -120,7 +120,7 @@ This command uses an older, slower REST based API. To run using GRPC API impleme
 
 For Java 7 (as opposed to 8) use *alpn-boot-7.1.3.v20150130.jar*.
 
-We use a test readset here from `genomics-test-data <https://console.developers.google.com/project/genomics-test-data/storage/browser/gatk-tools-java/>`_ project.
+We use a test readset here from `genomics-test-data <https://console.cloud.google.com/project/genomics-test-data/storage/browser/gatk-tools-java/>`_ project.
 
 Specifying a genomics region to use from the readset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -141,7 +141,7 @@ Timing the reading speed from the cloud
 You can run `gatk-tools-java/src/main/scripts/example.sh <https://github.com/googlegenomics/gatk-tools-java/blob/master/src/main/scripts/example.sh>`_ with and without "grpc" command line parameter to see the difference in reading speed. The timing statistics are dumped to the terminal.
 We benchmarked **x11** speed improvements with GRPC compared to REST, giving **~12,000 reads/second**.
 
-The tests were done on `Platinum Genomes NA12877_S1.bam dataset <https://console.developers.google.com/storage/browser/genomics-public-data/platinum-genomes/bam/?_ga=1.197206447.160385476.1431305548>`_, please see the `detailed writeup of the test procedure and results <https://docs.google.com/document/d/1Br7RMSbAChNpG6pi2teujf-YthczF-rAM1afSgDoCgQ/edit#>`_ if you want to repeat the test.
+The tests were done on `Platinum Genomes NA12877_S1.bam dataset <https://console.cloud.google.com/storage/browser/genomics-public-data/platinum-genomes/bam/?_ga=1.197206447.160385476.1431305548>`_, please see the `detailed writeup of the test procedure and results <https://docs.google.com/document/d/1Br7RMSbAChNpG6pi2teujf-YthczF-rAM1afSgDoCgQ/edit#>`_ if you want to repeat the test.
 
 We therefore recommend running GRPC variants of command line.
 
@@ -168,7 +168,7 @@ How do you find an ID of the readset from the  :doc:`/use_cases/discover_public_
 
 We will do it step by step using the command line API client.
 
-* Lets say we want to use `Platinum Genomes NA12877_S1.bam readgroupset <https://console.developers.google.com/storage/browser/genomics-public-data/platinum-genomes/bam/?_ga=1.197206447.160385476.1431305548>`_ from :doc:`/use_cases/discover_public_data/1000_genomes` project.
+* Lets say we want to use `Platinum Genomes NA12877_S1.bam readgroupset <https://console.cloud.google.com/storage/browser/genomics-public-data/platinum-genomes/bam/?_ga=1.197206447.160385476.1431305548>`_ from :doc:`/use_cases/discover_public_data/1000_genomes` project.
 
 * The `documentation <https://cloud.google.com/genomics/data/1000-genomes?hl=en>`_ page states that the dataset id for this set of files is **10473108253681171589**.
 
@@ -188,7 +188,7 @@ We will do it step by step using the command line API client.
 Now lets suppose we are not looking for one of the readgroupsets form the genomics public data but instead want to use one from our own project.
 In this case we need to figure out the *dataset id* for our files first, before we can use "readgroupsets list" command to list the individual readgroupsets.
 
-* Lets say we want to figure out which dataset ids are present under `genomics test data <https://console.developers.google.com/project/genomics-test-data/storage/browser>`_ project.
+* Lets say we want to figure out which dataset ids are present under `genomics test data <https://console.cloud.google.com/project/genomics-test-data/storage/browser>`_ project.
 
 * First we need to set the project id for subsequent commands to be our project using 
 

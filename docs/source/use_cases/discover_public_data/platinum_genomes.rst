@@ -22,7 +22,7 @@ This dataset comprises the 17 member CEPH pedigree 1463.  See http://www.illumin
 Google Cloud Platform data locations
 ------------------------------------
 
-* Google Cloud Storage folder `gs://genomics-public-data/platinum-genomes <https://console.developers.google.com/storage/genomics-public-data/platinum-genomes/>`_
+* Google Cloud Storage folder `gs://genomics-public-data/platinum-genomes <https://console.cloud.google.com/storage/genomics-public-data/platinum-genomes/>`_
 * Google Genomics Dataset ID `3049512673186936334 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=3049512673186936334>`_
 
   * `ReadGroupSet IDs <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.readgroupsets.search?fields=readGroupSets(id%252Cname)&_h=5&resource=%257B%250A++%2522datasetIds%2522%253A+%250A++%255B%25223049512673186936334%2522%250A++%255D%250A%257D&>`_

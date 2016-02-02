@@ -22,7 +22,7 @@ __ RenderedVersion_
 Google Cloud Platform data locations
 ------------------------------------
 
-* Google Cloud Storage folder `gs://genomics-public-data/ucsc/ <https://console.developers.google.com/storage/browser/genomics-public-data/ucsc/>`_
+* Google Cloud Storage folder `gs://genomics-public-data/ucsc/ <https://console.cloud.google.com/storage/browser/genomics-public-data/ucsc/>`_
 * Google Genomics `annotation sets <https://developers.google.com/apis-explorer/?#p/genomics/v1beta2/genomics.annotationSets.search?_h=11&resource=%257B%250A++%2522datasetIds%2522%253A+%250A++%255B%252210673227266162962312%2522%250A++%255D%250A%257D&>`_
 
 Provenance

@@ -31,7 +31,7 @@ This dataset comprises the three public synthetic tumor/normal pairs created for
 
 Google Cloud Platform data locations
 ------------------------------------
-* Google Cloud Storage folder `gs://public-dream-data/ <https://console.developers.google.com/storage/browser/public-dream-data/>`_
+* Google Cloud Storage folder `gs://public-dream-data/ <https://console.cloud.google.com/storage/browser/public-dream-data/>`_
 * Google Genomics dataset `337315832689 <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.datasets.get?datasetId=337315832689>`_.
 
 Provenance

@@ -22,7 +22,7 @@ Reference Genomes such as GRCh37, GRCh37lite, GRCh38, hg19, hs37d5, and b37 are 
 Google Cloud Platform data locations
 ------------------------------------
 
-* Google Cloud Storage folder `gs://genomics-public-data/references <https://console.developers.google.com/storage/genomics-public-data/references/>`_
+* Google Cloud Storage folder `gs://genomics-public-data/references <https://console.cloud.google.com/storage/genomics-public-data/references/>`_
 * Google Genomics `reference sets <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.referencesets.search>`_
 
 Provenance

@@ -143,8 +143,6 @@ rst_epilog = """
 .. _Contact us: google-genomics-contact@googlegroups.com
 
 .. ### Google Guide Links
-.. _Google Developers Console Guide: https://developers.google.com/console/help/new/
-.. _Google Identity Platform Guide: https://developers.google.com/identity/protocols/OAuth2
 .. _Application Default Credentials: https://developers.google.com/identity/protocols/application-default-credentials
 
 .. ### Google Product Links
@@ -152,7 +150,7 @@ rst_epilog = """
 .. _Google Cloud Dataflow: https://cloud.google.com/dataflow/
 .. _Google Cloud Storage: https://cloud.google.com/storage/
 .. _Google Compute Engine: https://cloud.google.com/compute/
-.. _Google Developers Console: https://console.developers.google.com/
+.. _Google Cloud Platform Console: https://console.cloud.google.com/
 .. _Google Genomics: https://cloud.google.com/genomics/
 .. _Google Cloud Datalab: https://cloud.google.com/datalab/
 .. _Google Cloud Dataproc: https://cloud.google.com/dataproc/
