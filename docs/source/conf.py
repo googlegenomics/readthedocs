@@ -156,10 +156,9 @@ rst_epilog = """
 .. _Google Cloud Dataproc: https://cloud.google.com/dataproc/
 
 .. ### Deep links into the Developers Console
-.. _Project List: https://console.developers.google.com/project
-.. _click-to-deploy NCBI BLAST: https://console.developers.google.com/project/_/launcher/details/click-to-deploy-images/ncbiblast
-.. _click-to-deploy Bioconductor: https://console.developers.google.com/project/_/mc/template/bioconductor
-.. _Deployments: https://console.developers.google.com/project/_/deployments
+.. _click-to-deploy NCBI BLAST: https://console.cloud.google.com/project/_/launcher/details/click-to-deploy-images/ncbiblast
+.. _click-to-deploy Bioconductor: https://console.cloud.google.com/project/_/mc/template/bioconductor
+.. _Deployments: https://console.cloud.google.com/project/_/deployments
 
 .. ### Deep links into cloud.google.com documentation
 .. _Compute Engine resource quota: https://cloud.google.com/compute/docs/resource-quotas
