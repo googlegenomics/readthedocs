@@ -28,8 +28,12 @@ There are several example notebooks for genomics use cases upon public data such
 * `Explore the 1000 Genomes Sample Information <https://github.com/googlegenomics/datalab-examples/blob/master/datalab/genomics/Explore%201000%20Genomes%20Samples.ipynb>`_
 * `Genome-wide association study <https://github.com/googlegenomics/datalab-examples/blob/master/datalab/genomics/Genome-wide%20association%20study%20(GWAS).ipynb>`_
 * `Getting started with the Google Genomics API <https://github.com/googlegenomics/datalab-examples/blob/master/datalab/genomics/Getting%20started%20with%20the%20Genomics%20API.ipynb>`_
+* And find more sample notebooks in:
 
-And find more sample notebooks in `https://github.com/googlegenomics/datalab-examples <https://github.com/googlegenomics/datalab-examples>`_, `https://github.com/GoogleCloudPlatform/datalab <https://github.com/GoogleCloudPlatform/datalab/blob/master/content/datalab/Readme.ipynb>`_, `https://github.com/isb-cgc/examples-Python <https://github.com/isb-cgc/examples-Python>`_, and `https://github.com/googlegenomics/linkage-disequilibrium/datalab <https://github.com/googlegenomics/linkage-disequilibrium/datalab>`_.
+  * `https://github.com/googlegenomics/datalab-examples <https://github.com/googlegenomics/datalab-examples>`_
+  * `https://github.com/GoogleCloudPlatform/datalab <https://github.com/GoogleCloudPlatform/datalab/blob/master/content/datalab/Readme.ipynb>`_
+  * `https://github.com/isb-cgc/examples-Python <https://github.com/isb-cgc/examples-Python>`_
+  * `https://github.com/googlegenomics/linkage-disequilibrium <https://github.com/googlegenomics/linkage-disequilibrium/tree/master/datalab>`_
 
 Run Notebooks
 -------------

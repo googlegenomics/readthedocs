@@ -1,5 +1,5 @@
 Compute and Analyze Linkage Disequilibrium
-==============================
+==========================================
 
 .. comment: begin: goto-read-the-docs
 
@@ -22,5 +22,4 @@ __ RenderedVersion_
 
   compute_linkage_disequilibrium
   transform_ld_results
-  public_ld_datasets
   analyze_ld_results

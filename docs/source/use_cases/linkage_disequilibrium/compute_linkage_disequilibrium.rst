@@ -1,5 +1,5 @@
 Compute Linkage Disequilibrium on a Variant Set
-=======================================
+===============================================
 
 .. comment: begin: goto-read-the-docs
 
@@ -22,14 +22,10 @@ __ RenderedVersion_
 
 .. contents::
 
-This pipeline calculates linkage disequilibrium between pairs of variants in a Variant Set. It takes as input:
-
-* a VariantSet for which the linkage disequilibrium values will be calculated
-
-and calculates the D' and allelic correlation measures of linkage disequilibrium, defined in
+This pipeline calculates linkage disequilibrium between pairs of variants in a Variant Set. It takes as input a VariantSet for which the linkage disequilibrium values will be calculated and calculates the D' and allelic correlation measures of linkage disequilibrium, defined in
 Box 1 of:
 
-| `Linkage disequilibrium — understanding the evolutionary past and mapping the medical future <http://www.nature.com/nrg/journal/v9/n6/full/nrg2361.html>`_
+| `Linkage disequilibrium - understanding the evolutionary past and mapping the medical future <http://www.nature.com/nrg/journal/v9/n6/full/nrg2361.html>`_
 | Slatkin, Montgomery
 | Nature Reviews Genetics, Volume 9, Issue 6, 477 - 485
 | DOI: http://dx.doi.org/10.1038/nrg2361
@@ -65,6 +61,7 @@ The following command will calculate linkage disequilibrium between all pairs of
 |dataflowAllRefs|
 
 To run the pipeline on a subset of individuals in a VariantSet:
+
 * Add a ``--callSetsToUse`` flag that has a comma-delimited list of call sets to include.
 
 Additional details
