@@ -20,8 +20,6 @@ __ RenderedVersion_
 .. toctree::
    :maxdepth: 2
 
-.. contents::
-
 There are several examples of interacting with LD results stored in BigQuery using Datalab in GitHub. The examples are all part of the `linkage disequilibrium project <https://github.com/googlegenomics/linkage-disequilibrium/tree/master/datalab>`_.
 
 * Exploring `summary statistics of LD data <https://github.com/googlegenomics/linkage-disequilibrium/blob/master/datalab/Exploring_Linkage_Disequilibrium_Data.ipynb>`_.
