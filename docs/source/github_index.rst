@@ -21,9 +21,6 @@ Interactive Data Analysis Samples and Tools
 `bioconductor-workshop-r <https://github.com/googlegenomics/bioconductor-workshop-r>`_
   R package containing instructional materials for using GoogleGenomics Bioconductor and bigrquery packages.
 
-`api-client-java <https://github.com/googlegenomics/api-client-java>`_
-  A command line tool for Google Genomics API queries.
-
 `api-client-r <https://github.com/googlegenomics/api-client-r>`_
   An R package for Google Genomics API queries.
 
@@ -51,8 +48,8 @@ Working with the Google Genomics API
 `getting-started-with-the-api <https://github.com/googlegenomics/getting-started-with-the-api>`_
   Examples of how to get started with the Google Genomics API in many languages.
 
-`api-provider-local-java <https://github.com/googlegenomics/api-provider-local-java>`_
-  An implementation of the Global Alliance Reads API which reads data from local BAM files.
+`utils-java <https://github.com/googlegenomics/utils-java>`_
+  Common Java files for Google Genomics integrations.
 
 Data Visualization Application Samples
 -----------------------------------------------
@@ -85,6 +82,3 @@ Miscellaneous
 
 `gce-images <https://github.com/googlegenomics/gce-images>`_
   Scripts that create Google Compute Engine images and Docker containers with popular genomics software installed.
-
-`utils-java <https://github.com/googlegenomics/utils-java>`_
-  Common Java files for Google Genomics integrations.
