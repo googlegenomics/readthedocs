@@ -27,9 +27,9 @@ b. Verify or increase quota
 
       gcloud compute regions describe *region*
 
-   or in ``Developers Console``:
+   or in ``Cloud Platform Console``:
 
-      https://console.developers.google.com/project/_/compute/quotas
+      https://console.cloud.google.com/project/_/compute/quotas
 
    Important quota limits include ``CPUs``, ``in-use IP addresses``,
    and ``disk size``.
