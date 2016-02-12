@@ -21,5 +21,6 @@ __ RenderedVersion_
   :maxdepth: 1
 
   compute_linkage_disequilibrium
+  /use_cases/linkage_disequilibrium/public_ld_datasets
   transform_ld_results
   analyze_ld_results
