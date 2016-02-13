@@ -22,11 +22,12 @@ Here are some analyses that operate on cloud-resident genomic variants.
 .. toctree::
   :maxdepth: 1
 
-  analyze_variants_with_bigquery
-  data_analysis_codelab.rst
-  transition_transversion
-  hardy_weinberg_equilibrium
-  ../compute_principal_coordinate_analysis/index
-  ../compute_identity_by_state/index
+  /use_cases/analyze_variants/analyze_variants_with_bigquery
+  /use_cases/analyze_variants/data_analysis_codelab.rst
+  /use_cases/analyze_variants/transition_transversion
+  /use_cases/analyze_variants/hardy_weinberg_equilibrium
+  /use_cases/compute_principal_coordinate_analysis/index
+  /use_cases/compute_identity_by_state/index
+  /use_cases/analyze_variants/gwas
 
 

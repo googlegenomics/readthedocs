@@ -25,3 +25,4 @@ __ RenderedVersion_
    /use_cases/annotate_variants/index
    /use_cases/perform_quality_control_checks/index
    /use_cases/linkage_disequilibrium/index
+   /sections/advanced_bigquery

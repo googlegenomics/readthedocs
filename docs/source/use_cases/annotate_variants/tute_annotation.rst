@@ -1,5 +1,5 @@
-Annotate Variants with Tute Genomics
-====================================
+Tute Genomics Annotation
+========================
 
 .. comment: begin: goto-read-the-docs
 

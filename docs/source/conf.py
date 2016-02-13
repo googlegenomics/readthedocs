@@ -132,6 +132,7 @@ rst_epilog = """
 .. ### VCF documentation links
 .. _VCF specification: http://samtools.github.io/hts-specs/VCFv4.2.pdf
 .. _gVCF: https://sites.google.com/site/gvcftools/home/about-gvcf
+.. _genome VCF: https://sites.google.com/site/gvcftools/home/about-gvcf
 .. _gVCF conventions: https://sites.google.com/site/gvcftools/home/about-gvcf/gvcf-conventions
 
 .. ### Corporate ecosystem links
@@ -165,6 +166,7 @@ rst_epilog = """
 .. _Compute Engine quota request form: https://docs.google.com/a/google.com/forms/d/1vb2MkAr9JcHrp6myQ3oTxCyBv2c7Iyc5wqIKqE3K4IE/viewform
 .. _Compute Engine Preemptible Virtual Machines: https://cloud.google.com/preemptible-vms/
 .. _Google BigQuery query reference: https://cloud.google.com/bigquery/query-reference
+.. _Google BigQuery user-defined functions: https://cloud.google.com/bigquery/user-defined-functions
 .. _cloud.google.com/genomics: https://cloud.google.com/genomics
 .. _What is Google Genomics: https://cloud.google.com/genomics/what-is-google-genomics
 .. _Google Genomics fundamentals: https://cloud.google.com/genomics/what-is-google-genomics#fundamentals
@@ -174,6 +176,7 @@ rst_epilog = """
 .. _Google Genomics API: https://cloud.google.com/genomics/reference/rest/
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/reference/rest/v1/reads
 .. _Google Genomics Variants API: https://cloud.google.com/genomics/reference/rest/v1/variants
+.. _Variant Import merge logic details: https://cloud.google.com/genomics/v1/managing-variants#imports
 .. _Load Genomic Variants: https://cloud.google.com/genomics/v1/load-variants
 .. _Understanding the BigQuery Variants Table Schema: https://cloud.google.com/genomics/v1/bigquery-variants-schema
 
@@ -186,6 +189,7 @@ rst_epilog = """
 
 .. ### Open ecosystem links
 .. _ALPN: http://www.eclipse.org/jetty/documentation/9.2.10.v20150310/alpn-chapter.html
+.. _Annovar: http://annovar.openbioinformatics.org/en/latest/
 .. _Apache Spark: https://spark.apache.org/
 .. _Apache Hadoop: https://hadoop.apache.org/
 .. _Docker: https://www.docker.com/
