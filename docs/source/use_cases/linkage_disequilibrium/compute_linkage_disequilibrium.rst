@@ -22,7 +22,7 @@ __ RenderedVersion_
 
 .. contents::
 
-This pipeline calculates linkage disequilibrium between pairs of variants in a Variant Set. It takes as input a VariantSet for which the linkage disequilibrium values will be calculated and calculates the D' and allelic correlation measures of linkage disequilibrium, defined in
+This pipeline calculates linkage disequilibrium between pairs of variants in a Global Alliance `VariantSet`_ (which you can `create from a VCF file <https://cloud.google.com/genomics/v1/load-variants>`_). It takes as input a VariantSet for which the linkage disequilibrium values will be calculated and calculates the D' and allelic correlation measures of linkage disequilibrium, defined in
 Box 1 of:
 
 | `Linkage disequilibrium - understanding the evolutionary past and mapping the medical future <http://www.nature.com/nrg/journal/v9/n6/full/nrg2361.html>`_
