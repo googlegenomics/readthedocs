@@ -17,6 +17,8 @@ __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
+Here are some quality control measures written in a cloud-native manner.
+
 .. toctree::
   :maxdepth: 1
 

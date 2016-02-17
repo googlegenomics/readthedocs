@@ -21,6 +21,7 @@ __ RenderedVersion_
   :maxdepth: 1
 
   tute_genomics_public_data
+  /use_cases/linkage_disequilibrium/public_ld_datasets
   clinvar_annotations
   ucsc_annotations
   isb_cgc_data

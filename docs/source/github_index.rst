@@ -21,9 +21,6 @@ Interactive Data Analysis Samples and Tools
 `bioconductor-workshop-r <https://github.com/googlegenomics/bioconductor-workshop-r>`_
   R package containing instructional materials for using GoogleGenomics Bioconductor and bigrquery packages.
 
-`api-client-java <https://github.com/googlegenomics/api-client-java>`_
-  A command line tool for Google Genomics API queries.
-
 `api-client-r <https://github.com/googlegenomics/api-client-r>`_
   An R package for Google Genomics API queries.
 
@@ -51,8 +48,8 @@ Working with the Google Genomics API
 `getting-started-with-the-api <https://github.com/googlegenomics/getting-started-with-the-api>`_
   Examples of how to get started with the Google Genomics API in many languages.
 
-`api-provider-local-java <https://github.com/googlegenomics/api-provider-local-java>`_
-  An implementation of the Global Alliance Reads API which reads data from local BAM files.
+`utils-java <https://github.com/googlegenomics/utils-java>`_
+  Common Java files for Google Genomics integrations.
 
 Data Visualization Application Samples
 -----------------------------------------------
@@ -64,7 +61,7 @@ Data Visualization Application Samples
   A sample Android app that calls the Google Genomics API.
 
 `api-client-python <https://github.com/googlegenomics/api-client-python>`_
-  Google AppEngine implelmentation of a simple genome browser that pulls data from the Google Genomics API.
+  Google AppEngine implementation of a simple genome browser that pulls data from the Google Genomics API.
 
 `api-client-r <https://github.com/googlegenomics/api-client-r>`_
   An R package for Google Genomics API queries.
@@ -75,13 +72,13 @@ Data Analysis Application Samples
 -----------------------------------------------
 
 `denovo-variant-caller-java <https://github.com/googlegenomics/denovo-variant-caller-java>`_
-  A de novo variant caller which uses information from a mother, father and child trio with a bayesian inference method.
+  A de novo variant caller which uses information from a mother, father and child trio with a Bayesian inference method.
+
+`linkage-disequilibrium <https://github.com/googlegenomics/linkage-disequilibrium>`_
+  A suite of Java tools to calculate linkage disequilibrium between variants and load the results into BigQuery and BigTable.
 
 Miscellaneous
 -----------------------------------------------
 
 `gce-images <https://github.com/googlegenomics/gce-images>`_
   Scripts that create Google Compute Engine images and Docker containers with popular genomics software installed.
-
-`utils-java <https://github.com/googlegenomics/utils-java>`_
-  Common Java files for Google Genomics integrations.

@@ -47,6 +47,7 @@ Create Output Dataset
 
 In order to run this pipeline, you must have a Google Genomics dataset to which the pipeline
 can output its AnnotationSet and Annotations.
+
 * If you already have a dataset in which you have write access, you may use it.  Click here to see your datasets: https://console.cloud.google.com/project/_/genomics/datasets
 * If not, you can click on the following link to use the Cloud Platform Console to create one: https://console.cloud.google.com/project/_/genomics/datasets/create.
 
