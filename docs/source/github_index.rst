@@ -72,7 +72,7 @@ Data Analysis Application Samples
 -----------------------------------------------
 
 `denovo-variant-caller-java <https://github.com/googlegenomics/denovo-variant-caller-java>`_
-  A de novo variant caller which uses information from a mother, father and child trio with a bayesian inference method.
+  A de novo variant caller which uses information from a mother, father and child trio with a Bayesian inference method.
 
 `linkage-disequilibrium <https://github.com/googlegenomics/linkage-disequilibrium>`_
   A suite of Java tools to calculate linkage disequilibrium between variants and load the results into BigQuery and BigTable.

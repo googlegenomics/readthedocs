@@ -177,6 +177,7 @@ rst_epilog = """
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/reference/rest/v1/reads
 .. _Google Genomics Variants API: https://cloud.google.com/genomics/reference/rest/v1/variants
 .. _Variant Import merge logic details: https://cloud.google.com/genomics/v1/managing-variants#imports
+.. _VariantSet: https://cloud.google.com/genomics/reference/rest/v1/variantsets
 .. _Load Genomic Variants: https://cloud.google.com/genomics/v1/load-variants
 .. _Understanding the BigQuery Variants Table Schema: https://cloud.google.com/genomics/v1/bigquery-variants-schema
 
