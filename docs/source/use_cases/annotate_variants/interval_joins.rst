@@ -171,7 +171,7 @@ Enter this query in the "Query Editor":
     Chr,
     Start
 
-The Tute table is for SNP annotation.  If a different table were used to annotate both SNPs and INDELs, you may wish apply a similar UDF to also "bin" the rows from the variants table, since INDELs may span multiple bins.
+The Tute table is for SNP annotation.  If a different table were used to annotate both SNPs and INDELs, you may wish to apply a similar UDF to also "bin" the rows from the variants table, since INDELs may span multiple bins.
 
 .. sidebar:: Bin Size
 

@@ -22,7 +22,7 @@ If your source data is single-sample VCF, `gVCF`_, or Complete Genomics masterVa
 
 (1) First, load your data into Google Genomics and export your variants to BigQuery.  See `Load Genomic Variants`_ for more detail as to how to do this.
 
-(2) Note that merging has occured during the import process, so each unique variant within the cohort will be a separate record within the variant set, with all calls for that variant nested within the record.  For more information see `Variant Import merge logic details`_.
+(2) Note that merging has occurred during the import process, so each unique variant within the cohort will be a separate record within the variant set, with all calls for that variant nested within the record.  For more information see `Variant Import merge logic details`_.
 
 (3) To create an export file similar to a VCF, run a query like the following and materialize the results to a new table. https://github.com/StanfordBioinformatics/mvp_aaa_codelabs/blob/master/sql/multisample-vcf.sql
 

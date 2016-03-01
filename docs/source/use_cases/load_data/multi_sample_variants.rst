@@ -25,9 +25,9 @@ If your source data is single-sample `gVCF`_ or Complete Genomics masterVar form
 Overview
 --------
 
-Suppose you have imported your single-sample files to the Variants API and exported them to BigQuery.  Let's refer to this original table as the "genome calls" table. It contains *all* reference calls and variant calls.
+Suppose you have imported your single-sample files to the Variants API and exported them to BigQuery. Let's refer to this original table as the "genome calls" table. It contains *all* reference calls and variant calls.
 
-To facilitate variant-centric analysis like we see in the `BigQuery 1,000 Genomes samples <https://github.com/googlegenomics/bigquery-examples/blob/master/1000genomes/README.md>`_, we can generate a second table, the "multi-sample variants" table.  The multi-sample variants table resembles a multi-sample VCF file. In this table:
+To facilitate variant-centric analysis like we see in the `BigQuery 1,000 Genomes samples <https://github.com/googlegenomics/bigquery-examples/blob/master/1000genomes/README.md>`_, we can generate a second table, the "multi-sample variants" table. The multi-sample variants table resembles a multi-sample VCF file. In this table:
 
 * every variant record includes calls for *all* callsets
 * variants which contained *only reference calls for all callsets* are omitted
@@ -56,7 +56,7 @@ becomes
 
 to capture not only that variant, but any other records that overlap that genomic position.
 
-Suppose we want to calculate an aggregate for a particular variant, such as the number of samples with the variant on one or both alleles and of samples that match the reference?  The WHERE clause above will do the trick.  But then suppose we want to do this for all SNPs in our dataset?
+Suppose we want to calculate an aggregate for a particular variant, such as the number of samples with the variant on one or both alleles and of samples that match the reference?  The WHERE clause above will do the trick. But then suppose we want to do this for all SNPs in our dataset?
 
 Examples
 --------
@@ -72,4 +72,4 @@ There are a few ways to generate the multi-sample variants table for use in vari
 
   * https://github.com/googlegenomics/bigquery-examples/tree/master/pgp/data-stories/schema-comparisons#motivation
 
-A note about scaling: as the number of samples increases, so does the number of private and rare variants.  At a certain point there are many, many rows with mostly 0/0 genotypes.  We are experimenting with alternate transformations.  Comment on `this issue <https://github.com/googlegenomics/codelabs/issues/52>`_ if you want a pointer to the most recent prototype.
+A note about scaling: as the number of samples increases, so does the number of private and rare variants. At a certain point there are many, many rows with mostly 0/0 genotypes. We are experimenting with alternate transformations. Comment on `this issue <https://github.com/googlegenomics/codelabs/issues/52>`_ if you want a pointer to the most recent prototype.
