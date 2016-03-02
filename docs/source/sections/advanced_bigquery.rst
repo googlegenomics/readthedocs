@@ -1,5 +1,5 @@
-Annotate Variants
-==================
+Advanced BigQuery Topics
+========================
 
 .. comment: begin: goto-read-the-docs
 
@@ -11,19 +11,17 @@ Annotate Variants
    | **If you are reading this on github, you should instead click** `here`__.         |
    +-----------------------------------------------------------------------------------+
 
-.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/annotate_variants/index.html
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/sections/advanced_bigquery.html
 
 __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-There are many ways to annotate cloud-resident genomic variants.
-
 .. toctree::
   :maxdepth: 1
 
-  /use_cases/annotate_variants/tute_annotation
-  /use_cases/annotate_variants/bioconductor_annotation
   /use_cases/annotate_variants/interval_joins
   /use_cases/annotate_variants/annovar
-  google_genomics_annotation
+  /use_cases/analyze_variants/gwas
+  /use_cases/load_data/multi_sample_variants
+..  /use_cases/load_data/reshape_bigquery_table

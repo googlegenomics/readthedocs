@@ -1,5 +1,5 @@
-Annotate Variants with Bioconductor
-===================================
+Bioconductor Annotation
+=======================
 
 .. comment: begin: goto-read-the-docs
 
