@@ -39,9 +39,19 @@ back to full strength.
 This document builds on the instructions to :doc:`index`
 to create a Grid Engine cluster of preemptible VMs.
 
+.. NOTE::
+   The instructions presented here are guidelines that have been used
+   to create clusters up to 100 nodes. However when preemption rates are
+   high, Elasticluster's re-provisioning of clusters (via Ansible) often
+   converges too slowly due to repeated failures.
+
+   For best success with the instructions here, it is recommended to keep
+   cluster sizes to 20 compute nodes or fewer. For larger clusters, use
+   regular (non-preemptible) virtual machines.
+
 Toolset
 -------
-To succesfully run a Grid Engine workload on preemptible VMs, the instructions
+To run a Grid Engine workload on preemptible VMs, the instructions
 here employ three tools:
 
 * `Elasticluster`_ - to create, configure, and destroy the cluster
