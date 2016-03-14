@@ -28,7 +28,7 @@ If your source data is single-sample VCF, `gVCF`_, or Complete Genomics masterVa
 
 (4) Export the table to Cloud Storage and then download it to a Compute Engine instance with sufficient disk space.
 
-(5) Use ``sed`` or another file editing tool to finish the transformation needed.  For example:
+(5) Use ``sed`` or another file editing tool to finish the transformation needed.  See also https://github.com/StanfordBioinformatics/mvp_aaa_codelabs/blob/master/bin/bq-to-vcf.py  For example:
 
  * Add the ``#CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT`` header line.
  * Convert commas to tabs.
