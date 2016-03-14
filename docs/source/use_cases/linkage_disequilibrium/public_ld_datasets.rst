@@ -16,6 +16,7 @@ Linkage Disequilibrium Datasets
 __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
+
 Linkage disequilibrium was run separately for each `super population and sub population <http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/integrated_call_samples_v3.20130502.ALL.panel>`_ within :doc:`/use_cases/discover_public_data/1000_genomes` phase 3 variants using the method defined in Box 1 of:
 
 | `Linkage disequilibrium - understanding the evolutionary past and mapping the medical future <http://www.nature.com/nrg/journal/v9/n6/full/nrg2361.html>`_
