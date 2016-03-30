@@ -20,6 +20,7 @@ __ RenderedVersion_
 .. toctree::
    :maxdepth: 1
 
+   /use_cases/run_pipelines_in_the_cloud/index
    /use_cases/setup_gridengine_cluster_on_compute_engine/index
    /use_cases/setup_gridengine_cluster_on_compute_engine/preemptible_vms
    /use_cases/run_samtools_over_many_files/index
