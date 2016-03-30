@@ -75,7 +75,7 @@ See the `README <https://github.com/googlegenomics/pipelines-api-examples/>`_
 at the top of the repository for prerequisites. Existing
 examples include:
 
-  * `Compress a file <https://github.com/googlegenomics/pipelines-api-examples/blob/master/compress>`_
+  * `Compress or decompress files <https://github.com/googlegenomics/pipelines-api-examples/blob/master/compress>`_
   * `Run FastQC over a list of BAM or FASTQ files <https://github.com/googlegenomics/pipelines-api-examples/blob/master/fastqc>`_
   * `Use samtools to create a BAM index file <https://github.com/googlegenomics/pipelines-api-examples/blob/master/samtools>`_
   * `Use a custom script in Cloud Storage to update a VCF header <https://github.com/googlegenomics/pipelines-api-examples/blob/master/set_vcf_sample_id>`_
