@@ -176,6 +176,7 @@ rst_epilog = """
 .. _Google Genomics API: https://cloud.google.com/genomics/reference/rest/
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/reference/rest/v1/reads
 .. _Google Genomics Variants API: https://cloud.google.com/genomics/reference/rest/v1/variants
+.. _Google Genomics Pipelines API: https://cloud.google.com/genomics/reference/rest/v1alpha2/pipelines
 .. _Variant Import merge logic details: https://cloud.google.com/genomics/v1/managing-variants#imports
 .. _VariantSet: https://cloud.google.com/genomics/reference/rest/v1/variantsets
 .. _Load Genomic Variants: https://cloud.google.com/genomics/v1/load-variants
@@ -224,6 +225,7 @@ rst_epilog = """
 .. _Grid Computing Tools github repo: https://github.com/googlegenomics/grid-computing-tools
 .. _getting-started-bigquery: https://github.com/googlegenomics/getting-started-bigquery
 .. _bigquery-examples: https://github.com/googlegenomics/bigquery-examples
+.. _pipelines-api-examples: https://github.com/googlegenomics/pipelines-api-examples
 
 .. ### R package links
 .. _VariantAnnotation: http://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html
