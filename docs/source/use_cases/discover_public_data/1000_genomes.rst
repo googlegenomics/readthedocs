@@ -81,10 +81,12 @@ Google Cloud Platform data locations
    * `genomics-public-data:1000_genomes <https://bigquery.cloud.google.com/table/genomics-public-data:1000_genomes.variants>`_ phase 1 variants and sample information
    * `genomics-public-data:1000_genomes_phase_3 <https://bigquery.cloud.google.com/table/genomics-public-data:1000_genomes_phase_3.variants_20150220_release>`_ phase 3 variants
 
-Beacon
-------
+Beacon and GA4GH
+----------------
 
 You can find a `Global Alliance for Genomics and Health Beacon`_ at http://webdev.dnastack.com/p/beacon/thousandgenomes?chromosome=1&coordinate=10177&allele=AC
+
+You can find an instance of the GA4GH reference server hosting this data at http://1kgenomes.ga4gh.org/.
 
 Provenance
 ----------
