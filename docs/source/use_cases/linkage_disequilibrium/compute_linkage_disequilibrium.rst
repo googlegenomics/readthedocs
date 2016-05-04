@@ -45,8 +45,8 @@ The following command will calculate linkage disequilibrium between all pairs of
 
 .. code-block:: shell
 
-  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
-    -cp /PATH/TO/linkage-disequilibrium*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp target/linkage-disequilibrium*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.LinkageDisequilibrium \
     --variantSetId=11027761582969783635 \
     --references=17:41196311:41277499 \

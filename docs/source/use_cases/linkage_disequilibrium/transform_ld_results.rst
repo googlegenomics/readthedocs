@@ -60,8 +60,8 @@ The following command will load LD results into an existing BigTable:
 
 .. code-block:: shell
 
-  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
-    -cp /PATH/TO/linkage-disequilibrium*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp target/linkage-disequilibrium*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.WriteLdBigtable \
     --bigtableProjectId=YOUR_BIGTABLE_PROJECT_ID \
     --bigtableClusterId=YOUR_BIGTABLE_CLUSTER_ID \
@@ -80,8 +80,8 @@ The following command will query LD results for a specific region of the genome 
 
 .. code-block:: shell
 
-  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
-    -cp /PATH/TO/linkage-disequilibrium*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp target/linkage-disequilibrium*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.QueryLdBigtable \
     --bigtableProjectId=YOUR_BIGTABLE_PROJECT_ID \
     --bigtableClusterId=YOUR_BIGTABLE_CLUSTER_ID \
