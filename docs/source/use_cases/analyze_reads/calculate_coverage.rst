@@ -72,7 +72,7 @@ region, using a bucket width of 1024 (in this case one bucket output) on the :do
 
 This can take several minutes to run.  You can check your results by using the Genomics API Explorer:
 
-1. First go to the `AnnotationSets search request page <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.annotationSets.search>`_ to determine what your newly created AnnotationSetId is.
+1. First go to the `AnnotationSets search request page <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.annotationsets.search>`_ to determine what your newly created AnnotationSetId is.
 
   a. Put your output dataset id in the ``datasetIds`` field.
   b. Press the `Authorize and Execute` button.
