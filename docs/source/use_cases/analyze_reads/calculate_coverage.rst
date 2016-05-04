@@ -62,8 +62,8 @@ region, using a bucket width of 1024 (in this case one bucket output) on the :do
 
 .. code-block:: shell
 
-  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
-    -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp google-genomics-dataflow-runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CalculateCoverage \
     --references=chr1:552960:553984 \
     --bucketWidth=1024 \
@@ -72,12 +72,12 @@ region, using a bucket width of 1024 (in this case one bucket output) on the :do
 
 This can take several minutes to run.  You can check your results by using the Genomics API Explorer:
 
-1. First go to the `AnnotationSets search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotationSets.search>`_ to determine what your newly created AnnotationSetId is.
+1. First go to the `AnnotationSets search request page <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.annotationSets.search>`_ to determine what your newly created AnnotationSetId is.
 
   a. Put your output dataset id in the ``datasetIds`` field.
   b. Press the `Authorize and Execute` button.
 
-2. Then go to the `Annotations search request page <https://developers.google.com/apis-explorer/#p/genomics/v1beta2/genomics.annotations.search>`_ to be able to see your newly created Annotation.
+2. Then go to the `Annotations search request page <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.annotations.search>`_ to be able to see your newly created Annotation.
 
   a. Put the AnnotationSetId you just found in the ``annotationSetIds`` field.
   b. Select ``info`` and ``position`` in the fields editor.
@@ -160,8 +160,8 @@ fewer read group sets then the default requirement of 11:
 
 .. code-block:: shell
 
-  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
-    -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp google-genomics-dataflow-runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CalculateCoverage \
     --references=chr1:552960:553984 \
     --bucketWidth=1024 \

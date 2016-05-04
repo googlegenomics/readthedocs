@@ -54,8 +54,8 @@ in the :doc:`/use_cases/discover_public_data/1000_genomes` dataset.  It also use
 
 .. code-block:: shell
 
-  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
-    -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp google-genomics-dataflow-runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.VerifyBamId \
     --references=17:41196311:41277499 \
     --readGroupSetIds=CMvnhpKTFhDq9e2Yy9G-Bg \

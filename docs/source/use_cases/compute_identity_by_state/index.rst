@@ -39,13 +39,13 @@ The following command will run Identity-by-State over the BRCA1 region within th
 
 .. code-block:: shell
 
-  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
-    -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp google-genomics-dataflow-runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.IdentityByState \
     --variantSetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
     --hasNonVariantSegments \
-    --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-ibs.tsv
+    --output=gs://YOUR-BUCKET/dataflow-output/platinum-genomes-brca1-ibs.tsv
 
 Note that there are several IBS calculators from which to choose. Use the ``--callSimilarityCalculatorFactory`` to switch between them.
 
