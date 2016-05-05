@@ -46,12 +46,12 @@ The following command will run PCA over the BRCA1 region within the :doc:`/use_c
 
 .. code-block:: shell
 
-  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
-    -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp google-genomics-dataflow-runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.VariantSimilarity \
     --variantSetId=3049512673186936334 \
     --references=chr17:41196311:41277499 \
-    --output=gs://YOUR-BUCKET/output/platinum-genomes-brca1-pca.tsv
+    --output=gs://YOUR-BUCKET/dataflow-output/platinum-genomes-brca1-pca.tsv
 
 .. include:: /includes/dataflow_on_gce_run.rst
 
