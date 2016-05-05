@@ -17,4 +17,4 @@ If you do not have Java on your local machine, the following setup instructions 
 
 .. note::
 
-  Depending on the pipeline, Cloud Shell may not not have sufficient memory to run pipeline locally (e.g., without the ``--runner`` command line flag).  If you get error ``java.lang.OutOfMemoryError: Java heap space``, follow the instructions to run the pipeline on Compute Engine Dataflow workers instead of locally (e.g. use ``--runner=DataflowPipelineRunner``).
+  Depending on the pipeline, Cloud Shell may not not have sufficient memory to run the pipeline locally (e.g., without the ``--runner`` command line flag).  If you get error ``java.lang.OutOfMemoryError: Java heap space``, follow the instructions to run the pipeline using Compute Engine Dataflow workers instead of locally (e.g. use ``--runner=DataflowPipelineRunner``).
