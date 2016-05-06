@@ -34,20 +34,20 @@ and monitor tasks running in the cloud.
 Overview
 --------
 
-A "pipeline" in its simplest form is simply a task consisting of:
+A "pipeline" in its simplest form is a task consisting of:
 
   * Path(s) of input files to read from Cloud Storage
   * Path(s) of output files/directories to write to Cloud Storage
   * A Docker_ image to run
-  * A command to run in the docker image
+  * A command to run in the Docker image
   * Cloud resources to use (number of CPUs, amount of memory, disk size and type)
 
 The Pipelines API will:
 
   #. Create a Compute Engine virtual machine
-  #. Download the docker image
+  #. Download the Docker image
   #. Download the input files
-  #. Run the docker command
+  #. Run a new Docker container with the specified image and command
   #. Upload the output files
   #. Destroy the Compute Engine virtual machine
 
@@ -58,7 +58,7 @@ Alternatives
 
 For many cases, the Pipelines API has an advantage over fixed clusters
 in that Compute Engine resources (virtual machines and disks) are
-allocated only for the lifetime of the running pipeline and are then
+allocated only for the lifetime of the running pipeline, and are then
 destroyed.
 
 However many existing scripts assume a fixed cluster (such as a shared
