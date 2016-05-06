@@ -152,6 +152,9 @@ rst_epilog = """
 .. _Google Cloud Storage: https://cloud.google.com/storage/
 .. _Google Compute Engine: https://cloud.google.com/compute/
 .. _Google Cloud Platform Console: https://console.cloud.google.com/
+.. _Cloud Console: https://console.cloud.google.com/
+.. _Google Cloud Shell: https://cloud.google.com/shell/docs/
+.. _Cloud Shell: https://cloud.google.com/shell/docs/
 .. _Google Genomics: https://cloud.google.com/genomics/
 .. _Google Cloud Datalab: https://cloud.google.com/datalab/
 .. _Google Cloud Dataproc: https://cloud.google.com/dataproc/
@@ -167,6 +170,8 @@ rst_epilog = """
 .. _Compute Engine Preemptible Virtual Machines: https://cloud.google.com/preemptible-vms/
 .. _Google BigQuery query reference: https://cloud.google.com/bigquery/query-reference
 .. _Google BigQuery user-defined functions: https://cloud.google.com/bigquery/user-defined-functions
+.. _Dataflow Quickstart: https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
+.. _Genomics Quickstart: https://cloud.google.com/genomics/quickstart
 .. _cloud.google.com/genomics: https://cloud.google.com/genomics
 .. _What is Google Genomics: https://cloud.google.com/genomics/what-is-google-genomics
 .. _Google Genomics fundamentals: https://cloud.google.com/genomics/what-is-google-genomics#fundamentals
@@ -199,6 +204,7 @@ rst_epilog = """
 .. _Elasticluster repo: https://github.com/gc3-uzh-ch/elasticluster
 .. _Galaxy: https://galaxyproject.org/
 .. _Grid Engine: http://gridengine.info/
+.. _Java 8: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 .. _NCBI BLAST: http://blast.ncbi.nlm.nih.gov/Blast.cgi
 .. _NCBI BLAST Cloud Documentation: http://ncbi.github.io/blast-cloud/
 .. _R: http://www.r-project.org/

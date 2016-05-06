@@ -36,7 +36,7 @@ The pipeline is implemented on `Google Cloud Dataflow`_.
 Setup Dataflow
 --------------
 
-.. include:: /includes/collapsible_dataflow_setup_instructions.rst
+.. include:: /includes/collapsible_ld_dataflow_setup_instructions.rst
 
 Run the pipeline
 ----------------
@@ -45,8 +45,8 @@ The following command will calculate linkage disequilibrium between all pairs of
 
 .. code-block:: shell
 
-  java -Xbootclasspath/p:PATH/TO/YOUR/alpn-boot-YOUR-ALPN-JAR-VERSION.jar \
-    -cp /PATH/TO/linkage-disequilibrium*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp target/linkage-disequilibrium*runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.LinkageDisequilibrium \
     --variantSetId=11027761582969783635 \
     --references=17:41196311:41277499 \
@@ -67,4 +67,4 @@ To run the pipeline on a subset of individuals in a VariantSet:
 Additional details
 ------------------
 
-.. include:: ../../includes/dataflow_details.rst
+.. include:: /includes/ld_dataflow_details.rst

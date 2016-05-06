@@ -44,7 +44,8 @@ specifically those in the BRCA1 region for sample NA12877 within the :doc:`/use_
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp google-genomics-dataflow-runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
     --references=chr17:41196311:41277499 \
     --BAMFilePath=gs://genomics-public-data/platinum-genomes/bam/NA12877_S1.bam \
@@ -54,7 +55,8 @@ The following command will count those same reads but from the `Google Genomics 
 
 .. code-block:: shell
 
-  java -cp /PATH/TO/google-genomics-dataflow*runnable.jar \
+  java -Xbootclasspath/p:alpn-boot.jar \
+    -cp google-genomics-dataflow-runnable.jar \
     com.google.cloud.genomics.dataflow.pipelines.CountReads \
     --references=chr17:41196311:41277499 \
     --readGroupSetId=CMvnhpKTFhD3he72j4KZuyc \
