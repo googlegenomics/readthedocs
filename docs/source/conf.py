@@ -182,6 +182,7 @@ rst_epilog = """
 .. _Google Genomics Reads API: https://cloud.google.com/genomics/reference/rest/v1/reads
 .. _Google Genomics Variants API: https://cloud.google.com/genomics/reference/rest/v1/variants
 .. _Google Genomics Pipelines API: https://cloud.google.com/genomics/reference/rest/v1alpha2/pipelines
+.. _Google APIs Explorer: https://developers.google.com/apis-explorer/#p/genomics/v1/
 .. _Variant Import merge logic details: https://cloud.google.com/genomics/v1/managing-variants#imports
 .. _VariantSet: https://cloud.google.com/genomics/reference/rest/v1/variantsets
 .. _Load Genomic Variants: https://cloud.google.com/genomics/v1/load-variants
