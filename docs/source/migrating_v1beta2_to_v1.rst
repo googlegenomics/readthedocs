@@ -118,10 +118,10 @@ The job ``request`` values are now in the operation ``metadata.request`` field.
 Field Masks
 ===========
 
-``get``, ``search``, and ``list`` APIs accept a list of fields to return,
-instead of all fields. This is sometimes referred to as a "field mask".
-Similarly ``patch`` APIs accept a field mask indicating the specific
-set of fields to change.
+All Genomics APIs accept an optional list of fields to return.
+This is sometimes referred to as a "field mask".
+The ``patch`` and ``update`` APIs accept an ``updateMask`` indicating the specific
+fields to change.
 
 In v1beta2, the "/" character could be used to separate a parent object
 from a child field, for example:
@@ -134,5 +134,10 @@ child field:
 * ``readGroupSets(id)``
 
 You can test building a proper field mask by using the "fields editor"
-available in the documentation for the `Google Genomics API`_.
+available in the documentation for the `Google Genomics API`_, or from the
+`Google APIs Explorer`_.
 
+For example, for ``genomics.datasets.list`` see:
+
+* `API Documentation <https://cloud.google.com/genomics/reference/rest/v1/datasets/list#try-it>`_
+* `APIs Explorer <https://developers.google.com/apis-explorer/#p/genomics/v1/genomics.datasets.list>`_
