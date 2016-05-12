@@ -32,7 +32,7 @@ IGV Desktop supports browsing of reads from the Google Genomics Reads API and al
 Setup
 ^^^^^^
 
-/includes/igv_desktop_setup.rst
+.. include:: /includes/igv_desktop_setup.rst
 
 View a Google Genomics ReadGroupSet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
