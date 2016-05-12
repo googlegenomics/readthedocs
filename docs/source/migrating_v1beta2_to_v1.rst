@@ -1,6 +1,6 @@
-============================
-Migrating from v1beta2 to v1
-============================
+=========================================
+Migrating from Genomics API v1beta2 to v1
+=========================================
 
 The v1beta2 version of the Google Genomics API is deprecated.
 
@@ -13,11 +13,33 @@ changing the name of objects or methods.
 API Documentation
 -----------------
 
-* `v1beta2 <https://cloud.google.com/genomics/v1beta2/reference/>`_
-* `v1 <https://cloud.google.com/genomics/reference/rest/>`_
+* v1beta2: https://cloud.google.com/genomics/v1beta2/reference/
+* v1     : https://cloud.google.com/genomics/reference/rest/
+
+New client libraries
+--------------------
+
+Python, Java, Go, and other language-specific client libraries for the
+v1 API can be found at:
+
+* https://cloud.google.com/genomics/v1/libraries
 
 API Changes
 -----------
+
+New endpoint:
+~~~~~~~~~~~~
+
+* v1beta2: ``https://www.googleapis.com/genomics/v1beta2``
+* v1     : ``https://genomics.googleapis.com/v1``
+
+End of paging response
+~~~~~~~~~~~~~~~~~~~~~~
+
+When reaching the end of paged-responses, the v1beta2 API would omit
+the ``nextPageToken`` field from the response. The v1 API will always
+return the ``nextPageToken`` field. When end of paging is reached,
+the value will be an empty string.
 
 New names
 =========
