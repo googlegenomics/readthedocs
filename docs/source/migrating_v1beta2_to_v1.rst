@@ -28,7 +28,7 @@ API Changes
 -----------
 
 New endpoint:
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 * v1beta2: ``https://www.googleapis.com/genomics/v1beta2``
 * v1     : ``https://genomics.googleapis.com/v1``
