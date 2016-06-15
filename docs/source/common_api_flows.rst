@@ -32,7 +32,7 @@ Browsing read data
 
 * ``GET /readgroupsets/<readGroupSetId>/coveragebuckets``
 
-  Get coverage information for a particular readset. This will tell you where the read data is located,
+  Get coverage information for a particular read group set. This will tell you where the read data is located,
   and which referenceNames should be used in the next step.
 
 * ``POST /reads/search {readGroupSetIds: [<readGroupSetId>]}``
@@ -44,8 +44,8 @@ Browsing read data
   start and end coordinates they wish to view. The API uses 0-based coordinates.
 
 
-Map reducing over read data within a readset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Map reducing over read data within a read group set
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * ``GET /readgroupsets/<readGroupSetId>/coveragebuckets``
 
