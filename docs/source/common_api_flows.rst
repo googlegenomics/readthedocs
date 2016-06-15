@@ -14,13 +14,9 @@ simplified request bodies. Each step should map 1-1 with all of the auto-generat
 Browsing read data
 ~~~~~~~~~~~~~~~~~~
 
-* ``GET /datasets``
+* ``GET /datasets?projectId=YOUR-PROJECT-ID``
 
-  List all available datasets that a current user has access to. (Or all public datasets when not using OAuth)
-  Choose one datasetId from the result.
-
-  Note: Currently, this call only returns public datasets! It is not able to return any private datasets.
-  For now, you may need to ask a user for a datasetId or readGroupSetId directly
+  List all available datasets in a particular project.
 
 * ``POST /readgroupsets/search {datasetIds: [<datasetId>]}``
 
@@ -39,7 +35,6 @@ Browsing read data
 
   Get reads for a particular read group set.
 
-  Note: The call also requires ``referenceName``, ``start`` and ``end``.
   The referenceName can be chosen from the coverage buckets by the user, along with the
   start and end coordinates they wish to view. The API uses 0-based coordinates.
 
@@ -78,8 +73,8 @@ Map reducing over variant data
   you wish to have, you can calculate sharding bounds.
 
   Let's say there are 23 references, and you want 115 shards. The easiest math would
-  have us creating 5 shards per reference, each with a ``start`` of ``i * referenceBound.upperBound/5``
-  and an ``end`` of ``min(referenceBound.upperBound, start + referenceBound.upperBound/5)``
+  have us creating 5 shards per reference, each with a ``start`` of ``i * referenceBounds.upperBound/5``
+  and an ``end`` of ``min(referenceBound.upperBound, start + referenceBounds.upperBound/5)``
 
 * ``POST /variants/search {variantSetIds: [x], referenceName: shard.refName, start: shard.start, end: shard.end}``
 
@@ -88,7 +83,7 @@ Map reducing over variant data
 
   If you only want to look at certain call sets, you can include the ``callSetIds: ["id1", "id2"]``
   field on the search request. Only call information for those call sets will be returned. Variants
-  without any of the requested call sets won't be included at all.
+  without any of the requested call sets will not be included at all.
 
 
 
