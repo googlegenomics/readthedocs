@@ -34,6 +34,5 @@ as how you might build your own code which uses the API.
    ../../constants
    ../../common_api_flows
    ../../auth_requirements
-   ../../api-client-java/index
    ../../api-client-python/index
    ../../api-client-r/index

@@ -54,9 +54,9 @@ The following command will use `ClinVar`_ to annotate variants on a portion of c
 
 You can check your results by ensuring that the following three results are contained in the output files::
 
-  chr17:40714803:A:CI7s77ro84KpKhIFY2hyMTcYs4S1EyDwuoPB1PDR19AB: WindowReiterable{[{alternateBases=A, effect=NONSYNONYMOUS_SNP, geneId=ChYIiN-g9eP0uo-UARDi_aPt7qzv9twBEgIxNxjr_rQTIJrU8My-4_2UdA, transcriptIds=[ChYIiN-g9eP0uo-UARDm-eqXgp7Bi5IBEgIxNxjr_rQTII_53bW3_PSh6AE], type=SNP}]}
-  chr17:40722028:G:CI7s77ro84KpKhIFY2hyMTcY7Ly1EyDvqeCryb2xrQw: WindowReiterable{[{alternateBases=G, effect=NONSYNONYMOUS_SNP, geneId=ChYIiN-g9eP0uo-UARDi_aPt7qzv9twBEgIxNxjlpbUTIL3v58KG8MzFJw, transcriptIds=[ChYIiN-g9eP0uo-UARDm-eqXgp7Bi5IBEgIxNxjlpbUTIMvX96zMvJyV0gE], type=SNP}]}
-  chr17:40706905:A:CI7s77ro84KpKhIFY2hyMTcY2ca0EyCw4NnN8qzS8S0: WindowReiterable{[{alternateBases=A, effect=NONSYNONYMOUS_SNP, geneId=ChYIiN-g9eP0uo-UARDi_aPt7qzv9twBEgIxNxjvr7QTIITZ6M7yo8CnbA, transcriptIds=[ChYIiN-g9eP0uo-UARDm-eqXgp7Bi5IBEgIxNxjvr7QTINX5koLhyJHYkwE], type=SNP}]}
+  chr17:40714803:A:CI7s77ro84KpKhIFY2hyMTcYs4S1EyDwuoPB1PDR19AB: [{alternateBases=A, effect=NONSYNONYMOUS_SNP, geneId=ChYIiN-g9eP0uo-UARDi_aPt7qzv9twBEgIxNxjr_rQTIJrU8My-4_2UdA, transcriptIds=[ChYIiN-g9eP0uo-UARDm-eqXgp7Bi5IBEgIxNxjr_rQTII_53bW3_PSh6AE], type=SNP}]
+  chr17:40722028:G:CI7s77ro84KpKhIFY2hyMTcY7Ly1EyDvqeCryb2xrQw: [{alternateBases=G, effect=NONSYNONYMOUS_SNP, geneId=ChYIiN-g9eP0uo-UARDi_aPt7qzv9twBEgIxNxjlpbUTIL3v58KG8MzFJw, transcriptIds=[ChYIiN-g9eP0uo-UARDm-eqXgp7Bi5IBEgIxNxjlpbUTIMvX96zMvJyV0gE], type=SNP}]
+  chr17:40706905:A:CI7s77ro84KpKhIFY2hyMTcY2ca0EyCw4NnN8qzS8S0: [{alternateBases=A, effect=NONSYNONYMOUS_SNP, geneId=ChYIiN-g9eP0uo-UARDi_aPt7qzv9twBEgIxNxjvr7QTIITZ6M7yo8CnbA, transcriptIds=[ChYIiN-g9eP0uo-UARDm-eqXgp7Bi5IBEgIxNxjvr7QTINX5koLhyJHYkwE], type=SNP}]
 
 .. include:: /includes/dataflow_on_gce_run.rst
 
