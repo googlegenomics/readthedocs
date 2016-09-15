@@ -20,9 +20,20 @@ __ RenderedVersion_
 IGV Web
 -------
 
-Try it now: http://igv.org/web/demo/ga4gh-demo.html
+igv.js is an embeddable interactive genome visualization component.
+The source code for igv.js is available on github:
 
-There is also an embeddable version: http://igv.org/web/examples/ga4gh.html
+    https://github.com/igvteam/igv.js
+
+
+Documentation is available at:
+
+    https://github.com/igvteam/igv.js/wiki
+
+
+Try it now with public data in Google Genomics:
+
+    http://igv.org/web/examples/google-demo.html
 
 IGV Desktop
 -----------
