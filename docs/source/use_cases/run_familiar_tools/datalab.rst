@@ -24,7 +24,7 @@ Read Example Notebooks
 
 There are several example notebooks for genomics use cases upon public data such as the :doc:`/use_cases/discover_public_data/platinum_genomes`, :doc:`/use_cases/discover_public_data/1000_genomes`, and :doc:`/use_cases/discover_public_data/isb_cgc_data`.  You can read them on github:
 
-* `Exploring Genomic Data <https://github.com/GoogleCloudPlatform/datalab/blob/master/content/datalab/samples/Exploring%20Genomics%20Data.ipynb>`_
+* `Exploring Genomic Data <https://github.com/googledatalab/datalab/blob/f52335fe7bc596aa63f61230717c473caf6047de/dev/notebooks/Exploring%20Genomics%20Data.ipynb>`_
 * `Explore the 1000 Genomes Sample Information <https://github.com/googlegenomics/datalab-examples/blob/master/datalab/genomics/Explore%201000%20Genomes%20Samples.ipynb>`_
 * `Genome-wide association study <https://github.com/googlegenomics/datalab-examples/blob/master/datalab/genomics/Genome-wide%20association%20study%20(GWAS).ipynb>`_
 * `Getting started with the Google Genomics API <https://github.com/googlegenomics/datalab-examples/blob/master/datalab/genomics/Getting%20started%20with%20the%20Genomics%20API.ipynb>`_
