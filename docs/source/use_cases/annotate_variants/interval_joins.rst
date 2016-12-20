@@ -22,7 +22,7 @@ If you want to use BigQuery to JOIN variants with other data described by genomi
 Example
 -------
 
-Let's use a concrete example: *Suppose you have a list of genes names and you want to find all the rare SNPs overlapping those genes and also 100,000 bp on either side of the gene for all of your whole genome samples.*
+Let's use a concrete example: Suppose you have a list of gene names and you want to find all the rare SNPs overlapping those genes and also 100,000 bp on either side of the gene for all of your whole genome samples.
 
 (1) The first thing we need to do is load or create our table of intervals.
 
@@ -138,25 +138,31 @@ Let's use a concrete example: *Suppose you have a list of genes names and you wa
 Results
 -------
 
-A specific run of the above interval JOIN took `Query complete (92.1s elapsed, 3.38 TB processed)` on:
+A specific run of the above interval JOIN took
+
+.. code::
+
+  Query complete (92.1s elapsed, 3.38 TB processed)
+
+on:
 
   * 2,504 samples for 84,801,867 phase 3 variants from :doc:`/use_cases/discover_public_data/1000_genomes`
   * the nearly 9 billion row :doc:`/use_cases/discover_public_data/tute_genomics_public_data` table
   * and a gene list containing 250 randomly chosen genes via the following query
 
-.. code::
+  .. code::
 
-  SELECT
-    Gene,
-    Chr,
-    MIN(Start) AS gene_start,
-    MAX(`End`) AS gene_end,
-    MIN(Start) - 100000 AS region_start,
-    MAX(`End`) + 100000 AS region_end
-  FROM
-    `silver-wall-555.TuteTable.hg19`
-  WHERE
-    Gene IN (SELECT Gene FROM `silver-wall-555.TuteTable.hg19` GROUP BY Gene LIMIT 250)
-  GROUP BY
-    Chr,
-    Gene
+    SELECT
+      Gene,
+      Chr,
+      MIN(Start) AS gene_start,
+      MAX(`End`) AS gene_end,
+      MIN(Start) - 100000 AS region_start,
+      MAX(`End`) + 100000 AS region_end
+    FROM
+      `silver-wall-555.TuteTable.hg19`
+    WHERE
+      Gene IN (SELECT Gene FROM `silver-wall-555.TuteTable.hg19` GROUP BY Gene LIMIT 250)
+    GROUP BY
+      Chr,
+      Gene
