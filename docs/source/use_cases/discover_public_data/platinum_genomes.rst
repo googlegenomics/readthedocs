@@ -17,7 +17,7 @@ __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-This dataset comprises the 17 member CEPH pedigree 1463.  See http://www.illumina.com/platinumgenomes/ for full details.
+This dataset comprises the `6 member CEPH pedigree 1463 <http://www.ebi.ac.uk/ena/data/view/PRJEB3381>`_.  See http://www.illumina.com/platinumgenomes/ for full details.
 
 Google Cloud Platform data locations
 ------------------------------------
