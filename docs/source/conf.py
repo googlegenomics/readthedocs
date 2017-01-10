@@ -129,7 +129,7 @@ rst_epilog = """
 .. _Global Alliance for Genomics and Health Beacon: http://ga4gh.org/#/beacon
 
 .. ### VCF documentation links
-.. _VCF specification: http://samtools.github.io/hts-specs/VCFv4.2.pdf
+.. _VCF specification: https://samtools.github.io/hts-specs/VCFv4.3.pdf
 .. _gVCF: https://sites.google.com/site/gvcftools/home/about-gvcf
 .. _genome VCF: https://sites.google.com/site/gvcftools/home/about-gvcf
 .. _gVCF conventions: https://sites.google.com/site/gvcftools/home/about-gvcf/gvcf-conventions

@@ -1,11 +1,18 @@
-.. _FROM clause: https://cloud.google.com/bigquery/query-reference#from
-.. _WHERE clause: https://cloud.google.com/bigquery/query-reference#where
-.. _HAVING clause: https://cloud.google.com/bigquery/query-reference#having
-.. _REGEXP_REPLACE: https://cloud.google.com/bigquery/query-reference#regularexpressionfunctions
-.. _CASE function: https://cloud.google.com/bigquery/query-reference#otherfunctions
-.. _GROUP_CONCAT function: https://cloud.google.com/bigquery/query-reference#aggfunctions
-.. _COUNT function: https://cloud.google.com/bigquery/query-reference#aggfunctions
-.. _WITHIN keyword: https://cloud.google.com/bigquery/query-reference#scopedaggregation
+.. BigQuery documentation links
+
+.. _Standard SQL Query Syntax: https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax
+.. _Legacy SQL Migration Guide: https://cloud.google.com/bigquery/docs/reference/standard-sql/migrating-from-legacy-sql
+.. _Legacy SQL FLATTEN: https://cloud.google.com/bigquery/docs/reference/standard-sql/migrating-from-legacy-sql#removing_repetition_with_flatten
+.. _JOIN: https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#join_types
+.. _Query Plan Explanation: https://cloud.google.com/bigquery/query-plan-explanation
+.. _WITH clause: https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#with-clause
+.. _SAFE_CAST: https://cloud.google.com/bigquery/docs/reference/standard-sql/functions-and-operators#casting
+.. _REGEXP_REPLACE: https://cloud.google.com/bigquery/docs/reference/standard-sql/functions-and-operators#regexp_replace
+.. _CASE function: https://cloud.google.com/bigquery/docs/reference/standard-sql/functions-and-operators#conditional-expressions
+.. _ARRAY: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#array-type
+.. _STRUCT: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#struct-type
+.. _UNNEST: https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#unnest
+.. _User Defined Functions: https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions
 
 Analyze variants using Google BigQuery
 ======================================
@@ -32,14 +39,14 @@ The purpose of this code lab is to help you:
 * learn valuable BigQuery SQL syntax
 * become familiar with the variants table created by a Google Genomics variant export
 
-BigQuery uses thousands of machines in parallel to process your queries.
-This means you can use it to interact with genomic data in an ad-hoc fashion.
+BigQuery can use thousands of machines in parallel to process your queries.
+This means you can use it to interact with genomic data in an ad-hoc fashion:
 Queries that on traditional systems take hours to run (as batch jobs) can
 instead be processed in seconds with BigQuery.
 
 This code lab focuses on genomic variant data that has been exported from Google
 Genomics to BigQuery. The dataset used is from the public
-`Illumina Platinum Genomes project data`_ (17 samples). You may run the same
+`Illumina Platinum Genomes project data`_ (6 samples). You may run the same
 queries against other datasets exported from Google Genomics, including:
 
 * the `1000 Genomes project data`_
@@ -52,7 +59,6 @@ Here are some of the questions you'll answer in this code lab about the variant 
 * How many records are in the variants table
 * How many variant calls are in the variants table
 * How many variants are called for each sample
-* How many non-variants are called for each sample
 * How many samples are in the variants table
 * How many variants are there per chromosome
 * How many high-quality variants per-sample
@@ -63,10 +69,10 @@ Here are some of the technical skills you will learn:
 * How are non-variant segments represented in the variants table
 * How are variant calls represented in the variants table
 * How are variant call quality filters represented in the variants table
-* How to handle nested fields in variants data
+* How to handle hierarchical fields in variants data
 * How to count distinct records
 * How to group records
-* How to construct queries using subqueries
+* How to write user-defined functions
 
 BigQuery Web Interface
 ----------------------
@@ -89,7 +95,7 @@ project.
 Add the Genomics public data project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We could immediately start composing queries against any BigQuery data you
+You could immediately start composing queries against any BigQuery data you
 have access to, including public datasets. But first let's add a nice
 usability shortcut for accessing the Genomics public data.
 
@@ -116,10 +122,11 @@ Table schema
 ~~~~~~~~~~~~
 
 On the left-hand side of the browser window, you should see a list of
-BigQuery datasets. Select the ``genomics-public-data:platinum_genomes``.
-Click on the ``variants`` table, which should appear in the drop-down.
+BigQuery datasets. Opening "Google Genomics Public Data (genomics-public-data)"
+you should see ``platinum_genomes``. Opening ``platinum_genomes``
+you should see the ``variants`` table.
 
-When you have selected the table from the drop-down, you should now see the
+Selecting the ``variants`` table from the drop-down, you should now see the
 table schema in the right-hand pane:
 
    .. image:: analyze_variants_with_bigquery/variants_table_schema.png
@@ -129,7 +136,7 @@ The key fields of the variants table that will be frequently referenced
 in this code lab are:
 
   reference_name
-    The reference on which this variant occurs. (such as "chr20" or "X")
+    The reference on which this variant occurs (such as "chr20" or "X").
 
   start
     The position at which this variant occurs (0-based). This corresponds to
@@ -138,10 +145,10 @@ in this code lab are:
   end
     The end position (0-based) of this variant. This corresponds to the
     first base after the last base in the reference allele. So, the length
-    of the reference allele is (end - start).
+    of the reference allele is (``end`` - ``start``).
 
   reference_bases
-    The reference bases for this variant. They start at the given position.
+    The reference bases for this variant.
 
   alternate_bases
     The bases that appear instead of the reference bases.
@@ -151,14 +158,15 @@ and
   call
     The variant calls for this particular variant.
 
-The first set of fields are what makes a ``variant`` record unique.
+The first set of fields are what makes a ``variants`` record unique.
 
-The ``call`` field contains a list of the calls for the ``variant`` record.
-The ``call`` field is a REPEATED field which contains NESTED fields
-(REPEATED and NESTED fields are discussed further
-:ref:`below <repeated-and-nested-fields>`).
+The ``call`` field contains a list of the calls for the ``variants`` record.
+The ``call`` field is an ARRAY (aka REPEATED) field and is a STRUCT
+(it contains NESTED fields)
+ARRAY and STRUCT fields are discussed further
+:ref:`below <array-and-struct-fields>`.
 
-The fixed NESTED fields of the call field are:
+The fixed members of the call field are:
 
   call.call_set_id
     Unique identifier generated by Google Genomics to identify a callset.
@@ -167,8 +175,8 @@ The fixed NESTED fields of the call field are:
     Identifier supplied on input to Google Genomics for a callset.
     This is also typically known as the sample identifier.
 
-  genotype
-    Repeated field containing the numeric genotype encodings for this call.
+  call.genotype
+    Array field containing the numeric genotype encodings for this call.
     Values:
 
     * -1: no call
@@ -178,8 +186,8 @@ The fixed NESTED fields of the call field are:
     *  ...
     *  n: nth alternate_bases value
 
-  genotype_likelihood
-    Repeated field containing the likelihood value for each corresponding
+  call.genotype_likelihood
+    Array field containing the likelihood value for each corresponding
     genotype.
 
 More details about other fields can be found at
@@ -215,27 +223,38 @@ More on the origin of the data can be found
 `here <http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/platinum_genomes.html>`_ on
 `googlegenomics.readthedocs.org <http://googlegenomics.readthedocs.org>`_.
 
-.. _repeated-and-nested-fields:
+.. _array-and-struct-fields:
 
-REPEATED and NESTED fields
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+ARRAY and STRUCT fields
+^^^^^^^^^^^^^^^^^^^^^^^
 
-BigQuery supports REPEATED fields for lists of values and NESTED fields for
-hierarchical values. These field types are useful for representing rich data
+BigQuery supports fields of type `ARRAY`_ for lists of values
+and fields of type `STRUCT`_ for hierarchical values.
+These field types are useful for representing rich data
 without duplication.
 
-Two of the fields noted above, the ``alternate_bases`` and the ``call``
-field, are REPEATED fields.  REPEATED fields are a feature of BigQuery
+   +-------------------------------------------------------------------------+
+   | Legacy SQL Nomenclature                                                 |
+   +=========================================================================+
+   | Prior to supporting the SQL 2011 standard, BigQuery used its own SQL    |
+   | variant, now called "Legacy SQL". In Legacy SQL ARRAY and STRUCT        |
+   | fields were referred to as "REPEATED" and "NESTED" fields respectively. |
+   |                                                                         |
+   | For more information, see the `Legacy SQL Migration Guide`_.            |
+   +-------------------------------------------------------------------------+
+
+Two of the ``variants`` fields noted above, the ``alternate_bases`` and the
+``call`` field, are ARRAY fields. ARRAY fields are a feature of BigQuery
 that allow for embedding multiple values of the same type into the same
 field (similar to a list).
 
-The ``alternate_bases`` field is a simple REPEATED field in that it allows
+The ``alternate_bases`` field is a simple ARRAY field in that it allows
 for multiple scalar STRING values.  For example:
 
-   .. image:: analyze_variants_with_bigquery/repeated_fields_example.png
+   .. image:: analyze_variants_with_bigquery/array_fields_example.png
       :width: 85%
 
-.. When RTD uses Sphinx 4.x, use the table below instead of an image
+.. When RTD uses Sphinx 4.x, use the table below instead of the image above.
    Until then, using a proper table triggers
    https://github.com/sphinx-doc/sphinx/issues/1871
 
@@ -249,12 +268,13 @@ for multiple scalar STRING values.  For example:
    |                |          |          | - CT            |
    +----------------+----------+----------+-----------------+
 
-The ``call`` field is a complex REPEATED field in that it contains
-NESTED fields (making it a hierarchical field).
-The ``call`` field contains 14 nested fields, such as ``call_set_name``,
-``genotype``, and ``FILTER``. Some fields, such as ``genotype`` and
-``FILTER``, are themselves REPEATED fields. We will see examples of
-working with these fields below.
+The ``call`` field is a complex ARRAY field in that contains STRUCTs.
+The Platinum Genomes ``call`` field contains 13 fields of its own, such as
+``call_set_name``, ``genotype``, and ``FILTER``.
+Some fields, such as ``genotype`` and ``FILTER``, are themselves ARRAY
+fields. We will see examples of working with these fields below.
+
+.. _variants-vs-non-variants:
 
 Variants vs. non-variants
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -271,18 +291,19 @@ reference and no-call states for any site of interest".
    +--------------------------------------------------------------+
 
 In a ``variants`` table exported from Google Genomics, the non-variant segments
-are commonly represented in one of two ways (the representation depends on
-the variant caller that generated the source data):
+are commonly represented in one of the following ways (the representation
+depends on the variant caller that generated the source data):
 
-* With a NULL ``alternate_bases`` value, or
-* With the text string '<NON_REF>' as the ``alternate_bases`` value
+* With a zero-length ``alternate_bases`` value, or
+* With the text string ``<NON_REF>`` as an ``alternate_bases`` value, or
+* With the text string ``<*>`` as an ``alternate_bases`` value
 
 For example:
 
    +----------------+-------+------+-----------------+-------------------+
    | reference_name | start |  end | reference_bases | *alternate_bases* |
    +================+=======+======+=================+===================+
-   |              1 |  1000 | 1010 |               A |       *<NON_REF>* |
+   |              1 |  1000 | 1010 |               A |                   |
    +----------------+-------+------+-----------------+-------------------+
 
 or
@@ -290,37 +311,54 @@ or
    +----------------+-------+------+-----------------+-------------------+
    | reference_name | start |  end | reference_bases | *alternate_bases* |
    +================+=======+======+=================+===================+
-   |              1 |  1000 | 1010 |               A |          *[NULL]* |
+   |              1 |  1000 | 1010 |               A | - *<NON_REF>*     |
    +----------------+-------+------+-----------------+-------------------+
 
 In this example we have a reference block of 10 bases on chromosome 1,
 starting at position 1000. The reference base at position 1000 is an "A"
 (the reference bases at the other positions of this block are not represented).
 
+In the first case, the ``alternate_bases`` ARRAY field contains no values;
+it is an ARRAY of length 0.
+In the second case, the ``alternate_bases`` ARRAY field is length 1 containing
+the literal text string ``<NON_REF>``.
+
+   +--------------------------------------------------------------+
+   | See the `VCF specification`_ for further discussion of       |
+   | representing non-variant positions in the genome.            |
+   +--------------------------------------------------------------+
+
 The Platinum Genomes data represents non-variant segments with a NULL
 ``alternate_bases`` value, however the queries in this code lab are designed to
-accommodate either representation.
+accommodate each of the above representations.
 
 Table summary data
 ~~~~~~~~~~~~~~~~~~
 
-Click on the "Details" button on the right hand side of the browser window.
+Click on the "Details" button in the right hand pane of the browser window.
 This will display information like:
 
-   .. image:: analyze_variants_with_bigquery/variants_table_info.png
+   .. image:: analyze_variants_with_bigquery/variants_table_details.png
       :width: 95%
 
-You can immediately see the size of this table at 103 GB and over 688 million
-rows, and you see a preview of a few records in the table.
+You can immediately see the size of this table at 46.5 GB and over 261 million
+rows.
+
+Click on the "Preview" button and you see a preview of a few records in the
+table like:
+
+   .. image:: analyze_variants_with_bigquery/variants_table_preview.png
+      :width: 95%
 
 Queries
 -------
 Now that you have an overview of data in the table, we will start issuing
 queries and progressively add more query techniques and explanations of
-the ``variant`` table data.
+the ``variants`` table data.
 
 We will include many documentation references when introducing new concepts,
-but you may find it useful to open the `Google BigQuery query reference`_.
+but you may find it useful to open and reference the
+`Standard SQL Query Syntax`_.
 
 How many records are in the variants table
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -330,88 +368,116 @@ but to get your feet wet with queries, let's verify that summary data:
 
 ::
 
-   SELECT COUNT(1) AS number_of_records
-   FROM [genomics-public-data:platinum_genomes.variants]
+   #standardSQL
+   SELECT
+     COUNT(1) AS number_of_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants`
 
-You should see the same result as "Number of Rows" above: ``688,167,235``.
-
-   +-----------------------------------------------------------------------+
-   | Code tip: COUNT(1) vs. COUNT(*) vs. COUNT(<field>)                    |
-   +=======================================================================+
-   | When counting records in a BigQuery table, you will want to take care |
-   | when selecting whether to use the syntax "``COUNT(1)``",              |
-   | "``COUNT(*)``" or "``COUNT(<field>)``".                               |
-   |                                                                       |
-   | Be aware that ``COUNT(NULL)`` returns ``0``. If you use the syntax    |
-   | ``COUNT(<field>)``, then this can be a problem if that field contains |
-   | ``NULL`` values that you wish to count.                               |
-   |                                                                       |
-   | When counting top-level non-repeated fields, ``COUNT(*)`` or          |
-   | ``COUNT(1)`` is typically a better choice than ``COUNT(<field>)``     |
-   | since ``COUNT(<field>)`` will return ``0`` for ``NULL`` values.       |
-   |                                                                       |
-   | When counting REPEATED fields, use ``COUNT(<field>)``. If you want to |
-   | count ``NULL`` values in a repeated field, use                        |
-   | ``COUNT(IFNULL(<field>, ''))``.                                       |
-   +-----------------------------------------------------------------------+
+You should see the same result as "Number of Rows" above: ``261,285,806``.
 
 How many variant calls are in the variants table
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each record in the ``variant`` table is a genomic position that is a variant
-or non-variant segment, and each record has within it a "repeated field",
-which is list of ``calls``. Each call includes the ``call_set_name``
+Each record in the ``variants`` table is a genomic position that is a variant
+or non-variant segment, and each record has within it an ARRAY field,
+which is a list of ``calls``. Each call includes the ``call_set_name``
 (typically the genomic "sample id"), along with values like the genotype,
 quality fields, read depth, and other fields typically found in a VCF or
 `Complete Genomics`_ masterVar file.
 
-Let's now get a summary of total number of calls. As noted, the ``call``
-field is a REPEATED field, with multiple calls embedded in each ``variant``
-record. We cannot count the instances of the call field directly:
+Let's now get a summary of total number of calls across all samples.
+As noted, the ``call`` field is an ARRAY field, with multiple calls
+embedded in each ``variants`` record.
+We *cannot* just change what we count above to count the ``call`` field:
 
 ::
 
-   SELECT COUNT(call) AS number_of_calls
-   FROM [genomics-public-data:platinum_genomes.variants]
+   #standardSQL
+   SELECT
+     COUNT(call) AS number_of_calls
+   FROM
+     `genomics-public-data.platinum_genomes.variants`
 
-returns:
+returns the ``number_of_calls`` as 261,285,806. Notice that this is the
+same as the number of variant records. This query did not count the
+array elements, just the number of arrays.
 
-::
+We have a few choices then on how we count the calls.
 
-   Error: Field call is not a leaf field.
-
-We have a few choices then on how we count the calls. To directly count
-the instances of the ``call`` field, we are going to instruct BigQuery
-to `flatten <https://cloud.google.com/bigquery/docs/data#nested>`_ the
-table as it processes it (removing one level of nesting). This tells
-BigQuery to treat each ``call`` as though it were a top-level record.
-
-::
-
-   SELECT COUNT(1) AS number_of_calls
-   FROM (FLATTEN([genomics-public-data:platinum_genomes.variants], call))
-
-or we can use the knowledge that each call field must have a single
-``call_set_name``:
+One way is to count the total number of calls by querying over the
+``variants`` records and sum the lengths of each ``call`` ARRAY.
 
 ::
 
-   SELECT COUNT(call.call_set_name) AS number_of_calls
-   FROM [genomics-public-data:platinum_genomes.variants]
+   #standardSQL
+   SELECT
+     SUM(ARRAY_LENGTH(call)) AS number_of_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants`
 
-For both of these queries, you should get a result of ``887,457,596``,
-which means that there is an average of ``1.3`` calls per variant record
+Another way is to `JOIN`_ the ``variants`` record with the ``variants.call``
+field. This is similar to the `Legacy SQL FLATTEN`_ technique, which
+effectively expands each call record to be a top level result joined with
+its parent ``variants`` record fields.
+
+::
+
+   #standardSQL
+   SELECT
+     COUNT(call) AS number_of_calls
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v, v.call
+
+Note the use of the comma (,) operator, which is a short-hand notation
+for ``JOIN``. Also note that the join to the ``call`` field
+makes an implicit `UNNEST`_ call on the ``call`` field.
+
+   +------------------------------------------------------------------------+
+   | Code tip: UNNEST                                                       |
+   +========================================================================+
+   | The `UNNEST`_ function provides a mechanism to query over an ARRAY     |
+   | field as though it is a table. UNNEST returns one record for each      |
+   | element of an ARRAY.                                                   |
+   +------------------------------------------------------------------------+
+
+The previous query is equivalent to:
+
+::
+
+   #standardSQL
+   SELECT
+     COUNT(call) AS number_of_calls
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   JOIN
+      UNNEST(v.call)
+
+The final example for counting calls extends the previous example to
+demonstrate accessing one of the ``call`` fields.
+Each ``call`` must have a single ``call_set_name`` and so to count them:
+
+::
+
+   #standardSQL
+   SELECT
+     COUNT(call.call_set_name) AS number_of_calls
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v, v.call call
+
+For each of these queries, you should get a result of ``309,551,691``,
+which means that there is an average of ``1.2`` calls per variant record
 in this dataset.
 
    +-----------------------------------------------------------------------+
-   | Code tip: Don't FLATTEN on call                                       |
+   | Which query is "better"?                                              |
    +=======================================================================+
-   | Explicit flattening of the ``call`` field significantly expands the   |
-   | number of records for BigQuery to process, and is typically           |
-   | unnecessary. A better pattern that is often effective is to use one   |
-   | (inner) query to reduce the data set and an outer query to aggregate  |
-   | over the inner query results. An example will be shown                |
-   | :ref:`below <inner-outer-query-example>`).                            |
+   | BigQuery pricing is based on the amount of data examined. Query       |
+   | performance also improves when we can reduce the amount of data       |
+   | examined. BigQuery provides empirical data which can be viewed in the |
+   | web UI; always check the "Query complete (Ns elapsed, M B processed)" |
+   | displayed. You may make use of the `Query Plan Explanation`_ to       |
+   | optimize your queries.                                                |
    +-----------------------------------------------------------------------+
 
 How many variants and non-variant segments are in the table
@@ -424,58 +490,102 @@ Let's now run a query that filters out the non-variant segments:
 
 ::
 
-   SELECT COUNT(1) AS number_of_real_variants
-   FROM [genomics-public-data:platinum_genomes.variants]
-   OMIT RECORD IF
-     EVERY(alternate_bases == '<NON_REF>') OR
-     EVERY(alternate_bases IS NULL)
+   #standardSQL
+   SELECT
+     COUNT(1) AS number_of_real_variants
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.alternate_bases) AS alt
+             WHERE
+               alt NOT IN ("<NON_REF>", "<*>"))
 
 When you issue this command, you'll observe that the number of variants
-(including no-calls of variants) is ``12,379,576``. So the vast majority
+(including no-calls of variants) is ``10,982,549``. So the vast majority
 of records are reference calls, which is to be expected.
 
-   +-----------------------------------------------------------------------+
-   | Code tip: OMIT IF                                                     |
-   +=======================================================================+
-   | BigQuery provides three different filtering clauses for queries:      |
-   |                                                                       |
-   | - WHERE                                                               |
-   | - OMIT IF                                                             |
-   | - HAVING                                                              |
-   |                                                                       |
-   | The HAVING clause can be applied to aggregate fields of a query.      |
-   | HAVING will be discussed in more detail below.                        |
-   |                                                                       |
-   | For filtering prior to aggregation, BigQuery's WHERE is analogous to  |
-   | the traditional SQL "WHERE" clause applied to records. OMIT IF        |
-   | provides additional functionality not provided by WHERE.              |
-   | According to the the Query Reference:                                 |
-   |                                                                       |
-   |   `whereas the WHERE clause filters only the entire top-level`        |
-   |   `record, the OMIT IF clause can exclude an individual element`      |
-   |   `in a repeated field`                                               |
-   |                                                                       |
-   | This ability to filter on individual elements in a repeated field is  |
-   | critical for working with records in the ``variants`` table as it     |
-   | contains 11 repeated fields.                                          |
-   +-----------------------------------------------------------------------+
+What's the logic of this query? How did it filter out non-variant segments?
+
+As noted :ref:`above <variants-vs-non-variants>`, there are (at least)
+three different conventions for designating a variant record as a non-variant
+segment. The WHERE clause here includes ``variant`` records where the
+``alternate_bases`` field contains a value that is a true alternate
+sequence (it is NOT one of the special marker values).
+
+In the above query, for each record in the ``variants`` table, we
+issue a subquery over the ``alternate_bases`` field of that
+``variants`` record, returning the value 1 for each
+``alternate_bases`` that is not ``<NON_REF>`` or ``<*>``.
+
+If the subquery returns any records, the corresponding ``variants``
+record is counted.
 
 Let's turn the previous query around and get a count of the reference segments:
 
 ::
 
-   SELECT COUNT(1) AS number_of_non_variants
-   FROM [genomics-public-data:platinum_genomes.variants]
-   OMIT RECORD IF NOT
-     (EVERY(alternate_bases IS NULL) OR
-      EVERY(alternate_bases == '<NON_REF>'))
+   #standardSQL
+   SELECT
+     COUNT(1) AS number_of_non_variants
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     NOT EXISTS (SELECT 1
+                   FROM UNNEST(v.alternate_bases) AS alt
+                 WHERE
+                   alt NOT IN ("<NON_REF>", "<*>"))
 
-This command will return a count of ``675,787,659`` non-variant records.
+This command will return a count of ``250,303,257`` non-variant records.
 This is good since:
 
 ::
 
-   675,787,659 + 12,379,576 = 688,167,235
+   250,303,257 + 10,982,549 = 261,285,806 
+
+The above WHERE clause is a literal negation of the previous query, but the
+double negation (NOT EXIST ... NOT IN ...) can be a little difficult to follow.
+A more direct form of this query is:
+
+::
+
+   #standardSQL
+   SELECT
+     COUNT(1) AS number_of_non_variants
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     ARRAY_LENGTH(v.alternate_bases) = 0
+     OR EXISTS (SELECT 1
+                 FROM UNNEST(v.alternate_bases) AS alt
+               WHERE
+                 alt IN ("<NON_REF>", "<*>"))
+
+This query directly counts the variant records which either:
+
+  * Have an alternate_bases array length of 0, or
+  * Contain an alternate_bases value of ``<NON_REF>`` or ``<*>``
+
+This directly maps to the description of the non-variant segment representation
+noted :ref:`above <variants-vs-non-variants>`. But note that there is a
+subtle difference between this query and the previous that can produce
+different results depending on your data.
+
+In many datasets, ``variants`` records will be *either* variants or non-variant
+segments; such records will either contain ``alternate_bases`` values
+consisting only of genomic sequences *OR* will contain a single ``<NON_REF>``
+or ``<*>`` value.
+
+It is however very possible for a variant caller to produce a variant record
+in a VCF with an ALT column value of ``T,<NON_REF>``. Of the previous two
+queries, the first will *exclude* such records from the result, while the
+second will *include* them.
+
+What this difference makes clear is that the notion of a particular ``variants``
+record being a binary "variant" *or* "non-variant" segment is dataset-
+specific. One will typically want to look at more specific criteria
+(the actual genotype calls of specific variants) during analysis. This is
+discussed further below.
 
 How many variants does each sample have called?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -484,42 +594,52 @@ We've now had a quick look at the top-level records in the ``variants`` table.
 Next let's look at the child records, namely the individual samples that have
 had calls made against the variants.
 
-Each variant in the ``variants`` table will have one or more
+Each variant in the ``variants`` table will have zero or more
 ``call.call_set_name`` values. A given ``call.call_set_name`` will appear
-in multiple ``variant`` records.
+in multiple ``variants`` records.
 
-To count the number of ``variant`` records in which each ``callset`` appears:
+To count the number of ``variants`` records in which each ``callset`` appears:
 
 ::
 
-   SELECT call.call_set_name AS call_set_name,
-          COUNT(call.call_set_name) AS call_count_for_call_set
-   FROM [genomics-public-data:platinum_genomes.variants]
-   GROUP BY call_set_name
-   ORDER BY call_set_name
+   #standardSQL
+   SELECT
+     call.call_set_name AS call_set_name,
+     COUNT(call.call_set_name) AS call_count_for_call_set
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v, v.call
+   GROUP BY
+     call_set_name
+   ORDER BY
+     call_set_name
 
-You should observe that there are 17 records returned.
+You should observe that there are 6 records returned.
 Each ``call_set_name`` corresponds to an individual who was sequenced.
 
    .. image:: analyze_variants_with_bigquery/call_count_for_call_set.png
       :width: 60%
       :align: center
 
-But humans don't typically have 50 million variants. Recall that the
-``variants`` table contains reference calls as well, so let's filter
-those out and just look at the non-reference segments, the "real"
-variant records:
+But humans don't typically have 50 million variants. Let's filter out
+the reference segments and and just look at the "real" variant records:
 
 ::
 
-   SELECT call.call_set_name AS call_set_name,
-          COUNT(call.call_set_name) AS call_count_for_call_set
-   FROM [genomics-public-data:platinum_genomes.variants]
-   OMIT RECORD IF
-     EVERY(alternate_bases == '<NON_REF>') OR
-     EVERY(alternate_bases IS NULL)
-   GROUP BY call_set_name
-   ORDER BY call_set_name
+   #standardSQL
+   SELECT
+     call.call_set_name AS call_set_name,
+     COUNT(call.call_set_name) AS call_count_for_call_set
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v, v.call
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.alternate_bases) AS alt
+             WHERE
+               alt NOT IN ("<NON_REF>", "<*>"))
+   GROUP BY
+     call_set_name
+   ORDER BY
+     call_set_name
 
 Returns:
 
@@ -528,62 +648,48 @@ Returns:
       :align: center
 
 5 million variants for a human is on the right scale, but there is one
-additional filter that we missed applying to our results.
-
-.. _inner-outer-query-example:
+additional filter that we have missed applying to our results.
 
 Filter "true variants" by genotype
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Variants that were loaded into this table include "no-calls" with a
-``genotype`` field value of ``-1``. These cannot be legitimately called
-"true variants", so let's filter them out too.
+Variants loaded into the Platinum Genomes ``variants`` table include no-calls.
+A no-call is represented by a ``genotype`` value of -1. These cannot be
+legitimately called "true variants" for individuals, so let's filter them out.
+Many tools filter such calls if at least one of the genotypes is -1, and so
+we will do the same here.
 
-The previous query filtered all non-variant segment records before
-aggregating over the ``call`` field. We now want to filter all non-variant
-segment records `and` filter all ``calls`` within the remaining variant
-records.
+We can be even more concrete with our variant queries by only including
+calls with genotypes greater than zero. If a call includes only genotypes
+that are no-calls (-1) or reference (0), then they are not true variants.
 
-However, the OMIT IF clause provides filtering at only one scope at a time,
-so we will instead use an inner/outer query pattern as follows:
+The following query adds the additional filtering by genotype:
 
-1. Inner query filters at the RECORD level and aggregates at the call level
-2. Outer query filters on the aggregated call value
+::
 
-.. code: sql
-
-   SELECT call_set_name, SUM(is_variant) AS call_count_for_call_set
-   FROM (
-     SELECT
-       call.call_set_name AS call_set_name,
-       SOME(call.genotype > 0) WITHIN call AS is_variant
-     FROM
-       [genomics-public-data:platinum_genomes.variants]
-     OMIT RECORD IF
-       EVERY(alternate_bases == '<NON_REF>') OR
-       EVERY(alternate_bases IS NULL)
-     )
-   GROUP BY call_set_name
-   ORDER BY call_set_name
+   #standardSQL
+   SELECT
+     call.call_set_name AS call_set_name,
+     COUNT(call.call_set_name) AS call_count_for_call_set
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v, v.call
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.alternate_bases) AS alt
+             WHERE
+               alt NOT IN ("<NON_REF>", "<*>"))
+     AND EXISTS (SELECT 1 FROM UNNEST(call.genotype) AS gt WHERE gt > 0)
+     AND NOT EXISTS (SELECT 1 FROM UNNEST(call.genotype) AS gt WHERE gt < 0)
+   GROUP BY
+     call_set_name
+   ORDER BY
+     call_set_name
 
 Returns:
 
    .. image:: analyze_variants_with_bigquery/count_true_variants_per_callset_2.png
       :width: 60%
       :align: center
-
-The key element in this query is:
-
-::
-
-    SOME(call.genotype > 0) WITHIN call AS is_variant
-
-This transforms a REPEATABLE field (genotype) within the REPEATABLE field
-(``call``) into a single value of ``true`` or ``false``. The ``is_variant``
-computed field will be ``true`` only for ``call`` fields with a genotype
-indicating "non-reference" (``genotype > 0``). The outer query then computes
-the ``SUM`` on the ``is_variant`` computed field, using the fact that
-``SUM(true)`` returns ``1`` and ``SUM(false)`` returns ``0``.
 
 Is the non-variant segment filter actually needed here?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -595,83 +701,82 @@ The above query filtered out:
 
 There is some redundancy in this filter. All ``call.genotype`` values for
 non-variant segments in this dataset are either 0, or -1.
-Thus the above query could safely be rewritten with the OMIT RECORD IF
-clause removed:
+Thus the above query could safely be rewritten without the filter on
+``alternate_bases``.
 
 ::
 
-   SELECT call_set_name, SUM(is_variant) AS call_count_for_call_set
-   FROM (
-     SELECT
-       call.call_set_name AS call_set_name,
-       SOME(call.genotype > 0) WITHIN call AS is_variant
-     FROM
-       [genomics-public-data:platinum_genomes.variants]
-     )
-   GROUP BY call_set_name
-   ORDER BY call_set_name
+   #standardSQL
+   SELECT
+     call.call_set_name AS call_set_name,
+     COUNT(call.call_set_name) AS call_count_for_call_set
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v, v.call
+   WHERE
+     EXISTS (SELECT 1 FROM UNNEST(call.genotype) AS gt WHERE gt > 0)
+     AND NOT EXISTS (SELECT 1 FROM UNNEST(call.genotype) AS gt WHERE gt < 0)
+   GROUP BY
+     call_set_name
+   ORDER BY
+     call_set_name
 
-The first form of this query would generally be preferred as it makes the
-semantic intent of the query more clear (only query over "true variant"
-records). However as queries become larger and more complicated, removing
-well-known redundancies can make your queries more readable.
+The previous form of this query may be preferred as it
+makes the semantic intent of more clear (only query over
+"true variant" records).
+
+However as queries become larger and more complicated, removing
+well-known redundancies can make your queries more readable and can also
+make them less expensive. BigQuery costs are based on the number of bytes
+processed. The second form of the query does not need to examine the
+``alternate_bases`` column.
 
 How many samples are in the variants table?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We just observed that there are 17 distinct ``call_set_name`` values in the
-``variants`` table. However our query returned 17 records, not the value 17.
-What if you want to get the count of distinct ``call_set_names`` as result?
+In the previous few queries, we observed that there are 6 distinct
+``call_set_name`` values in the ``variants`` table as each query returned 6
+rows. But what if we were interested in specifically returning that count?
 
-We can again use the inner/outer query pattern that is a common BigQuery
-technique: use an inner query to build up aggregate results, and then use
-an outer query to either *filter* based on the inner aggregation or to
-*aggregate* the inner query results further:
+One way to do this is to take our existing query and treat it like a table
+over which we can query. In this example, we take the previous queries and
+first collapse it down to the minimum results needed - just the list of
+call set names:
 
 ::
 
-   SELECT COUNT(1) AS number_of_callsets
-   FROM (
+   #standardSQL
+   SELECT call.call_set_name
+   FROM `genomics-public-data.platinum_genomes.variants` v, v.call
+   GROUP BY call.call_set_name)
+
+then we compose a query using the SQL `WITH clause`_.
+
+::
+
+   #standardSQL
+   WITH call_sets AS (
      SELECT call.call_set_name
-     FROM [genomics-public-data:platinum_genomes.variants]
-     GROUP BY call.call_set_name
-   )
+     FROM `genomics-public-data.platinum_genomes.variants` v, v.call
+     GROUP BY call.call_set_name)
 
-For more on using a subselect, see the *subselect_clause* section of the
-`FROM clause`_ documentation.
+   SELECT
+     COUNT(1) AS number_of_callsets
+   FROM
+     call_sets
 
-The above inner/outer query pattern is frequently useful but is unnecessary
-for this particular query. We can get the count of distinct ``call_set_name``
-values easier ways:
+This composition query pattern is frequently useful and is shown here as
+an example.
 
-::
-
-   SELECT COUNT(DISTINCT call.call_set_name) AS number_of_callsets
-   FROM [genomics-public-data:platinum_genomes.variants]
-
-This query is more compact and has a syntax similar to relational databases.
-The one caveat to using this function is
-`documented <https://cloud.google.com/bigquery/query-reference#aggfunctions>`_
-for the DISTINCT keyword:
-
-   *Note that the returned value for* ``DISTINCT`` *is a statistical*
-   *approximation and is not guaranteed to be exact.*
-
-   *If you require greater accuracy from* ``COUNT(DISTINCT)`` *, you can*
-   *specify a second parameter, n, which gives the threshold below which*
-   *exact results are guaranteed.*
-
-The ``DISTINCT`` function can be extremely useful when you do not need
-exact results or you can safely bound the results by explicitly specify
-the value of "n" as an upper-bound.
-
-If you need exact results and cannot a priori bound the result, you can
-use the ``EXACT_COUNT_DISTINCT`` function:
+Composition turns out to be unnecessary for this particular query.
+We can get the count of distinct ``call_set_name`` values an easier way:
 
 ::
 
-  SELECT EXACT_COUNT_DISTINCT(call.call_set_name) AS number_of_callsets
-  FROM [genomics-public-data:platinum_genomes.variants]
+   #standardSQL
+   SELECT
+     COUNT(DISTINCT call.call_set_name) AS number_of_callsets
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v,  v.call
 
 How many variants are there per chromosome
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -682,15 +787,45 @@ with ``GROUP BY`` and ``COUNT`` from the previous section, this should
 be fairly straight-forward. We just need to apply these same tools to
 the ``reference_name`` field.
 
+It turns out that there are some wrinkles to contend with.  
+The query that we want is:
+
+  - Return all ``variants`` records in which there is
+
+    - at least one call with
+
+      - at least one genotype greater than 0
+
+  - Group the variant records by chromosome and count each group
+
+The first wrinkle is that we need to look into an ARRAY (genotype)
+within an ARRAY (call) while keeping execution context of the query
+at the ``variants`` record level. We are not interested in producing
+a per-call or per-genotype result. We are interested in producing
+a per-variant result.
+
+We saw above how to "look into" an ARRAY record, without changing the query
+context, we can use the `UNNEST`_ function in an EXISTS subquery in our
+WHERE clause:
+
 ::
 
-   SELECT reference_name,
-          COUNT(reference_name) AS number_of_variant_records
-   FROM [genomics-public-data:platinum_genomes.variants]
-   OMIT RECORD IF
-     EVERY(call.genotype <= 0)
-   GROUP BY reference_name
-   ORDER BY reference_name
+   #standardSQL
+   SELECT
+     reference_name,
+     COUNT(reference_name) AS number_of_variant_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.call) AS call
+             WHERE EXISTS (SELECT 1
+                             FROM UNNEST(call.genotype) AS gt
+                           WHERE gt > 0))
+   GROUP BY
+     reference_name
+   ORDER BY
+     reference_name
 
 Returns:
 
@@ -698,13 +833,33 @@ Returns:
       :width: 60%
       :align: center
 
-In this query, we have counted variants by chromosome (``reference_name``).
-To only count true variants, we have excluded variants for which all calls
-are either no-calls (-1) or reference (0). This is equivalent to *including*
-all variants which have some calls with genotype "alternate" (> 0).
+The above encodes very explicitly our needed logic. We can make this a
+bit more concise by turning the EXISTS clause into a JOIN of the ``call``
+field with the ``call.genotype`` field:
 
-The above is good and fairly straight-forward, but let's work on improving
-our output.  What if you'd rather sort in chromosome-numeric order?
+::
+
+   #standardSQL
+   SELECT
+     reference_name,
+     COUNT(reference_name) AS number_of_variant_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.call) AS call, UNNEST(call.genotype) AS gt
+             WHERE gt > 0)
+   GROUP BY
+     reference_name
+   ORDER BY
+     reference_name
+
+
+The above is good and the results are correct, but let's work on improving
+our output. Our second wrinkle arises as we'd like to sort the output in
+chromosome-numeric order but the field we are sorting on is a STRING and
+the values contain the prefix "chr".
+
 Let's walk through a few steps to demonstrate some BigQuery technique.
 
 To sort numerically, we should first trim out the "chr" from the
@@ -712,59 +867,83 @@ To sort numerically, we should first trim out the "chr" from the
 
 ::
 
-   SELECT REGEXP_REPLACE(reference_name, '^chr', '') AS chromosome,
-          COUNT(reference_name) AS number_of_variant_records
-   FROM [genomics-public-data:platinum_genomes.variants]
-   OMIT RECORD IF
-     EVERY(call.genotype <= 0)
-   GROUP BY chromosome
-   ORDER BY chromosome
+   #standardSQL
+   SELECT
+     REGEXP_REPLACE(reference_name, '^chr', '') AS chromosome,
+     COUNT(reference_name) AS number_of_variant_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.call) AS call, UNNEST(call.genotype) AS gt
+             WHERE gt > 0)
+   GROUP BY
+     chromosome
+   ORDER BY
+     chromosome
 
 What did we do here? First we used the `REGEXP_REPLACE`_
-function to replace the leading "chr" string with an with an empty string,
-and then we changed the ``GROUP BY`` and ``ORDER BY`` to use the computed
-field. But the ordering isn't quite what we wanted:
+function to replace the leading "chr" string with an with an empty string
+(and gave the result a column alias of ``chromosome``).
+Then we changed the ``GROUP BY`` and ``ORDER BY`` to use the computed
+``chromosome`` field. But the ordering isn't quite what we wanted:
 
    .. image:: analyze_variants_with_bigquery/true_variants_by_chromosome_remove_chr.png
       :width: 60%
       :align: center
 
-The order is still a string rather than numeric ordering. We can simply
+The order is still string rather than numeric ordering. Let's try to
 cast the column to an integer:
 
 ::
 
-   SELECT INTEGER(REGEXP_REPLACE(reference_name, '^chr', '')) AS chromosome,
-          COUNT(reference_name) AS number_of_variant_records
-   FROM [genomics-public-data:platinum_genomes.variants]
-   OMIT RECORD IF
-     EVERY(call.genotype <= 0)
-   GROUP BY chromosome
-   ORDER BY chromosome
+   #standardSQL
+   SELECT
+     CAST(REGEXP_REPLACE(reference_name, '^chr', '') AS INT64) AS chromosome,
+     COUNT(reference_name) AS number_of_variant_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.call) AS call, UNNEST(call.genotype) AS gt
+             WHERE gt > 0)
+   GROUP BY
+     chromosome
+   ORDER BY
+     chromosome
 
-But this reveals something wrong with the results:
+Unfortunately this generates an error:
 
-   .. image:: analyze_variants_with_bigquery/true_variants_by_chromosome_as_integer.png
-      :width: 60%
-      :align: center
+   +------------------------------+
+   | Error: Bad int64 value: X    |
+   +------------------------------+
 
-Not all chromosome names are numeric (X, Y, MT). This makes it challenging
-to order as desired. Let's approach this slightly differently and use
-string sorting but prepend a "0" to the lower-numbered chromosomes:
+Not all chromosome names are numeric, namely X, Y, and M.
+This makes it challenging to order as desired.
+Let's approach this slightly differently and use
+string sorting. To get the desired order, we will prepend a "0" to
+chromosomes 1-9:
 
 ::
 
+   #standardSQL
    SELECT
-    CASE WHEN INTEGER(REGEXP_REPLACE(reference_name, '^chr', '')) < 10
-         THEN '0' + REGEXP_REPLACE(reference_name, '^chr', '')
+     CASE
+       WHEN SAFE_CAST(REGEXP_REPLACE(reference_name, '^chr', '') AS INT64) < 10
+         THEN CONCAT('0', REGEXP_REPLACE(reference_name, '^chr', ''))
          ELSE REGEXP_REPLACE(reference_name, '^chr', '')
-    END as chromosome,
-    COUNT(reference_name) AS number_of_variant_records
-   FROM [genomics-public-data:platinum_genomes.variants]
-   OMIT RECORD IF
-     EVERY(call.genotype <= 0)
-   GROUP BY chromosome
-   ORDER BY chromosome
+     END AS chromosome,
+     COUNT(reference_name) AS number_of_variant_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.call) AS call, UNNEST(call.genotype) AS gt
+             WHERE gt > 0)
+   GROUP BY
+     chromosome
+   ORDER BY
+     chromosome
 
 This looks better:
 
@@ -776,61 +955,139 @@ What did we do? We used the highly flexible `CASE function`_ to prepend a
 "0" to all chromosomes numbered less than 10, and only removed the "chr"
 from the remaining ``reference_name`` values.
 
-An alternative to padding the numeric values to get the right sort order
-would be to filter out the chromosomes that are not autosomes:
+Also notice the use of the `SAFE_CAST`_ function. This will return NULL
+for X, Y, and M instead of raising an error.
+
+As a final improvement on the output of the above query, let's display the
+``reference_name`` unchanged while still getting the sort ordering we want.
+All we need to do is move our ``CASE`` clause to the ``ORDER BY``:
 
 ::
 
-   SELECT INTEGER(REGEXP_REPLACE(reference_name, '^chr', '')) AS chromosome,
-          COUNT(reference_name) AS number_of_variant_records
-   FROM [genomics-public-data:platinum_genomes.variants]
-   WHERE reference_name NOT IN ('chrX', 'chrY', 'chrM')
-   OMIT RECORD IF
-     EVERY(call.genotype <= 0)
-   GROUP BY chromosome
-   ORDER BY chromosome
+   #standardSQL
+   SELECT
+     reference_name,
+     COUNT(reference_name) AS number_of_variant_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.call) AS call, UNNEST(call.genotype) AS gt
+             WHERE gt > 0)
+   GROUP BY
+     reference_name
+   ORDER BY
+     CASE
+       WHEN SAFE_CAST(REGEXP_REPLACE(reference_name, '^chr', '') AS INT64) < 10
+         THEN CONCAT('0', REGEXP_REPLACE(reference_name, '^chr', ''))
+         ELSE REGEXP_REPLACE(reference_name, '^chr', '')
+     END
 
-Returns:
+Result:
 
-   .. image:: analyze_variants_with_bigquery/true_variants_by_chrosome_only_autosomes.png
+   .. image:: analyze_variants_with_bigquery/true_variants_by_chromome_final.png
       :width: 60%
       :align: center
 
-As a last comment on counting variants per chromosome, if instead of
-ordering by chromosome, you want to order by the number of variants
-per chromosome (largest values first), then just change the ``ORDER BY``
-field from the original query:
+User Defined Functions
+~~~~~~~~~~~~~~~~~~~~~~
+
+We were able to embed some fairly interesting logic into our query with
+the CASE statement. But doing so made the query more verbose. As you build
+more complex queries, keeping the queries concise becomes more and more
+important to make it easier to ensure their logic is correct.
+
+Let's use one last bit of BigQuery technique to improve on our query:
+`User Defined Functions`_. UDFs can be defined as SQL expressions or
+as JavaScript.
+
+In our first example, we will simply move the ``CASE`` logic from our previous
+query into a function:
 
 ::
 
-   SELECT reference_name,
-          COUNT(reference_name) AS number_of_variant_records
-   FROM [genomics-public-data:platinum_genomes.variants]
-   OMIT RECORD IF
-     EVERY(call.genotype <= 0)
-   GROUP BY reference_name
-   ORDER BY number_of_variant_records DESC
+   #standardSQL
+   CREATE TEMPORARY FUNCTION SortableChromosome(reference_name STRING)
+     RETURNS STRING AS (
+     -- Remove the leading "chr" (if any) in the reference_name
+     -- If the chromosome is 1 - 9, prepend a "0" since
+     -- "2" sorts after "10", but "02" sorts before "10".
+     CASE
+       WHEN SAFE_CAST(REGEXP_REPLACE(reference_name, '^chr', '') AS INT64) < 10
+         THEN CONCAT('0', REGEXP_REPLACE(reference_name, '^chr', ''))
+         ELSE REGEXP_REPLACE(reference_name, '^chr', '')
+     END
+   );
 
-Returns:
+   SELECT
+     reference_name,
+     COUNT(reference_name) AS number_of_variant_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.call) AS call, UNNEST(call.genotype) AS gt
+             WHERE gt > 0)
+   GROUP BY
+     reference_name
+   ORDER BY SortableChromosome(reference_name)
 
-   .. image:: analyze_variants_with_bigquery/true_variants_by_chrosome_ordered_by_count.png
-      :width: 60%
-      :align: center
+In the second example, we use a function defined in JavaScript:
+
+::
+
+   #standardSQL
+   CREATE TEMPORARY FUNCTION SortableChromosome(reference_name STRING)
+     RETURNS STRING LANGUAGE js AS """
+     // Remove the leading "chr" (if any) in the reference_name
+     var chr = reference_name.replace(/^chr/, '');
+     
+     // If the chromosome is 1 - 9, prepend a "0" since
+     // "2" sorts after "10", but "02" sorts before "10".
+     if (chr.length == 1 && '123456789'.indexOf(chr) >= 0) {
+       return '0' + chr;
+     }
+     
+     return chr;
+   """;
+   
+   SELECT
+     reference_name,
+     COUNT(reference_name) AS number_of_variant_records
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v
+   WHERE
+     EXISTS (SELECT 1
+               FROM UNNEST(v.call) AS call, UNNEST(call.genotype) AS gt
+             WHERE gt > 0)
+   GROUP BY
+     reference_name
+   ORDER BY SortableChromosome(reference_name)
+
+Each of these two queries returns the same as our previous query, but the
+logic of the query is more concise.
 
 How many high-quality variants per-sample
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `VCF specification`_ includes the ``FILTER`` field which can be used
+The `VCF specification`_ describes the ``FILTER`` field which can be used
 to label variant calls of different qualities. Let's take a look at the
 per-call ``FILTER`` values for the Platinum Genomes dataset:
 
 ::
 
-   SELECT call.FILTER AS FILTER,
-          COUNT(call.FILTER) AS number_of_calls
-   FROM [genomics-public-data:platinum_genomes.variants]
-   GROUP BY FILTER
-   ORDER BY number_of_calls
+   #standardSQL
+   SELECT
+     call_filter,
+     COUNT(call_filter) AS number_of_calls
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v,
+     v.call,
+     UNNEST(call.FILTER) AS call_filter
+   GROUP BY
+     call_filter
+   ORDER BY
+     number_of_calls
 
 Returns:
 
@@ -842,40 +1099,45 @@ Calls with multiple FILTER values
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The values for the ``number_of_calls`` seem high based on the total number
-of calls. Let's sum up the ``number_of_calls`` column:
+of calls. Let's sum up all of the FILTER values:
 
 ::
 
-   SELECT SUM(number_of_calls)
-   FROM (
-     SELECT call.FILTER AS FILTER,
-            COUNT(call.FILTER) AS number_of_calls
-     FROM [genomics-public-data:platinum_genomes.variants]
-     GROUP BY FILTER
-   )
+   #standardSQL
+   SELECT
+     COUNT(call_filter) AS number_of_filters
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v,
+     v.call,
+     call.FILTER AS call_filter
 
-The returned result is ``939,055,789``, which is higher than the total
-number of calls we computed earlier (``887,457,596``). So what is going
+The returned result is ``327,580,807``, which is higher than the total
+number of calls we computed earlier (``309,551,691``). So what is going
 on here? Is our query faulty?
 
-No. The ``FILTER`` field is a REPEATED field within each ``call`` field,
-so some ``call`` fields have multiple ``FILTER`` values. Let's see a few:
+No. The ``FILTER`` field is an ARRAY field within each ``call`` field,
+so some ``call`` fields have multiple ``FILTER`` values. Let's concatenate
+the FILTER field values while looking at a few variant calls.
 
 ::
 
+   #standardSQL
    SELECT
      reference_name,
      start,
-     end,
+     `end`,
      reference_bases,
      call.call_set_name AS call_set_name,
-     GROUP_CONCAT(call.FILTER) WITHIN call AS FILTER,
-     COUNT(call.FILTER) WITHIN call AS FILTER_count
+     (SELECT STRING_AGG(call_filter) FROM UNNEST(call.FILTER) AS call_filter) AS filters,
+     ARRAY_LENGTH(call.FILTER) AS filter_count
    FROM
-     [genomics-public-data:platinum_genomes.variants]
-   HAVING FILTER_count > 1
-   ORDER BY FILTER_count DESC
-   LIMIT 10
+     `genomics-public-data.platinum_genomes.variants` v, v.call
+   WHERE
+     ARRAY_LENGTH(call.FILTER) > 1
+   ORDER BY
+     filter_count DESC, reference_name, start, `end`, reference_bases, call_set_name
+   LIMIT
+     10
 
 Returns:
 
@@ -886,47 +1148,6 @@ Returns:
 So we can see that some variant calls of low quality will fail to pass
 multiple filters.
 
-There were a few new BigQuery features used in this query:
-
-1. GROUP_CONCAT ... WITHIN
-2. COUNT ... WITHIN
-3. HAVING
-
-   +-----------------------------------------------------------------------+
-   | Code tip: GROUP_CONCAT ... WITHIN                                     |
-   +=======================================================================+
-   | The `GROUP_CONCAT function`_ allows for easily creating a single      |
-   | string from repeated values. It is most commonly used for             |
-   | concatenating REPEATED fields together.                               |
-   |                                                                       |
-   | The `WITHIN keyword`_ indicates the scope of the values to            |
-   | concatenate together, typically either the keyword RECORD or the name |
-   | of a repeated field.                                                  |
-   +-----------------------------------------------------------------------+
-
-   +-----------------------------------------------------------------------+
-   | Code tip: COUNT ... WITHIN                                            |
-   +=======================================================================+
-   | The `COUNT function`_ can count repeated values in multiple contexts. |
-   | The `WITHIN keyword`_ indicates the scope of the values to count,     |
-   | which can be over a table, a group (as created by a GROUP BY clause), |
-   | within a RECORD, or within a field.                                   |
-   +-----------------------------------------------------------------------+
-
-   +-----------------------------------------------------------------------+
-   | Code tip: HAVING                                                      |
-   +=======================================================================+
-   | The `HAVING clause`_ is used for filtering, much like the             |
-   | `WHERE clause`_ and OMIT IF.                                          |
-   | Where HAVING differs is in when it is evaluated. HAVING allows you to |
-   | filter after aggregation, so if you want to filter against a COUNT    |
-   | result, do so using the HAVING clause.                                |
-   |                                                                       |
-   | Note that with the late evaluation, HAVING also allows for filtering  |
-   | by query field aliases, while WHERE and OMIT IF do not.               |
-   +-----------------------------------------------------------------------+
-
-
 FILTERing for high quality variant records
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -936,24 +1157,29 @@ they are high quality calls that have passed all variant calling filters.
 
 When analyzing variants, you will often want to filter out lower quality
 variants. It is expected that if the ``FILTER`` field contains the value
-``PASS``, it will contain no other values. Let's verify that:
+``PASS``, it will contain no other values. Let's verify that by adding one
+new condition to the WHERE clause of the previous query:
 
 ::
 
-  SELECT
-    reference_name,
-    start,
-    end,
-    reference_bases,
-    call.call_set_name AS call_set_name,
-    GROUP_CONCAT(call.FILTER) WITHIN call AS FILTER,
-    COUNT(call.FILTER) WITHIN call AS FILTER_count
-  FROM
-    [genomics-public-data:platinum_genomes.variants]
-  OMIT call IF EVERY(call.FILTER != 'PASS')
-  HAVING FILTER_count > 1
-  ORDER BY FILTER_count DESC
-  LIMIT 10
+   #standardSQL
+   SELECT
+     reference_name,
+     start,
+     `end`,
+     reference_bases,
+     call.call_set_name AS call_set_name,
+     (SELECT STRING_AGG(call_filter) FROM UNNEST(call.FILTER) AS call_filter) AS filters,
+     ARRAY_LENGTH(call.FILTER) AS filter_count
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v, v.call
+   WHERE
+     EXISTS (SELECT 1 FROM UNNEST(call.FILTER) AS call_filter WHERE call_filter = 'PASS')
+     AND ARRAY_LENGTH(call.FILTER) > 1
+   ORDER BY
+     filter_count DESC, reference_name, start, `end`, reference_bases, call_set_name
+   LIMIT
+     10
 
 The result is:
 
@@ -971,16 +1197,23 @@ Count high quality calls for samples
 All high quality calls for each sample
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The following counts all calls (variants and non-variants) for each call set
+omitting any call with a non-`PASS` filter.
+
 ::
 
+   #standardSQL
    SELECT
      call.call_set_name AS call_set_name,
      COUNT(1) AS number_of_calls
    FROM
-     [genomics-public-data:platinum_genomes.variants]
-   OMIT call IF SOME(call.FILTER != 'PASS')
-   GROUP BY call_set_name
-   ORDER BY call_set_name
+     `genomics-public-data.platinum_genomes.variants` v, v.call
+   WHERE
+     NOT EXISTS (SELECT 1 FROM UNNEST(call.FILTER) AS call_filter WHERE call_filter != 'PASS')
+   GROUP BY
+     call_set_name
+   ORDER BY
+     call_set_name
 
 Returns:
 
@@ -991,51 +1224,28 @@ Returns:
 All high quality true variant calls for each sample
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The following counts all calls (variants and non-variants) for each call set
+omitting any call with a non-`PASS` filter and including only calls with at
+least one true variant (genotype > 0).
+
 ::
 
+   #standardSQL
    SELECT
-     call_set_name,
+     call.call_set_name AS call_set_name,
      COUNT(1) AS number_of_calls
-   FROM (
-     SELECT
-       call.call_set_name AS call_set_name
-     FROM [genomics-public-data:platinum_genomes.variants]
-     OMIT call IF
-       EVERY(call.genotype <= 0) OR
-       EVERY(call.FILTER != 'PASS')
-   )
-   GROUP BY call_set_name
-   ORDER BY call_set_name
+   FROM
+     `genomics-public-data.platinum_genomes.variants` v, v.call
+   WHERE
+     NOT EXISTS (SELECT 1 FROM UNNEST(call.FILTER) AS call_filter WHERE call_filter != 'PASS')
+     AND EXISTS (SELECT 1 FROM UNNEST(call.genotype) as gt WHERE gt > 0)
+   GROUP BY
+     call_set_name
+   ORDER BY
+     call_set_name
 
 Returns:
    .. image:: analyze_variants_with_bigquery/count_high_quality_variant_calls.png
-      :width: 60%
-      :align: center
-
-All high quality reference calls for each sample
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-   SELECT
-     call_set_name,
-     COUNT(1) AS number_of_calls
-   FROM (
-     SELECT
-      call.call_set_name AS call_set_name,
-      call.FILTER AS call_FILTER
-     FROM [genomics-public-data:platinum_genomes.variants]
-     OMIT RECORD IF
-       (EVERY(alternate_bases == '<NON_REF>') OR
-        EVERY(alternate_bases IS NULL))
-   )
-   OMIT call IF NOT
-     EVERY(call_FILTER != 'PASS')
-   GROUP BY call_set_name
-   ORDER BY call_set_name
-
-Returns:
-   .. image:: analyze_variants_with_bigquery/count_high_quality_non_variant_calls.png
       :width: 60%
       :align: center
 
@@ -1050,6 +1260,7 @@ in BigQuery see:
 
 * https://github.com/googlegenomics/getting-started-bigquery
 * https://github.com/googlegenomics/bigquery-examples
+* https://github.com/googlegenomics/codelabs
 * :doc:`/use_cases/discover_public_data/tute_genomics_public_data`
 * :doc:`/use_cases/analyze_variants/index`
 
