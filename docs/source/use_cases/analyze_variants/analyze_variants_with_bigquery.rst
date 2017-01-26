@@ -339,7 +339,7 @@ Click on the "Details" button in the right hand pane of the browser window.
 This will display information like:
 
    .. image:: analyze_variants_with_bigquery/variants_table_details.png
-      :width: 95%
+      :width: 75%
 
 You can immediately see the size of this table at 46.5 GB and over 261 million
 rows.
