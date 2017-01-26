@@ -252,7 +252,7 @@ rst_epilog = """
 
 .. GLOBAL SUBSTITUTIONS CAN GO HERE
 
-.. |sparkADC| replace:: If the `Application Default Credentials`_ are not sufficient, use ``--secretsFile=PATH/TO/YOUR/client_secrets.json``.  If you do not already have this file, see the `authentication instructions`_ to obtain it.
+.. |sparkADC| replace:: If the `Application Default Credentials`_ are not sufficient, use ``--client-secrets=PATH/TO/YOUR/client_secrets.json``.  If you do not already have this file, see the `authentication instructions`_ to obtain it.
 .. |dataflowADC| replace:: If the `Application Default Credentials`_ are not sufficient, use ``--client-secrets PATH/TO/YOUR/client_secrets.json``.  If you do not already have this file, see the `authentication instructions`_ to obtain it.
 .. |dataflowSomeRefs| replace:: Use a comma-separated list to run over multiple disjoint regions.  For example to run over `BRCA1`_ and `BRCA2`_ ``--references=chr13:32889610:32973808,chr17:41196311:41277499``.
 .. |dataflowAllRefs| replace:: To run this pipeline over the entire genome, use ``--allReferences`` instead of ``--references=chr17:41196311:41277499``.
