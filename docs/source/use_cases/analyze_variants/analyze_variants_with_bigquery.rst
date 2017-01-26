@@ -399,11 +399,11 @@ We *cannot* just change what we count above to count the ``call`` field:
    FROM
      `genomics-public-data.platinum_genomes.variants`
 
-returns the ``number_of_calls`` as 261,285,806. Notice that this is the
-same as the number of variant records. This query did not count the
-array elements, just the number of arrays.
+returns the ``number_of_calls`` as 261,285,806. **Notice that this is the
+same as the number of variant records. This query did NOT count the
+array elements, just the number of arrays.**
 
-We have a few choices then on how we count the calls.
+We have a few choices then on how we properly count the calls.
 
 One way is to count the total number of calls by querying over the
 ``variants`` records and sum the lengths of each ``call`` ARRAY.
