@@ -11,13 +11,13 @@ Platinum Genomes DeepVariant
    | **If you are reading this on github, you should instead click** `here`__.         |
    +-----------------------------------------------------------------------------------+
 
-.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/platinum_genomes.html
+.. _RenderedVersion: http://googlegenomics.readthedocs.org/en/latest/use_cases/discover_public_data/platinum_genomes_deepvariant.html
 
 __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-This dataset comprises the `6 member CEPH pedigree 1463 <http://www.ebi.ac.uk/ena/data/view/PRJEB3381>`_ called using the DeepVariant toolchain and reference genome GRCh38.  See the `DeepVariant preprint <http://biorxiv.org/content/early/2016/12/14/092890>`_ for full details:
+This dataset comprises the `6 member CEPH pedigree 1463 <http://www.ebi.ac.uk/ena/data/view/PRJEB3381>`_ called using the  the alpha version of the `Verily DeepVariant`_ toolchain aligned to :ref:`vgrch38` reference genome.  See the `DeepVariant preprint <http://biorxiv.org/content/early/2016/12/14/092890>`_ for full details:
 
 |  `Creating a universal SNP and small indel variant caller with deep neural networks <http://biorxiv.org/content/early/2016/12/14/092890>`_
 |  Ryan Poplin, Dan Newburger, Jojo Dijamco, Nam Nguyen, Dion Loy, Sam Gross, Cory Y. McLean, Mark A. DePristo

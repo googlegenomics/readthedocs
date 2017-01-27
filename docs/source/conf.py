@@ -186,6 +186,7 @@ rst_epilog = """
 .. _VariantSet: https://cloud.google.com/genomics/reference/rest/v1/variantsets
 .. _Load Genomic Variants: https://cloud.google.com/genomics/v1/load-variants
 .. _Understanding the BigQuery Variants Table Schema: https://cloud.google.com/genomics/v1/bigquery-variants-schema
+.. _Verily DeepVariant: https://cloud.google.com/genomics/v1alpha2/deepvariant
 
 .. _Using Google Cloud Storage with Big Data: https://cloud.google.com/storage/docs/working-with-big-data
 .. _gsutil: https://cloud.google.com/storage/docs/gsutil
