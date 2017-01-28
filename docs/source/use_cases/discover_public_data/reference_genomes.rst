@@ -66,23 +66,27 @@ Verily's GRCh38
 
 Verily's GRCh38 reference genome is fully compatible with any b38 genome in the autosome.
 
-Verily elected to use a version of GRCh38 that excludes all patch sequences, omits alternate haplotype chromosomes, includes decoy sequences, and masks out duplicate copies of centromeric regions. There is an existing genome assembly version, named `GRCh38_no_alt_plus_hs38d1 <ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz>`_, for which these transformations have all already been performed by the GRC. This assembly version was created specifically for analysis, with its rationale and exact genome modifications thoroughly documented in its `README file <ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/README_analysis_sets.txt>`_. Consequently, we elected to use this as our base genome assembly, but applied a few modifications described below.
+Verily's GRCh38:
 
-A common variation in representation in genome assemblies is the decision on chromosome naming. The two most prevalent naming schemes for the nuclear and mitochondrial chromosomes are:
+* excludes all patch sequences
+* omits alternate haplotype chromosomes
+* includes decoy sequences
+* masks out duplicate copies of centromeric regions
 
-'Chr' naming:
-  chr{1..22}, chrX, chrY, chrM
+The base assembly is `GRCh38_no_alt_plus_hs38d1 <ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz>`_. This assembly version was created specifically for analysis, with its rationale and exact genome modifications thoroughly documented in its `README <ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/README_analysis_sets.txt>`_ file.
 
-'Int' naming:
-  {1..22}, X, Y, MT
+Verily applied the following modifications to the base assembly:
 
-Ensuring consistency across datasets is of paramount importance, to avoid the annoying-at-best, error-prone-at-worst conversion between the naming schemes. Because much of the additional data files we use are provided by GENCODE, which uses 'chr' naming when referring to the same major genome assembly (GRCh38), we elected to use 'chr' naming as well. This necessitated transformation from the 'int' naming used by the GRCh38_no_alt_plus_hs38d1.
+* Reference segment names are prefixed with "chr".
 
-We noticed that the carefully-curated GRCh38_no_alt_plus_hs38d1 genome sequence contains extended IUPAC code representations for some base pairs. Because these codes cause issues for many tools, we decided to follow the VCF 4.3 specification which recommends converting all extended IUPAC codes to the first matching alphabetical base pair.
+   +--------------------------------------------------------------+
+   | Many of the additional data files we use are provided        |
+   | by GENCODE, which uses "chr" naming convention.              |
+   +--------------------------------------------------------------+
 
-Because we modified both the chromosome naming scheme and the sequence of 74 extended IUPAC characters, a unique naming scheme for the genome reference we use is imperative. We elected to use the generic naming scheme
+* All 74 extended IUPAC codes are converted to the first matching alphabetical base pair as recommended in the VCF 4.3 specification.
 
-``<Major reference version>_Verily_v<version number>``
+* This release of the genome reference is named ``GRCh38_Verily_v1``
 
 hg19
 ^^^^
