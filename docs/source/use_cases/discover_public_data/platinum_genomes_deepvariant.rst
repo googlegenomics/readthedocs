@@ -17,7 +17,7 @@ __ RenderedVersion_
 
 .. comment: end: goto-read-the-docs
 
-This dataset comprises the `6 member CEPH pedigree 1463 <http://www.ebi.ac.uk/ena/data/view/PRJEB3381>`_ called using the  the alpha version of the `Verily DeepVariant`_ toolchain aligned to :ref:`vgrch38` reference genome.  See the `DeepVariant preprint <http://biorxiv.org/content/early/2016/12/14/092890>`_ for full details:
+This dataset comprises the `6 member CEPH pedigree 1463 <http://www.ebi.ac.uk/ena/data/view/PRJEB3381>`_ called using the alpha version of the `Verily DeepVariant`_ toolchain aligned to :ref:`vgrch38` reference genome.  See the `DeepVariant preprint <http://biorxiv.org/content/early/2016/12/14/092890>`_ for full details:
 
 |  `Creating a universal SNP and small indel variant caller with deep neural networks <http://biorxiv.org/content/early/2016/12/14/092890>`_
 |  Ryan Poplin, Dan Newburger, Jojo Dijamco, Nam Nguyen, Dion Loy, Sam Gross, Cory Y. McLean, Mark A. DePristo
