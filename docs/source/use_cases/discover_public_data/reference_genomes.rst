@@ -58,6 +58,36 @@ Genome Reference Consortium Human Build 38 includes data from 39 gzipped fasta f
 
 More information on this source data can be found in this `NCBI article <http://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26/>`__ and in the `FTP README <ftp://ftp.ncbi.nlm.nih.gov/genbank/genomes/README_ASSEMBLIES>`__.
 
+
+.. _vgrch38:
+
+Verily's GRCh38
+^^^^^^^^^^^^^^^
+
+Verily's GRCh38 reference genome is fully compatible with any b38 genome in the autosome.
+
+Verily's GRCh38:
+
+* excludes all patch sequences
+* omits alternate haplotype chromosomes
+* includes decoy sequences
+* masks out duplicate copies of centromeric regions
+
+The base assembly is `GRCh38_no_alt_plus_hs38d1 <ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz>`_. This assembly version was created specifically for analysis, with its rationale and exact genome modifications thoroughly documented in its `README <ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/README_analysis_sets.txt>`_ file.
+
+Verily applied the following modifications to the base assembly:
+
+* Reference segment names are prefixed with "chr".
+
+   +--------------------------------------------------------------+
+   | Many of the additional data files we use are provided        |
+   | by GENCODE, which uses "chr" naming convention.              |
+   +--------------------------------------------------------------+
+
+* All 74 extended IUPAC codes are converted to the first matching alphabetical base pair as recommended in the VCF 4.3 specification.
+
+* This release of the genome reference is named ``GRCh38_Verily_v1``
+
 hg19
 ^^^^
 

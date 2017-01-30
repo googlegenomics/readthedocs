@@ -43,6 +43,6 @@
 
         cd spark-examples
         sbt assembly
-        cp target/scala-2.10/googlegenomics-spark-examples-assembly-*.jar ~/
+        cp target/scala-2.*/googlegenomics-spark-examples-assembly-*.jar ~/
         cd ~/
 
