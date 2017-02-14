@@ -130,7 +130,7 @@ The script also saves away changed environment variables and installs a ``deacti
     cd elasticluster
     git clone git://github.com/gc3-uzh-ch/elasticluster.git src
     cd src
-    python setup.py install
+    pip install -e .
 
    b. From github (googlegenomics fork)
 
@@ -139,7 +139,7 @@ The script also saves away changed environment variables and installs a ``deacti
     cd elasticluster
     git clone https://github.com/googlegenomics/elasticluster.git src
     cd src
-    python setup.py install
+    pip install -e .
 
 .. _index--create-your-cluster-definition-file:
 
@@ -233,7 +233,7 @@ Instructions for ensuring your SSH keypair exists can be found
    login=google-login
    setup_provider=ansible-gridengine
    security_group=default
-   image_id=****REPLACE WITH OUTPUT FROM: gcloud compute images list | grep ^backports-debian | cut -f 1 -d " "****
+   image_id=****REPLACE WITH OUTPUT FROM: gcloud compute images list | grep debian | cut -f 1 -d " "****
    flavor=n1-standard-1
    frontend_nodes=1
    compute_nodes=3
@@ -423,4 +423,4 @@ To update your installation, active the virtualenv, pull the source from GitHub,
     source elasticluster/bin/activate
     cd elasticluster/src
     git pull
-    python setup.py install
+    pip install -e .
