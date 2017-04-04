@@ -31,3 +31,4 @@ __ RenderedVersion_
   pgp_public_data
   dream_smc_dna
   simons_foundation
+  1000_cannabis_genomes
