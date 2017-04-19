@@ -28,5 +28,5 @@ The Institute for Systems Biology (ISB) has created and made public a dataset ba
 Google Cloud Platform data locations
 ------------------------------------
 
-* Google BigQuery Dataset ID `isb-cgc:tcga_201510_alpha <https://bigquery.cloud.google.com/dataset/isb-cgc:tcga_201510_alpha>`_
+* Google BigQuery Dataset ID `isb-cgc:tcga_201607_beta <https://bigquery.cloud.google.com/dataset/isb-cgc:tcga_201607_beta>`_
 

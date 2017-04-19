@@ -25,3 +25,4 @@ __ RenderedVersion_
   clinvar_annotations
   ucsc_annotations
   isb_cgc_data
+  cosmic_annotations
