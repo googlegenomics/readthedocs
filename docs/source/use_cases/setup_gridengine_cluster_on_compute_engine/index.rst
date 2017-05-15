@@ -209,7 +209,7 @@ Instructions for ensuring your SSH keypair exists can be found
    [setup/ansible-gridengine]
    provider=ansible
    frontend_groups=gridengine_master
-   compute_groups=gridengine_clients
+   compute_groups=gridengine_worker
 
    # Create a cloud provider (call it "google-cloud")
    [cloud/google-cloud]
@@ -231,7 +231,7 @@ Instructions for ensuring your SSH keypair exists can be found
    [cluster/gridengine]
    cloud=google-cloud
    login=google-login
-   setup_provider=ansible-gridengine
+   setup=ansible-gridengine
    security_group=default
    image_id=****REPLACE WITH OUTPUT FROM: gcloud compute images list | grep debian | cut -f 1 -d " "****
    flavor=n1-standard-1
