@@ -210,7 +210,7 @@ rst_epilog = """
 .. _NCBI BLAST Cloud Documentation: http://ncbi.github.io/blast-cloud/
 .. _R: http://www.r-project.org/
 .. _S3IT: http://www.s3it.uzh.ch/
-.. _SLURM: https://computing.llnl.gov/linux/slurm/
+.. _Slurm: https://slurm.schedmd.com/
 
 .. _Bioconductor: http://www.bioconductor.org/
 .. _Using Bioconductor: http://www.bioconductor.org/install/
