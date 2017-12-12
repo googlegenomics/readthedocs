@@ -22,8 +22,6 @@ __ RenderedVersion_
 
   1000_genomes
   platinum_genomes
-  platinum_genomes_deepvariant
-  precision_fda
   reference_genomes
   mssng_data
   isb_cgc_data
