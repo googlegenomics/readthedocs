@@ -9,10 +9,17 @@ Google Genomics Cookbook
 Welcome to the Google Genomics Cookbook on Read the Docs. 
 
   +--------------------------------------------------------------------+
-  | The official Google Genomics documentation can be found at         |
+  | The Google Genomics Cookbook on Read the Docs is not actively      |
+  | maintained. For the most up to date documentation, view the        |
+  | official Google Genomics documentation at                          |
   | `cloud.google.com/genomics`_. There you will find information such |
   | as `What is Google Genomics`_, `Google Genomics fundamentals`_,    |
   | and details of the `Google Genomics API`_.                         |
+  |                                                                    |
+  | Also note that much of the Genomics v1 API surface has been        |
+  | superseded by Variant Transforms and htsget. See the `deprecation  |
+  | notice <https://cloud.google.com/genomics/deprecation>`_ for more  |
+  | information.                                                       |
   +--------------------------------------------------------------------+
 
 Here on Read the Docs, you will find documentation and tutorials for 
