@@ -1,3 +1,6 @@
+Analyze Data in Google Genomics
+===============================
+
 +--------------------------------------------------------------------------------------------------------------+
 | Note: Google Genomics is now Cloud Life Sciences.                                                            |       
 | The Google Genomics Cookbook on Read the Docs is not actively                                                |
@@ -10,8 +13,6 @@
 | superseded by `Variant Transforms <https://cloud.google.com/life-sciences/docs/how-tos/variant-transforms>`_ |
 | and `htsget <https://cloud.google.com/life-sciences/docs/how-tos/reading-data-htsget>`_.                     |
 +--------------------------------------------------------------------------------------------------------------+
-Analyze Data in Google Genomics
-===============================
 
 .. comment: begin: goto-read-the-docs
 
