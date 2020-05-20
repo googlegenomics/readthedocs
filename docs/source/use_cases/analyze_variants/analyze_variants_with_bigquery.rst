@@ -14,6 +14,19 @@
 .. _UNNEST: https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#unnest
 .. _User Defined Functions: https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions
 
++--------------------------------------------------------------------------------------------------------------+
+| Note: Google Genomics is now Cloud Life Sciences.                                                            |
+| The Google Genomics Cookbook on Read the Docs is not actively                                                |
+| maintained and may contain incorrect or outdated information.                                                |
+| The cookbook is only available for historical reference. For                                                 |
+| the most up to date documentation, view the official Cloud                                                   |
+| Life Sciences documentation at https://cloud.google.com/life-sciences.                                       |
+|                                                                                                              |
+| Also note that much of the Genomics v1 API surface has been                                                  |
+| superseded by `Variant Transforms <https://cloud.google.com/life-sciences/docs/how-tos/variant-transforms>`_ |
+| and `htsget <https://cloud.google.com/life-sciences/docs/how-tos/reading-data-htsget>`_.                     |
++--------------------------------------------------------------------------------------------------------------+
+
 Analyze variants using Google BigQuery
 ======================================
 

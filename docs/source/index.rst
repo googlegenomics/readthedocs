@@ -8,19 +8,18 @@ Google Genomics Cookbook
 
 Welcome to the Google Genomics Cookbook on Read the Docs. 
 
-  +--------------------------------------------------------------------+
-  | The Google Genomics Cookbook on Read the Docs is not actively      |
-  | maintained. For the most up to date documentation, view the        |
-  | official Google Genomics documentation at                          |
-  | `cloud.google.com/genomics`_. There you will find information such |
-  | as `What is Google Genomics`_, `Google Genomics fundamentals`_,    |
-  | and details of the `Google Genomics API`_.                         |
-  |                                                                    |
-  | Also note that much of the Genomics v1 API surface has been        |
-  | superseded by Variant Transforms and htsget. See the `deprecation  |
-  | notice <https://cloud.google.com/genomics/deprecation>`_ for more  |
-  | information.                                                       |
-  +--------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
+| Note: Google Genomics is now Cloud Life Sciences.                                                            |
+| The Google Genomics Cookbook on Read the Docs is not actively                                                |
+| maintained and may contain incorrect or outdated information.                                                |
+| The cookbook is only available for historical reference. For                                                 |
+| the most up to date documentation, view the official Cloud                                                   |
+| Life Sciences documentation at https://cloud.google.com/life-sciences.                                       |
+|                                                                                                              |
+| Also note that much of the Genomics v1 API surface has been                                                  |
+| superseded by `Variant Transforms <https://cloud.google.com/life-sciences/docs/how-tos/variant-transforms>`_ |
+| and `htsget <https://cloud.google.com/life-sciences/docs/how-tos/reading-data-htsget>`_.                     |
++--------------------------------------------------------------------------------------------------------------+
 
 Here on Read the Docs, you will find documentation and tutorials for 
 common tasks including moving, transforming, and analyzing genomic data.
